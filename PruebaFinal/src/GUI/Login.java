@@ -2,15 +2,36 @@ package GUI;
 
 import MyContainers.TextPrompt;
 import javax.swing.ImageIcon;
+import java.util.ArrayList;
+import java.util.List;
+import Funcionamiento.Usuario;
 
 public class Login extends javax.swing.JFrame {
-
+    
+     private List<Usuario> Usuario;
+        
     /**
      * Creates new form Pantalla
      */
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        this.aviso.setVisible(false);
+        this.fondoAviso.setVisible(false);
+        this.labelNota.setVisible(false);
+        this.labelMayus.setVisible(false);
+        this.labelUsuario.setVisible(false);
+        this.salirAviso.setVisible(false);
+        
+        
+            //Lista Usuarios
+        Usuario = new ArrayList<>();
+        Usuario.add(new Usuario("franco.almerco","franco"));
+        Usuario.add(new Usuario("alondra.gonzales","alondra"));
+        Usuario.add(new Usuario("fabian.maquen","fabian"));
+        Usuario.add(new Usuario("omar.morales","omar"));
+        Usuario.add(new Usuario("nefi.valderrama","nefi"));
         
         TextPrompt txtCorreo = new TextPrompt("Username", txtEmail);
         TextPrompt txtContra = new TextPrompt("Password", jp_password_recovery);
@@ -27,6 +48,12 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         ultimaCapa = new javax.swing.JPanel();
+        salirAviso = new javax.swing.JButton();
+        labelMayus = new javax.swing.JLabel();
+        labelNota = new javax.swing.JLabel();
+        labelUsuario = new javax.swing.JLabel();
+        aviso = new javax.swing.JLabel();
+        fondoAviso = new javax.swing.JLabel();
         botonVerContraseña = new javax.swing.JButton();
         botonSalir = new javax.swing.JButton();
         botonLogin = new MyContainers.BotonCustomLogin();
@@ -45,6 +72,40 @@ public class Login extends javax.swing.JFrame {
 
         ultimaCapa.setBackground(new java.awt.Color(102, 102, 102));
         ultimaCapa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        salirAviso.setBackground(new java.awt.Color(42, 57, 115));
+        salirAviso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoSalir35x35.png"))); // NOI18N
+        salirAviso.setBorder(null);
+        salirAviso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        salirAviso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirAvisoActionPerformed(evt);
+            }
+        });
+        ultimaCapa.add(salirAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 232, -1, -1));
+
+        labelMayus.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        labelMayus.setForeground(new java.awt.Color(255, 255, 255));
+        labelMayus.setText("con exactitud (Mayus/Minus).");
+        ultimaCapa.add(labelMayus, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 348, -1, -1));
+
+        labelNota.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        labelNota.setForeground(new java.awt.Color(255, 255, 255));
+        labelNota.setText("Nota: Asegurarse de digitar su clave ");
+        ultimaCapa.add(labelNota, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 330, 220, -1));
+
+        labelUsuario.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        labelUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        labelUsuario.setText("Usuario y/o Contraseña no válido. ");
+        ultimaCapa.add(labelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 303, 210, -1));
+
+        aviso.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        aviso.setForeground(new java.awt.Color(255, 255, 255));
+        aviso.setText("AVISO");
+        ultimaCapa.add(aviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 255, -1, -1));
+
+        fondoAviso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoAviso.png"))); // NOI18N
+        ultimaCapa.add(fondoAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 310, 210));
 
         botonVerContraseña.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         botonVerContraseña.setForeground(new java.awt.Color(255, 255, 255));
@@ -92,12 +153,12 @@ public class Login extends javax.swing.JFrame {
         personaGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoMuñueco.png"))); // NOI18N
         ultimaCapa.add(personaGUI, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 240, -1, -1));
 
+        txtEmail.setBackground(new java.awt.Color(63, 108, 165));
         txtEmail.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(255, 255, 255));
         txtEmail.setToolTipText("");
         txtEmail.setBorder(null);
         txtEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtEmail.setOpaque(false);
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
@@ -111,11 +172,11 @@ public class Login extends javax.swing.JFrame {
         candadoGUI.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         ultimaCapa.add(candadoGUI, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 300, -1, -1));
 
+        jp_password_recovery.setBackground(new java.awt.Color(63, 108, 165));
         jp_password_recovery.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jp_password_recovery.setForeground(new java.awt.Color(255, 255, 255));
         jp_password_recovery.setBorder(null);
         jp_password_recovery.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        jp_password_recovery.setOpaque(false);
         jp_password_recovery.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jp_password_recoveryActionPerformed(evt);
@@ -123,11 +184,11 @@ public class Login extends javax.swing.JFrame {
         });
         ultimaCapa.add(jp_password_recovery, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 290, 160, 50));
 
+        botonRecordar.setBackground(new java.awt.Color(63, 108, 165));
         botonRecordar.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         botonRecordar.setForeground(new java.awt.Color(255, 255, 255));
         botonRecordar.setText("Remember me");
         botonRecordar.setFocusPainted(false);
-        botonRecordar.setOpaque(false);
         botonRecordar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonRecordarActionPerformed(evt);
@@ -135,6 +196,7 @@ public class Login extends javax.swing.JFrame {
         });
         ultimaCapa.add(botonRecordar, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 360, -1, -1));
 
+        botonOlvidaContra.setBackground(new java.awt.Color(63, 108, 165));
         botonOlvidaContra.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         botonOlvidaContra.setForeground(new java.awt.Color(255, 255, 255));
         botonOlvidaContra.setText("Forgot ¿Password?");
@@ -193,7 +255,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jp_password_recoveryActionPerformed
    
     private void botonOlvidaContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOlvidaContraActionPerformed
-
+            
+        RecuperarClave rClave = new RecuperarClave();
+        rClave.setVisible(true);
+        this.setVisible(false);
+        
     }//GEN-LAST:event_botonOlvidaContraActionPerformed
 
     private void botonRecordarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRecordarActionPerformed
@@ -202,6 +268,36 @@ public class Login extends javax.swing.JFrame {
 
     private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed
         // TODO add your handling code here:
+    String correo = txtEmail.getText();
+    String contrasena = new String(jp_password_recovery.getPassword());
+    
+    boolean confirmarUsuario = false;
+    for (Usuario listaUsuario : Usuario) {
+        if (listaUsuario.getNombreUsuario().equals(correo) && listaUsuario.getContrasenha().equals(contrasena)) {
+           confirmarUsuario = true;
+           break;
+            }
+      }
+        if(confirmarUsuario){
+              // Aqui ... abrir ventana inicio.
+        } else {
+        
+              //Si el correo no esta registrado o esta mal
+                this.aviso.setVisible(true);
+                this.fondoAviso.setVisible(true);
+                this.labelMayus.setVisible(true);
+                this.labelUsuario.setVisible(true);
+                this.labelNota.setVisible(true);
+                this.salirAviso.setVisible(true);
+                this.botonSalir.setVisible(false);
+                this.botonVerContraseña.setVisible(false);
+                this.personaGUI.setVisible(false);
+                this.txtEmail.setVisible(false);
+                this.candadoGUI.setVisible(false);
+                this.jp_password_recovery.setVisible(false);
+                this.botonRecordar.setVisible(false);
+                this.botonOlvidaContra.setVisible(false);      
+        } 
     }//GEN-LAST:event_botonLoginActionPerformed
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
@@ -225,7 +321,15 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
 
+    private void salirAvisoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirAvisoActionPerformed
+        // TODO add your handling code here:
+        Login ventanaLogin = new Login();
+        ventanaLogin.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_salirAvisoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel aviso;
     private MyContainers.Background background1;
     private MyContainers.BotonCustomLogin botonLogin;
     private javax.swing.JButton botonOlvidaContra;
@@ -233,10 +337,15 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton botonSalir;
     private javax.swing.JButton botonVerContraseña;
     private javax.swing.JLabel candadoGUI;
+    private javax.swing.JLabel fondoAviso;
     private javax.swing.JLabel fondoLogin;
     private javax.swing.JPasswordField jp_password_recovery;
+    private javax.swing.JLabel labelMayus;
+    private javax.swing.JLabel labelNota;
+    private javax.swing.JLabel labelUsuario;
     private javax.swing.JLabel logoUsil;
     private javax.swing.JLabel personaGUI;
+    private javax.swing.JButton salirAviso;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JPanel ultimaCapa;
     // End of variables declaration//GEN-END:variables
