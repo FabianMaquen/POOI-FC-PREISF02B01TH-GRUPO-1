@@ -193,9 +193,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jp_password_recoveryActionPerformed
    
     private void botonOlvidaContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOlvidaContraActionPerformed
-        Prueba ventanaPrueba = new Prueba();
-        ventanaPrueba.setVisible(true);
-        this.setVisible(false);
+
     }//GEN-LAST:event_botonOlvidaContraActionPerformed
 
     private void botonRecordarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRecordarActionPerformed
