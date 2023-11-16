@@ -16,6 +16,8 @@
 *private.xml
 *private.properties
 PruebaFinal/build/*
+PruebaFinal/nbproject/*
+
 
 # Package files
 *.jar
