@@ -22,8 +22,28 @@ public class Inicio extends javax.swing.JFrame {
 
         UltimaCapa = new javax.swing.JPanel();
         panelBlancoCurva = new MyContainers.PanelRound();
+        jSeparator1 = new javax.swing.JSeparator();
+        jb_chatbot = new javax.swing.JButton();
+        jb_fotocheck = new javax.swing.JButton();
+        jb_contacto = new javax.swing.JButton();
+        jl_titulo_uchill = new javax.swing.JLabel();
+        jl_foto_noticia1 = new javax.swing.JLabel();
+        jl_text1_noticia1 = new javax.swing.JLabel();
+        jl_text2_noticia1 = new javax.swing.JLabel();
+        jl_text3_noticia1 = new javax.swing.JLabel();
+        jl_text4_noticia1 = new javax.swing.JLabel();
+        jl_foto_noticia2 = new javax.swing.JLabel();
+        jl_text1_noticia2 = new javax.swing.JLabel();
+        jl_text2_noticia2 = new javax.swing.JLabel();
+        jl_text3_noticia2 = new javax.swing.JLabel();
+        jl_text4_noticia2 = new javax.swing.JLabel();
+        jl_foto_noticia3 = new javax.swing.JLabel();
+        jl_text1_noticia3 = new javax.swing.JLabel();
+        jl_text2_noticia3 = new javax.swing.JLabel();
+        jl_text3_noticia3 = new javax.swing.JLabel();
+        jl_text4_noticia3 = new javax.swing.JLabel();
         jl_nombre_usuario = new javax.swing.JLabel();
-        jl_bienvenida = new javax.swing.JLabel();
+        jl_bienvenido = new javax.swing.JLabel();
         jb_retroceder = new javax.swing.JButton();
         jb_salir = new javax.swing.JButton();
         background1 = new MyContainers.Background();
@@ -37,6 +57,128 @@ public class Inicio extends javax.swing.JFrame {
         panelBlancoCurva.setRoundTopLeft(80);
         panelBlancoCurva.setRoundTopRight(80);
         panelBlancoCurva.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jSeparator1.setForeground(new java.awt.Color(41, 61, 109));
+        panelBlancoCurva.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 320, 10));
+
+        jb_chatbot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoChatbot70x75.png"))); // NOI18N
+        jb_chatbot.setBorder(null);
+        jb_chatbot.setBorderPainted(false);
+        jb_chatbot.setContentAreaFilled(false);
+        jb_chatbot.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_chatbot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_chatbotActionPerformed(evt);
+            }
+        });
+        panelBlancoCurva.add(jb_chatbot, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 415, 50, 60));
+
+        jb_fotocheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotocheck60x60.png"))); // NOI18N
+        jb_fotocheck.setBorder(null);
+        jb_fotocheck.setBorderPainted(false);
+        jb_fotocheck.setContentAreaFilled(false);
+        jb_fotocheck.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_fotocheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_fotocheckActionPerformed(evt);
+            }
+        });
+        panelBlancoCurva.add(jb_fotocheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, -1, -1));
+
+        jb_contacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoContacto30x33.png"))); // NOI18N
+        jb_contacto.setBorder(null);
+        jb_contacto.setBorderPainted(false);
+        jb_contacto.setContentAreaFilled(false);
+        jb_contacto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_contacto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_contactoActionPerformed(evt);
+            }
+        });
+        panelBlancoCurva.add(jb_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 425, -1, -1));
+
+        jl_titulo_uchill.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
+        jl_titulo_uchill.setForeground(new java.awt.Color(41, 61, 109));
+        jl_titulo_uchill.setText("Las últimas en Uchill");
+        panelBlancoCurva.add(jl_titulo_uchill, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
+
+        jl_foto_noticia1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotonoticia1.png"))); // NOI18N
+        jl_foto_noticia1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true));
+        panelBlancoCurva.add(jl_foto_noticia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 70, 150, -1));
+
+        jl_text1_noticia1.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_text1_noticia1.setForeground(new java.awt.Color(41, 61, 109));
+        jl_text1_noticia1.setText("USIL   gana   sede   del  CONEIA  2024   tras");
+        jl_text1_noticia1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panelBlancoCurva.add(jl_text1_noticia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 75, 260, -1));
+
+        jl_text2_noticia1.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_text2_noticia1.setForeground(new java.awt.Color(41, 61, 109));
+        jl_text2_noticia1.setText("destacada actuación en Cusco");
+        panelBlancoCurva.add(jl_text2_noticia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 170, -1));
+
+        jl_text3_noticia1.setFont(new java.awt.Font("Franklin Gothic Book", 0, 10)); // NOI18N
+        jl_text3_noticia1.setForeground(new java.awt.Color(41, 61, 109));
+        jl_text3_noticia1.setText("Estudiantes de Ingeniería Agroindustrial obtuvieron");
+        panelBlancoCurva.add(jl_text3_noticia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 115, 240, -1));
+
+        jl_text4_noticia1.setFont(new java.awt.Font("Franklin Gothic Book", 0, 10)); // NOI18N
+        jl_text4_noticia1.setForeground(new java.awt.Color(41, 61, 109));
+        jl_text4_noticia1.setText("premios en dos categorías.");
+        panelBlancoCurva.add(jl_text4_noticia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 210, -1));
+
+        jl_foto_noticia2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotonoticia2_150x89.png"))); // NOI18N
+        jl_foto_noticia2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true));
+        panelBlancoCurva.add(jl_foto_noticia2, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 175, 150, -1));
+
+        jl_text1_noticia2.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_text1_noticia2.setForeground(new java.awt.Color(41, 61, 109));
+        jl_text1_noticia2.setText("USIL   organizan   la   Semana   Mundial  del");
+        jl_text1_noticia2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panelBlancoCurva.add(jl_text1_noticia2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 260, -1));
+
+        jl_text2_noticia2.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_text2_noticia2.setForeground(new java.awt.Color(41, 61, 109));
+        jl_text2_noticia2.setText("Emprendimiento ");
+        jl_text2_noticia2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panelBlancoCurva.add(jl_text2_noticia2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 195, 260, -1));
+
+        jl_text3_noticia2.setFont(new java.awt.Font("Franklin Gothic Book", 0, 10)); // NOI18N
+        jl_text3_noticia2.setForeground(new java.awt.Color(41, 61, 109));
+        jl_text3_noticia2.setText("Decimocuarto  año  consecutivo  que  se reliza este");
+        panelBlancoCurva.add(jl_text3_noticia2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 240, -1));
+
+        jl_text4_noticia2.setFont(new java.awt.Font("Franklin Gothic Book", 0, 10)); // NOI18N
+        jl_text4_noticia2.setForeground(new java.awt.Color(41, 61, 109));
+        jl_text4_noticia2.setText("importante evento en Perú.");
+        panelBlancoCurva.add(jl_text4_noticia2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 235, 240, -1));
+
+        jl_foto_noticia3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotonoticia3_150x89.png"))); // NOI18N
+        jl_foto_noticia3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true));
+        panelBlancoCurva.add(jl_foto_noticia3, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 280, 150, -1));
+
+        jl_text1_noticia3.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_text1_noticia3.setForeground(new java.awt.Color(41, 61, 109));
+        jl_text1_noticia3.setText("USIL   organiza   Primer   Torneo   de   Judo");
+        jl_text1_noticia3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panelBlancoCurva.add(jl_text1_noticia3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 285, 260, -1));
+
+        jl_text2_noticia3.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_text2_noticia3.setForeground(new java.awt.Color(41, 61, 109));
+        jl_text2_noticia3.setText("Universitario");
+        jl_text2_noticia3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panelBlancoCurva.add(jl_text2_noticia3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 260, -1));
+
+        jl_text3_noticia3.setFont(new java.awt.Font("Franklin Gothic Book", 0, 10)); // NOI18N
+        jl_text3_noticia3.setForeground(new java.awt.Color(41, 61, 109));
+        jl_text3_noticia3.setText("Más  de  cien  atletas  competirán  este  sábado 11");
+        panelBlancoCurva.add(jl_text3_noticia3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 325, 240, -1));
+
+        jl_text4_noticia3.setFont(new java.awt.Font("Franklin Gothic Book", 0, 10)); // NOI18N
+        jl_text4_noticia3.setForeground(new java.awt.Color(41, 61, 109));
+        jl_text4_noticia3.setText("de noviembre en el coliseo de la USIL.");
+        panelBlancoCurva.add(jl_text4_noticia3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 240, -1));
+
         UltimaCapa.add(panelBlancoCurva, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 490));
 
         jl_nombre_usuario.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -46,10 +188,10 @@ public class Inicio extends javax.swing.JFrame {
         jl_nombre_usuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         UltimaCapa.add(jl_nombre_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 280, -1));
 
-        jl_bienvenida.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jl_bienvenida.setForeground(new java.awt.Color(255, 255, 255));
-        jl_bienvenida.setText("¡BIENVENIDO!");
-        UltimaCapa.add(jl_bienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 20, -1, -1));
+        jl_bienvenido.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jl_bienvenido.setForeground(new java.awt.Color(255, 255, 255));
+        jl_bienvenido.setText("¡BIENVENIDO!");
+        UltimaCapa.add(jl_bienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 20, -1, -1));
 
         jb_retroceder.setBackground(new java.awt.Color(38, 65, 115));
         jb_retroceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BackIcon.png"))); // NOI18N
@@ -107,13 +249,49 @@ public class Inicio extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jb_salirActionPerformed
 
+    private void jb_chatbotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_chatbotActionPerformed
+        //Chatbot ventanaChatbot = new Chatbot();
+        //ventanaChatbot.setVisible(true);
+        //this.setVisible(false);
+    }//GEN-LAST:event_jb_chatbotActionPerformed
+
+    private void jb_fotocheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_fotocheckActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_fotocheckActionPerformed
+
+    private void jb_contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_contactoActionPerformed
+        Contactos ventanaContactos = new Contactos();
+        ventanaContactos.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jb_contactoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel UltimaCapa;
     private MyContainers.Background background1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton jb_chatbot;
+    private javax.swing.JButton jb_contacto;
+    private javax.swing.JButton jb_fotocheck;
     private javax.swing.JButton jb_retroceder;
     private javax.swing.JButton jb_salir;
-    private javax.swing.JLabel jl_bienvenida;
+    private javax.swing.JLabel jl_bienvenido;
+    private javax.swing.JLabel jl_foto_noticia1;
+    private javax.swing.JLabel jl_foto_noticia2;
+    private javax.swing.JLabel jl_foto_noticia3;
     private javax.swing.JLabel jl_nombre_usuario;
+    private javax.swing.JLabel jl_text1_noticia1;
+    private javax.swing.JLabel jl_text1_noticia2;
+    private javax.swing.JLabel jl_text1_noticia3;
+    private javax.swing.JLabel jl_text2_noticia1;
+    private javax.swing.JLabel jl_text2_noticia2;
+    private javax.swing.JLabel jl_text2_noticia3;
+    private javax.swing.JLabel jl_text3_noticia1;
+    private javax.swing.JLabel jl_text3_noticia2;
+    private javax.swing.JLabel jl_text3_noticia3;
+    private javax.swing.JLabel jl_text4_noticia1;
+    private javax.swing.JLabel jl_text4_noticia2;
+    private javax.swing.JLabel jl_text4_noticia3;
+    private javax.swing.JLabel jl_titulo_uchill;
     private MyContainers.PanelRound panelBlancoCurva;
     // End of variables declaration//GEN-END:variables
 }
