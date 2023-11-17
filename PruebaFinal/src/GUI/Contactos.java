@@ -19,10 +19,10 @@ public class Contactos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        capaBackground = new javax.swing.JPanel();
+        backMain = new javax.swing.JButton();
         bienvenida2 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        panelRound1 = new MyContainers.PanelRound();
+        blancoCurva = new MyContainers.PanelRound();
         panelRound9 = new MyContainers.PanelRound();
         n21 = new javax.swing.JLabel();
         As7 = new javax.swing.JLabel();
@@ -61,20 +61,29 @@ public class Contactos extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        capaBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        backMain.setBackground(new java.awt.Color(38, 65, 115));
+        backMain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BackIcon.png"))); // NOI18N
+        backMain.setBorder(null);
+        backMain.setContentAreaFilled(false);
+        backMain.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backMain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backMainActionPerformed(evt);
+            }
+        });
+        capaBackground.add(backMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 20, -1, -1));
 
         bienvenida2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         bienvenida2.setForeground(new java.awt.Color(255, 255, 255));
         bienvenida2.setText("CONTACTO");
-        jPanel1.add(bienvenida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
+        capaBackground.add(bienvenida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BackIcon.png"))); // NOI18N
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 20, -1, -1));
-
-        panelRound1.setBackground(new java.awt.Color(232, 235, 241));
-        panelRound1.setRoundTopLeft(80);
-        panelRound1.setRoundTopRight(80);
+        blancoCurva.setBackground(new java.awt.Color(232, 235, 241));
+        blancoCurva.setRoundTopLeft(80);
+        blancoCurva.setRoundTopRight(80);
+        blancoCurva.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelRound9.setBackground(new java.awt.Color(204, 204, 204));
         panelRound9.setRoundBottomLeft(20);
@@ -115,6 +124,8 @@ public class Contactos extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
+        blancoCurva.add(panelRound9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 44, -1, -1));
+
         panelRound3.setBackground(new java.awt.Color(204, 204, 204));
         panelRound3.setRoundBottomLeft(20);
         panelRound3.setRoundBottomRight(20);
@@ -150,6 +161,8 @@ public class Contactos extends javax.swing.JFrame {
                 .addComponent(n8)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
+
+        blancoCurva.add(panelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 44, -1, -1));
 
         panelRound4.setBackground(new java.awt.Color(204, 204, 204));
         panelRound4.setRoundBottomLeft(20);
@@ -198,6 +211,8 @@ public class Contactos extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        blancoCurva.add(panelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 143, -1, -1));
+
         panelRound5.setBackground(new java.awt.Color(204, 204, 204));
         panelRound5.setRoundBottomLeft(20);
         panelRound5.setRoundBottomRight(20);
@@ -236,6 +251,8 @@ public class Contactos extends javax.swing.JFrame {
                 .addComponent(n11)
                 .addContainerGap(13, Short.MAX_VALUE))
         );
+
+        blancoCurva.add(panelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 248, -1, -1));
 
         panelRound6.setBackground(new java.awt.Color(204, 204, 204));
         panelRound6.setRoundBottomLeft(20);
@@ -286,6 +303,8 @@ public class Contactos extends javax.swing.JFrame {
                 .addGap(36, 36, 36))
         );
 
+        blancoCurva.add(panelRound6, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 248, -1, 81));
+
         panelRound7.setBackground(new java.awt.Color(204, 204, 204));
         panelRound7.setRoundBottomLeft(20);
         panelRound7.setRoundBottomRight(20);
@@ -334,162 +353,96 @@ public class Contactos extends javax.swing.JFrame {
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
+        blancoCurva.add(panelRound7, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 143, -1, -1));
+
         n14.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         n14.setForeground(new java.awt.Color(41, 61, 109));
         n14.setText("www.facebook.com/usil.peru");
         n14.setAlignmentX(0.5F);
+        blancoCurva.add(n14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 368, -1, -1));
 
         n15.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         n15.setForeground(new java.awt.Color(41, 61, 109));
         n15.setText("www.twitter.com/_USIL");
         n15.setAlignmentX(0.5F);
+        blancoCurva.add(n15, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 402, -1, -1));
 
         n16.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         n16.setForeground(new java.awt.Color(41, 61, 109));
         n16.setText("www.instagram.com/usil/");
         n16.setAlignmentX(0.5F);
+        blancoCurva.add(n16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 436, -1, -1));
 
         n17.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         n17.setForeground(new java.awt.Color(41, 61, 109));
         n17.setText("www.youtube.com/user/usilpe");
         n17.setAlignmentX(0.5F);
+        blancoCurva.add(n17, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 368, -1, -1));
 
         facebook1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/facebookRedi.png"))); // NOI18N
         facebook1.setText("jLabel2");
+        blancoCurva.add(facebook1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 363, 25, -1));
 
         facebook2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/instagramRedi2.png"))); // NOI18N
         facebook2.setText("jLabel2");
+        blancoCurva.add(facebook2, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 431, 25, 25));
 
         facebook3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/youtubeRedi.png"))); // NOI18N
         facebook3.setText("jLabel2");
+        blancoCurva.add(facebook3, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 363, 25, -1));
 
         facebook4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tiktokRedi2.png"))); // NOI18N
         facebook4.setText("jLabel2");
+        blancoCurva.add(facebook4, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 400, 25, 25));
 
         facebook5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/whatsappRedi2.png"))); // NOI18N
         facebook5.setText("jLabel2");
+        blancoCurva.add(facebook5, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 431, 25, 25));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TwitterXRedi3.png"))); // NOI18N
         jLabel1.setText("jLabel1");
+        blancoCurva.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 400, 28, -1));
 
         n18.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         n18.setForeground(new java.awt.Color(41, 61, 109));
         n18.setText("www.tiktok.com/@usil.edu");
         n18.setAlignmentX(0.5F);
+        blancoCurva.add(n18, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 405, -1, -1));
 
         n19.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         n19.setForeground(new java.awt.Color(41, 61, 109));
         n19.setText("981-313-100");
         n19.setAlignmentX(0.5F);
+        blancoCurva.add(n19, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 436, -1, -1));
 
-        javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
-        panelRound1.setLayout(panelRound1Layout);
-        panelRound1Layout.setHorizontalGroup(
-            panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRound1Layout.createSequentialGroup()
-                        .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(panelRound9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(panelRound5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                        .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(panelRound7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(panelRound3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(panelRound6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound1Layout.createSequentialGroup()
-                        .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(facebook1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(facebook2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(n14)
-                            .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(n15)
-                                .addComponent(n16)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(facebook4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(facebook3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(facebook5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(n18)
-                            .addComponent(n17)
-                            .addComponent(n19))))
-                .addGap(14, 14, 14))
-        );
-        panelRound1Layout.setVerticalGroup(
-            panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound1Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelRound9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelRound5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelRound6, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(facebook1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(n14)
-                    .addComponent(n17)
-                    .addComponent(facebook3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(n15)
-                        .addComponent(jLabel1))
-                    .addGroup(panelRound1Layout.createSequentialGroup()
-                        .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(facebook4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(n18))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(n16)
-                            .addComponent(facebook2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(facebook5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(n19))))
-                .addContainerGap())
-        );
+        capaBackground.add(blancoCurva, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 490));
 
-        jPanel1.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 490));
-
-        javax.swing.GroupLayout background1Layout = new javax.swing.GroupLayout(background1);
-        background1.setLayout(background1Layout);
-        background1Layout.setHorizontalGroup(
-            background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
-        background1Layout.setVerticalGroup(
-            background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 130, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 130));
+        background1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        capaBackground.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 130));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(capaBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(capaBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backMainActionPerformed
+        // TODO add your handling code here:
+        Login ventanaLogin = new Login();
+        ventanaLogin.setVisible(true);
+        this.setVisible(false);
+
+        //hola esto es un cambio
+
+    }//GEN-LAST:event_backMainActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel As;
@@ -499,16 +452,17 @@ public class Contactos extends javax.swing.JFrame {
     private javax.swing.JLabel As5;
     private javax.swing.JLabel As7;
     private javax.swing.JLabel PaSe;
+    private javax.swing.JButton backMain;
     private MyContainers.Background background1;
     private javax.swing.JLabel bienvenida2;
+    private MyContainers.PanelRound blancoCurva;
+    private javax.swing.JPanel capaBackground;
     private javax.swing.JLabel facebook1;
     private javax.swing.JLabel facebook2;
     private javax.swing.JLabel facebook3;
     private javax.swing.JLabel facebook4;
     private javax.swing.JLabel facebook5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel n10;
     private javax.swing.JLabel n11;
     private javax.swing.JLabel n12;
@@ -523,7 +477,6 @@ public class Contactos extends javax.swing.JFrame {
     private javax.swing.JLabel n6;
     private javax.swing.JLabel n8;
     private javax.swing.JLabel n9;
-    private MyContainers.PanelRound panelRound1;
     private MyContainers.PanelRound panelRound3;
     private MyContainers.PanelRound panelRound4;
     private MyContainers.PanelRound panelRound5;

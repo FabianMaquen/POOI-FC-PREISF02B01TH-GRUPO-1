@@ -26,17 +26,32 @@ public class Inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        UltimaCapa = new javax.swing.JPanel();
+        panelBlancoCurva = new MyContainers.PanelRound();
+        fondoAzulDegradado = new MyContainers.Background();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        UltimaCapa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panelBlancoCurva.setBackground(new java.awt.Color(232, 235, 241));
+        panelBlancoCurva.setRoundTopLeft(80);
+        panelBlancoCurva.setRoundTopRight(80);
+        panelBlancoCurva.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        UltimaCapa.add(panelBlancoCurva, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 490));
+
+        fondoAzulDegradado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        UltimaCapa.add(fondoAzulDegradado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 130));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(UltimaCapa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(UltimaCapa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -78,5 +93,9 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel UltimaCapa;
+    private MyContainers.Background fondoAzulDegradado;
+    private MyContainers.PanelRound panelBlancoCurva;
+    private MyContainers.PanelRound panelRound1;
     // End of variables declaration//GEN-END:variables
 }
