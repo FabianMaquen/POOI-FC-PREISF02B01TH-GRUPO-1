@@ -1,20 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package GUI;
 
-/**
- *
- * @author Fabian Maquen
- */
 public class Inicio extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Inicio
-     */
     public Inicio() {
         initComponents();
+        this.setLocationRelativeTo(null);
+    }
+    
+    public void setNombreUsuario(String nombreUsuario) {
+        jl_nombre_usuario.setText(nombreUsuario);
     }
 
     /**
@@ -28,9 +22,14 @@ public class Inicio extends javax.swing.JFrame {
 
         UltimaCapa = new javax.swing.JPanel();
         panelBlancoCurva = new MyContainers.PanelRound();
-        fondoAzulDegradado = new MyContainers.Background();
+        jl_nombre_usuario = new javax.swing.JLabel();
+        jl_bienvenida = new javax.swing.JLabel();
+        jb_retroceder = new javax.swing.JButton();
+        jb_salir = new javax.swing.JButton();
+        background1 = new MyContainers.Background();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         UltimaCapa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -40,8 +39,48 @@ public class Inicio extends javax.swing.JFrame {
         panelBlancoCurva.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         UltimaCapa.add(panelBlancoCurva, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 490));
 
-        fondoAzulDegradado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        UltimaCapa.add(fondoAzulDegradado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 130));
+        jl_nombre_usuario.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jl_nombre_usuario.setForeground(new java.awt.Color(255, 255, 255));
+        jl_nombre_usuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_nombre_usuario.setText("Nombre_Usuario");
+        jl_nombre_usuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        UltimaCapa.add(jl_nombre_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 280, -1));
+
+        jl_bienvenida.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jl_bienvenida.setForeground(new java.awt.Color(255, 255, 255));
+        jl_bienvenida.setText("¡BIENVENIDO!");
+        UltimaCapa.add(jl_bienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 20, -1, -1));
+
+        jb_retroceder.setBackground(new java.awt.Color(38, 65, 115));
+        jb_retroceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BackIcon.png"))); // NOI18N
+        jb_retroceder.setBorder(null);
+        jb_retroceder.setContentAreaFilled(false);
+        jb_retroceder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_retroceder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_retrocederActionPerformed(evt);
+            }
+        });
+        UltimaCapa.add(jb_retroceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 20, -1, -1));
+
+        jb_salir.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jb_salir.setForeground(new java.awt.Color(255, 255, 255));
+        jb_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoSalir35x35.png"))); // NOI18N
+        jb_salir.setBorder(null);
+        jb_salir.setBorderPainted(false);
+        jb_salir.setContentAreaFilled(false);
+        jb_salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_salir.setFocusPainted(false);
+        jb_salir.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jb_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_salirActionPerformed(evt);
+            }
+        });
+        UltimaCapa.add(jb_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 20, 30, -1));
+
+        background1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        UltimaCapa.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 130));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -57,45 +96,24 @@ public class Inicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
+        // TODO add your handling code here:
+        Login ventanaLogin = new Login();
+        ventanaLogin.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jb_retrocederActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Inicio().setVisible(true);
-            }
-        });
-    }
+    private void jb_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jb_salirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel UltimaCapa;
-    private MyContainers.Background fondoAzulDegradado;
+    private MyContainers.Background background1;
+    private javax.swing.JButton jb_retroceder;
+    private javax.swing.JButton jb_salir;
+    private javax.swing.JLabel jl_bienvenida;
+    private javax.swing.JLabel jl_nombre_usuario;
     private MyContainers.PanelRound panelBlancoCurva;
-    private MyContainers.PanelRound panelRound1;
     // End of variables declaration//GEN-END:variables
 }

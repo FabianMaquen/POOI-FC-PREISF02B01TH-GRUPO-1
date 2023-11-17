@@ -43,11 +43,11 @@ public class Bienvenida extends javax.swing.JFrame {
 
         bienvenida1.setForeground(new java.awt.Color(255, 255, 255));
         bienvenida1.setText("¡Bienvenido a la app móvil de USIL, tu portal");
-        jPanel1.add(bienvenida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 270, 260, 20));
+        jPanel1.add(bienvenida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 270, 260, 20));
 
         bienvenida2.setForeground(new java.awt.Color(255, 255, 255));
         bienvenida2.setText(" personal para una experiencia educativa sin límites!");
-        jPanel1.add(bienvenida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 286, -1, -1));
+        jPanel1.add(bienvenida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 286, -1, -1));
 
         logoUsil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usilLogo190x190.png"))); // NOI18N
         jPanel1.add(logoUsil, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, -1));

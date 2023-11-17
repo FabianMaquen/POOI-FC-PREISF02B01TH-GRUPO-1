@@ -2,9 +2,6 @@ package GUI;
 
 public class Contactos extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Bienvenida
-     */
     public Contactos() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -20,7 +17,7 @@ public class Contactos extends javax.swing.JFrame {
     private void initComponents() {
 
         capaBackground = new javax.swing.JPanel();
-        backMain = new javax.swing.JButton();
+        jb_retroceder = new javax.swing.JButton();
         bienvenida2 = new javax.swing.JLabel();
         blancoCurva = new MyContainers.PanelRound();
         panelRound9 = new MyContainers.PanelRound();
@@ -63,17 +60,17 @@ public class Contactos extends javax.swing.JFrame {
 
         capaBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        backMain.setBackground(new java.awt.Color(38, 65, 115));
-        backMain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BackIcon.png"))); // NOI18N
-        backMain.setBorder(null);
-        backMain.setContentAreaFilled(false);
-        backMain.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        backMain.addActionListener(new java.awt.event.ActionListener() {
+        jb_retroceder.setBackground(new java.awt.Color(38, 65, 115));
+        jb_retroceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BackIcon.png"))); // NOI18N
+        jb_retroceder.setBorder(null);
+        jb_retroceder.setContentAreaFilled(false);
+        jb_retroceder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_retroceder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backMainActionPerformed(evt);
+                jb_retrocederActionPerformed(evt);
             }
         });
-        capaBackground.add(backMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 20, -1, -1));
+        capaBackground.add(jb_retroceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 20, -1, -1));
 
         bienvenida2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         bienvenida2.setForeground(new java.awt.Color(255, 255, 255));
@@ -434,15 +431,12 @@ public class Contactos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backMainActionPerformed
+    private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
         // TODO add your handling code here:
-        Login ventanaLogin = new Login();
-        ventanaLogin.setVisible(true);
+        Inicio ventanaInicio = new Inicio();
+        ventanaInicio.setVisible(true);
         this.setVisible(false);
-
-        //hola esto es un cambio
-
-    }//GEN-LAST:event_backMainActionPerformed
+    }//GEN-LAST:event_jb_retrocederActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel As;
@@ -452,7 +446,6 @@ public class Contactos extends javax.swing.JFrame {
     private javax.swing.JLabel As5;
     private javax.swing.JLabel As7;
     private javax.swing.JLabel PaSe;
-    private javax.swing.JButton backMain;
     private MyContainers.Background background1;
     private javax.swing.JLabel bienvenida2;
     private MyContainers.PanelRound blancoCurva;
@@ -463,6 +456,7 @@ public class Contactos extends javax.swing.JFrame {
     private javax.swing.JLabel facebook4;
     private javax.swing.JLabel facebook5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jb_retroceder;
     private javax.swing.JLabel n10;
     private javax.swing.JLabel n11;
     private javax.swing.JLabel n12;

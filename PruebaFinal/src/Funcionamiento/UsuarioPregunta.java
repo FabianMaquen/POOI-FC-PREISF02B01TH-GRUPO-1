@@ -4,11 +4,8 @@ public class UsuarioPregunta extends Usuario {
     
     private Usuario usuario;
 
-    public UsuarioPregunta() {
-    }
-
-    public UsuarioPregunta(String nombreUsuario, String contrasenha) {
-        super(nombreUsuario, contrasenha);
+    public UsuarioPregunta(String nombreUsuario, String contrasenha, String nombreCompleto, double codigoUsuario) {
+        super(nombreUsuario, contrasenha, nombreCompleto, codigoUsuario);
     }
 
     public Usuario getUsuario() {

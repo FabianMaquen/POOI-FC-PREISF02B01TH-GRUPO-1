@@ -4,18 +4,16 @@ public class Usuario {
 
     private String nombreUsuario;
     private String contrasenha;
-    
-    public Usuario() {
-        this.nombreUsuario = "";
-        this.contrasenha = "";
-    }
-    
-    public Usuario(String nombreUsuario, String contrasenha) {
+    private String nombreCompleto;
+    private double codigoUsuario;
+
+    public Usuario(String nombreUsuario, String contrasenha, String nombreCompleto, double codigoUsuario) {
         this.nombreUsuario = nombreUsuario;
         this.contrasenha = contrasenha;
+        this.nombreCompleto = nombreCompleto;
+        this.codigoUsuario = codigoUsuario;
     }
     
-
     public String getNombreUsuario() {
         return nombreUsuario;
     }
@@ -30,6 +28,22 @@ public class Usuario {
 
     public void setContrasenha(String contrasenha) {
         this.contrasenha = contrasenha;
+    }
+
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+
+    public double getCodigoUsuario() {
+        return codigoUsuario;
+    }
+
+    public void setCodigoUsuario(double codigoUsuario) {
+        this.codigoUsuario = codigoUsuario;
     }
     
     public void confirmar(){
