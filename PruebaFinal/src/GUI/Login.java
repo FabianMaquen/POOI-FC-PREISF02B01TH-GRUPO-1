@@ -219,17 +219,7 @@ public class Login extends javax.swing.JFrame {
         fondoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/FondoLogin.png"))); // NOI18N
         ultimaCapa.add(fondoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 150, -1, 360));
 
-        javax.swing.GroupLayout background1Layout = new javax.swing.GroupLayout(background1);
-        background1.setLayout(background1Layout);
-        background1Layout.setHorizontalGroup(
-            background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
-        background1Layout.setVerticalGroup(
-            background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
-        );
-
+        background1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         ultimaCapa.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

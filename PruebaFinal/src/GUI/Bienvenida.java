@@ -52,17 +52,7 @@ public class Bienvenida extends javax.swing.JFrame {
         logoUsil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usilLogo190x190.png"))); // NOI18N
         jPanel1.add(logoUsil, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, -1));
 
-        javax.swing.GroupLayout background1Layout = new javax.swing.GroupLayout(background1);
-        background1.setLayout(background1Layout);
-        background1Layout.setHorizontalGroup(
-            background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
-        background1Layout.setVerticalGroup(
-            background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
-        );
-
+        background1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
