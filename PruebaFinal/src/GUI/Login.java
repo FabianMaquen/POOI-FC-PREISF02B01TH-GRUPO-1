@@ -1,17 +1,14 @@
 package GUI;
 
+import Funcionamiento.ListaUsuarios;
+import Funcionamiento.Usuario;
 import MyContainers.TextPrompt;
 import javax.swing.ImageIcon;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JFrame;
-import Funcionamiento.Usuario;
 
 
 public class Login extends JFrame {
-    
-    private List<Usuario> Usuario;
-        
+     
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -22,14 +19,6 @@ public class Login extends JFrame {
         this.labelMayus.setVisible(false);
         this.labelUsuario.setVisible(false);
         this.salirAviso.setVisible(false);
-        
-        //Lista Usuarios
-        Usuario = new ArrayList<>();
-        Usuario.add(new Usuario("franco.almerco","franco", "Almerco Alaya, Franco Raúl", 2312782));
-        Usuario.add(new Usuario("alondra.gonzales","alondra", "Gonzales Cuaresma, Alondra Yamileth", 2312461));
-        Usuario.add(new Usuario("fabian.maquen","fabian", "Maquen Caisan, Fabian",2311685));
-        Usuario.add(new Usuario("omar.morales","omar", "Morales Silva, Omar Jean Piere", 2313215));
-        Usuario.add(new Usuario("nefi.valderrama","nefi", "Valderrama Vilca, Nefi Bitner", 2311081));
         
         TextPrompt txtCorreo = new TextPrompt("Username", txtEmail);
         TextPrompt txtContra = new TextPrompt("Password", jp_password_recovery);
@@ -274,10 +263,9 @@ public class Login extends JFrame {
         String correo = txtEmail.getText();
         String contrasena = new String(jp_password_recovery.getPassword());
 
-        for (Usuario listaUsuario : Usuario) {
-            if (listaUsuario.getNombreUsuario().equals(correo) && listaUsuario.getContrasenha().equals(contrasena)) {
-                Inicio ventanaInicio = new Inicio();
-                ventanaInicio.setNombreUsuario(listaUsuario.getNombreCompleto());
+        for (Usuario us : ListaUsuarios.usuarios) {
+            if (us.getNombreUsuario().equals(correo) && us.getContrasenha().equals(contrasena)) {
+                Inicio ventanaInicio = new Inicio(us);
                 ventanaInicio.setVisible(true);
                 this.setVisible(false);
                 break;

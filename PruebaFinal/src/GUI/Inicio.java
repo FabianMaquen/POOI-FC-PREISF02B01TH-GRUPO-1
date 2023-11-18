@@ -1,15 +1,41 @@
 package GUI;
 
-public class Inicio extends javax.swing.JFrame {
+import Funcionamiento.Usuario;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 
-    public Inicio() {
+public class Inicio extends JFrame {
+    private Usuario usuario;
+    
+    public Inicio(){
+        
+    }
+
+    public Inicio(Usuario usuario) {
         initComponents();
+        this.usuario = usuario;    
         this.setLocationRelativeTo(null);
+        setUpUsuario();
     }
     
-    public void setNombreUsuario(String nombreUsuario) {
-        jl_nombre_usuario.setText(nombreUsuario);
+    private void setUpUsuario(){
+        //Bienvenida Nombre_Completo
+        jl_nombre_usuario.setText(usuario.getNombreCompleto());
+        
+        //Logo del boton
+        ImageIcon nuevaImagen;
+        jb_fotocheck.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(usuario.getFotocheckPequeño())));
     }
+    
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -78,6 +104,7 @@ public class Inicio extends javax.swing.JFrame {
         jb_fotocheck.setBorderPainted(false);
         jb_fotocheck.setContentAreaFilled(false);
         jb_fotocheck.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_fotocheck.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jb_fotocheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_fotocheckActionPerformed(evt);
@@ -102,7 +129,7 @@ public class Inicio extends javax.swing.JFrame {
         jl_titulo_uchill.setText("Las últimas en Uchill");
         panelBlancoCurva.add(jl_titulo_uchill, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
 
-        jl_foto_noticia1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotonoticia1.png"))); // NOI18N
+        jl_foto_noticia1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotonoticia1_150x89.png"))); // NOI18N
         jl_foto_noticia1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true));
         panelBlancoCurva.add(jl_foto_noticia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 70, 150, -1));
 
@@ -256,7 +283,9 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_chatbotActionPerformed
 
     private void jb_fotocheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_fotocheckActionPerformed
-        // TODO add your handling code here:
+        //Fotocheck ventanaFotocheck = new Fotocheck();
+        //ventanaFotocheck.setVisible(true);
+        //this.setVisible(false);
     }//GEN-LAST:event_jb_fotocheckActionPerformed
 
     private void jb_contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_contactoActionPerformed

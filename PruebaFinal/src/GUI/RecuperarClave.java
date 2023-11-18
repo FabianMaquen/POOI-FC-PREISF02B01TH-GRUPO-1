@@ -1,8 +1,7 @@
 package GUI;
 
 import MyContainers.TextPrompt;
-import java.util.ArrayList;
-import java.util.List;
+import Funcionamiento.ListaUsuarios;
 import Funcionamiento.Usuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,29 +10,17 @@ import javax.swing.JFrame;
 
 public class RecuperarClave extends JFrame {
     
-    private List<Usuario> Usuario;
     private Timer timer;
 
-    
     public RecuperarClave() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.CorreoValido.setVisible(false);
         this.CorreoNoValido.setVisible(false);
         
-        
-        //Lista Usuarios
-        Usuario = new ArrayList<>();
-        Usuario.add(new Usuario("franco.almerco","franco", "Almerco Alaya, Franco Raúl", 2312782));
-        Usuario.add(new Usuario("alondra.gonzales","alondra", "Gonzales Cuaresma, Alondra Yamileth", 2312461));
-        Usuario.add(new Usuario("fabian.maquen","fabian", "Maquen Caisan, Fabian",2311685));
-        Usuario.add(new Usuario("omar.morales","omar", "Morales Silva, Omar Jean Piere", 2313215));
-        Usuario.add(new Usuario("nefi.valderrama","nefi", "Valderrama Vilca, Nefi Bitner", 2311081));
-        
         TextPrompt txtCorreo = new TextPrompt("Email ID", txtUsuario);
        
-            
-         timer = new Timer(2000, new ActionListener() {
+        timer = new Timer(2000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 CorreoValido.setVisible(false);
@@ -162,24 +149,19 @@ public class RecuperarClave extends JFrame {
 
     private void botonCustomLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCustomLogin1ActionPerformed
         // TODO add your handling code here:
-     String correo = txtUsuario.getText();  
-       
-    boolean confirmarCorreo = false;
-    for(Usuario listaUsuario:Usuario){
-     if (listaUsuario.getNombreUsuario().equals(correo) ) {
-         confirmarCorreo = true;
-         break;
+        String correo = txtUsuario.getText();
+
+        for (Usuario us : ListaUsuarios.usuarios) {
+            this.CorreoValido.setVisible(false);
+            this.CorreoNoValido.setVisible(false);
+            
+            if (us.getCorreoUsuario().equals(correo)) {
+                this.CorreoValido.setVisible(true);
+                break;
+            } else{
+                this.CorreoNoValido.setVisible(true);
+            }
         }
-    }
-      
-       if(confirmarCorreo){   
-          this.CorreoValido.setVisible(true);
-      }else {
-        this.CorreoNoValido.setVisible(true);
-    
-        }
-         timer.restart();
-         
     }//GEN-LAST:event_botonCustomLogin1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
