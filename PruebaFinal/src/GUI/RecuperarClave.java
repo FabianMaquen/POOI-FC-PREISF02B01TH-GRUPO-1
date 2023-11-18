@@ -1,45 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package GUI;
+
 import MyContainers.TextPrompt;
-import javax.swing.ImageIcon;
-import java.util.ArrayList;
-import java.util.List;
+import Funcionamiento.ListaUsuarios;
 import Funcionamiento.Usuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
-/**
- *
- * @author franc
- */
-public class RecuperarClave extends javax.swing.JFrame {
-    private List<Usuario> Usuario;
+import javax.swing.JFrame;
+
+public class RecuperarClave extends JFrame {
+    
     private Timer timer;
-    /**
-     * Creates new form RecuperarClave
-     */
+
     public RecuperarClave() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.CorreoValido.setVisible(false);
         this.CorreoNoValido.setVisible(false);
         
-        
-        //Lista Usuarios
-        Usuario = new ArrayList<>();
-        Usuario.add(new Usuario("franco.almerco@usil.pe","franco"));
-        Usuario.add(new Usuario("alondra.gonzales@usil.pe","alondra"));
-        Usuario.add(new Usuario("fabian.maquen@usil.pe","fabian"));
-        Usuario.add(new Usuario("omar.morales@usil.pe","omar"));
-        Usuario.add(new Usuario("nefi.valderrama@usil.pe","nefi"));
-        
         TextPrompt txtCorreo = new TextPrompt("Email ID", txtUsuario);
        
-            
-         timer = new Timer(2000, new ActionListener() {
+        timer = new Timer(2000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 CorreoValido.setVisible(false);
@@ -59,7 +40,7 @@ public class RecuperarClave extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jb_retroceder = new javax.swing.JButton();
         logoUsuario = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         botonCustomLogin1 = new MyContainers.BotonCustomLogin();
@@ -75,22 +56,22 @@ public class RecuperarClave extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(440, 580));
 
         jPanel1.setMinimumSize(new java.awt.Dimension(440, 580));
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 580));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(38, 65, 115));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BackIcon.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jb_retroceder.setBackground(new java.awt.Color(38, 65, 115));
+        jb_retroceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BackIcon.png"))); // NOI18N
+        jb_retroceder.setBorder(null);
+        jb_retroceder.setContentAreaFilled(false);
+        jb_retroceder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_retroceder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jb_retrocederActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 20, -1, -1));
+        jPanel1.add(jb_retroceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 20, -1, -1));
 
         logoUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoMuñueco.png"))); // NOI18N
         jPanel1.add(logoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
@@ -142,24 +123,14 @@ public class RecuperarClave extends javax.swing.JFrame {
         FondoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/FondoLogin.png"))); // NOI18N
         jPanel1.add(FondoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 150, -1, 360));
 
-        javax.swing.GroupLayout background1Layout = new javax.swing.GroupLayout(background1);
-        background1.setLayout(background1Layout);
-        background1Layout.setHorizontalGroup(
-            background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
-        );
-        background1Layout.setVerticalGroup(
-            background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 580));
+        background1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,42 +140,29 @@ public class RecuperarClave extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
         // TODO add your handling code here:
         Login ventanaLogin = new Login();
         ventanaLogin.setVisible(true);
         this.setVisible(false);
-        
-        //hola esto es un cambio
-       
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jb_retrocederActionPerformed
 
     private void botonCustomLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCustomLogin1ActionPerformed
         // TODO add your handling code here:
-     String correo = txtUsuario.getText();  
-       
-    boolean confirmarCorreo = false;
-    for(Usuario listaUsuario:Usuario){
-     if (listaUsuario.getNombreUsuario().equals(correo) ) {
-         confirmarCorreo = true;
-         break;
+        String correo = txtUsuario.getText();
+
+        for (Usuario us : ListaUsuarios.usuarios) {
+            this.CorreoValido.setVisible(false);
+            this.CorreoNoValido.setVisible(false);
+            
+            if (us.getCorreoUsuario().equals(correo)) {
+                this.CorreoValido.setVisible(true);
+                break;
+            } else{
+                this.CorreoNoValido.setVisible(true);
+            }
         }
-    }
-      
-       if(confirmarCorreo){   
-          this.CorreoValido.setVisible(true);
-      }else {
-        this.CorreoNoValido.setVisible(true);
-    
-        }
-         timer.restart();
-         
     }//GEN-LAST:event_botonCustomLogin1ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CorreoNoValido;
@@ -212,10 +170,10 @@ public class RecuperarClave extends javax.swing.JFrame {
     private javax.swing.JLabel FondoLogin;
     private MyContainers.Background background1;
     private MyContainers.BotonCustomLogin botonCustomLogin1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jb_retroceder;
     private javax.swing.JLabel logoUsil;
     private javax.swing.JLabel logoUsuario;
     private javax.swing.JLabel recordar;

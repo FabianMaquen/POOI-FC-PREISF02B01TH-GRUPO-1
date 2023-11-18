@@ -3,7 +3,6 @@ package Funcionamiento;
 public class Chatbot {
     
     private String memoriaConversacion;
-    private UsuarioPregunta pregunta;
     public Chatbot() {
         memoriaConversacion = "";
     }

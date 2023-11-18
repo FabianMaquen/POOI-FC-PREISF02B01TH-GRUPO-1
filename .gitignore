@@ -32,3 +32,4 @@ PruebaFinal/nbproject/private/*
 *.swp
 *~.nib
 *.tmp
+/PruebaFinal/dist/
