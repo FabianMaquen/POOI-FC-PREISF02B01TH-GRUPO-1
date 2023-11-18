@@ -150,8 +150,9 @@ public class RecuperarClave extends JFrame {
     private void botonCustomLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCustomLogin1ActionPerformed
         // TODO add your handling code here:
         String correo = txtUsuario.getText();
+        ListaUsuarios l_us = new ListaUsuarios();
 
-        for (Usuario us : ListaUsuarios.usuarios) {
+        for (Usuario us : l_us.getUsuarios()) {
             this.CorreoValido.setVisible(false);
             this.CorreoNoValido.setVisible(false);
             

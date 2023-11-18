@@ -260,16 +260,17 @@ public class Login extends JFrame {
 
     private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed
         // TODO add your handling code here:
-        String correo = txtEmail.getText();
+        String username = txtEmail.getText();
         String contrasena = new String(jp_password_recovery.getPassword());
-
-        for (Usuario us : ListaUsuarios.usuarios) {
-            if (us.getNombreUsuario().equals(correo) && us.getContrasenha().equals(contrasena)) {
+        
+        ListaUsuarios l_us = new ListaUsuarios();
+        
+        for(Usuario us : l_us.getUsuarios()){
+            if(us.getNombreUsuario().equals(username) && us.getContrasenha().equals(contrasena)){
                 Inicio ventanaInicio = new Inicio(us);
                 ventanaInicio.setVisible(true);
-                this.setVisible(false);
-                break;
-            }else {
+                this.setVisible(false);     
+            } else {
                 //Si el correo no esta registrado o esta mal
                 this.aviso.setVisible(true);
                 this.fondoAviso.setVisible(true);
@@ -285,7 +286,7 @@ public class Login extends JFrame {
                 this.jp_password_recovery.setVisible(false);
                 this.botonRecordar.setVisible(false);
                 this.botonOlvidaContra.setVisible(false);      
-            } 
+            }
         }
     }//GEN-LAST:event_botonLoginActionPerformed
 
