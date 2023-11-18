@@ -8,7 +8,8 @@ public class Inicio extends JFrame {
     private Usuario usuario;
     
     public Inicio(){
-        
+        initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     public Inicio(Usuario usuario) {

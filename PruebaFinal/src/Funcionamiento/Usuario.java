@@ -6,7 +6,7 @@ public class Usuario {
     private String contrasenha;
     private String correoUsuario;
     private String nombreCompleto;
-    private double codigoUsuario;
+    private int codigoUsuario;
     private String fotocheckPequeño;
     private String fotocheckGrande;
     private String QR_Usuario;
@@ -15,7 +15,7 @@ public class Usuario {
         
     }
 
-    public Usuario(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, double codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario) {
+    public Usuario(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, int codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario) {
         this.nombreUsuario = nombreUsuario;
         this.contrasenha = contrasenha;
         this.correoUsuario = correoUsuario;
@@ -58,11 +58,11 @@ public class Usuario {
         this.nombreCompleto = nombreCompleto;
     }
 
-    public double getCodigoUsuario() {
+    public int getCodigoUsuario() {
         return codigoUsuario;
     }
 
-    public void setCodigoUsuario(double codigoUsuario) {
+    public void setCodigoUsuario(int codigoUsuario) {
         this.codigoUsuario = codigoUsuario;
     }
 
@@ -89,6 +89,13 @@ public class Usuario {
     public void setQR_Usuario(String QR_Usuario) {
         this.QR_Usuario = QR_Usuario;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "nombreUsuario=" + nombreUsuario + ", contrasenha=" + contrasenha + ", correoUsuario=" + correoUsuario + ", nombreCompleto=" + nombreCompleto + ", codigoUsuario=" + codigoUsuario + ", fotocheckPeque\u00f1o=" + fotocheckPequeño + ", fotocheckGrande=" + fotocheckGrande + ", QR_Usuario=" + QR_Usuario + '}';
+    }
+    
+    
     
     public void confirmar(){
     }
