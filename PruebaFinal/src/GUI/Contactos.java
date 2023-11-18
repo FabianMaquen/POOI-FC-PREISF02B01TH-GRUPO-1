@@ -20,19 +20,12 @@ public class Contactos extends javax.swing.JFrame {
         jb_retroceder = new javax.swing.JButton();
         bienvenida2 = new javax.swing.JLabel();
         blancoCurva = new MyContainers.PanelRound();
-        panelRound9 = new MyContainers.PanelRound();
-        n21 = new javax.swing.JLabel();
-        As7 = new javax.swing.JLabel();
         panelRound3 = new MyContainers.PanelRound();
         As2 = new javax.swing.JLabel();
         n8 = new javax.swing.JLabel();
         panelRound4 = new MyContainers.PanelRound();
         As4 = new javax.swing.JLabel();
-        n10 = new javax.swing.JLabel();
         n12 = new javax.swing.JLabel();
-        panelRound5 = new MyContainers.PanelRound();
-        As5 = new javax.swing.JLabel();
-        n11 = new javax.swing.JLabel();
         panelRound6 = new MyContainers.PanelRound();
         As = new javax.swing.JLabel();
         PaSe = new javax.swing.JLabel();
@@ -53,6 +46,14 @@ public class Contactos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         n18 = new javax.swing.JLabel();
         n19 = new javax.swing.JLabel();
+        panelRound8 = new MyContainers.PanelRound();
+        As6 = new javax.swing.JLabel();
+        n22 = new javax.swing.JLabel();
+        As9 = new javax.swing.JLabel();
+        panelRound10 = new MyContainers.PanelRound();
+        As8 = new javax.swing.JLabel();
+        n23 = new javax.swing.JLabel();
+        n24 = new javax.swing.JLabel();
         background1 = new MyContainers.Background();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -82,335 +83,207 @@ public class Contactos extends javax.swing.JFrame {
         blancoCurva.setRoundTopRight(80);
         blancoCurva.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelRound9.setBackground(new java.awt.Color(204, 204, 204));
-        panelRound9.setRoundBottomLeft(20);
-        panelRound9.setRoundBottomRight(20);
-        panelRound9.setRoundTopLeft(20);
-        panelRound9.setRoundTopRight(20);
-
-        n21.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        n21.setForeground(new java.awt.Color(41, 61, 109));
-        n21.setText("317-1090");
-        n21.setAlignmentX(0.5F);
-
-        As7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        As7.setForeground(new java.awt.Color(41, 61, 109));
-        As7.setText("Emergencias USIL");
-
-        javax.swing.GroupLayout panelRound9Layout = new javax.swing.GroupLayout(panelRound9);
-        panelRound9.setLayout(panelRound9Layout);
-        panelRound9Layout.setHorizontalGroup(
-            panelRound9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound9Layout.createSequentialGroup()
-                .addGroup(panelRound9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRound9Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(n21))
-                    .addGroup(panelRound9Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(As7)))
-                .addContainerGap(44, Short.MAX_VALUE))
-        );
-        panelRound9Layout.setVerticalGroup(
-            panelRound9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound9Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(As7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(n21)
-                .addGap(16, 16, 16))
-        );
-
-        blancoCurva.add(panelRound9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 44, -1, -1));
-
         panelRound3.setBackground(new java.awt.Color(204, 204, 204));
         panelRound3.setRoundBottomLeft(20);
         panelRound3.setRoundBottomRight(20);
         panelRound3.setRoundTopLeft(20);
         panelRound3.setRoundTopRight(20);
+        panelRound3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         As2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         As2.setForeground(new java.awt.Color(41, 61, 109));
         As2.setText("Soporte aula virtual");
+        panelRound3.add(As2, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 18, -1, -1));
 
         n8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         n8.setForeground(new java.awt.Color(41, 61, 109));
         n8.setText("317-1010 opción 1");
         n8.setAlignmentX(0.5F);
+        panelRound3.add(n8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 44, -1, -1));
 
-        javax.swing.GroupLayout panelRound3Layout = new javax.swing.GroupLayout(panelRound3);
-        panelRound3.setLayout(panelRound3Layout);
-        panelRound3Layout.setHorizontalGroup(
-            panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound3Layout.createSequentialGroup()
-                .addContainerGap(31, Short.MAX_VALUE)
-                .addGroup(panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(As2)
-                    .addComponent(n8))
-                .addGap(28, 28, 28))
-        );
-        panelRound3Layout.setVerticalGroup(
-            panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(As2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(n8)
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
-
-        blancoCurva.add(panelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 44, -1, -1));
+        blancoCurva.add(panelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 192, 88));
 
         panelRound4.setBackground(new java.awt.Color(204, 204, 204));
         panelRound4.setRoundBottomLeft(20);
         panelRound4.setRoundBottomRight(20);
         panelRound4.setRoundTopLeft(20);
         panelRound4.setRoundTopRight(20);
+        panelRound4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         As4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         As4.setForeground(new java.awt.Color(41, 61, 109));
-        As4.setText("Soporte INFOSIL");
-
-        n10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        n10.setForeground(new java.awt.Color(41, 61, 109));
-        n10.setText("helpdesk@usil.edu.pe");
-        n10.setAlignmentX(0.5F);
+        As4.setText("Emergencias USIL");
+        panelRound4.add(As4, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 20, -1, -1));
 
         n12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         n12.setForeground(new java.awt.Color(41, 61, 109));
-        n12.setText("317-1010 opción 2");
+        n12.setText("317-1090");
         n12.setAlignmentX(0.5F);
+        panelRound4.add(n12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 45, -1, -1));
 
-        javax.swing.GroupLayout panelRound4Layout = new javax.swing.GroupLayout(panelRound4);
-        panelRound4.setLayout(panelRound4Layout);
-        panelRound4Layout.setHorizontalGroup(
-            panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(As4)
-                .addGap(41, 41, 41))
-            .addGroup(panelRound4Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(n12)
-                    .addComponent(n10))
-                .addContainerGap(33, Short.MAX_VALUE))
-        );
-        panelRound4Layout.setVerticalGroup(
-            panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound4Layout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(As4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(n12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(n10)
-                .addContainerGap())
-        );
-
-        blancoCurva.add(panelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 143, -1, -1));
-
-        panelRound5.setBackground(new java.awt.Color(204, 204, 204));
-        panelRound5.setRoundBottomLeft(20);
-        panelRound5.setRoundBottomRight(20);
-        panelRound5.setRoundTopLeft(20);
-        panelRound5.setRoundTopRight(20);
-
-        As5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        As5.setForeground(new java.awt.Color(41, 61, 109));
-        As5.setText("Central telefónica USIL");
-
-        n11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        n11.setForeground(new java.awt.Color(41, 61, 109));
-        n11.setText("317-1000");
-        n11.setAlignmentX(0.5F);
-
-        javax.swing.GroupLayout panelRound5Layout = new javax.swing.GroupLayout(panelRound5);
-        panelRound5.setLayout(panelRound5Layout);
-        panelRound5Layout.setHorizontalGroup(
-            panelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound5Layout.createSequentialGroup()
-                .addGroup(panelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRound5Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(As5))
-                    .addGroup(panelRound5Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(n11)))
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-        panelRound5Layout.setVerticalGroup(
-            panelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound5Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(As5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(n11)
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
-
-        blancoCurva.add(panelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 248, -1, -1));
+        blancoCurva.add(panelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 30, 200, 88));
 
         panelRound6.setBackground(new java.awt.Color(204, 204, 204));
         panelRound6.setRoundBottomLeft(20);
         panelRound6.setRoundBottomRight(20);
         panelRound6.setRoundTopLeft(20);
         panelRound6.setRoundTopRight(20);
+        panelRound6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         As.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         As.setForeground(new java.awt.Color(41, 61, 109));
         As.setText("Aseguradora");
+        panelRound6.add(As, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 8, -1, -1));
 
         PaSe.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         PaSe.setForeground(new java.awt.Color(41, 61, 109));
         PaSe.setText("Pacifico Seguros");
+        panelRound6.add(PaSe, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 32, -1, -1));
 
         n6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         n6.setForeground(new java.awt.Color(41, 61, 109));
         n6.setText("415-1515");
         n6.setAlignmentX(0.5F);
+        panelRound6.add(n6, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 58, -1, 12));
 
-        javax.swing.GroupLayout panelRound6Layout = new javax.swing.GroupLayout(panelRound6);
-        panelRound6.setLayout(panelRound6Layout);
-        panelRound6Layout.setHorizontalGroup(
-            panelRound6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound6Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(As)
-                .addGap(50, 50, 50))
-            .addGroup(panelRound6Layout.createSequentialGroup()
-                .addGroup(panelRound6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRound6Layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(n6))
-                    .addGroup(panelRound6Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(PaSe)))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-        panelRound6Layout.setVerticalGroup(
-            panelRound6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(As)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PaSe, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(n6, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
-        );
-
-        blancoCurva.add(panelRound6, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 248, -1, 81));
+        blancoCurva.add(panelRound6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 193, 88));
 
         panelRound7.setBackground(new java.awt.Color(204, 204, 204));
         panelRound7.setRoundBottomLeft(20);
         panelRound7.setRoundBottomRight(20);
         panelRound7.setRoundTopLeft(20);
         panelRound7.setRoundTopRight(20);
+        panelRound7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         As3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         As3.setForeground(new java.awt.Color(41, 61, 109));
         As3.setText("Asesor de servicios");
+        panelRound7.add(As3, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 10, -1, -1));
 
         n13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         n13.setForeground(new java.awt.Color(41, 61, 109));
         n13.setText("atencionalumno@usil.edu.pe");
         n13.setAlignmentX(0.5F);
+        panelRound7.add(n13, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 55, -1, -1));
 
         n9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         n9.setForeground(new java.awt.Color(41, 61, 109));
         n9.setText("317-1010 opción 3");
         n9.setAlignmentX(0.5F);
+        panelRound7.add(n9, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 33, -1, -1));
 
-        javax.swing.GroupLayout panelRound7Layout = new javax.swing.GroupLayout(panelRound7);
-        panelRound7.setLayout(panelRound7Layout);
-        panelRound7Layout.setHorizontalGroup(
-            panelRound7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound7Layout.createSequentialGroup()
-                .addGroup(panelRound7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRound7Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(panelRound7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(n9)
-                            .addComponent(As3)))
-                    .addGroup(panelRound7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(n13)))
-                .addContainerGap(11, Short.MAX_VALUE))
-        );
-        panelRound7Layout.setVerticalGroup(
-            panelRound7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(As3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(n9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(n13)
-                .addContainerGap(9, Short.MAX_VALUE))
-        );
-
-        blancoCurva.add(panelRound7, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 143, -1, -1));
+        blancoCurva.add(panelRound7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 193, 88));
 
         n14.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         n14.setForeground(new java.awt.Color(41, 61, 109));
         n14.setText("www.facebook.com/usil.peru");
         n14.setAlignmentX(0.5F);
-        blancoCurva.add(n14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 368, -1, -1));
+        blancoCurva.add(n14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 368, -1, -1));
 
         n15.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         n15.setForeground(new java.awt.Color(41, 61, 109));
         n15.setText("www.twitter.com/_USIL");
         n15.setAlignmentX(0.5F);
-        blancoCurva.add(n15, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 402, -1, -1));
+        blancoCurva.add(n15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 402, -1, -1));
 
         n16.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         n16.setForeground(new java.awt.Color(41, 61, 109));
         n16.setText("www.instagram.com/usil/");
         n16.setAlignmentX(0.5F);
-        blancoCurva.add(n16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 436, -1, -1));
+        blancoCurva.add(n16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 436, -1, -1));
 
         n17.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         n17.setForeground(new java.awt.Color(41, 61, 109));
         n17.setText("www.youtube.com/user/usilpe");
         n17.setAlignmentX(0.5F);
-        blancoCurva.add(n17, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 368, -1, -1));
+        blancoCurva.add(n17, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 368, -1, -1));
 
         facebook1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/facebookRedi.png"))); // NOI18N
         facebook1.setText("jLabel2");
-        blancoCurva.add(facebook1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 363, 25, -1));
+        blancoCurva.add(facebook1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 363, 25, -1));
 
         facebook2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/instagramRedi2.png"))); // NOI18N
         facebook2.setText("jLabel2");
-        blancoCurva.add(facebook2, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 431, 25, 25));
+        blancoCurva.add(facebook2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 431, 25, 25));
 
         facebook3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/youtubeRedi.png"))); // NOI18N
         facebook3.setText("jLabel2");
-        blancoCurva.add(facebook3, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 363, 25, -1));
+        blancoCurva.add(facebook3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 363, 25, -1));
 
         facebook4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tiktokRedi2.png"))); // NOI18N
         facebook4.setText("jLabel2");
-        blancoCurva.add(facebook4, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 400, 25, 25));
+        blancoCurva.add(facebook4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, 25, 25));
 
         facebook5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/whatsappRedi2.png"))); // NOI18N
         facebook5.setText("jLabel2");
-        blancoCurva.add(facebook5, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 431, 25, 25));
+        blancoCurva.add(facebook5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 431, 25, 25));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TwitterXRedi3.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        blancoCurva.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 400, 28, -1));
+        blancoCurva.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 400, 28, -1));
 
         n18.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         n18.setForeground(new java.awt.Color(41, 61, 109));
         n18.setText("www.tiktok.com/@usil.edu");
         n18.setAlignmentX(0.5F);
-        blancoCurva.add(n18, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 405, -1, -1));
+        blancoCurva.add(n18, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 405, -1, -1));
 
         n19.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         n19.setForeground(new java.awt.Color(41, 61, 109));
         n19.setText("981-313-100");
         n19.setAlignmentX(0.5F);
-        blancoCurva.add(n19, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 436, -1, -1));
+        blancoCurva.add(n19, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 436, -1, -1));
+
+        panelRound8.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound8.setRoundBottomLeft(20);
+        panelRound8.setRoundBottomRight(20);
+        panelRound8.setRoundTopLeft(20);
+        panelRound8.setRoundTopRight(20);
+        panelRound8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        As6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        As6.setForeground(new java.awt.Color(41, 61, 109));
+        As6.setText("Central Telefónica USIL");
+        panelRound8.add(As6, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 280, -1, -1));
+
+        n22.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        n22.setForeground(new java.awt.Color(41, 61, 109));
+        n22.setText("317-1000");
+        n22.setAlignmentX(0.5F);
+        panelRound8.add(n22, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 45, -1, -1));
+
+        As9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        As9.setForeground(new java.awt.Color(41, 61, 109));
+        As9.setText("Central Telefónica USIL");
+        panelRound8.add(As9, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 20, -1, -1));
+
+        blancoCurva.add(panelRound8, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 250, 200, 88));
+
+        panelRound10.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound10.setRoundBottomLeft(20);
+        panelRound10.setRoundBottomRight(20);
+        panelRound10.setRoundTopLeft(20);
+        panelRound10.setRoundTopRight(20);
+        panelRound10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        As8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        As8.setForeground(new java.awt.Color(41, 61, 109));
+        As8.setText("Soporte INFOSIL");
+        panelRound10.add(As8, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 9, -1, -1));
+
+        n23.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        n23.setForeground(new java.awt.Color(41, 61, 109));
+        n23.setText("helpdesk@usil.edu.pe");
+        n23.setAlignmentX(0.5F);
+        panelRound10.add(n23, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 55, -1, -1));
+
+        n24.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        n24.setForeground(new java.awt.Color(41, 61, 109));
+        n24.setText("317-1010 opción 2");
+        n24.setAlignmentX(0.5F);
+        panelRound10.add(n24, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 33, -1, -1));
+
+        blancoCurva.add(panelRound10, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 140, 200, 88));
 
         capaBackground.add(blancoCurva, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 490));
 
@@ -443,8 +316,9 @@ public class Contactos extends javax.swing.JFrame {
     private javax.swing.JLabel As2;
     private javax.swing.JLabel As3;
     private javax.swing.JLabel As4;
-    private javax.swing.JLabel As5;
-    private javax.swing.JLabel As7;
+    private javax.swing.JLabel As6;
+    private javax.swing.JLabel As8;
+    private javax.swing.JLabel As9;
     private javax.swing.JLabel PaSe;
     private MyContainers.Background background1;
     private javax.swing.JLabel bienvenida2;
@@ -457,8 +331,6 @@ public class Contactos extends javax.swing.JFrame {
     private javax.swing.JLabel facebook5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jb_retroceder;
-    private javax.swing.JLabel n10;
-    private javax.swing.JLabel n11;
     private javax.swing.JLabel n12;
     private javax.swing.JLabel n13;
     private javax.swing.JLabel n14;
@@ -467,15 +339,17 @@ public class Contactos extends javax.swing.JFrame {
     private javax.swing.JLabel n17;
     private javax.swing.JLabel n18;
     private javax.swing.JLabel n19;
-    private javax.swing.JLabel n21;
+    private javax.swing.JLabel n22;
+    private javax.swing.JLabel n23;
+    private javax.swing.JLabel n24;
     private javax.swing.JLabel n6;
     private javax.swing.JLabel n8;
     private javax.swing.JLabel n9;
+    private MyContainers.PanelRound panelRound10;
     private MyContainers.PanelRound panelRound3;
     private MyContainers.PanelRound panelRound4;
-    private MyContainers.PanelRound panelRound5;
     private MyContainers.PanelRound panelRound6;
     private MyContainers.PanelRound panelRound7;
-    private MyContainers.PanelRound panelRound9;
+    private MyContainers.PanelRound panelRound8;
     // End of variables declaration//GEN-END:variables
 }
