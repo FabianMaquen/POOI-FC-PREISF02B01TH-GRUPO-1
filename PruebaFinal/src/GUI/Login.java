@@ -3,6 +3,7 @@ package GUI;
 import Funcionamiento.ListaUsuarios;
 import Funcionamiento.Usuario;
 import MyContainers.TextPrompt;
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -12,6 +13,7 @@ public class Login extends JFrame {
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setBackground(new Color(0, 0,0, 0));
         
         this.aviso.setVisible(false);
         this.fondoAviso.setVisible(false);
@@ -48,17 +50,17 @@ public class Login extends JFrame {
         txtEmail = new javax.swing.JTextField();
         candadoGUI = new javax.swing.JLabel();
         jp_password_recovery = new javax.swing.JPasswordField();
-        botonRecordar = new javax.swing.JCheckBox();
+        botonLoginVisitante = new javax.swing.JButton();
         botonOlvidaContra = new javax.swing.JButton();
         logoUsil = new javax.swing.JLabel();
         fondoLogin = new javax.swing.JLabel();
-        background1 = new MyContainers.Background();
-        jPanel1 = new javax.swing.JPanel();
+        fondoCurveadoDegradado1 = new MyContainers.FondoCurveadoDegradado();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         ultimaCapa.setBackground(new java.awt.Color(102, 102, 102));
+        ultimaCapa.setOpaque(false);
         ultimaCapa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         salirAviso.setBackground(new java.awt.Color(42, 57, 115));
@@ -132,7 +134,7 @@ public class Login extends JFrame {
         botonLogin.setText("LOG IN");
         botonLogin.setBorderPainted(false);
         botonLogin.setFocusPainted(false);
-        botonLogin.setFont(new java.awt.Font("Franklin Gothic Book", 0, 16)); // NOI18N
+        botonLogin.setFont(new java.awt.Font("Franklin Gothic Book", 1, 16)); // NOI18N
         botonLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonLoginActionPerformed(evt);
@@ -174,17 +176,23 @@ public class Login extends JFrame {
         });
         ultimaCapa.add(jp_password_recovery, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 290, 160, 50));
 
-        botonRecordar.setBackground(new java.awt.Color(63, 108, 165));
-        botonRecordar.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        botonRecordar.setForeground(new java.awt.Color(255, 255, 255));
-        botonRecordar.setText("Remember me");
-        botonRecordar.setFocusPainted(false);
-        botonRecordar.addActionListener(new java.awt.event.ActionListener() {
+        botonLoginVisitante.setBackground(new java.awt.Color(63, 108, 165));
+        botonLoginVisitante.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        botonLoginVisitante.setForeground(new java.awt.Color(255, 255, 255));
+        botonLoginVisitante.setText("Log in as a visitor");
+        botonLoginVisitante.setBorder(null);
+        botonLoginVisitante.setBorderPainted(false);
+        botonLoginVisitante.setContentAreaFilled(false);
+        botonLoginVisitante.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonLoginVisitante.setFocusPainted(false);
+        botonLoginVisitante.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        botonLoginVisitante.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        botonLoginVisitante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonRecordarActionPerformed(evt);
+                botonLoginVisitanteActionPerformed(evt);
             }
         });
-        ultimaCapa.add(botonRecordar, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 360, -1, -1));
+        ultimaCapa.add(botonLoginVisitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 365, 100, -1));
 
         botonOlvidaContra.setBackground(new java.awt.Color(63, 108, 165));
         botonOlvidaContra.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
@@ -209,22 +217,23 @@ public class Login extends JFrame {
         fondoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/FondoLogin.png"))); // NOI18N
         ultimaCapa.add(fondoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 150, -1, 360));
 
-        background1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        fondoCurveadoDegradado1.setRoundBottomLeft(50);
+        fondoCurveadoDegradado1.setRoundBottomRight(50);
+        fondoCurveadoDegradado1.setRoundTopLeft(50);
+        fondoCurveadoDegradado1.setRoundTopRight(50);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
+        javax.swing.GroupLayout fondoCurveadoDegradado1Layout = new javax.swing.GroupLayout(fondoCurveadoDegradado1);
+        fondoCurveadoDegradado1.setLayout(fondoCurveadoDegradado1Layout);
+        fondoCurveadoDegradado1Layout.setHorizontalGroup(
+            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        fondoCurveadoDegradado1Layout.setVerticalGroup(
+            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 580, Short.MAX_VALUE)
         );
 
-        background1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, -1, -1));
-
-        ultimaCapa.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 580));
+        ultimaCapa.add(fondoCurveadoDegradado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -254,10 +263,6 @@ public class Login extends JFrame {
         this.setVisible(false);  
     }//GEN-LAST:event_botonOlvidaContraActionPerformed
 
-    private void botonRecordarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRecordarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonRecordarActionPerformed
-
     private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed
         // TODO add your handling code here:
         String username = txtEmail.getText();
@@ -284,7 +289,6 @@ public class Login extends JFrame {
                 this.txtEmail.setVisible(false);
                 this.candadoGUI.setVisible(false);
                 this.jp_password_recovery.setVisible(false);
-                this.botonRecordar.setVisible(false);
                 this.botonOlvidaContra.setVisible(false);      
             }
         }
@@ -318,17 +322,22 @@ public class Login extends JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_salirAvisoActionPerformed
 
+    private void botonLoginVisitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginVisitanteActionPerformed
+        Inicio ventanaInicio = new Inicio();
+        ventanaInicio.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_botonLoginVisitanteActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel aviso;
-    private MyContainers.Background background1;
     private MyContainers.BotonCustomLogin botonLogin;
+    private javax.swing.JButton botonLoginVisitante;
     private javax.swing.JButton botonOlvidaContra;
-    private javax.swing.JCheckBox botonRecordar;
     private javax.swing.JButton botonVerContraseña;
     private javax.swing.JLabel candadoGUI;
     private javax.swing.JLabel fondoAviso;
+    private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
     private javax.swing.JLabel fondoLogin;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jb_salir;
     private javax.swing.JPasswordField jp_password_recovery;
     private javax.swing.JLabel labelMayus;
