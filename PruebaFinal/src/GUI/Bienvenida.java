@@ -1,5 +1,7 @@
 package GUI;
 
+import java.awt.Color;
+
 public class Bienvenida extends javax.swing.JFrame {
 
     /**
@@ -8,6 +10,7 @@ public class Bienvenida extends javax.swing.JFrame {
     public Bienvenida() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setBackground(new Color(0, 0,0, 0));
     }
 
     /**
@@ -24,16 +27,17 @@ public class Bienvenida extends javax.swing.JFrame {
         bienvenida1 = new javax.swing.JLabel();
         bienvenida2 = new javax.swing.JLabel();
         logoUsil = new javax.swing.JLabel();
-        background1 = new MyContainers.Background();
+        fondoCurveadoDegradado1 = new MyContainers.FondoCurveadoDegradado();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        jPanel1.setOpaque(false);
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         botonBienvenida.setText("LET'S START");
         botonBienvenida.setFocusPainted(false);
-        botonBienvenida.setFont(new java.awt.Font("Franklin Gothic Book", 0, 16)); // NOI18N
+        botonBienvenida.setFont(new java.awt.Font("Franklin Gothic Book", 1, 16)); // NOI18N
         botonBienvenida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonBienvenidaActionPerformed(evt);
@@ -52,8 +56,23 @@ public class Bienvenida extends javax.swing.JFrame {
         logoUsil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usilLogo190x190.png"))); // NOI18N
         jPanel1.add(logoUsil, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, -1));
 
-        background1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 580));
+        fondoCurveadoDegradado1.setRoundBottomLeft(50);
+        fondoCurveadoDegradado1.setRoundBottomRight(50);
+        fondoCurveadoDegradado1.setRoundTopLeft(50);
+        fondoCurveadoDegradado1.setRoundTopRight(50);
+
+        javax.swing.GroupLayout fondoCurveadoDegradado1Layout = new javax.swing.GroupLayout(fondoCurveadoDegradado1);
+        fondoCurveadoDegradado1.setLayout(fondoCurveadoDegradado1Layout);
+        fondoCurveadoDegradado1Layout.setHorizontalGroup(
+            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 440, Short.MAX_VALUE)
+        );
+        fondoCurveadoDegradado1Layout.setVerticalGroup(
+            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 580, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(fondoCurveadoDegradado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,10 +95,10 @@ public class Bienvenida extends javax.swing.JFrame {
     }//GEN-LAST:event_botonBienvenidaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private MyContainers.Background background1;
     private javax.swing.JLabel bienvenida1;
     private javax.swing.JLabel bienvenida2;
     private MyContainers.BotonCustomWelcome botonBienvenida;
+    private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel logoUsil;
     // End of variables declaration//GEN-END:variables

@@ -35,6 +35,9 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="capaBackground">
+      <Properties>
+        <Property name="opaque" type="boolean" value="false"/>
+      </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
         <Property name="useNullLayout" type="boolean" value="false"/>
@@ -86,6 +89,8 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f1" green="eb" red="e8" type="rgb"/>
             </Property>
+            <Property name="roundBottomLeft" type="int" value="50"/>
+            <Property name="roundBottomRight" type="int" value="50"/>
             <Property name="roundTopLeft" type="int" value="80"/>
             <Property name="roundTopRight" type="int" value="80"/>
           </Properties>
@@ -677,15 +682,28 @@
             </Container>
           </SubComponents>
         </Container>
-        <Container class="MyContainers.Background" name="background1">
+        <Container class="MyContainers.FondoCurveadoDegradado" name="fondoCurveadoDegradado1">
+          <Properties>
+            <Property name="roundTopLeft" type="int" value="50"/>
+            <Property name="roundTopRight" type="int" value="50"/>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="440" height="130"/>
+              <AbsoluteConstraints x="0" y="0" width="440" height="140"/>
             </Constraint>
           </Constraints>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-            <Property name="useNullLayout" type="boolean" value="false"/>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="440" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="140" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
           </Layout>
         </Container>
       </SubComponents>

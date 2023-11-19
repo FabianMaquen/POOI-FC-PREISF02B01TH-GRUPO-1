@@ -1,6 +1,7 @@
 package GUI;
 
 import Funcionamiento.Usuario;
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -10,12 +11,17 @@ public class Inicio extends JFrame {
     public Inicio(){
         initComponents();
         this.setLocationRelativeTo(null);
+        setBackground(new Color(0, 0,0, 0));
+        jl_nombre_usuario.setText("Visitante");
+        jb_saldos_pagos.setVisible(false);
+        jb_cursos.setVisible(false);
     }
 
     public Inicio(Usuario usuario) {
         initComponents();
         this.usuario = usuario;    
         this.setLocationRelativeTo(null);
+        setBackground(new Color(0, 0,0, 0));
         setUpUsuario();
     }
     
@@ -36,8 +42,6 @@ public class Inicio extends JFrame {
         this.usuario = usuario;
     }
     
-    
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,9 +54,11 @@ public class Inicio extends JFrame {
         UltimaCapa = new javax.swing.JPanel();
         panelBlancoCurva = new MyContainers.PanelRound();
         jSeparator1 = new javax.swing.JSeparator();
-        jb_chatbot = new javax.swing.JButton();
+        jb_saldos_pagos = new javax.swing.JButton();
         jb_fotocheck = new javax.swing.JButton();
         jb_contacto = new javax.swing.JButton();
+        jb_cursos = new javax.swing.JButton();
+        jb_chatbot = new javax.swing.JButton();
         jl_titulo_uchill = new javax.swing.JLabel();
         jl_foto_noticia1 = new javax.swing.JLabel();
         jl_text1_noticia1 = new javax.swing.JLabel();
@@ -73,32 +79,35 @@ public class Inicio extends JFrame {
         jl_bienvenido = new javax.swing.JLabel();
         jb_retroceder = new javax.swing.JButton();
         jb_salir = new javax.swing.JButton();
-        background1 = new MyContainers.Background();
+        fondoCurveadoDegradado1 = new MyContainers.FondoCurveadoDegradado();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        UltimaCapa.setOpaque(false);
         UltimaCapa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelBlancoCurva.setBackground(new java.awt.Color(232, 235, 241));
+        panelBlancoCurva.setRoundBottomLeft(50);
+        panelBlancoCurva.setRoundBottomRight(50);
         panelBlancoCurva.setRoundTopLeft(80);
         panelBlancoCurva.setRoundTopRight(80);
         panelBlancoCurva.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jSeparator1.setForeground(new java.awt.Color(41, 61, 109));
-        panelBlancoCurva.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 320, 10));
+        panelBlancoCurva.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 340, 10));
 
-        jb_chatbot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoChatbot70x75.png"))); // NOI18N
-        jb_chatbot.setBorder(null);
-        jb_chatbot.setBorderPainted(false);
-        jb_chatbot.setContentAreaFilled(false);
-        jb_chatbot.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jb_chatbot.addActionListener(new java.awt.event.ActionListener() {
+        jb_saldos_pagos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoContacto30x33.png"))); // NOI18N
+        jb_saldos_pagos.setBorder(null);
+        jb_saldos_pagos.setBorderPainted(false);
+        jb_saldos_pagos.setContentAreaFilled(false);
+        jb_saldos_pagos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_saldos_pagos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jb_chatbotActionPerformed(evt);
+                jb_saldos_pagosActionPerformed(evt);
             }
         });
-        panelBlancoCurva.add(jb_chatbot, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 415, 50, 60));
+        panelBlancoCurva.add(jb_saldos_pagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 425, -1, -1));
 
         jb_fotocheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotocheck60x60.png"))); // NOI18N
         jb_fotocheck.setBorder(null);
@@ -123,7 +132,31 @@ public class Inicio extends JFrame {
                 jb_contactoActionPerformed(evt);
             }
         });
-        panelBlancoCurva.add(jb_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 425, -1, -1));
+        panelBlancoCurva.add(jb_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 425, -1, -1));
+
+        jb_cursos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoContacto30x33.png"))); // NOI18N
+        jb_cursos.setBorder(null);
+        jb_cursos.setBorderPainted(false);
+        jb_cursos.setContentAreaFilled(false);
+        jb_cursos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_cursos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_cursosActionPerformed(evt);
+            }
+        });
+        panelBlancoCurva.add(jb_cursos, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 425, -1, -1));
+
+        jb_chatbot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoChatbot70x75.png"))); // NOI18N
+        jb_chatbot.setBorder(null);
+        jb_chatbot.setBorderPainted(false);
+        jb_chatbot.setContentAreaFilled(false);
+        jb_chatbot.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_chatbot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_chatbotActionPerformed(evt);
+            }
+        });
+        panelBlancoCurva.add(jb_chatbot, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 415, 50, 60));
 
         jl_titulo_uchill.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
         jl_titulo_uchill.setForeground(new java.awt.Color(41, 61, 109));
@@ -249,8 +282,23 @@ public class Inicio extends JFrame {
         });
         UltimaCapa.add(jb_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 20, 30, -1));
 
-        background1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        UltimaCapa.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 130));
+        fondoCurveadoDegradado1.setRoundBottomLeft(50);
+        fondoCurveadoDegradado1.setRoundBottomRight(50);
+        fondoCurveadoDegradado1.setRoundTopLeft(50);
+        fondoCurveadoDegradado1.setRoundTopRight(50);
+
+        javax.swing.GroupLayout fondoCurveadoDegradado1Layout = new javax.swing.GroupLayout(fondoCurveadoDegradado1);
+        fondoCurveadoDegradado1.setLayout(fondoCurveadoDegradado1Layout);
+        fondoCurveadoDegradado1Layout.setHorizontalGroup(
+            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 440, Short.MAX_VALUE)
+        );
+        fondoCurveadoDegradado1Layout.setVerticalGroup(
+            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 140, Short.MAX_VALUE)
+        );
+
+        UltimaCapa.add(fondoCurveadoDegradado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 140));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -290,19 +338,32 @@ public class Inicio extends JFrame {
     }//GEN-LAST:event_jb_fotocheckActionPerformed
 
     private void jb_contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_contactoActionPerformed
-        Contactos ventanaContactos = new Contactos();
+        // Pasa la instancia actual de Inicio a la clase Contactos
+        Contactos ventanaContactos = new Contactos(usuario, this);
         ventanaContactos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_contactoActionPerformed
 
+    private void jb_saldos_pagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_saldos_pagosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_saldos_pagosActionPerformed
+
+    private void jb_cursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_cursosActionPerformed
+        Cursos ventanaCursos = new Cursos(usuario, this);
+        ventanaCursos.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jb_cursosActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel UltimaCapa;
-    private MyContainers.Background background1;
+    private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton jb_chatbot;
     private javax.swing.JButton jb_contacto;
+    private javax.swing.JButton jb_cursos;
     private javax.swing.JButton jb_fotocheck;
     private javax.swing.JButton jb_retroceder;
+    private javax.swing.JButton jb_saldos_pagos;
     private javax.swing.JButton jb_salir;
     private javax.swing.JLabel jl_bienvenido;
     private javax.swing.JLabel jl_foto_noticia1;

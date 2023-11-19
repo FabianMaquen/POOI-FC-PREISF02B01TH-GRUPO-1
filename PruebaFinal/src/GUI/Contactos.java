@@ -1,10 +1,25 @@
 package GUI;
 
-public class Contactos extends javax.swing.JFrame {
+import javax.swing.JFrame;
+import Funcionamiento.Usuario;
+import java.awt.Color;
+
+public class Contactos extends JFrame {
+    private Usuario usuario;
+    private Inicio ventanaInicio;
 
     public Contactos() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setBackground(new Color(0, 0,0, 0));
+    }
+    
+    public Contactos(Usuario us, Inicio inicio) {
+        initComponents();
+        this.usuario = us;
+        this.ventanaInicio = inicio;
+        this.setLocationRelativeTo(null);
+        setBackground(new Color(0, 0,0, 0));
     }
 
     /**
@@ -54,11 +69,12 @@ public class Contactos extends javax.swing.JFrame {
         As8 = new javax.swing.JLabel();
         n23 = new javax.swing.JLabel();
         n24 = new javax.swing.JLabel();
-        background1 = new MyContainers.Background();
+        fondoCurveadoDegradado1 = new MyContainers.FondoCurveadoDegradado();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        capaBackground.setOpaque(false);
         capaBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jb_retroceder.setBackground(new java.awt.Color(38, 65, 115));
@@ -79,6 +95,8 @@ public class Contactos extends javax.swing.JFrame {
         capaBackground.add(bienvenida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
 
         blancoCurva.setBackground(new java.awt.Color(232, 235, 241));
+        blancoCurva.setRoundBottomLeft(50);
+        blancoCurva.setRoundBottomRight(50);
         blancoCurva.setRoundTopLeft(80);
         blancoCurva.setRoundTopRight(80);
         blancoCurva.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -287,8 +305,21 @@ public class Contactos extends javax.swing.JFrame {
 
         capaBackground.add(blancoCurva, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 490));
 
-        background1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        capaBackground.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 130));
+        fondoCurveadoDegradado1.setRoundTopLeft(50);
+        fondoCurveadoDegradado1.setRoundTopRight(50);
+
+        javax.swing.GroupLayout fondoCurveadoDegradado1Layout = new javax.swing.GroupLayout(fondoCurveadoDegradado1);
+        fondoCurveadoDegradado1.setLayout(fondoCurveadoDegradado1Layout);
+        fondoCurveadoDegradado1Layout.setHorizontalGroup(
+            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 440, Short.MAX_VALUE)
+        );
+        fondoCurveadoDegradado1Layout.setVerticalGroup(
+            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 140, Short.MAX_VALUE)
+        );
+
+        capaBackground.add(fondoCurveadoDegradado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 140));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -305,8 +336,8 @@ public class Contactos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
-        // TODO add your handling code here:
-        Inicio ventanaInicio = new Inicio();
+        // Crea una nueva instancia de Inicio con los datos originales
+        ventanaInicio.setUsuario(usuario);
         ventanaInicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_retrocederActionPerformed
@@ -320,7 +351,6 @@ public class Contactos extends javax.swing.JFrame {
     private javax.swing.JLabel As8;
     private javax.swing.JLabel As9;
     private javax.swing.JLabel PaSe;
-    private MyContainers.Background background1;
     private javax.swing.JLabel bienvenida2;
     private MyContainers.PanelRound blancoCurva;
     private javax.swing.JPanel capaBackground;
@@ -329,6 +359,7 @@ public class Contactos extends javax.swing.JFrame {
     private javax.swing.JLabel facebook3;
     private javax.swing.JLabel facebook4;
     private javax.swing.JLabel facebook5;
+    private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jb_retroceder;
     private javax.swing.JLabel n12;

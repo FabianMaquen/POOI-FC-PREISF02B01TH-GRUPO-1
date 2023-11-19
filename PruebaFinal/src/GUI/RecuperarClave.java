@@ -3,6 +3,7 @@ package GUI;
 import MyContainers.TextPrompt;
 import Funcionamiento.ListaUsuarios;
 import Funcionamiento.Usuario;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
@@ -15,6 +16,7 @@ public class RecuperarClave extends JFrame {
     public RecuperarClave() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setBackground(new Color(0, 0,0, 0));
         this.CorreoValido.setVisible(false);
         this.CorreoNoValido.setVisible(false);
         
@@ -51,13 +53,14 @@ public class RecuperarClave extends JFrame {
         recordar = new javax.swing.JLabel();
         logoUsil = new javax.swing.JLabel();
         FondoLogin = new javax.swing.JLabel();
-        background1 = new MyContainers.Background();
+        fondoCurveadoDegradado1 = new MyContainers.FondoCurveadoDegradado();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
 
         jPanel1.setMinimumSize(new java.awt.Dimension(440, 580));
+        jPanel1.setOpaque(false);
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 580));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -123,8 +126,23 @@ public class RecuperarClave extends JFrame {
         FondoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/FondoLogin.png"))); // NOI18N
         jPanel1.add(FondoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 150, -1, 360));
 
-        background1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 580));
+        fondoCurveadoDegradado1.setRoundBottomLeft(50);
+        fondoCurveadoDegradado1.setRoundBottomRight(50);
+        fondoCurveadoDegradado1.setRoundTopLeft(50);
+        fondoCurveadoDegradado1.setRoundTopRight(50);
+
+        javax.swing.GroupLayout fondoCurveadoDegradado1Layout = new javax.swing.GroupLayout(fondoCurveadoDegradado1);
+        fondoCurveadoDegradado1.setLayout(fondoCurveadoDegradado1Layout);
+        fondoCurveadoDegradado1Layout.setHorizontalGroup(
+            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 440, Short.MAX_VALUE)
+        );
+        fondoCurveadoDegradado1Layout.setVerticalGroup(
+            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 580, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(fondoCurveadoDegradado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -169,8 +187,8 @@ public class RecuperarClave extends JFrame {
     private javax.swing.JLabel CorreoNoValido;
     private javax.swing.JLabel CorreoValido;
     private javax.swing.JLabel FondoLogin;
-    private MyContainers.Background background1;
     private MyContainers.BotonCustomLogin botonCustomLogin1;
+    private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
