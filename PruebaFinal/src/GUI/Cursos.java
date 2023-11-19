@@ -37,7 +37,7 @@ public class Cursos extends JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        bienvenida2 = new javax.swing.JLabel();
+        jl_cursos_titulo = new javax.swing.JLabel();
         jb_retroceder = new javax.swing.JButton();
         panelRound1 = new MyContainers.PanelRound();
         fondoCurveadoDegradado1 = new MyContainers.FondoCurveadoDegradado();
@@ -48,10 +48,10 @@ public class Cursos extends JFrame {
         jPanel2.setOpaque(false);
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        bienvenida2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        bienvenida2.setForeground(new java.awt.Color(255, 255, 255));
-        bienvenida2.setText("CURSOS");
-        jPanel2.add(bienvenida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 30, -1, -1));
+        jl_cursos_titulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jl_cursos_titulo.setForeground(new java.awt.Color(255, 255, 255));
+        jl_cursos_titulo.setText("CURSOS");
+        jPanel2.add(jl_cursos_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 30, -1, -1));
 
         jb_retroceder.setBackground(new java.awt.Color(38, 65, 115));
         jb_retroceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BackIcon.png"))); // NOI18N
@@ -100,10 +100,10 @@ public class Cursos extends JFrame {
     }//GEN-LAST:event_jb_retrocederActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel bienvenida2;
     private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jb_retroceder;
+    private javax.swing.JLabel jl_cursos_titulo;
     private MyContainers.PanelRound panelRound1;
     // End of variables declaration//GEN-END:variables
 }

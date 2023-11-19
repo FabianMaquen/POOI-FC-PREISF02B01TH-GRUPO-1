@@ -97,7 +97,7 @@ public class Inicio extends JFrame {
         jSeparator1.setForeground(new java.awt.Color(41, 61, 109));
         panelBlancoCurva.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 340, 10));
 
-        jb_saldos_pagos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoContacto30x33.png"))); // NOI18N
+        jb_saldos_pagos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoPagos35x35.png"))); // NOI18N
         jb_saldos_pagos.setBorder(null);
         jb_saldos_pagos.setBorderPainted(false);
         jb_saldos_pagos.setContentAreaFilled(false);
@@ -107,7 +107,7 @@ public class Inicio extends JFrame {
                 jb_saldos_pagosActionPerformed(evt);
             }
         });
-        panelBlancoCurva.add(jb_saldos_pagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 425, -1, -1));
+        panelBlancoCurva.add(jb_saldos_pagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 424, -1, -1));
 
         jb_fotocheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotocheck60x60.png"))); // NOI18N
         jb_fotocheck.setBorder(null);
@@ -132,9 +132,9 @@ public class Inicio extends JFrame {
                 jb_contactoActionPerformed(evt);
             }
         });
-        panelBlancoCurva.add(jb_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 425, -1, -1));
+        panelBlancoCurva.add(jb_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 427, -1, -1));
 
-        jb_cursos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoContacto30x33.png"))); // NOI18N
+        jb_cursos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoCursos50x50.png"))); // NOI18N
         jb_cursos.setBorder(null);
         jb_cursos.setBorderPainted(false);
         jb_cursos.setContentAreaFilled(false);
@@ -144,7 +144,7 @@ public class Inicio extends JFrame {
                 jb_cursosActionPerformed(evt);
             }
         });
-        panelBlancoCurva.add(jb_cursos, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 425, -1, -1));
+        panelBlancoCurva.add(jb_cursos, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 417, -1, -1));
 
         jb_chatbot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoChatbot70x75.png"))); // NOI18N
         jb_chatbot.setBorder(null);
@@ -156,7 +156,7 @@ public class Inicio extends JFrame {
                 jb_chatbotActionPerformed(evt);
             }
         });
-        panelBlancoCurva.add(jb_chatbot, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 415, 50, 60));
+        panelBlancoCurva.add(jb_chatbot, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 416, 50, 60));
 
         jl_titulo_uchill.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
         jl_titulo_uchill.setForeground(new java.awt.Color(41, 61, 109));
