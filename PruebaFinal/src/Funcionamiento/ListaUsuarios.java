@@ -71,7 +71,7 @@ public class ListaUsuarios {
     // M?todos para manipular el archivo de texto
     private void cargarArchivo() {
     try {
-        File file = new File("./src/Funcionamiento/ListaUsuarios.txt");
+        File file = new File("./src/ListaUsuarios.txt");
         Class<ListaUsuarios> clazz = ListaUsuarios.class;
         InputStream inputStream = clazz.getResourceAsStream("/ListaUsuarios.txt");
         if (file.exists()) {
