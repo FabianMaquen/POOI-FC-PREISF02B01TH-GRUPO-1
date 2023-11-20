@@ -35,7 +35,7 @@ public class ListaUsuarios {
         }
     }
     
-    public void registrarCliente(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, int codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario) {
+    public void registrarCliente(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, String codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario) {
         Usuario us = new Usuario(nombreUsuario,contrasenha,correoUsuario,nombreCompleto,codigoUsuario,fotocheckPequeño,fotocheckGrande,QR_Usuario);
         adicionar(us);
         mostrar();
@@ -60,7 +60,7 @@ public class ListaUsuarios {
         String contrasenha = st.nextToken().trim();
         String correoUsuario = st.nextToken().trim();
         String nombreCompleto = st.nextToken().trim();
-        int codigoUsuario = Integer.parseInt(st.nextToken().trim());
+        String codigoUsuario = st.nextToken().trim();
         String fotocheckPequeño = st.nextToken().trim();       
         String fotocheckGrande = st.nextToken().trim();
         String QR_Usuario = st.nextToken().trim();         
