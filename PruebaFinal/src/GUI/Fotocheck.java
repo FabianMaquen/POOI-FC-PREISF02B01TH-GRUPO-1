@@ -101,7 +101,7 @@ public class Fotocheck extends javax.swing.JFrame implements Runnable {
         UltimaCapa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jb_retroceder.setBackground(new java.awt.Color(38, 65, 115));
-        jb_retroceder.setIcon(new javax.swing.ImageIcon("C:\\Users\\Valderrama\\Documents\\NetBeansProjects\\TrabajoPoo\\POOI-FC-PREISF02B01TH-GRUPO-1\\PruebaFinal\\src\\images\\BackIcon.png")); // NOI18N
+        jb_retroceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BackIcon.png"))); // NOI18N
         jb_retroceder.setBorder(null);
         jb_retroceder.setContentAreaFilled(false);
         jb_retroceder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -172,7 +172,18 @@ public class Fotocheck extends javax.swing.JFrame implements Runnable {
 
         fondoCurveadoDegradado1.setRoundTopLeft(50);
         fondoCurveadoDegradado1.setRoundTopRight(50);
-        fondoCurveadoDegradado1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        javax.swing.GroupLayout fondoCurveadoDegradado1Layout = new javax.swing.GroupLayout(fondoCurveadoDegradado1);
+        fondoCurveadoDegradado1.setLayout(fondoCurveadoDegradado1Layout);
+        fondoCurveadoDegradado1Layout.setHorizontalGroup(
+            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 440, Short.MAX_VALUE)
+        );
+        fondoCurveadoDegradado1Layout.setVerticalGroup(
+            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 140, Short.MAX_VALUE)
+        );
+
         UltimaCapa.add(fondoCurveadoDegradado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 140));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -190,7 +201,7 @@ public class Fotocheck extends javax.swing.JFrame implements Runnable {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
-        // TODO add your handling code here:
+        // Crea una nueva instancia de Inicio con los datos originales
         ventanaInicio.setUsuario(usuario);
         ventanaInicio.setVisible(true);
         this.setVisible(false);
