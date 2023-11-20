@@ -332,9 +332,9 @@ public class Inicio extends JFrame {
     }//GEN-LAST:event_jb_chatbotActionPerformed
 
     private void jb_fotocheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_fotocheckActionPerformed
-        //Fotocheck ventanaFotocheck = new Fotocheck();
-        //ventanaFotocheck.setVisible(true);
-        //this.setVisible(false);
+        Fotocheck ventanaFotocheck = new Fotocheck(usuario,  this);
+        ventanaFotocheck.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jb_fotocheckActionPerformed
 
     private void jb_contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_contactoActionPerformed

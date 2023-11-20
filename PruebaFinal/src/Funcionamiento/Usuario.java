@@ -6,7 +6,7 @@ public class Usuario {
     private String contrasenha;
     private String correoUsuario;
     private String nombreCompleto;
-    private int codigoUsuario;
+    private String codigoUsuario;
     private String fotocheckPequeño;
     private String fotocheckGrande;
     private String QR_Usuario;
@@ -15,7 +15,7 @@ public class Usuario {
         
     }
 
-    public Usuario(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, int codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario) {
+    public Usuario(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, String codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario) {
         this.nombreUsuario = nombreUsuario;
         this.contrasenha = contrasenha;
         this.correoUsuario = correoUsuario;
@@ -58,11 +58,11 @@ public class Usuario {
         this.nombreCompleto = nombreCompleto;
     }
 
-    public int getCodigoUsuario() {
+    public String getCodigoUsuario() {
         return codigoUsuario;
     }
 
-    public void setCodigoUsuario(int codigoUsuario) {
+    public void setCodigoUsuario(String codigoUsuario) {
         this.codigoUsuario = codigoUsuario;
     }
 
