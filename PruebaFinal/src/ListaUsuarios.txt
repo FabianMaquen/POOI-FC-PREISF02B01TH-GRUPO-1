@@ -1,5 +1,5 @@
-franco.almerco,franco,franco.almerco@usil.pe,Almerco Alaya Franco Raúl,2312782,/images/Foto_Franco60x60.png,/images/Foto_Franco95x95.png,/images/QR_Franco.png
-alondra.gonzales,alondra,alondra.gonzales@usil.pe,Gonzales Cuaresma Alondra Yamileth,2312461,/images/Foto_Alondra60x60.png,/images/Foto_Alondra95x95.png,/images/QR_Alondra.png
-fabian.maquen,fabian,fabian.maquen@usil.pe,Maquen Caisan Fabian,2311685,/images/Foto_Fabian60x60.png,/images/Foto_Fabian95x95.png,/images/QR_Fabian.png
-omar.morales,omar,omar.morales@usil.pe,Morales Silva Omar Jean Piere,2313215,/images/Foto_Omar60x60.png,/images/Foto_Omar95x95.png,/images/QR_Omar.png
-nefi.valderrama,nefi,nefi.valderrama@usil.pe,Valderrama Vilca Nefi Bitner,2311081,/images/Foto_Nefi60x60.png,/images/Foto_Nefi95x95.png,/images/QR_Nefi.png
+franco.almerco,franco,franco.almerco@usil.pe,Almerco Ayala Franco Raúl,2312782,/images/Foto_Franco60x60.png,/images/Foto_Franco95x95.png,/images/QR_Franco.png,S/1400.00,CU 1584721
+alondra.gonzales,alondra,alondra.gonzales@usil.pe,Gonzales Cuaresma Alondra Yamileth,2312461,/images/Foto_Alondra60x60.png,/images/Foto_Alondra95x95.png,/images/QR_Alondra.png,S/1200.00,CU 6515487
+fabian.maquen,fabian,fabian.maquen@usil.pe,Maquen Caisan Fabian,2311685,/images/Foto_Fabian60x60.png,/images/Foto_Fabian95x95.png,/images/QR_Fabian.png,S/1200.00,CU 9584715
+omar.morales,omar,omar.morales@usil.pe,Morales Silva Omar Jean Piere,2313215,/images/Foto_Omar60x60.png,/images/Foto_Omar95x95.png,/images/QR_Omar.png,S/1500.00,CU 3564859
+nefi.valderrama,nefi,nefi.valderrama@usil.pe,Valderrama Vilca Nefi Bitner,2311081,/images/Foto_Nefi60x60.png,/images/Foto_Nefi95x95.png,/images/QR_Nefi.png,S/1300.00,CU 4781526
