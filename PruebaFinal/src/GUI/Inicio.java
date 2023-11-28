@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import Funcionamiento.*;
 
 public class Inicio extends JFrame {
     private Estudiante usuario;
@@ -330,9 +331,11 @@ public class Inicio extends JFrame {
     }//GEN-LAST:event_jb_salirActionPerformed
 
     private void jb_chatbotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_chatbotActionPerformed
-        //Chatbot ventanaChatbot = new Chatbot();
-        //ventanaChatbot.setVisible(true);
-        //this.setVisible(false);
+        ChatBot cb = new ChatBot(""); // Crea una instancia de la clase ChatBot
+        cb.setSize(460, 620);
+        cb.setLocationRelativeTo(null);
+        cb.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jb_chatbotActionPerformed
 
     private void jb_contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_contactoActionPerformed
