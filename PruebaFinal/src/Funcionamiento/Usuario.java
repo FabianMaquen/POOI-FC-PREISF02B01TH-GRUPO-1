@@ -10,12 +10,14 @@ public class Usuario {
     private String fotocheckPequeño;
     private String fotocheckGrande;
     private String QR_Usuario;
-    
+    private String mensualidad;
+    private String codigoCuota;
+
     public Usuario(){
         
     }
 
-    public Usuario(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, String codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario) {
+    public Usuario(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, String codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario, String mensualidad, String codigoCuota) {
         this.nombreUsuario = nombreUsuario;
         this.contrasenha = contrasenha;
         this.correoUsuario = correoUsuario;
@@ -24,6 +26,16 @@ public class Usuario {
         this.fotocheckPequeño = fotocheckPequeño;
         this.fotocheckGrande = fotocheckGrande;
         this.QR_Usuario = QR_Usuario;
+        this.mensualidad = mensualidad;
+        this.codigoCuota = codigoCuota;
+    }
+
+    public String getCodigoCuota() {
+        return codigoCuota;
+    }
+
+    public void setCodigoCuota(String codigoCuota) {
+        this.codigoCuota = codigoCuota;
     }
 
     public String getNombreUsuario() {
@@ -90,9 +102,18 @@ public class Usuario {
         this.QR_Usuario = QR_Usuario;
     }
 
+    public String getMensualidad() {
+        return mensualidad;
+    }
+
+    public void setMensualidad(String mensualidad) {
+        this.mensualidad = mensualidad;
+    }
+    
+    
     @Override
     public String toString() {
-        return "Usuario{" + "nombreUsuario=" + nombreUsuario + ", contrasenha=" + contrasenha + ", correoUsuario=" + correoUsuario + ", nombreCompleto=" + nombreCompleto + ", codigoUsuario=" + codigoUsuario + ", fotocheckPeque\u00f1o=" + fotocheckPequeño + ", fotocheckGrande=" + fotocheckGrande + ", QR_Usuario=" + QR_Usuario + '}';
+        return "Usuario{" + "nombreUsuario=" + nombreUsuario + ", contrasenha=" + contrasenha + ", correoUsuario=" + correoUsuario + ", nombreCompleto=" + nombreCompleto + ", codigoUsuario=" + codigoUsuario + ", fotocheckPeque\u00f1o=" + fotocheckPequeño + ", fotocheckGrande=" + fotocheckGrande + ", QR_Usuario=" + QR_Usuario + ", Mensualidad=" + mensualidad + '}';
     }
     
     
