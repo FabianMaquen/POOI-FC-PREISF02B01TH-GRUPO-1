@@ -1,12 +1,16 @@
 package GUI;
 
-import Funcionamiento.Usuario;
+import Funcionamiento.Curso;
+import Funcionamiento.Estudiante;
+import Funcionamiento.ListaCursos;
+import Funcionamiento.ListaEstudiantes;
 import java.awt.Color;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class Inicio extends JFrame {
-    private Usuario usuario;
+    private Estudiante usuario;
     
     public Inicio(){
         initComponents();
@@ -17,7 +21,7 @@ public class Inicio extends JFrame {
         jb_cursos.setVisible(false);
     }
 
-    public Inicio(Usuario usuario) {
+    public Inicio(Estudiante usuario) {
         initComponents();
         this.usuario = usuario;    
         this.setLocationRelativeTo(null);
@@ -34,11 +38,11 @@ public class Inicio extends JFrame {
         jb_fotocheck.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(usuario.getFotocheckPequeño())));
     }
     
-    public Usuario getUsuario() {
+    public Estudiante getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Estudiante usuario) {
         this.usuario = usuario;
     }
     
@@ -54,8 +58,8 @@ public class Inicio extends JFrame {
         UltimaCapa = new javax.swing.JPanel();
         panelBlancoCurva = new MyContainers.PanelRound();
         jSeparator1 = new javax.swing.JSeparator();
-        jb_saldos_pagos = new javax.swing.JButton();
         jb_fotocheck = new javax.swing.JButton();
+        jb_saldos_pagos = new javax.swing.JButton();
         jb_contacto = new javax.swing.JButton();
         jb_cursos = new javax.swing.JButton();
         jb_chatbot = new javax.swing.JButton();
@@ -97,18 +101,6 @@ public class Inicio extends JFrame {
         jSeparator1.setForeground(new java.awt.Color(41, 61, 109));
         panelBlancoCurva.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 340, 10));
 
-        jb_saldos_pagos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoPagos35x35.png"))); // NOI18N
-        jb_saldos_pagos.setBorder(null);
-        jb_saldos_pagos.setBorderPainted(false);
-        jb_saldos_pagos.setContentAreaFilled(false);
-        jb_saldos_pagos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jb_saldos_pagos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jb_saldos_pagosActionPerformed(evt);
-            }
-        });
-        panelBlancoCurva.add(jb_saldos_pagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 424, -1, -1));
-
         jb_fotocheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotocheck60x60.png"))); // NOI18N
         jb_fotocheck.setBorder(null);
         jb_fotocheck.setBorderPainted(false);
@@ -121,6 +113,18 @@ public class Inicio extends JFrame {
             }
         });
         panelBlancoCurva.add(jb_fotocheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, -1, -1));
+
+        jb_saldos_pagos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoPagos35x35.png"))); // NOI18N
+        jb_saldos_pagos.setBorder(null);
+        jb_saldos_pagos.setBorderPainted(false);
+        jb_saldos_pagos.setContentAreaFilled(false);
+        jb_saldos_pagos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_saldos_pagos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_saldos_pagosActionPerformed(evt);
+            }
+        });
+        panelBlancoCurva.add(jb_saldos_pagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 424, -1, -1));
 
         jb_contacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoContacto30x33.png"))); // NOI18N
         jb_contacto.setBorder(null);
@@ -331,12 +335,6 @@ public class Inicio extends JFrame {
         //this.setVisible(false);
     }//GEN-LAST:event_jb_chatbotActionPerformed
 
-    private void jb_fotocheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_fotocheckActionPerformed
-        Fotocheck ventanaFotocheck = new Fotocheck(usuario,  this);
-        ventanaFotocheck.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jb_fotocheckActionPerformed
-
     private void jb_contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_contactoActionPerformed
         // Pasa la instancia actual de Inicio a la clase Contactos
         Contactos ventanaContactos = new Contactos(usuario, this);
@@ -349,14 +347,29 @@ public class Inicio extends JFrame {
         SaldosYPagos ventanaSaldosYPagos = new SaldosYPagos(usuario,this);
         ventanaSaldosYPagos.setVisible(true);
         this.setVisible(false); 
-        
     }//GEN-LAST:event_jb_saldos_pagosActionPerformed
 
     private void jb_cursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_cursosActionPerformed
-        Cursos ventanaCursos = new Cursos(usuario, this);
+        // Crear una instancia de ListaCursos
+        ListaCursos listaCursos = new ListaCursos();
+        ListaEstudiantes l_us = new ListaEstudiantes();
+
+        // Obtener la lista de cursos
+        List<Curso> cursos = listaCursos.getCursos();
+
+        // Crear una instancia de la ventana Cursos y pasar la lista de cursos
+        Cursos ventanaCursos = new Cursos(usuario, this, cursos);
+
+        // Hacer visible la ventana Cursos y ocultar la ventana actual
         ventanaCursos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_cursosActionPerformed
+
+    private void jb_fotocheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_fotocheckActionPerformed
+        Fotocheck ventanaFotocheck = new Fotocheck(usuario,  this);
+        ventanaFotocheck.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jb_fotocheckActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel UltimaCapa;

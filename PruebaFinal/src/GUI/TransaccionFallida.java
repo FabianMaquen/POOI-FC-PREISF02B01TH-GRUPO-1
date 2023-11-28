@@ -1,14 +1,14 @@
 package GUI;
 
-import Funcionamiento.Usuario;
+import Funcionamiento.Estudiante;
 import java.awt.Color;
 import javax.swing.JFrame;
 
 public class TransaccionFallida extends JFrame {
-    private Usuario usuario;
+    private Estudiante usuario;
     private MetodoDePago ventanaMetodoDePago;
     
-    public TransaccionFallida(Usuario us, MetodoDePago metodoDePago) {
+    public TransaccionFallida(Estudiante us, MetodoDePago metodoDePago) {
         initComponents();
         this.usuario = us;
         this.ventanaMetodoDePago = metodoDePago;

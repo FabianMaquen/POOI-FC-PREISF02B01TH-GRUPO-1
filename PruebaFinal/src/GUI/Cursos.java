@@ -1,17 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package GUI;
 
-import Funcionamiento.Usuario;
+import Funcionamiento.Aula;
+import Funcionamiento.Curso;
+import Funcionamiento.Estudiante;
+import MyContainers.ScrollBarCustom;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class Cursos extends JFrame {
-    
-    private Usuario usuario;
+    private Estudiante usuario;
     private Inicio ventanaInicio;
+    private List<Curso> cursos;
+    private String nombreCurso;
+    private String jl_numero_creditos;
+    private Aula aula;
+    
 
     public Cursos() {
         initComponents();
@@ -19,13 +25,17 @@ public class Cursos extends JFrame {
         setBackground(new Color(0, 0,0, 0));
     }
     
-    public Cursos(Usuario us, Inicio inicio) {
+    public Cursos(Estudiante us, Inicio inicio, List<Curso> cursos) {
         initComponents();
         this.usuario = us;
         this.ventanaInicio = inicio;
+        this.cursos = cursos;
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0,0, 0));
+        setUpCursos();
+        scroll.setVerticalScrollBar(new ScrollBarCustom());
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,22 +46,79 @@ public class Cursos extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        jl_indicador_pregrado = new javax.swing.JLabel();
+        jp_ultima_capa = new javax.swing.JPanel();
         jl_cursos_titulo = new javax.swing.JLabel();
         jb_retroceder = new javax.swing.JButton();
+        jb_salir = new javax.swing.JButton();
         panelRound1 = new MyContainers.PanelRound();
+        scroll = new javax.swing.JScrollPane();
+        contenedor = new javax.swing.JPanel();
+        fondocurso1 = new MyContainers.PanelRound();
+        jl_titulo_bloque_c1 = new javax.swing.JLabel();
+        jl_foto_docente_c1 = new javax.swing.JLabel();
+        jl_nombre_c1 = new javax.swing.JLabel();
+        jl_bloque_c1 = new javax.swing.JLabel();
+        jl_nombre_docente_c1 = new javax.swing.JLabel();
+        jl_correo_docente_c1 = new javax.swing.JLabel();
+        jb_información_c1 = new javax.swing.JButton("<html><u>Texto Subrayado</u></html>");
+        fondocurso2 = new MyContainers.PanelRound();
+        jl_titulo_bloque_c2 = new javax.swing.JLabel();
+        jl_foto_docente_c2 = new javax.swing.JLabel();
+        jl_nombre_c2 = new javax.swing.JLabel();
+        jl_bloque_c2 = new javax.swing.JLabel();
+        jl_nombre_docente_c2 = new javax.swing.JLabel();
+        jl_correo_docente_c2 = new javax.swing.JLabel();
+        jb_información_c2 = new javax.swing.JButton("<html><u>Texto Subrayado</u></html>");
+        fondocurso3 = new MyContainers.PanelRound();
+        jl_titulo_bloque_c3 = new javax.swing.JLabel();
+        jl_foto_docente_c3 = new javax.swing.JLabel();
+        jl_nombre_c3 = new javax.swing.JLabel();
+        jl_bloque_c3 = new javax.swing.JLabel();
+        jl_nombre_docente_c3 = new javax.swing.JLabel();
+        jl_correo_docente_c3 = new javax.swing.JLabel();
+        jb_información_c3 = new javax.swing.JButton("<html><u>Texto Subrayado</u></html>");
+        fondocurso4 = new MyContainers.PanelRound();
+        jl_titulo_bloque_c4 = new javax.swing.JLabel();
+        jl_foto_docente_c4 = new javax.swing.JLabel();
+        jl_nombre_c4 = new javax.swing.JLabel();
+        jl_bloque_c4 = new javax.swing.JLabel();
+        jl_nombre_docente_c4 = new javax.swing.JLabel();
+        jl_correo_docente_c4 = new javax.swing.JLabel();
+        jb_información_c4 = new javax.swing.JButton("<html><u>Texto Subrayado</u></html>");
+        fondocurso5 = new MyContainers.PanelRound();
+        jl_titulo_bloque_c5 = new javax.swing.JLabel();
+        jl_foto_docente_c5 = new javax.swing.JLabel();
+        jl_nombre_c5 = new javax.swing.JLabel();
+        jl_bloque_c5 = new javax.swing.JLabel();
+        jl_nombre_docente_c5 = new javax.swing.JLabel();
+        jl_correo_docente_c5 = new javax.swing.JLabel();
+        jb_información_c5 = new javax.swing.JButton("<html><u>Texto Subrayado</u></html>");
+        fondocurso6 = new MyContainers.PanelRound();
+        jl_titulo_bloque_c6 = new javax.swing.JLabel();
+        jl_foto_docente_c6 = new javax.swing.JLabel();
+        jl_nombre_c6 = new javax.swing.JLabel();
+        jl_bloque_c6 = new javax.swing.JLabel();
+        jl_nombre_docente_c6 = new javax.swing.JLabel();
+        jl_correo_docente_c6 = new javax.swing.JLabel();
+        jb_información_c6 = new javax.swing.JButton("<html><u>Texto Subrayado</u></html>");
+        jcb_lista_pregrado = new javax.swing.JComboBox<>();
         fondoCurveadoDegradado1 = new MyContainers.FondoCurveadoDegradado();
+
+        jl_indicador_pregrado.setFont(new java.awt.Font("Dubai Medium", 0, 14)); // NOI18N
+        jl_indicador_pregrado.setForeground(new java.awt.Color(41, 61, 109));
+        jl_indicador_pregrado.setText("(PRE-GRADO) 2023 - 02");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel2.setOpaque(false);
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jp_ultima_capa.setOpaque(false);
+        jp_ultima_capa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jl_cursos_titulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jl_cursos_titulo.setForeground(new java.awt.Color(255, 255, 255));
         jl_cursos_titulo.setText("CURSOS");
-        jPanel2.add(jl_cursos_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 30, -1, -1));
+        jp_ultima_capa.add(jl_cursos_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 30, -1, -1));
 
         jb_retroceder.setBackground(new java.awt.Color(38, 65, 115));
         jb_retroceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BackIcon.png"))); // NOI18N
@@ -63,7 +130,23 @@ public class Cursos extends JFrame {
                 jb_retrocederActionPerformed(evt);
             }
         });
-        jPanel2.add(jb_retroceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 20, -1, -1));
+        jp_ultima_capa.add(jb_retroceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 20, -1, -1));
+
+        jb_salir.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jb_salir.setForeground(new java.awt.Color(255, 255, 255));
+        jb_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoSalir35x35.png"))); // NOI18N
+        jb_salir.setBorder(null);
+        jb_salir.setBorderPainted(false);
+        jb_salir.setContentAreaFilled(false);
+        jb_salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_salir.setFocusPainted(false);
+        jb_salir.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jb_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_salirActionPerformed(evt);
+            }
+        });
+        jp_ultima_capa.add(jb_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 20, 30, -1));
 
         panelRound1.setBackground(new java.awt.Color(232, 235, 241));
         panelRound1.setRoundBottomLeft(50);
@@ -71,27 +154,655 @@ public class Cursos extends JFrame {
         panelRound1.setRoundTopLeft(80);
         panelRound1.setRoundTopRight(80);
         panelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 490));
+
+        scroll.setBackground(new java.awt.Color(232, 235, 241));
+        scroll.setBorder(null);
+        scroll.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scroll.setToolTipText("");
+        scroll.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        scroll.setAutoscrolls(true);
+        scroll.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        scroll.setFocusable(false);
+        scroll.setOpaque(false);
+
+        contenedor.setBackground(new java.awt.Color(232, 235, 241));
+        contenedor.setMinimumSize(new java.awt.Dimension(370, 805));
+        contenedor.setOpaque(false);
+        contenedor.setPreferredSize(new java.awt.Dimension(380, 805));
+        contenedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        fondocurso1.setBackground(new java.awt.Color(196, 205, 219));
+        fondocurso1.setRoundBottomLeft(20);
+        fondocurso1.setRoundBottomRight(20);
+        fondocurso1.setRoundTopLeft(20);
+        fondocurso1.setRoundTopRight(20);
+        fondocurso1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_titulo_bloque_c1.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_titulo_bloque_c1.setForeground(new java.awt.Color(41, 61, 109));
+        jl_titulo_bloque_c1.setText("Bloque : ");
+        fondocurso1.add(jl_titulo_bloque_c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 35, 60, 20));
+
+        jl_foto_docente_c1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_foto_docente_c1.setForeground(new java.awt.Color(41, 61, 109));
+        jl_foto_docente_c1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotocheck60x60.png"))); // NOI18N
+        jl_foto_docente_c1.setText("Correo_Docente");
+        fondocurso1.add(jl_foto_docente_c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 38, 60, 60));
+
+        jl_nombre_c1.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
+        jl_nombre_c1.setForeground(new java.awt.Color(41, 61, 109));
+        jl_nombre_c1.setText("Nombre_Curso");
+        fondocurso1.add(jl_nombre_c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 12, 320, 20));
+
+        jl_bloque_c1.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_bloque_c1.setForeground(new java.awt.Color(41, 61, 109));
+        jl_bloque_c1.setText("Bloque_Curso");
+        fondocurso1.add(jl_bloque_c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 35, 170, 20));
+
+        jl_nombre_docente_c1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_nombre_docente_c1.setForeground(new java.awt.Color(41, 61, 109));
+        jl_nombre_docente_c1.setText("Nombre_Docente");
+        fondocurso1.add(jl_nombre_docente_c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 65, -1, -1));
+
+        jl_correo_docente_c1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_correo_docente_c1.setForeground(new java.awt.Color(41, 61, 109));
+        jl_correo_docente_c1.setText("Correo_Docente");
+        fondocurso1.add(jl_correo_docente_c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+
+        jb_información_c1.setBackground(new java.awt.Color(63, 108, 165));
+        jb_información_c1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jb_información_c1.setForeground(new java.awt.Color(41, 61, 109));
+        jb_información_c1.setText("Información");
+        jb_información_c1.setBorder(null);
+        jb_información_c1.setBorderPainted(false);
+        jb_información_c1.setContentAreaFilled(false);
+        jb_información_c1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_información_c1.setFocusPainted(false);
+        jb_información_c1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jb_información_c1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_información_c1ActionPerformed(evt);
+            }
+        });
+        fondocurso1.add(jb_información_c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
+
+        contenedor.add(fondocurso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 10, 360, 110));
+
+        fondocurso2.setBackground(new java.awt.Color(196, 205, 219));
+        fondocurso2.setRoundBottomLeft(20);
+        fondocurso2.setRoundBottomRight(20);
+        fondocurso2.setRoundTopLeft(20);
+        fondocurso2.setRoundTopRight(20);
+        fondocurso2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_titulo_bloque_c2.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_titulo_bloque_c2.setForeground(new java.awt.Color(41, 61, 109));
+        jl_titulo_bloque_c2.setText("Bloque : ");
+        fondocurso2.add(jl_titulo_bloque_c2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 35, 60, 20));
+
+        jl_foto_docente_c2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_foto_docente_c2.setForeground(new java.awt.Color(41, 61, 109));
+        jl_foto_docente_c2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotocheck60x60.png"))); // NOI18N
+        jl_foto_docente_c2.setText("Correo_Docente");
+        fondocurso2.add(jl_foto_docente_c2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 38, 60, 60));
+
+        jl_nombre_c2.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
+        jl_nombre_c2.setForeground(new java.awt.Color(41, 61, 109));
+        jl_nombre_c2.setText("Nombre_Curso");
+        fondocurso2.add(jl_nombre_c2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 12, 320, 20));
+
+        jl_bloque_c2.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_bloque_c2.setForeground(new java.awt.Color(41, 61, 109));
+        jl_bloque_c2.setText("Bloque_Curso");
+        fondocurso2.add(jl_bloque_c2, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 35, 170, 20));
+
+        jl_nombre_docente_c2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_nombre_docente_c2.setForeground(new java.awt.Color(41, 61, 109));
+        jl_nombre_docente_c2.setText("Nombre_Docente");
+        fondocurso2.add(jl_nombre_docente_c2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 65, -1, -1));
+
+        jl_correo_docente_c2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_correo_docente_c2.setForeground(new java.awt.Color(41, 61, 109));
+        jl_correo_docente_c2.setText("Correo_Docente");
+        fondocurso2.add(jl_correo_docente_c2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+
+        jb_información_c2.setBackground(new java.awt.Color(63, 108, 165));
+        jb_información_c2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jb_información_c2.setForeground(new java.awt.Color(41, 61, 109));
+        jb_información_c2.setText("Información");
+        jb_información_c2.setBorder(null);
+        jb_información_c2.setBorderPainted(false);
+        jb_información_c2.setContentAreaFilled(false);
+        jb_información_c2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_información_c2.setFocusPainted(false);
+        jb_información_c2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jb_información_c2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_información_c2ActionPerformed(evt);
+            }
+        });
+        fondocurso2.add(jb_información_c2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
+
+        contenedor.add(fondocurso2, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 145, 360, 110));
+
+        fondocurso3.setBackground(new java.awt.Color(196, 205, 219));
+        fondocurso3.setRoundBottomLeft(20);
+        fondocurso3.setRoundBottomRight(20);
+        fondocurso3.setRoundTopLeft(20);
+        fondocurso3.setRoundTopRight(20);
+        fondocurso3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_titulo_bloque_c3.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_titulo_bloque_c3.setForeground(new java.awt.Color(41, 61, 109));
+        jl_titulo_bloque_c3.setText("Bloque : ");
+        fondocurso3.add(jl_titulo_bloque_c3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 35, 60, 20));
+
+        jl_foto_docente_c3.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_foto_docente_c3.setForeground(new java.awt.Color(41, 61, 109));
+        jl_foto_docente_c3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotocheck60x60.png"))); // NOI18N
+        jl_foto_docente_c3.setText("Correo_Docente");
+        fondocurso3.add(jl_foto_docente_c3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 38, 60, 60));
+
+        jl_nombre_c3.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
+        jl_nombre_c3.setForeground(new java.awt.Color(41, 61, 109));
+        jl_nombre_c3.setText("Nombre_Curso");
+        fondocurso3.add(jl_nombre_c3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 12, 320, 20));
+
+        jl_bloque_c3.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_bloque_c3.setForeground(new java.awt.Color(41, 61, 109));
+        jl_bloque_c3.setText("Bloque_Curso");
+        fondocurso3.add(jl_bloque_c3, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 35, 170, 20));
+
+        jl_nombre_docente_c3.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_nombre_docente_c3.setForeground(new java.awt.Color(41, 61, 109));
+        jl_nombre_docente_c3.setText("Nombre_Docente");
+        fondocurso3.add(jl_nombre_docente_c3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 65, -1, -1));
+
+        jl_correo_docente_c3.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_correo_docente_c3.setForeground(new java.awt.Color(41, 61, 109));
+        jl_correo_docente_c3.setText("Correo_Docente");
+        fondocurso3.add(jl_correo_docente_c3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+
+        jb_información_c3.setBackground(new java.awt.Color(63, 108, 165));
+        jb_información_c3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jb_información_c3.setForeground(new java.awt.Color(41, 61, 109));
+        jb_información_c3.setText("Información");
+        jb_información_c3.setBorder(null);
+        jb_información_c3.setBorderPainted(false);
+        jb_información_c3.setContentAreaFilled(false);
+        jb_información_c3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_información_c3.setFocusPainted(false);
+        jb_información_c3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jb_información_c3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_información_c3ActionPerformed(evt);
+            }
+        });
+        fondocurso3.add(jb_información_c3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
+
+        contenedor.add(fondocurso3, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 280, 360, 110));
+
+        fondocurso4.setBackground(new java.awt.Color(196, 205, 219));
+        fondocurso4.setRoundBottomLeft(20);
+        fondocurso4.setRoundBottomRight(20);
+        fondocurso4.setRoundTopLeft(20);
+        fondocurso4.setRoundTopRight(20);
+        fondocurso4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_titulo_bloque_c4.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_titulo_bloque_c4.setForeground(new java.awt.Color(41, 61, 109));
+        jl_titulo_bloque_c4.setText("Bloque : ");
+        fondocurso4.add(jl_titulo_bloque_c4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 35, 60, 20));
+
+        jl_foto_docente_c4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_foto_docente_c4.setForeground(new java.awt.Color(41, 61, 109));
+        jl_foto_docente_c4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotocheck60x60.png"))); // NOI18N
+        jl_foto_docente_c4.setText("Correo_Docente");
+        fondocurso4.add(jl_foto_docente_c4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 38, 60, 60));
+
+        jl_nombre_c4.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
+        jl_nombre_c4.setForeground(new java.awt.Color(41, 61, 109));
+        jl_nombre_c4.setText("Nombre_Curso");
+        fondocurso4.add(jl_nombre_c4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 12, 320, 20));
+
+        jl_bloque_c4.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_bloque_c4.setForeground(new java.awt.Color(41, 61, 109));
+        jl_bloque_c4.setText("Bloque_Curso");
+        fondocurso4.add(jl_bloque_c4, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 35, 170, 20));
+
+        jl_nombre_docente_c4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_nombre_docente_c4.setForeground(new java.awt.Color(41, 61, 109));
+        jl_nombre_docente_c4.setText("Nombre_Docente");
+        fondocurso4.add(jl_nombre_docente_c4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 65, -1, -1));
+
+        jl_correo_docente_c4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_correo_docente_c4.setForeground(new java.awt.Color(41, 61, 109));
+        jl_correo_docente_c4.setText("Correo_Docente");
+        fondocurso4.add(jl_correo_docente_c4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+
+        jb_información_c4.setBackground(new java.awt.Color(63, 108, 165));
+        jb_información_c4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jb_información_c4.setForeground(new java.awt.Color(41, 61, 109));
+        jb_información_c4.setText("Información");
+        jb_información_c4.setBorder(null);
+        jb_información_c4.setBorderPainted(false);
+        jb_información_c4.setContentAreaFilled(false);
+        jb_información_c4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_información_c4.setFocusPainted(false);
+        jb_información_c4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jb_información_c4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_información_c4ActionPerformed(evt);
+            }
+        });
+        fondocurso4.add(jb_información_c4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
+
+        contenedor.add(fondocurso4, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 415, 360, 110));
+
+        fondocurso5.setBackground(new java.awt.Color(196, 205, 219));
+        fondocurso5.setRoundBottomLeft(20);
+        fondocurso5.setRoundBottomRight(20);
+        fondocurso5.setRoundTopLeft(20);
+        fondocurso5.setRoundTopRight(20);
+        fondocurso5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_titulo_bloque_c5.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_titulo_bloque_c5.setForeground(new java.awt.Color(41, 61, 109));
+        jl_titulo_bloque_c5.setText("Bloque : ");
+        fondocurso5.add(jl_titulo_bloque_c5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 35, 60, 20));
+
+        jl_foto_docente_c5.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_foto_docente_c5.setForeground(new java.awt.Color(41, 61, 109));
+        jl_foto_docente_c5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotocheck60x60.png"))); // NOI18N
+        jl_foto_docente_c5.setText("Correo_Docente");
+        fondocurso5.add(jl_foto_docente_c5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 38, 60, 60));
+
+        jl_nombre_c5.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
+        jl_nombre_c5.setForeground(new java.awt.Color(41, 61, 109));
+        jl_nombre_c5.setText("Nombre_Curso");
+        fondocurso5.add(jl_nombre_c5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 12, 320, 20));
+
+        jl_bloque_c5.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_bloque_c5.setForeground(new java.awt.Color(41, 61, 109));
+        jl_bloque_c5.setText("Bloque_Curso");
+        fondocurso5.add(jl_bloque_c5, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 35, 170, 20));
+
+        jl_nombre_docente_c5.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_nombre_docente_c5.setForeground(new java.awt.Color(41, 61, 109));
+        jl_nombre_docente_c5.setText("Nombre_Docente");
+        fondocurso5.add(jl_nombre_docente_c5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 65, -1, -1));
+
+        jl_correo_docente_c5.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_correo_docente_c5.setForeground(new java.awt.Color(41, 61, 109));
+        jl_correo_docente_c5.setText("Correo_Docente");
+        fondocurso5.add(jl_correo_docente_c5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+
+        jb_información_c5.setBackground(new java.awt.Color(63, 108, 165));
+        jb_información_c5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jb_información_c5.setForeground(new java.awt.Color(41, 61, 109));
+        jb_información_c5.setText("Información");
+        jb_información_c5.setBorder(null);
+        jb_información_c5.setBorderPainted(false);
+        jb_información_c5.setContentAreaFilled(false);
+        jb_información_c5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_información_c5.setFocusPainted(false);
+        jb_información_c5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jb_información_c5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_información_c5ActionPerformed(evt);
+            }
+        });
+        fondocurso5.add(jb_información_c5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
+
+        contenedor.add(fondocurso5, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 550, 360, 110));
+
+        fondocurso6.setBackground(new java.awt.Color(196, 205, 219));
+        fondocurso6.setRoundBottomLeft(20);
+        fondocurso6.setRoundBottomRight(20);
+        fondocurso6.setRoundTopLeft(20);
+        fondocurso6.setRoundTopRight(20);
+        fondocurso6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_titulo_bloque_c6.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_titulo_bloque_c6.setForeground(new java.awt.Color(41, 61, 109));
+        jl_titulo_bloque_c6.setText("Bloque : ");
+        fondocurso6.add(jl_titulo_bloque_c6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 35, 60, 20));
+
+        jl_foto_docente_c6.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_foto_docente_c6.setForeground(new java.awt.Color(41, 61, 109));
+        jl_foto_docente_c6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotocheck60x60.png"))); // NOI18N
+        jl_foto_docente_c6.setText("Correo_Docente");
+        fondocurso6.add(jl_foto_docente_c6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 38, 60, 60));
+
+        jl_nombre_c6.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
+        jl_nombre_c6.setForeground(new java.awt.Color(41, 61, 109));
+        jl_nombre_c6.setText("Nombre_Curso");
+        fondocurso6.add(jl_nombre_c6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 12, 320, 20));
+
+        jl_bloque_c6.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jl_bloque_c6.setForeground(new java.awt.Color(41, 61, 109));
+        jl_bloque_c6.setText("Bloque_Curso");
+        fondocurso6.add(jl_bloque_c6, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 35, 170, 20));
+
+        jl_nombre_docente_c6.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_nombre_docente_c6.setForeground(new java.awt.Color(41, 61, 109));
+        jl_nombre_docente_c6.setText("Nombre_Docente");
+        fondocurso6.add(jl_nombre_docente_c6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 65, -1, -1));
+
+        jl_correo_docente_c6.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jl_correo_docente_c6.setForeground(new java.awt.Color(41, 61, 109));
+        jl_correo_docente_c6.setText("Correo_Docente");
+        fondocurso6.add(jl_correo_docente_c6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+
+        jb_información_c6.setBackground(new java.awt.Color(63, 108, 165));
+        jb_información_c6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jb_información_c6.setForeground(new java.awt.Color(41, 61, 109));
+        jb_información_c6.setText("Información");
+        jb_información_c6.setBorder(null);
+        jb_información_c6.setBorderPainted(false);
+        jb_información_c6.setContentAreaFilled(false);
+        jb_información_c6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_información_c6.setFocusPainted(false);
+        jb_información_c6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jb_información_c6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_información_c6ActionPerformed(evt);
+            }
+        });
+        fondocurso6.add(jb_información_c6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
+
+        contenedor.add(fondocurso6, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 685, 360, 110));
+
+        scroll.setViewportView(contenedor);
+
+        panelRound1.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 400, 410));
+
+        jcb_lista_pregrado.setBackground(new java.awt.Color(232, 235, 241));
+        jcb_lista_pregrado.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jcb_lista_pregrado.setForeground(new java.awt.Color(41, 61, 109));
+        jcb_lista_pregrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(PRE-GRADO) 2023 - 02" }));
+        jcb_lista_pregrado.setBorder(null);
+        jcb_lista_pregrado.setFocusable(false);
+        jcb_lista_pregrado.setOpaque(false);
+        jcb_lista_pregrado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb_lista_pregradoActionPerformed(evt);
+            }
+        });
+        panelRound1.add(jcb_lista_pregrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 160, -1));
+
+        jp_ultima_capa.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 490));
 
         fondoCurveadoDegradado1.setRoundTopLeft(50);
         fondoCurveadoDegradado1.setRoundTopRight(50);
         fondoCurveadoDegradado1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(fondoCurveadoDegradado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 140));
+        jp_ultima_capa.add(fondoCurveadoDegradado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 140));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jp_ultima_capa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jp_ultima_capa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    public void setUsuario(Estudiante us){
+        this.usuario = us;
+    }
+    
+    private void setUpCursos(){
+        
+        ImageIcon nuevaImagen;
+        
+        if (usuario.getCodigoUsuario().equalsIgnoreCase("2312782")) { //FRANCO
+            
+            fondocurso6.setVisible(false);
+            // Cambiar el tamaño del contenedor
+            contenedor.setPreferredSize(new Dimension(380, 670));
 
+            // Asegurarse de que el cambio de tamaño se refleje correctamente
+            contenedor.revalidate();
+            contenedor.repaint();
+            
+            // CURSO 1 - Calculo
+            jl_nombre_c1.setText(cursos.get(2).getNombreCurso());
+            jl_bloque_c1.setText(cursos.get(2).getBloqueCurso());
+            jl_nombre_docente_c1.setText(cursos.get(2).getNombreDocente());
+            jl_correo_docente_c1.setText(cursos.get(2).getCorreoDocente());
+            jl_foto_docente_c1.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(2).getFotoDocente())));
+            jl_numero_creditos = cursos.get(2).getNumeroCreditos();
+            aula = new Aula(cursos.get(2).getAula().getnCampus(), cursos.get(2).getAula().getnPabellon(), cursos.get(2).getAula().getnAula());
+            
+            // CURSO 2 - Lenguaje II
+            jl_nombre_c2.setText(cursos.get(9).getNombreCurso());
+            jl_bloque_c2.setText(cursos.get(9).getBloqueCurso());
+            jl_nombre_docente_c2.setText(cursos.get(9).getNombreDocente());
+            jl_correo_docente_c2.setText(cursos.get(9).getCorreoDocente());
+            jl_foto_docente_c2.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(9).getFotoDocente())));
+            
+            // CURSO 3 - Discreta
+            jl_nombre_c3.setText(cursos.get(10).getNombreCurso());
+            jl_bloque_c3.setText(cursos.get(10).getBloqueCurso());
+            jl_nombre_docente_c3.setText(cursos.get(10).getNombreDocente());
+            jl_correo_docente_c3.setText(cursos.get(10).getCorreoDocente());
+            jl_foto_docente_c3.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(10).getFotoDocente())));
+            
+            // CURSO 4 - POO I
+            jl_nombre_c4.setText(cursos.get(15).getNombreCurso());
+            jl_bloque_c4.setText(cursos.get(15).getBloqueCurso());
+            jl_nombre_docente_c4.setText(cursos.get(15).getNombreDocente());
+            jl_correo_docente_c4.setText(cursos.get(15).getCorreoDocente());
+            jl_foto_docente_c4.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(15).getFotoDocente())));
+            
+            // CURSO 5 - REALIDAD NACIONAL
+            jl_nombre_c5.setText(cursos.get(16).getNombreCurso());
+            jl_bloque_c5.setText(cursos.get(16).getBloqueCurso());
+            jl_nombre_docente_c5.setText(cursos.get(16).getNombreDocente());
+            jl_correo_docente_c5.setText(cursos.get(16).getCorreoDocente());
+            jl_foto_docente_c5.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(16).getFotoDocente())));
+        }
+        else if(usuario.getCodigoUsuario().equalsIgnoreCase("2312461")){ // ALONDRA
+            
+            // CURSO 1 - Administración
+            jl_nombre_c1.setText(cursos.get(0).getNombreCurso());
+            jl_bloque_c1.setText(cursos.get(0).getBloqueCurso());
+            jl_nombre_docente_c1.setText(cursos.get(0).getNombreDocente());
+            jl_correo_docente_c1.setText(cursos.get(0).getCorreoDocente());
+           jl_foto_docente_c1.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(0).getFotoDocente())));
+            
+            // CURSO 2 - Calculo
+            jl_nombre_c2.setText(cursos.get(1).getNombreCurso());
+            jl_bloque_c2.setText(cursos.get(1).getBloqueCurso());
+            jl_nombre_docente_c2.setText(cursos.get(1).getNombreDocente());
+            jl_correo_docente_c2.setText(cursos.get(1).getCorreoDocente());
+            jl_foto_docente_c2.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(1).getFotoDocente())));
+            
+            // CURSO 3 - Ingles I
+            jl_nombre_c3.setText(cursos.get(4).getNombreCurso());
+            jl_bloque_c3.setText(cursos.get(4).getBloqueCurso());
+            jl_nombre_docente_c3.setText(cursos.get(4).getNombreDocente());
+            jl_correo_docente_c3.setText(cursos.get(4).getCorreoDocente());
+            jl_foto_docente_c3.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(4).getFotoDocente())));
+            
+            // CURSO 4 - Lenguaje II
+            jl_nombre_c4.setText(cursos.get(7).getNombreCurso());
+            jl_bloque_c4.setText(cursos.get(7).getBloqueCurso());
+            jl_nombre_docente_c4.setText(cursos.get(7).getNombreDocente());
+            jl_correo_docente_c4.setText(cursos.get(7).getCorreoDocente());
+            jl_foto_docente_c4.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(7).getFotoDocente())));
+            
+            // CURSO 5 - Discreta
+            jl_nombre_c5.setText(cursos.get(10).getNombreCurso());
+            jl_bloque_c5.setText(cursos.get(10).getBloqueCurso());
+            jl_nombre_docente_c5.setText(cursos.get(10).getNombreDocente());
+            jl_correo_docente_c5.setText(cursos.get(10).getCorreoDocente());
+            jl_foto_docente_c5.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(10).getFotoDocente())));
+            
+            // CURSO 6 - POO I
+            jl_nombre_c6.setText(cursos.get(15).getNombreCurso());
+            jl_bloque_c6.setText(cursos.get(15).getBloqueCurso());
+            jl_nombre_docente_c6.setText(cursos.get(15).getNombreDocente());
+            jl_correo_docente_c6.setText(cursos.get(15).getCorreoDocente());
+            jl_foto_docente_c6.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(15).getFotoDocente())));
+        }
+        else if(usuario.getCodigoUsuario().equalsIgnoreCase("2311685")){ // FABIAN
+            
+            // CURSO 1 - Calculo
+            jl_nombre_c1.setText(cursos.get(1).getNombreCurso());
+            jl_bloque_c1.setText(cursos.get(1).getBloqueCurso());
+            jl_nombre_docente_c1.setText(cursos.get(1).getNombreDocente());
+            jl_correo_docente_c1.setText(cursos.get(1).getCorreoDocente());
+            jl_foto_docente_c1.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(1).getFotoDocente())));
+            nombreCurso = cursos.get(1).getNombreCurso();
+            jl_numero_creditos = cursos.get(1).getNumeroCreditos();
+            aula = new Aula(cursos.get(1).getAula().getnCampus(), cursos.get(1).getAula().getnPabellon(), cursos.get(1).getAula().getnAula());
+            
+            // CURSO 2 - Ingles III
+            jl_nombre_c2.setText(cursos.get(5).getNombreCurso());
+            jl_bloque_c2.setText(cursos.get(5).getBloqueCurso());
+            jl_nombre_docente_c2.setText(cursos.get(5).getNombreDocente());
+            jl_correo_docente_c2.setText(cursos.get(5).getCorreoDocente());
+            jl_foto_docente_c2.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(5).getFotoDocente())));
+            nombreCurso = cursos.get(5).getNombreCurso();
+            jl_numero_creditos = cursos.get(5).getNumeroCreditos();
+            aula = new Aula(cursos.get(5).getAula().getnCampus(), cursos.get(5).getAula().getnPabellon(), cursos.get(5).getAula().getnAula());
+            
+            // CURSO 3 - Lenguaje II
+            jl_nombre_c3.setText(cursos.get(7).getNombreCurso());
+            jl_bloque_c3.setText(cursos.get(7).getBloqueCurso());
+            jl_nombre_docente_c3.setText(cursos.get(7).getNombreDocente());
+            jl_correo_docente_c3.setText(cursos.get(7).getCorreoDocente());
+            jl_foto_docente_c3.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(7).getFotoDocente())));
+            jl_numero_creditos = cursos.get(7).getNumeroCreditos();
+            aula = new Aula(cursos.get(7).getAula().getnCampus(), cursos.get(7).getAula().getnPabellon(), cursos.get(7).getAula().getnAula());
+            
+            // CURSO 4 - Discreta
+            jl_nombre_c4.setText(cursos.get(11).getNombreCurso());
+            jl_bloque_c4.setText(cursos.get(11).getBloqueCurso());
+            jl_nombre_docente_c4.setText(cursos.get(11).getNombreDocente());
+            jl_correo_docente_c4.setText(cursos.get(11).getCorreoDocente());
+            jl_foto_docente_c4.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(11).getFotoDocente())));
+            nombreCurso = cursos.get(11).getNombreCurso();
+            jl_numero_creditos = cursos.get(11).getNumeroCreditos();
+            aula = new Aula(cursos.get(11).getAula().getnCampus(), cursos.get(11).getAula().getnPabellon(), cursos.get(11).getAula().getnAula());
+            
+            // CURSO 5 - Economia
+            jl_nombre_c5.setText(cursos.get(13).getNombreCurso());
+            jl_bloque_c5.setText(cursos.get(13).getBloqueCurso());
+            jl_nombre_docente_c5.setText(cursos.get(13).getNombreDocente());
+            jl_correo_docente_c5.setText(cursos.get(13).getCorreoDocente());
+            jl_foto_docente_c5.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(13).getFotoDocente())));
+            nombreCurso = cursos.get(13).getNombreCurso();
+            jl_numero_creditos = cursos.get(13).getNumeroCreditos();
+            aula = new Aula(cursos.get(13).getAula().getnCampus(), cursos.get(13).getAula().getnPabellon(), cursos.get(13).getAula().getnAula());
+            
+            // CURSO 6 - POO I
+            jl_nombre_c6.setText(cursos.get(15).getNombreCurso());
+            jl_bloque_c6.setText(cursos.get(15).getBloqueCurso());
+            jl_nombre_docente_c6.setText(cursos.get(15).getNombreDocente());
+            jl_correo_docente_c6.setText(cursos.get(15).getCorreoDocente());
+            jl_foto_docente_c6.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(15).getFotoDocente())));           
+            nombreCurso = cursos.get(15).getNombreCurso();
+            jl_numero_creditos = cursos.get(15).getNumeroCreditos();
+            aula = new Aula(cursos.get(15).getAula().getnCampus(), cursos.get(15).getAula().getnPabellon(), cursos.get(15).getAula().getnAula());
+        } 
+        else if (usuario.getCodigoUsuario().equalsIgnoreCase("2313215")) { // OMAR
+            
+            fondocurso6.setVisible(false);
+            // Cambiar el tamaño del contenedor
+            contenedor.setPreferredSize(new Dimension(380, 670));
+
+            // Asegurarse de que el cambio de tamaño se refleje correctamente
+            contenedor.revalidate();
+            contenedor.repaint();
+            
+            // CURSO 1 - Calculo
+            jl_nombre_c1.setText(cursos.get(1).getNombreCurso());
+            jl_bloque_c1.setText(cursos.get(1).getBloqueCurso());
+            jl_nombre_docente_c1.setText(cursos.get(1).getNombreDocente());
+            jl_correo_docente_c1.setText(cursos.get(1).getCorreoDocente());
+            jl_foto_docente_c1.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(1).getFotoDocente())));
+            
+            // CURSO 2 - Ingles III
+            jl_nombre_c2.setText(cursos.get(5).getNombreCurso());
+            jl_bloque_c2.setText(cursos.get(5).getBloqueCurso());
+            jl_nombre_docente_c2.setText(cursos.get(5).getNombreDocente());
+            jl_correo_docente_c2.setText(cursos.get(5).getCorreoDocente());
+            jl_foto_docente_c2.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(5).getFotoDocente())));
+            
+            // CURSO 3 - Lenguaje II
+            jl_nombre_c3.setText(cursos.get(9).getNombreCurso());
+            jl_bloque_c3.setText(cursos.get(9).getBloqueCurso());
+            jl_nombre_docente_c3.setText(cursos.get(9).getNombreDocente());
+            jl_correo_docente_c3.setText(cursos.get(9).getCorreoDocente());
+            jl_foto_docente_c3.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(9).getFotoDocente())));
+            
+            // CURSO 4 - POO I
+            jl_nombre_c4.setText(cursos.get(15).getNombreCurso());
+            jl_bloque_c4.setText(cursos.get(15).getBloqueCurso());
+            jl_nombre_docente_c4.setText(cursos.get(15).getNombreDocente());
+            jl_correo_docente_c4.setText(cursos.get(15).getCorreoDocente());
+            jl_foto_docente_c4.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(15).getFotoDocente())));
+            
+            // CURSO 5 - REALIDAD NACIONAL
+            jl_nombre_c5.setText(cursos.get(17).getNombreCurso());
+            jl_bloque_c5.setText(cursos.get(17).getBloqueCurso());
+            jl_nombre_docente_c5.setText(cursos.get(17).getNombreDocente());
+            jl_correo_docente_c5.setText(cursos.get(17).getCorreoDocente());
+            jl_foto_docente_c5.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(17).getFotoDocente())));
+        }
+        else if (usuario.getCodigoUsuario().equalsIgnoreCase("2311081")){ // NEFI
+            
+            // CURSO 1 - Calculo
+            jl_nombre_c1.setText(cursos.get(3).getNombreCurso());
+            jl_bloque_c1.setText(cursos.get(3).getBloqueCurso());
+            jl_nombre_docente_c1.setText(cursos.get(3).getNombreDocente());
+            jl_correo_docente_c1.setText(cursos.get(3).getCorreoDocente());
+            jl_foto_docente_c1.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(3).getFotoDocente())));
+            
+            // CURSO 2 - Ing Software I
+            jl_nombre_c2.setText(cursos.get(6).getNombreCurso());
+            jl_bloque_c2.setText(cursos.get(6).getBloqueCurso());
+            jl_nombre_docente_c2.setText(cursos.get(6).getNombreDocente());
+            jl_correo_docente_c2.setText(cursos.get(6).getCorreoDocente());
+            jl_foto_docente_c2.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(6).getFotoDocente())));
+            
+            // CURSO 3 - Lenguaje II
+            jl_nombre_c3.setText(cursos.get(8).getNombreCurso());
+            jl_bloque_c3.setText(cursos.get(8).getBloqueCurso());
+            jl_nombre_docente_c3.setText(cursos.get(8).getNombreDocente());
+            jl_correo_docente_c3.setText(cursos.get(8).getCorreoDocente());
+            jl_foto_docente_c3.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(8).getFotoDocente())));
+            
+            // CURSO 4 - Discreta
+            jl_nombre_c4.setText(cursos.get(12).getNombreCurso());
+            jl_bloque_c4.setText(cursos.get(12).getBloqueCurso());
+            jl_nombre_docente_c4.setText(cursos.get(12).getNombreDocente());
+            jl_correo_docente_c4.setText(cursos.get(12).getCorreoDocente());
+            jl_foto_docente_c4.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(12).getFotoDocente())));
+            
+            // CURSO 5 - Economia
+            jl_nombre_c5.setText(cursos.get(14).getNombreCurso());
+            jl_bloque_c5.setText(cursos.get(14).getBloqueCurso());
+            jl_nombre_docente_c5.setText(cursos.get(14).getNombreDocente());
+            jl_correo_docente_c5.setText(cursos.get(14).getCorreoDocente());
+            jl_foto_docente_c5.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(14).getFotoDocente())));
+            
+            // CURSO 6 - POO I
+            jl_nombre_c6.setText(cursos.get(15).getNombreCurso());
+            jl_bloque_c6.setText(cursos.get(15).getBloqueCurso());
+            jl_nombre_docente_c6.setText(cursos.get(15).getNombreDocente());
+            jl_correo_docente_c6.setText(cursos.get(15).getCorreoDocente());
+            jl_foto_docente_c6.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(15).getFotoDocente())));
+        }
+    }
+    
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
         // Crea una nueva instancia de Inicio con los datos originales
         ventanaInicio.setUsuario(usuario);
@@ -99,11 +810,113 @@ public class Cursos extends JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jb_retrocederActionPerformed
 
+    private void jb_información_c3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c3ActionPerformed
+        // TODO add your handling code here:
+        InfoCurso infoCursos = new InfoCurso(usuario, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        infoCursos.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jb_información_c3ActionPerformed
+
+    private void jb_información_c2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c2ActionPerformed
+        // TODO add your handling code here:
+        InfoCurso infoCursos = new InfoCurso(usuario, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        infoCursos.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jb_información_c2ActionPerformed
+
+    private void jb_información_c1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c1ActionPerformed
+        InfoCurso infoCursos = new InfoCurso(usuario, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        infoCursos.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jb_información_c1ActionPerformed
+
+    private void jb_información_c4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c4ActionPerformed
+        // TODO add your handling code here:
+        InfoCurso infoCursos = new InfoCurso(usuario, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        infoCursos.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jb_información_c4ActionPerformed
+
+    private void jb_información_c5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c5ActionPerformed
+        // TODO add your handling code here:
+        InfoCurso infoCursos = new InfoCurso(usuario, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        infoCursos.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jb_información_c5ActionPerformed
+
+    private void jb_información_c6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c6ActionPerformed
+        // TODO add your handling code here:
+        InfoCurso infoCursos = new InfoCurso(usuario, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        infoCursos.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jb_información_c6ActionPerformed
+
+    private void jcb_lista_pregradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_lista_pregradoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcb_lista_pregradoActionPerformed
+
+    private void jb_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jb_salirActionPerformed
+      
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel contenedor;
     private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
-    private javax.swing.JPanel jPanel2;
+    private MyContainers.PanelRound fondocurso1;
+    private MyContainers.PanelRound fondocurso2;
+    private MyContainers.PanelRound fondocurso3;
+    private MyContainers.PanelRound fondocurso4;
+    private MyContainers.PanelRound fondocurso5;
+    private MyContainers.PanelRound fondocurso6;
+    private javax.swing.JButton jb_información_c1;
+    private javax.swing.JButton jb_información_c2;
+    private javax.swing.JButton jb_información_c3;
+    private javax.swing.JButton jb_información_c4;
+    private javax.swing.JButton jb_información_c5;
+    private javax.swing.JButton jb_información_c6;
     private javax.swing.JButton jb_retroceder;
+    private javax.swing.JButton jb_salir;
+    private javax.swing.JComboBox<String> jcb_lista_pregrado;
+    private javax.swing.JLabel jl_bloque_c1;
+    private javax.swing.JLabel jl_bloque_c2;
+    private javax.swing.JLabel jl_bloque_c3;
+    private javax.swing.JLabel jl_bloque_c4;
+    private javax.swing.JLabel jl_bloque_c5;
+    private javax.swing.JLabel jl_bloque_c6;
+    private javax.swing.JLabel jl_correo_docente_c1;
+    private javax.swing.JLabel jl_correo_docente_c2;
+    private javax.swing.JLabel jl_correo_docente_c3;
+    private javax.swing.JLabel jl_correo_docente_c4;
+    private javax.swing.JLabel jl_correo_docente_c5;
+    private javax.swing.JLabel jl_correo_docente_c6;
     private javax.swing.JLabel jl_cursos_titulo;
+    private javax.swing.JLabel jl_foto_docente_c1;
+    private javax.swing.JLabel jl_foto_docente_c2;
+    private javax.swing.JLabel jl_foto_docente_c3;
+    private javax.swing.JLabel jl_foto_docente_c4;
+    private javax.swing.JLabel jl_foto_docente_c5;
+    private javax.swing.JLabel jl_foto_docente_c6;
+    private javax.swing.JLabel jl_indicador_pregrado;
+    private javax.swing.JLabel jl_nombre_c1;
+    private javax.swing.JLabel jl_nombre_c2;
+    private javax.swing.JLabel jl_nombre_c3;
+    private javax.swing.JLabel jl_nombre_c4;
+    private javax.swing.JLabel jl_nombre_c5;
+    private javax.swing.JLabel jl_nombre_c6;
+    private javax.swing.JLabel jl_nombre_docente_c1;
+    private javax.swing.JLabel jl_nombre_docente_c2;
+    private javax.swing.JLabel jl_nombre_docente_c3;
+    private javax.swing.JLabel jl_nombre_docente_c4;
+    private javax.swing.JLabel jl_nombre_docente_c5;
+    private javax.swing.JLabel jl_nombre_docente_c6;
+    private javax.swing.JLabel jl_titulo_bloque_c1;
+    private javax.swing.JLabel jl_titulo_bloque_c2;
+    private javax.swing.JLabel jl_titulo_bloque_c3;
+    private javax.swing.JLabel jl_titulo_bloque_c4;
+    private javax.swing.JLabel jl_titulo_bloque_c5;
+    private javax.swing.JLabel jl_titulo_bloque_c6;
+    private javax.swing.JPanel jp_ultima_capa;
     private MyContainers.PanelRound panelRound1;
+    private javax.swing.JScrollPane scroll;
     // End of variables declaration//GEN-END:variables
 }

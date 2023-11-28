@@ -1,6 +1,6 @@
 package GUI;
 
-import Funcionamiento.Usuario;
+import Funcionamiento.Estudiante;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -10,7 +10,7 @@ import GUI.MetodoDePago;
 
 public class SaldosYPagos extends JFrame {
     
-    private Usuario usuario;
+    private Estudiante usuario;
     private Inicio ventanaInicio;
     private Tarjeta tarjeta;
     private String valorOriginalMensualidad5;
@@ -35,7 +35,7 @@ public class SaldosYPagos extends JFrame {
         
     }
     
-    public SaldosYPagos(Usuario us, Inicio inicio) {
+    public SaldosYPagos(Estudiante us, Inicio inicio) {
         initComponents();
         this.usuario = us;
         this.ventanaInicio = inicio;
@@ -68,11 +68,11 @@ public class SaldosYPagos extends JFrame {
         valorOriginalMensualidad5 = jmensualidad5.getText();
     }
         
-         public Usuario getUsuario() {
+         public Estudiante getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Estudiante usuario) {
         this.usuario = usuario;
     }
 

@@ -1,6 +1,9 @@
 package Funcionamiento;
 
-public class Usuario {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Estudiante {
 
     private String nombreUsuario;
     private String contrasenha;
@@ -10,14 +13,12 @@ public class Usuario {
     private String fotocheckPequeño;
     private String fotocheckGrande;
     private String QR_Usuario;
+    private List<Curso> cursos;
     private String mensualidad;
     private String codigoCuota;
-
-    public Usuario(){
-        
-    }
-
-    public Usuario(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, String codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario, String mensualidad, String codigoCuota) {
+    
+     
+    public Estudiante(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, String codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario, String mensualidad, String codigoCuota) {
         this.nombreUsuario = nombreUsuario;
         this.contrasenha = contrasenha;
         this.correoUsuario = correoUsuario;
@@ -29,12 +30,18 @@ public class Usuario {
         this.mensualidad = mensualidad;
         this.codigoCuota = codigoCuota;
     }
-
-    public String getCodigoCuota() {
-        return codigoCuota;
-    }
-
-    public void setCodigoCuota(String codigoCuota) {
+    
+    public Estudiante(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, String codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario, List<Curso> cursos, String mensualidad, String codigoCuota) {
+        this.nombreUsuario = nombreUsuario;
+        this.contrasenha = contrasenha;
+        this.correoUsuario = correoUsuario;
+        this.nombreCompleto = nombreCompleto;
+        this.codigoUsuario = codigoUsuario;
+        this.fotocheckPequeño = fotocheckPequeño;
+        this.fotocheckGrande = fotocheckGrande;
+        this.QR_Usuario = QR_Usuario;
+        this.cursos = cursos;
+        this.mensualidad = mensualidad;
         this.codigoCuota = codigoCuota;
     }
 
@@ -93,13 +100,29 @@ public class Usuario {
     public void setFotocheckGrande(String fotocheckGrande) {
         this.fotocheckGrande = fotocheckGrande;
     }
-    
+
     public String getQR_Usuario() {
         return QR_Usuario;
     }
 
     public void setQR_Usuario(String QR_Usuario) {
         this.QR_Usuario = QR_Usuario;
+    }
+
+    public List<Curso> getCursos() {
+        return cursos;
+    }
+
+    public void setCursos(List<Curso> cursos) {
+        this.cursos = cursos;
+    }
+
+    public String getCodigoCuota() {
+        return codigoCuota;
+    }
+
+    public void setCodigoCuota(String codigoCuota) {
+        this.codigoCuota = codigoCuota;
     }
 
     public String getMensualidad() {
@@ -110,22 +133,9 @@ public class Usuario {
         this.mensualidad = mensualidad;
     }
     
-    
+
     @Override
     public String toString() {
-        return "Usuario{" + "nombreUsuario=" + nombreUsuario + ", contrasenha=" + contrasenha + ", correoUsuario=" + correoUsuario + ", nombreCompleto=" + nombreCompleto + ", codigoUsuario=" + codigoUsuario + ", fotocheckPeque\u00f1o=" + fotocheckPequeño + ", fotocheckGrande=" + fotocheckGrande + ", QR_Usuario=" + QR_Usuario + ", Mensualidad=" + mensualidad + '}';
-    }
-    
-    
-    
-    public void confirmar(){
-    }
-    
-    public void agregarUsuario(String nombreUsuario, String contrasenha, String nombreCompleto, double codigoUsuario){
-        
-    }
-    
-    public void cargarArchivo(){
-        
-    }
+        return "Estudiante{" + "nombreUsuario=" + nombreUsuario + ", contrasenha=" + contrasenha + ", correoUsuario=" + correoUsuario + ", nombreCompleto=" + nombreCompleto + ", codigoUsuario=" + codigoUsuario + ", fotocheckPeque\u00f1o=" + fotocheckPequeño + ", fotocheckGrande=" + fotocheckGrande + ", QR_Usuario=" + QR_Usuario + ", cursos=" + cursos + ", codigoCuota=" + codigoCuota + '}';
+    }   
 }

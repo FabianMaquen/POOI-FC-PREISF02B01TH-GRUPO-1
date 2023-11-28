@@ -1,6 +1,6 @@
 package GUI;
 
-import Funcionamiento.Usuario;
+import Funcionamiento.Estudiante;
 import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -9,12 +9,12 @@ import java.util.GregorianCalendar;
 import javax.swing.ImageIcon;
 
 public class Fotocheck extends javax.swing.JFrame implements Runnable {
-    private Usuario usuario;
+    private Estudiante usuario;
     private Inicio ventanaInicio;
     String hora, minutos, segundos;
     Thread hilo; 
 
-    public Fotocheck (Usuario usuario, Inicio inicio) {
+    public Fotocheck (Estudiante usuario, Inicio inicio) {
         initComponents();
         this.usuario = usuario;
         this.ventanaInicio = inicio;
@@ -40,11 +40,11 @@ public class Fotocheck extends javax.swing.JFrame implements Runnable {
         jl_qr_usuario.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(usuario.getQR_Usuario())));
     }
     
-    public Usuario getUsuario() {
+    public Estudiante getEstudiante() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setEstudiante(Estudiante usuario) {
         this.usuario = usuario;
     }
     

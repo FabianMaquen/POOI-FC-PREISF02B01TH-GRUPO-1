@@ -1,9 +1,10 @@
 package GUI;
 
-import Funcionamiento.ListaUsuarios;
-import Funcionamiento.Usuario;
+import Funcionamiento.ListaEstudiantes;
+import Funcionamiento.Estudiante;
 import MyContainers.TextPrompt;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -24,7 +25,6 @@ public class Login extends JFrame {
         
         TextPrompt txtCorreo = new TextPrompt("Username", txtEmail);
         TextPrompt txtContra = new TextPrompt("Password", jp_password_recovery);
-        
     }
 
     /**
@@ -140,6 +140,11 @@ public class Login extends JFrame {
                 botonLoginActionPerformed(evt);
             }
         });
+        botonLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                botonLoginKeyPressed(evt);
+            }
+        });
         ultimaCapa.add(botonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 410, 250, 50));
 
         personaGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoMuñueco.png"))); // NOI18N
@@ -172,6 +177,11 @@ public class Login extends JFrame {
         jp_password_recovery.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jp_password_recoveryActionPerformed(evt);
+            }
+        });
+        jp_password_recovery.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jp_password_recoveryKeyPressed(evt);
             }
         });
         ultimaCapa.add(jp_password_recovery, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 290, 160, 50));
@@ -268,9 +278,9 @@ public class Login extends JFrame {
         String username = txtEmail.getText();
         String contrasena = new String(jp_password_recovery.getPassword());
         
-        ListaUsuarios l_us = new ListaUsuarios();
+        ListaEstudiantes l_us = new ListaEstudiantes();
         
-        for(Usuario us : l_us.getUsuarios()){
+        for(Estudiante us : l_us.getUsuarios()){
             if(us.getNombreUsuario().equals(username) && us.getContrasenha().equals(contrasena)){
                 Inicio ventanaInicio = new Inicio(us);
                 ventanaInicio.setVisible(true);
@@ -327,6 +337,17 @@ public class Login extends JFrame {
         ventanaInicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_botonLoginVisitanteActionPerformed
+
+    private void botonLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_botonLoginKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonLoginKeyPressed
+
+    private void jp_password_recoveryKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jp_password_recoveryKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            botonLoginActionPerformed(null);
+        }
+    }//GEN-LAST:event_jp_password_recoveryKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel aviso;
