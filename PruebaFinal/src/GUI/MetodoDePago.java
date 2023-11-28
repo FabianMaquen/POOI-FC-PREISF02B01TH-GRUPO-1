@@ -8,7 +8,6 @@ import javax.swing.JFrame;
 import GUI.SaldosYPagos;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
 
 public class MetodoDePago extends JFrame {
 
@@ -16,6 +15,7 @@ public class MetodoDePago extends JFrame {
     private Usuario usuario;
     private SaldosYPagos ventanaSaldosYPagos;
     private ListaTarjetas listaTarjetas;
+    private SaldosYPagos saldosYPagos;
  
     public MetodoDePago() {
         initComponents();
@@ -24,26 +24,33 @@ public class MetodoDePago extends JFrame {
         this.listaTarjetas = new ListaTarjetas();
     }
 
-    public MetodoDePago(Tarjeta tar, SaldosYPagos SaldosYPagos, Usuario us) {
+    public MetodoDePago(Tarjeta tar, SaldosYPagos saldosYPagos, Usuario us) {
         initComponents();
         this.usuario = us;
         this.tarjeta = tar;
-        this.ventanaSaldosYPagos = SaldosYPagos;
+        this.ventanaSaldosYPagos = saldosYPagos;
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0, 0, 0));
          this.listaTarjetas = new ListaTarjetas();
     }
 
-    public MetodoDePago(Usuario us, SaldosYPagos SaldosYPagos) {
+    public MetodoDePago(Usuario us, SaldosYPagos saldosYPagos) {
         initComponents();
         this.usuario = us;
-        this.ventanaSaldosYPagos = SaldosYPagos;
+        this.ventanaSaldosYPagos = saldosYPagos;
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0, 0, 0));
  
     }
     
-   
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -221,14 +228,15 @@ public class MetodoDePago extends JFrame {
         // Verificar si la tarjeta está en la lista
         if (this.listaTarjetas.getTarjeta().contains(tarjetaIngresada)) {
             //Aca debería aparecer el aviso de pago exitoso
-            JOptionPane.showMessageDialog(this, "Pago Exitoso.");
-            ventanaSaldosYPagos.setUsuario(usuario);
-            ventanaSaldosYPagos.setVisible(true);
+            PagoExitoso ventanaPagoExitoso = new PagoExitoso(this.usuario, this.ventanaSaldosYPagos);
+            ventanaPagoExitoso.setVisible(true);
             this.setVisible(false);
             
         } else {
             // Aca el de Error 
-            JOptionPane.showMessageDialog(this, "Error.");
+            TransaccionFallida ventanaTransaccionFallida = new TransaccionFallida(usuario, this);
+            ventanaTransaccionFallida.setVisible(true);
+            this.setVisible(false);
         }
 
     }//GEN-LAST:event_botonConfirmarActionPerformed
