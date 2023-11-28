@@ -346,6 +346,10 @@ public class Inicio extends JFrame {
 
     private void jb_saldos_pagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_saldos_pagosActionPerformed
         // TODO add your handling code here:
+        SaldosYPagos ventanaSaldosYPagos = new SaldosYPagos(usuario,this);
+        ventanaSaldosYPagos.setVisible(true);
+        this.setVisible(false); 
+        
     }//GEN-LAST:event_jb_saldos_pagosActionPerformed
 
     private void jb_cursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_cursosActionPerformed

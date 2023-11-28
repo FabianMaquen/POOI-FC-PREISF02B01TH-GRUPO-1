@@ -1,5 +1,6 @@
 package Funcionamiento;
 
+import java.awt.HeadlessException;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -35,8 +36,8 @@ public class ListaUsuarios {
         }
     }
     
-    public void registrarCliente(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, String codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario) {
-        Usuario us = new Usuario(nombreUsuario,contrasenha,correoUsuario,nombreCompleto,codigoUsuario,fotocheckPequeño,fotocheckGrande,QR_Usuario);
+    public void registrarCliente(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, String codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario, String mensualidad, String codigoCuota) {
+        Usuario us = new Usuario(nombreUsuario,contrasenha,correoUsuario,nombreCompleto,codigoUsuario,fotocheckPequeño,fotocheckGrande,QR_Usuario,mensualidad,codigoCuota);
         adicionar(us);
         mostrar();
     }
@@ -63,8 +64,10 @@ public class ListaUsuarios {
         String codigoUsuario = st.nextToken().trim();
         String fotocheckPequeño = st.nextToken().trim();       
         String fotocheckGrande = st.nextToken().trim();
-        String QR_Usuario = st.nextToken().trim();         
-        Usuario us = new Usuario(nombreUsuario,contrasenha,correoUsuario,nombreCompleto,codigoUsuario,fotocheckPequeño,fotocheckGrande,QR_Usuario);
+        String QR_Usuario = st.nextToken().trim();
+        String mensualidad = st.nextToken().trim();
+        String codigoCuota = st.nextToken().trim();
+        Usuario us = new Usuario(nombreUsuario,contrasenha,correoUsuario,nombreCompleto,codigoUsuario,fotocheckPequeño,fotocheckGrande,QR_Usuario, mensualidad, codigoCuota);
         adicionar(us);
     }
     
@@ -78,7 +81,7 @@ public class ListaUsuarios {
             readFromInputStream(inputStream);
         } else
             JOptionPane.showMessageDialog(null,"El archivo txt no existe");
-        } catch (Exception x) {
+        } catch (HeadlessException | IOException x) {
             JOptionPane.showMessageDialog(null, "Se produjo un error= " + x);
         }
     }
