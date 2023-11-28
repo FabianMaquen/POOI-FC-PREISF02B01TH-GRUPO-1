@@ -1,8 +1,8 @@
 package GUI;
 
 import MyContainers.TextPrompt;
-import Funcionamiento.ListaUsuarios;
-import Funcionamiento.Usuario;
+import Funcionamiento.ListaEstudiantes;
+import Funcionamiento.Estudiante;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -168,9 +168,9 @@ public class RecuperarClave extends JFrame {
     private void botonCustomLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCustomLogin1ActionPerformed
         // TODO add your handling code here:
         String correo = txtUsuario.getText();
-        ListaUsuarios l_us = new ListaUsuarios();
+        ListaEstudiantes l_us = new ListaEstudiantes();
 
-        for (Usuario us : l_us.getUsuarios()) {
+        for (Estudiante us : l_us.getUsuarios()) {
             this.CorreoValido.setVisible(false);
             this.CorreoNoValido.setVisible(false);
             

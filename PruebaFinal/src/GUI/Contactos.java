@@ -1,11 +1,11 @@
 package GUI;
 
 import javax.swing.JFrame;
-import Funcionamiento.Usuario;
+import Funcionamiento.Estudiante;
 import java.awt.Color;
 
 public class Contactos extends JFrame {
-    private Usuario usuario;
+    private Estudiante usuario;
     private Inicio ventanaInicio;
 
     public Contactos() {
@@ -14,7 +14,7 @@ public class Contactos extends JFrame {
         setBackground(new Color(0, 0,0, 0));
     }
     
-    public Contactos(Usuario us, Inicio inicio) {
+    public Contactos(Estudiante us, Inicio inicio) {
         initComponents();
         this.usuario = us;
         this.ventanaInicio = inicio;

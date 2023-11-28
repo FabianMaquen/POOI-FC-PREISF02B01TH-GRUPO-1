@@ -1,0 +1,18 @@
+Administración para los negocios,FC-PREENI01H01T(H),GARCIA OTERO DIANA GRACIELA,diana.garciao@usil.pe,"",3,C2,C,101
+Cálculo de una variable,CN-PRECIV02A01T(H),BRAVO QUISPE CARLOS JUAN,carlos.bravo@usil.pe,/images/docenteBravo_Calculo.png,4,C2,D,301
+Cálculo de una variable,FC-PREIYC02B01M(H),LUIS ALBERTO DIAZ NUNJA,luis.diaz@usil.pe,"",4,C2,D,301
+Cálculo de una variable,FC-PREIYC02B01M(H),LUIS ALBERTO DIAZ NUNJA,luis.diaz@usil.pe,"",4,C1,X,103
+English I,FC-PREHOT01K01M,LEON LECCA KATIA MARLENI,katia.leon@usil.pe,"",5,C2,B,301
+English III,FC-VIREMP03D01M,DAVILA SILVESTRE SILVIA INES,silvia.davila@usil.pe,/images/docenteSilvia_InglesIII.png,5,C1,X,134
+Ingeniería de Software I,FC-PREISF03C01T(H),ACOSTA TICSE DEISY,deisy.acosta@usil.pe,"",2,C2,A,705
+Lenguaje y Comunicación II,FC-VIREMP02D01T,ANCHANTE ARIAS JIM ALEXANDER,jim.anchante@usil.pe,/images/docenteJim_LenguajeII.png,4,C1,X,153
+Lenguaje y Comunicación II,FC-VIRIAM02C01M,CHAVEZ DURAN ELIZABETH,elizabeth.chavez@usil.pe,"",4,C1,X,166
+Lenguaje y Comunicación II,FC-VIRPSC02C01T,CUMPA VALENCIA JOSE MOISES,jose.cumpav@usil.pe,"",4,C1,X,157
+Matemática Discreta,FC-PREISF02C01M,BETETA SALAS MARISEL ROCIO,marisel.beteta@epg.usil.pe, "",2,C2,A,506
+Matemática Discreta,FC-PREISF02C01M(H),TORRES CESPEDES ISABEL ZORAIDA,isabel.torres@usil.pe,/images/docenteAnonimo.png,2,C1/C2,F/A,201/505
+Matemática Discreta,FC-PREISF02D01M,TORRES CESPEDES ISABEL ZORAIDA,isabel.torres@usil.pe,/images/docenteAnonimo.png,2,C2,A,705
+Principios de Economía,FC-PREPSC02C01M(H),PELAEZ TEJADA ALESSANDRA,alessandra.pelaez@usil.pe,/images/docentePelaez_Economia.png,3,C2/C2,D/D,202/506
+Principios de Economía,FC-VIREMP02K01T,VALDEZ BARBOZA ALBERTO,alberto.valdez@usil.pe,"",3,C1,X,147
+Programación Orientada a Objetos I,FC-PREISF02B01T(H),ALFARO GUTIERREZ GIANNY ROMIE,gianny.alfaro@usil.pe,/images/docenteGianny_POOI.png,4,C2,A,506
+Realidad Nacional y Globalización,FC-PREENI02A01T(H),JOSE HELI VILLANUEVA BARRON,jose.villanuevab@usil.pe,"",3,C2,C,104
+Realidad Nacional y Globalización,FC-PREENI02F01M(H),RIVERA RUA CARLOS,carlos.riverar@usil.pe,"",3,C2,C,104

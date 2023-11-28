@@ -2,7 +2,7 @@ package GUI;
 
 import Funcionamiento.ListaTarjetas;
 import Funcionamiento.Tarjeta;
-import Funcionamiento.Usuario;
+import Funcionamiento.Estudiante;
 import java.awt.Color;
 import javax.swing.JFrame;
 import GUI.SaldosYPagos;
@@ -12,7 +12,7 @@ import java.util.List;
 public class MetodoDePago extends JFrame {
 
     private Tarjeta tarjeta;
-    private Usuario usuario;
+    private Estudiante usuario;
     private SaldosYPagos ventanaSaldosYPagos;
     private ListaTarjetas listaTarjetas;
     private SaldosYPagos saldosYPagos;
@@ -24,7 +24,7 @@ public class MetodoDePago extends JFrame {
         this.listaTarjetas = new ListaTarjetas();
     }
 
-    public MetodoDePago(Tarjeta tar, SaldosYPagos saldosYPagos, Usuario us) {
+    public MetodoDePago(Tarjeta tar, SaldosYPagos saldosYPagos, Estudiante us) {
         initComponents();
         this.usuario = us;
         this.tarjeta = tar;
@@ -34,7 +34,7 @@ public class MetodoDePago extends JFrame {
          this.listaTarjetas = new ListaTarjetas();
     }
 
-    public MetodoDePago(Usuario us, SaldosYPagos saldosYPagos) {
+    public MetodoDePago(Estudiante us, SaldosYPagos saldosYPagos) {
         initComponents();
         this.usuario = us;
         this.ventanaSaldosYPagos = saldosYPagos;
@@ -43,11 +43,11 @@ public class MetodoDePago extends JFrame {
  
     }
     
-    public Usuario getUsuario() {
+    public Estudiante getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Estudiante usuario) {
         this.usuario = usuario;
     }
     
