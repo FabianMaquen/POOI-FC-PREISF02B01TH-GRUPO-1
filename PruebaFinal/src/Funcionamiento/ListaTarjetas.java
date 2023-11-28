@@ -77,7 +77,7 @@ public ListaTarjetas(){
         } else
             JOptionPane.showMessageDialog(null,"El archivo txt no existe");
         } catch (Exception x) {
-            JOptionPane.showMessageDialog(null, "Se produjo un error= " + x);
+            JOptionPane.showMessageDialog(null, "");
         }
     }
 }

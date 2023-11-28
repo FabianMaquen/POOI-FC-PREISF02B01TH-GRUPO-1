@@ -5,41 +5,42 @@ import Funcionamiento.Tarjeta;
 import Funcionamiento.Usuario;
 import java.awt.Color;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import GUI.SaldosYPagos;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 public class MetodoDePago extends JFrame {
-    
+
     private Tarjeta tarjeta;
     private Usuario usuario;
     private SaldosYPagos ventanaSaldosYPagos;
     private ListaTarjetas listaTarjetas;
-    private SaldosYPagos saldosYPagos;
-    
+ 
     public MetodoDePago() {
         initComponents();
         this.setLocationRelativeTo(null);
-        setBackground(new Color(0, 0,0, 0));
+        setBackground(new Color(0, 0, 0, 0));
         this.listaTarjetas = new ListaTarjetas();
     }
-    
-    public MetodoDePago(Tarjeta tar, SaldosYPagos SaldosYPagos,Usuario us) {
+
+    public MetodoDePago(Tarjeta tar, SaldosYPagos SaldosYPagos, Usuario us) {
         initComponents();
         this.usuario = us;
         this.tarjeta = tar;
         this.ventanaSaldosYPagos = SaldosYPagos;
         this.setLocationRelativeTo(null);
-        setBackground(new Color(0, 0,0, 0));
-        this.listaTarjetas = new ListaTarjetas();
-    
+        setBackground(new Color(0, 0, 0, 0));
+         this.listaTarjetas = new ListaTarjetas();
     }
-    
+
     public MetodoDePago(Usuario us, SaldosYPagos SaldosYPagos) {
         initComponents();
         this.usuario = us;
         this.ventanaSaldosYPagos = SaldosYPagos;
         this.setLocationRelativeTo(null);
-        setBackground(new Color(0, 0,0, 0));
+        setBackground(new Color(0, 0, 0, 0));
+ 
     }
     
    
@@ -68,6 +69,9 @@ public class MetodoDePago extends JFrame {
         jCVV = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         botonConfirmar = new MyContainers.BotonCustomLogin();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         fondoCurveadoDegradado1 = new MyContainers.FondoCurveadoDegradado();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -153,7 +157,16 @@ public class MetodoDePago extends JFrame {
                 botonConfirmarActionPerformed(evt);
             }
         });
-        panelRound1.add(botonConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, -1, -1));
+        panelRound1.add(botonConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, -1, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/visalogo (1).png"))); // NOI18N
+        panelRound1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 295, -1, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mastercard (1) (1).png"))); // NOI18N
+        panelRound1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 50, 40));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo-American-Express (1).png"))); // NOI18N
+        panelRound1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 50, 40));
 
         jPanel2.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 440, 390));
 
@@ -230,6 +243,9 @@ public class MetodoDePago extends JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jNombreTarjeta;
     private javax.swing.JTextField jNumeroTarjeta;
     private javax.swing.JPanel jPanel2;

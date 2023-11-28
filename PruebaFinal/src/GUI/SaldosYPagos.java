@@ -44,6 +44,10 @@ public class SaldosYPagos extends JFrame {
         setUpUsuario();
         jLabel2.setVisible(false);
         panelRound4.setVisible(false);
+        jmensualidad5.setText(valorOriginalMensualidad5);
+         fondoAviso.setVisible(false);
+         jLabelAviso.setVisible(false);
+         jLabelMensaje.setVisible(false);
         
         jCheckBoxPagar.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +94,9 @@ public class SaldosYPagos extends JFrame {
         jb_retroceder = new javax.swing.JButton();
         panelRound1 = new MyContainers.PanelRound();
         jLabel3 = new javax.swing.JLabel();
+        jLabelAviso = new javax.swing.JLabel();
+        jLabelMensaje = new javax.swing.JLabel();
+        fondoAviso = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         panelRound4 = new MyContainers.PanelRound();
@@ -183,6 +190,19 @@ public class SaldosYPagos extends JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 102));
         jLabel3.setText("PAGOS");
         panelRound1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 100, 20));
+
+        jLabelAviso.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabelAviso.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelAviso.setText("AVISO");
+        panelRound1.add(jLabelAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, -1, -1));
+
+        jLabelMensaje.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabelMensaje.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelMensaje.setText("SELECCIONE UNA CUOTA");
+        panelRound1.add(jLabelMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
+
+        fondoAviso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoAviso.png"))); // NOI18N
+        panelRound1.add(fondoAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 280, 210));
 
         jScrollPane1.setBorder(null);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -412,8 +432,14 @@ public class SaldosYPagos extends JFrame {
     private void jCheckBoxPagarActionPerformed(java.awt.event.ActionEvent evt) {                                              
     if (jCheckBoxPagar.isSelected()) {
         jmensualidad5.setText(jmensualidad7.getText());
+         fondoAviso.setVisible(false);
+         jLabelAviso.setVisible(false);
+         jLabelMensaje.setVisible(false);
     } else {
         jmensualidad5.setText(valorOriginalMensualidad5);
+         fondoAviso.setVisible(true);
+         jLabelAviso.setVisible(true);
+         jLabelMensaje.setVisible(true);
     }
 } 
     
@@ -429,8 +455,11 @@ public class SaldosYPagos extends JFrame {
         jCheckBoxPagar.setVisible(false);
         jLabel2.setVisible(true);
         panelRound4.setVisible(true);
+        jmensualidad5.setText(valorOriginalMensualidad5);
     } else {
-         JOptionPane.showMessageDialog(this, "Seleccione la cuota.");
+         fondoAviso.setVisible(true);
+         jLabelAviso.setVisible(true);
+         jLabelMensaje.setVisible(true);
          jmensualidad5.setText(valorOriginalMensualidad5);
     }
     }//GEN-LAST:event_botonPagarActionPerformed
@@ -473,6 +502,7 @@ public class SaldosYPagos extends JFrame {
     private javax.swing.JLabel cuota3;
     private javax.swing.JLabel cuota4;
     private javax.swing.JLabel cuota5;
+    private javax.swing.JLabel fondoAviso;
     private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
     private javax.swing.JCheckBox jCheckBoxPagar;
     private javax.swing.JLabel jLabel12;
@@ -486,6 +516,8 @@ public class SaldosYPagos extends JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelAviso;
+    private javax.swing.JLabel jLabelMensaje;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
