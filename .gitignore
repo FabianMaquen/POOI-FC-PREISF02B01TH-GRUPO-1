@@ -15,7 +15,9 @@
 *.log
 *private.xml
 *private.properties
-PruebaFinal/build/classes/GUI/*.form
+PruebaFinal/build/*
+PruebaFinal/nbproject/private/*
+
 
 # Package files
 *.jar
@@ -30,3 +32,4 @@ PruebaFinal/build/classes/GUI/*.form
 *.swp
 *~.nib
 *.tmp
+/PruebaFinal/dist/
