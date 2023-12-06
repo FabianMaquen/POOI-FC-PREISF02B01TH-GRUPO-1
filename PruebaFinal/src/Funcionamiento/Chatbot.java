@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.reflect.Field;
 
-public class ChatBot extends JFrame implements ActionListener {
+public class Chatbot extends JFrame implements ActionListener {
     JScrollPane sp;
     static JTextArea area = new JTextArea();
     JTextField field = new JTextField();
@@ -23,7 +23,7 @@ public class ChatBot extends JFrame implements ActionListener {
     private final int oportunidades = 3; // Número máximo de intentos permitidos
 
 
-    public ChatBot(String title) {
+    public Chatbot(String title) {
         super(title);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

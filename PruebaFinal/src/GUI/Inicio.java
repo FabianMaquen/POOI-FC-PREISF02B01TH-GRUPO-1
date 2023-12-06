@@ -331,7 +331,7 @@ public class Inicio extends JFrame {
     }//GEN-LAST:event_jb_salirActionPerformed
 
     private void jb_chatbotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_chatbotActionPerformed
-        ChatBot cb = new ChatBot(""); // Crea una instancia de la clase ChatBot
+        Chatbot cb = new Chatbot(""); // Crea una instancia de la clase ChatBot
         cb.setSize(460, 620);
         cb.setLocationRelativeTo(null);
         cb.setVisible(true);
