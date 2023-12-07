@@ -170,11 +170,11 @@ public class RecuperarClave extends JFrame {
         String correo = txtUsuario.getText();
         ListaEstudiantes l_us = new ListaEstudiantes();
 
-        for (Estudiante us : l_us.getUsuarios()) {
+        for (Estudiante us : l_us.getEstudiantes()) {
             this.CorreoValido.setVisible(false);
             this.CorreoNoValido.setVisible(false);
             
-            if (us.getCorreoUsuario().equals(correo)) {
+            if (us.getCorreoEstudiante().equals(correo)) {
                 this.CorreoValido.setVisible(true);
                 break;
             } else{

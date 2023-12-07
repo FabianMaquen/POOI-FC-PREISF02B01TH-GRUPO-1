@@ -32,7 +32,7 @@ public class PagoExitoso extends JFrame {
         jl_texto1 = new javax.swing.JLabel();
         jl_texto2 = new javax.swing.JLabel();
         jl_check_icon = new javax.swing.JLabel();
-        botonHecho = new MyContainers.BotonCustomLogin();
+        botonVolver = new MyContainers.BotonCustomLogin();
         logoUsil = new javax.swing.JLabel();
         fondoCurveadoDegradado1 = new MyContainers.FondoCurveadoDegradado();
 
@@ -43,11 +43,11 @@ public class PagoExitoso extends JFrame {
         UltimaCapa.setOpaque(false);
         UltimaCapa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jl_textoFondo.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jl_textoFondo.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
         jl_textoFondo.setForeground(new java.awt.Color(255, 255, 255));
         jl_textoFondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl_textoFondo.setText("Gracias!");
-        UltimaCapa.add(jl_textoFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 170, -1, -1));
+        UltimaCapa.add(jl_textoFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 140, -1));
 
         panelBlancoCurva.setBackground(new java.awt.Color(232, 235, 241));
         panelBlancoCurva.setRoundBottomLeft(50);
@@ -84,19 +84,20 @@ public class PagoExitoso extends JFrame {
         jl_texto2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jl_texto2.setInheritsPopupMenu(false);
         jl_texto2.setVerifyInputWhenFocusTarget(false);
-        panelBlancoCurva.add(jl_texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 260, 20));
+        panelBlancoCurva.add(jl_texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 320, 20));
 
         jl_check_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CheckIcon.png"))); // NOI18N
-        panelBlancoCurva.add(jl_check_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
+        panelBlancoCurva.add(jl_check_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 30, -1, -1));
 
-        botonHecho.setText("Hecho");
-        botonHecho.setFocusable(false);
-        botonHecho.addActionListener(new java.awt.event.ActionListener() {
+        botonVolver.setText("Hecho");
+        botonVolver.setFocusable(false);
+        botonVolver.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        botonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonHechoActionPerformed(evt);
+                botonVolverActionPerformed(evt);
             }
         });
-        panelBlancoCurva.add(botonHecho, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 200, -1, -1));
+        panelBlancoCurva.add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 100, 50));
 
         UltimaCapa.add(panelBlancoCurva, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 440, 284));
 
@@ -105,18 +106,7 @@ public class PagoExitoso extends JFrame {
 
         fondoCurveadoDegradado1.setRoundTopLeft(50);
         fondoCurveadoDegradado1.setRoundTopRight(50);
-
-        javax.swing.GroupLayout fondoCurveadoDegradado1Layout = new javax.swing.GroupLayout(fondoCurveadoDegradado1);
-        fondoCurveadoDegradado1.setLayout(fondoCurveadoDegradado1Layout);
-        fondoCurveadoDegradado1Layout.setHorizontalGroup(
-            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
-        fondoCurveadoDegradado1Layout.setVerticalGroup(
-            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 340, Short.MAX_VALUE)
-        );
-
+        fondoCurveadoDegradado1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         UltimaCapa.add(fondoCurveadoDegradado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 340));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -133,16 +123,16 @@ public class PagoExitoso extends JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonHechoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHechoActionPerformed
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
         // TODO add your handling code here:
         //ventanaSaldosYPagos.setUsuario(usuario);
         ventanaSaldosYPagos.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_botonHechoActionPerformed
+    }//GEN-LAST:event_botonVolverActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel UltimaCapa;
-    private MyContainers.BotonCustomLogin botonHecho;
+    private MyContainers.BotonCustomLogin botonVolver;
     private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
     private javax.swing.JLabel jl_check_icon;
     private javax.swing.JLabel jl_resultadoPago;

@@ -26,8 +26,8 @@ public class TransaccionFallida extends JFrame {
     private void initComponents() {
 
         UltimaCapa = new javax.swing.JPanel();
-        jl_textoFondo1 = new javax.swing.JLabel();
         jl_textoFondo2 = new javax.swing.JLabel();
+        jl_textoFondo1 = new javax.swing.JLabel();
         panelBlancoCurva = new MyContainers.PanelRound();
         jl_resultadoPago = new javax.swing.JLabel();
         jl_texto1 = new javax.swing.JLabel();
@@ -43,17 +43,17 @@ public class TransaccionFallida extends JFrame {
         UltimaCapa.setOpaque(false);
         UltimaCapa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jl_textoFondo1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jl_textoFondo1.setForeground(new java.awt.Color(255, 255, 255));
-        jl_textoFondo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jl_textoFondo1.setText("Hubo un error con los datos");
-        UltimaCapa.add(jl_textoFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, -1, -1));
-
-        jl_textoFondo2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jl_textoFondo2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jl_textoFondo2.setForeground(new java.awt.Color(255, 255, 255));
         jl_textoFondo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl_textoFondo2.setText("ingresados");
-        UltimaCapa.add(jl_textoFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
+        UltimaCapa.add(jl_textoFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 440, -1));
+
+        jl_textoFondo1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jl_textoFondo1.setForeground(new java.awt.Color(255, 255, 255));
+        jl_textoFondo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_textoFondo1.setText("Hubo un error con los datos");
+        UltimaCapa.add(jl_textoFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 440, -1));
 
         panelBlancoCurva.setBackground(new java.awt.Color(232, 235, 241));
         panelBlancoCurva.setRoundBottomLeft(50);
@@ -82,16 +82,17 @@ public class TransaccionFallida extends JFrame {
         panelBlancoCurva.add(jl_texto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 144, 260, 20));
 
         jl_check_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EquisIcon.png"))); // NOI18N
-        panelBlancoCurva.add(jl_check_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
+        panelBlancoCurva.add(jl_check_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 30, -1, -1));
 
         botonVolver.setText("Volver");
         botonVolver.setFocusable(false);
+        botonVolver.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonVolverActionPerformed(evt);
             }
         });
-        panelBlancoCurva.add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 200, -1, -1));
+        panelBlancoCurva.add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 100, 50));
 
         UltimaCapa.add(panelBlancoCurva, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 440, 284));
 
@@ -100,18 +101,7 @@ public class TransaccionFallida extends JFrame {
 
         fondoCurveadoDegradado1.setRoundTopLeft(50);
         fondoCurveadoDegradado1.setRoundTopRight(50);
-
-        javax.swing.GroupLayout fondoCurveadoDegradado1Layout = new javax.swing.GroupLayout(fondoCurveadoDegradado1);
-        fondoCurveadoDegradado1.setLayout(fondoCurveadoDegradado1Layout);
-        fondoCurveadoDegradado1Layout.setHorizontalGroup(
-            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
-        fondoCurveadoDegradado1Layout.setVerticalGroup(
-            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 340, Short.MAX_VALUE)
-        );
-
+        fondoCurveadoDegradado1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         UltimaCapa.add(fondoCurveadoDegradado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 340));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

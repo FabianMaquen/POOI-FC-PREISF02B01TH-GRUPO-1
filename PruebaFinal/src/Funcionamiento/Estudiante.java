@@ -1,42 +1,40 @@
 package Funcionamiento;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Estudiante {
 
-    private String nombreUsuario;
+    private String nombreEstudiante;
     private String contrasenha;
-    private String correoUsuario;
+    private String correoEstudiante;
     private String nombreCompleto;
-    private String codigoUsuario;
+    private String codigoEstudiante;
     private String fotocheckPequeño;
     private String fotocheckGrande;
     private String QR_Usuario;
     private List<Curso> cursos;
     private String mensualidad;
     private String codigoCuota;
-    
-     
-    public Estudiante(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, String codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario, String mensualidad, String codigoCuota) {
-        this.nombreUsuario = nombreUsuario;
+
+    public Estudiante(String nombreEstudiante, String contrasenha, String correoEstudiante, String nombreCompleto, String codigoEstudiante, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario, String mensualidad, String codigoCuota) {
+        this.nombreEstudiante = nombreEstudiante;
         this.contrasenha = contrasenha;
-        this.correoUsuario = correoUsuario;
+        this.correoEstudiante = correoEstudiante;
         this.nombreCompleto = nombreCompleto;
-        this.codigoUsuario = codigoUsuario;
+        this.codigoEstudiante = codigoEstudiante;
         this.fotocheckPequeño = fotocheckPequeño;
         this.fotocheckGrande = fotocheckGrande;
         this.QR_Usuario = QR_Usuario;
         this.mensualidad = mensualidad;
         this.codigoCuota = codigoCuota;
     }
-    
-    public Estudiante(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, String codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario, List<Curso> cursos, String mensualidad, String codigoCuota) {
-        this.nombreUsuario = nombreUsuario;
+
+    public Estudiante(String nombreEstudiante, String contrasenha, String correoEstudiante, String nombreCompleto, String codigoEstudiante, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario, List<Curso> cursos, String mensualidad, String codigoCuota) {
+        this.nombreEstudiante = nombreEstudiante;
         this.contrasenha = contrasenha;
-        this.correoUsuario = correoUsuario;
+        this.correoEstudiante = correoEstudiante;
         this.nombreCompleto = nombreCompleto;
-        this.codigoUsuario = codigoUsuario;
+        this.codigoEstudiante = codigoEstudiante;
         this.fotocheckPequeño = fotocheckPequeño;
         this.fotocheckGrande = fotocheckGrande;
         this.QR_Usuario = QR_Usuario;
@@ -45,12 +43,12 @@ public class Estudiante {
         this.codigoCuota = codigoCuota;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public String getNombreEstudiante() {
+        return nombreEstudiante;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+    public void setNombreEstudiante(String nombreEstudiante) {
+        this.nombreEstudiante = nombreEstudiante;
     }
 
     public String getContrasenha() {
@@ -61,12 +59,12 @@ public class Estudiante {
         this.contrasenha = contrasenha;
     }
 
-    public String getCorreoUsuario() {
-        return correoUsuario;
+    public String getCorreoEstudiante() {
+        return correoEstudiante;
     }
 
-    public void setCorreoUsuario(String correoUsuario) {
-        this.correoUsuario = correoUsuario;
+    public void setCorreoEstudiante(String correoEstudiante) {
+        this.correoEstudiante = correoEstudiante;
     }
 
     public String getNombreCompleto() {
@@ -77,13 +75,14 @@ public class Estudiante {
         this.nombreCompleto = nombreCompleto;
     }
 
-    public String getCodigoUsuario() {
-        return codigoUsuario;
+    public String getCodigoEstudiante() {
+        return codigoEstudiante;
     }
 
-    public void setCodigoUsuario(String codigoUsuario) {
-        this.codigoUsuario = codigoUsuario;
+    public void setCodigoEstudiante(String codigoEstudiante) {
+        this.codigoEstudiante = codigoEstudiante;
     }
+
 
     public String getFotocheckPequeño() {
         return fotocheckPequeño;
@@ -132,10 +131,9 @@ public class Estudiante {
     public void setMensualidad(String mensualidad) {
         this.mensualidad = mensualidad;
     }
-    
 
     @Override
     public String toString() {
-        return "Estudiante{" + "nombreUsuario=" + nombreUsuario + ", contrasenha=" + contrasenha + ", correoUsuario=" + correoUsuario + ", nombreCompleto=" + nombreCompleto + ", codigoUsuario=" + codigoUsuario + ", fotocheckPeque\u00f1o=" + fotocheckPequeño + ", fotocheckGrande=" + fotocheckGrande + ", QR_Usuario=" + QR_Usuario + ", cursos=" + cursos + ", codigoCuota=" + codigoCuota + '}';
-    }   
+        return "Estudiante{" + "nombreEstudiante=" + nombreEstudiante + ", contrasenha=" + contrasenha + ", correoEstudiante=" + correoEstudiante + ", nombreCompleto=" + nombreCompleto + ", codigoEstudiante=" + codigoEstudiante + ", fotocheckPeque\u00f1o=" + fotocheckPequeño + ", fotocheckGrande=" + fotocheckGrande + ", QR_Usuario=" + QR_Usuario + ", cursos=" + cursos + ", mensualidad=" + mensualidad + ", codigoCuota=" + codigoCuota + '}';
+    }
 }

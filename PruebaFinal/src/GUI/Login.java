@@ -278,11 +278,11 @@ public class Login extends JFrame {
         String username = txtEmail.getText();
         String contrasena = new String(jp_password_recovery.getPassword());
         
-        ListaEstudiantes l_us = new ListaEstudiantes();
+        ListaEstudiantes l_es = new ListaEstudiantes();
         
-        for(Estudiante us : l_us.getUsuarios()){
-            if(us.getNombreUsuario().equals(username) && us.getContrasenha().equals(contrasena)){
-                Inicio ventanaInicio = new Inicio(us);
+        for(Estudiante es : l_es.getEstudiantes()){
+            if(es.getNombreEstudiante().equals(username) && es.getContrasenha().equals(contrasena)){
+                Inicio ventanaInicio = new Inicio(es);
                 ventanaInicio.setVisible(true);
                 this.setVisible(false);     
             } else {
@@ -293,6 +293,7 @@ public class Login extends JFrame {
                 this.labelUsuario.setVisible(true);
                 this.labelNota.setVisible(true);
                 this.salirAviso.setVisible(true);
+                
                 this.jb_salir.setVisible(false);
                 this.botonVerContraseña.setVisible(false);
                 this.personaGUI.setVisible(false);
@@ -327,9 +328,20 @@ public class Login extends JFrame {
 
     private void salirAvisoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirAvisoActionPerformed
         // TODO add your handling code here:
-        Login ventanaLogin = new Login();
-        ventanaLogin.setVisible(true);
-        this.setVisible(false);
+        this.aviso.setVisible(false);
+        this.fondoAviso.setVisible(false);
+        this.labelMayus.setVisible(false);
+        this.labelUsuario.setVisible(false);
+        this.labelNota.setVisible(false);
+        this.salirAviso.setVisible(false);
+        
+        this.jb_salir.setVisible(true);
+        this.botonVerContraseña.setVisible(true);
+        this.personaGUI.setVisible(true);
+        this.txtEmail.setVisible(true);
+        this.candadoGUI.setVisible(true);
+        this.jp_password_recovery.setVisible(true);
+        this.botonOlvidaContra.setVisible(true);
     }//GEN-LAST:event_salirAvisoActionPerformed
 
     private void botonLoginVisitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginVisitanteActionPerformed

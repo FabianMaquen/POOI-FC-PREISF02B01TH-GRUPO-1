@@ -5,7 +5,7 @@ import Funcionamiento.Estudiante;
 import java.awt.Color;
 
 public class Contactos extends JFrame {
-    private Estudiante usuario;
+    private Estudiante estudiante;
     private Inicio ventanaInicio;
 
     public Contactos() {
@@ -14,9 +14,9 @@ public class Contactos extends JFrame {
         setBackground(new Color(0, 0,0, 0));
     }
     
-    public Contactos(Estudiante us, Inicio inicio) {
+    public Contactos(Estudiante es, Inicio inicio) {
         initComponents();
-        this.usuario = us;
+        this.estudiante = es;
         this.ventanaInicio = inicio;
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0,0, 0));
@@ -101,7 +101,7 @@ public class Contactos extends JFrame {
         blancoCurva.setRoundTopRight(80);
         blancoCurva.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelRound3.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound3.setBackground(new java.awt.Color(196, 205, 219));
         panelRound3.setRoundBottomLeft(20);
         panelRound3.setRoundBottomRight(20);
         panelRound3.setRoundTopLeft(20);
@@ -121,7 +121,7 @@ public class Contactos extends JFrame {
 
         blancoCurva.add(panelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 192, 88));
 
-        panelRound4.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound4.setBackground(new java.awt.Color(196, 205, 219));
         panelRound4.setRoundBottomLeft(20);
         panelRound4.setRoundBottomRight(20);
         panelRound4.setRoundTopLeft(20);
@@ -141,7 +141,7 @@ public class Contactos extends JFrame {
 
         blancoCurva.add(panelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 30, 200, 88));
 
-        panelRound6.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound6.setBackground(new java.awt.Color(196, 205, 219));
         panelRound6.setRoundBottomLeft(20);
         panelRound6.setRoundBottomRight(20);
         panelRound6.setRoundTopLeft(20);
@@ -166,7 +166,7 @@ public class Contactos extends JFrame {
 
         blancoCurva.add(panelRound6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 193, 88));
 
-        panelRound7.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound7.setBackground(new java.awt.Color(196, 205, 219));
         panelRound7.setRoundBottomLeft(20);
         panelRound7.setRoundBottomRight(20);
         panelRound7.setRoundTopLeft(20);
@@ -252,7 +252,7 @@ public class Contactos extends JFrame {
         n19.setAlignmentX(0.5F);
         blancoCurva.add(n19, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 436, -1, -1));
 
-        panelRound8.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound8.setBackground(new java.awt.Color(196, 205, 219));
         panelRound8.setRoundBottomLeft(20);
         panelRound8.setRoundBottomRight(20);
         panelRound8.setRoundTopLeft(20);
@@ -277,7 +277,7 @@ public class Contactos extends JFrame {
 
         blancoCurva.add(panelRound8, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 250, 200, 88));
 
-        panelRound10.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound10.setBackground(new java.awt.Color(196, 205, 219));
         panelRound10.setRoundBottomLeft(20);
         panelRound10.setRoundBottomRight(20);
         panelRound10.setRoundTopLeft(20);
@@ -337,7 +337,7 @@ public class Contactos extends JFrame {
 
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
         // Crea una nueva instancia de Inicio con los datos originales
-        ventanaInicio.setUsuario(usuario);
+        ventanaInicio.setEstudiante(estudiante);
         ventanaInicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_retrocederActionPerformed

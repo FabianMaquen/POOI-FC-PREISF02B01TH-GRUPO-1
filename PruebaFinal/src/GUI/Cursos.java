@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class Cursos extends JFrame {
-    private Estudiante usuario;
+    private Estudiante estudiante;
     private Inicio ventanaInicio;
     private List<Curso> cursos;
     private String nombreCurso;
@@ -25,9 +25,9 @@ public class Cursos extends JFrame {
         setBackground(new Color(0, 0,0, 0));
     }
     
-    public Cursos(Estudiante us, Inicio inicio, List<Curso> cursos) {
+    public Cursos(Estudiante es, Inicio inicio, List<Curso> cursos) {
         initComponents();
-        this.usuario = us;
+        this.estudiante = es;
         this.ventanaInicio = inicio;
         this.cursos = cursos;
         this.setLocationRelativeTo(null);
@@ -552,15 +552,15 @@ public class Cursos extends JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    public void setUsuario(Estudiante us){
-        this.usuario = us;
+    public void setEstudiante(Estudiante es){
+        this.estudiante = es;
     }
     
     private void setUpCursos(){
         
         ImageIcon nuevaImagen;
         
-        if (usuario.getCodigoUsuario().equalsIgnoreCase("2312782")) { //FRANCO
+        if (estudiante.getCodigoEstudiante().equalsIgnoreCase("2312782")) { //FRANCO
             
             fondocurso6.setVisible(false);
             // Cambiar el tamaño del contenedor
@@ -607,7 +607,7 @@ public class Cursos extends JFrame {
             jl_correo_docente_c5.setText(cursos.get(16).getCorreoDocente());
             jl_foto_docente_c5.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(16).getFotoDocente())));
         }
-        else if(usuario.getCodigoUsuario().equalsIgnoreCase("2312461")){ // ALONDRA
+        else if(estudiante.getCodigoEstudiante().equalsIgnoreCase("2312461")){ // ALONDRA
             
             // CURSO 1 - Administración
             jl_nombre_c1.setText(cursos.get(0).getNombreCurso());
@@ -651,7 +651,7 @@ public class Cursos extends JFrame {
             jl_correo_docente_c6.setText(cursos.get(15).getCorreoDocente());
             jl_foto_docente_c6.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(15).getFotoDocente())));
         }
-        else if(usuario.getCodigoUsuario().equalsIgnoreCase("2311685")){ // FABIAN
+        else if(estudiante.getCodigoEstudiante().equalsIgnoreCase("2311685")){ // FABIAN
             
             // CURSO 1 - Calculo
             jl_nombre_c1.setText(cursos.get(1).getNombreCurso());
@@ -712,7 +712,7 @@ public class Cursos extends JFrame {
             jl_numero_creditos = cursos.get(15).getNumeroCreditos();
             aula = new Aula(cursos.get(15).getAula().getnCampus(), cursos.get(15).getAula().getnPabellon(), cursos.get(15).getAula().getnAula());
         } 
-        else if (usuario.getCodigoUsuario().equalsIgnoreCase("2313215")) { // OMAR
+        else if (estudiante.getCodigoEstudiante().equalsIgnoreCase("2313215")) { // OMAR
             
             fondocurso6.setVisible(false);
             // Cambiar el tamaño del contenedor
@@ -757,7 +757,7 @@ public class Cursos extends JFrame {
             jl_correo_docente_c5.setText(cursos.get(17).getCorreoDocente());
             jl_foto_docente_c5.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(17).getFotoDocente())));
         }
-        else if (usuario.getCodigoUsuario().equalsIgnoreCase("2311081")){ // NEFI
+        else if (estudiante.getCodigoEstudiante().equalsIgnoreCase("2311081")){ // NEFI
             
             // CURSO 1 - Calculo
             jl_nombre_c1.setText(cursos.get(3).getNombreCurso());
@@ -805,48 +805,48 @@ public class Cursos extends JFrame {
     
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
         // Crea una nueva instancia de Inicio con los datos originales
-        ventanaInicio.setUsuario(usuario);
+        ventanaInicio.setEstudiante(estudiante);
         ventanaInicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_retrocederActionPerformed
 
     private void jb_información_c3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c3ActionPerformed
         // TODO add your handling code here:
-        InfoCurso infoCursos = new InfoCurso(usuario, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        InfoCurso infoCursos = new InfoCurso(estudiante, this, cursos, nombreCurso, jl_numero_creditos, aula);
         infoCursos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_información_c3ActionPerformed
 
     private void jb_información_c2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c2ActionPerformed
         // TODO add your handling code here:
-        InfoCurso infoCursos = new InfoCurso(usuario, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        InfoCurso infoCursos = new InfoCurso(estudiante, this, cursos, nombreCurso, jl_numero_creditos, aula);
         infoCursos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_información_c2ActionPerformed
 
     private void jb_información_c1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c1ActionPerformed
-        InfoCurso infoCursos = new InfoCurso(usuario, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        InfoCurso infoCursos = new InfoCurso(estudiante, this, cursos, nombreCurso, jl_numero_creditos, aula);
         infoCursos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_información_c1ActionPerformed
 
     private void jb_información_c4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c4ActionPerformed
         // TODO add your handling code here:
-        InfoCurso infoCursos = new InfoCurso(usuario, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        InfoCurso infoCursos = new InfoCurso(estudiante, this, cursos, nombreCurso, jl_numero_creditos, aula);
         infoCursos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_información_c4ActionPerformed
 
     private void jb_información_c5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c5ActionPerformed
         // TODO add your handling code here:
-        InfoCurso infoCursos = new InfoCurso(usuario, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        InfoCurso infoCursos = new InfoCurso(estudiante, this, cursos, nombreCurso, jl_numero_creditos, aula);
         infoCursos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_información_c5ActionPerformed
 
     private void jb_información_c6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c6ActionPerformed
         // TODO add your handling code here:
-        InfoCurso infoCursos = new InfoCurso(usuario, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        InfoCurso infoCursos = new InfoCurso(estudiante, this, cursos, nombreCurso, jl_numero_creditos, aula);
         infoCursos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_información_c6ActionPerformed

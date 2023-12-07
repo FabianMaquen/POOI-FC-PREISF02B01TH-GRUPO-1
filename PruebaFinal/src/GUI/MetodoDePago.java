@@ -12,7 +12,7 @@ import java.util.List;
 public class MetodoDePago extends JFrame {
 
     private Tarjeta tarjeta;
-    private Estudiante usuario;
+    private Estudiante estudiante;
     private SaldosYPagos ventanaSaldosYPagos;
     private ListaTarjetas listaTarjetas;
     private SaldosYPagos saldosYPagos;
@@ -24,9 +24,9 @@ public class MetodoDePago extends JFrame {
         this.listaTarjetas = new ListaTarjetas();
     }
 
-    public MetodoDePago(Tarjeta tar, SaldosYPagos saldosYPagos, Estudiante us) {
+    public MetodoDePago(Tarjeta tar, SaldosYPagos saldosYPagos, Estudiante es) {
         initComponents();
-        this.usuario = us;
+        this.estudiante = es;
         this.tarjeta = tar;
         this.ventanaSaldosYPagos = saldosYPagos;
         this.setLocationRelativeTo(null);
@@ -34,21 +34,21 @@ public class MetodoDePago extends JFrame {
          this.listaTarjetas = new ListaTarjetas();
     }
 
-    public MetodoDePago(Estudiante us, SaldosYPagos saldosYPagos) {
+    public MetodoDePago(Estudiante es, SaldosYPagos saldosYPagos) {
         initComponents();
-        this.usuario = us;
+        this.estudiante = es;
         this.ventanaSaldosYPagos = saldosYPagos;
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0, 0, 0));
  
     }
     
-    public Estudiante getUsuario() {
-        return usuario;
+    public Estudiante getEstudiante() {
+        return estudiante;
     }
 
-    public void setUsuario(Estudiante usuario) {
-        this.usuario = usuario;
+    public void setUsuario(Estudiante estudiante) {
+        this.estudiante = estudiante;
     }
     
     /**
@@ -198,9 +198,7 @@ public class MetodoDePago extends JFrame {
 
     private void jb_retroceder1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retroceder1ActionPerformed
         // Crea una nueva instancia de Inicio con los datos originales
-        
-        
-        ventanaSaldosYPagos.setUsuario(usuario);
+        ventanaSaldosYPagos.setEstudiante(estudiante);
         ventanaSaldosYPagos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_retroceder1ActionPerformed
@@ -228,13 +226,13 @@ public class MetodoDePago extends JFrame {
         // Verificar si la tarjeta está en la lista
         if (this.listaTarjetas.getTarjeta().contains(tarjetaIngresada)) {
             //Aca debería aparecer el aviso de pago exitoso
-            PagoExitoso ventanaPagoExitoso = new PagoExitoso(this.usuario, this.ventanaSaldosYPagos);
+            PagoExitoso ventanaPagoExitoso = new PagoExitoso(this.estudiante, this.ventanaSaldosYPagos);
             ventanaPagoExitoso.setVisible(true);
             this.setVisible(false);
             
         } else {
             // Aca el de Error 
-            TransaccionFallida ventanaTransaccionFallida = new TransaccionFallida(usuario, this);
+            TransaccionFallida ventanaTransaccionFallida = new TransaccionFallida(estudiante, this);
             ventanaTransaccionFallida.setVisible(true);
             this.setVisible(false);
         }
