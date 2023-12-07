@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import Funcionamiento.*;
 
 public class Inicio extends JFrame {
-    private Estudiante usuario;
+    private Estudiante estudiante;
     
     public Inicio(){
         initComponents();
@@ -22,29 +22,29 @@ public class Inicio extends JFrame {
         jb_cursos.setVisible(false);
     }
 
-    public Inicio(Estudiante usuario) {
+    public Inicio(Estudiante estudiante) {
         initComponents();
-        this.usuario = usuario;    
+        this.estudiante = estudiante;    
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0,0, 0));
-        setUpUsuario();
+        setUpEstudiante();
     }
     
-    private void setUpUsuario(){
+    private void setUpEstudiante(){
         //Bienvenida Nombre_Completo
-        jl_nombre_usuario.setText(usuario.getNombreCompleto());
+        jl_nombre_usuario.setText(estudiante.getNombreCompleto());
         
         //Logo del boton
         ImageIcon nuevaImagen;
-        jb_fotocheck.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(usuario.getFotocheckPequeño())));
+        jb_fotocheck.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(estudiante.getFotocheckPequeño())));
     }
     
-    public Estudiante getUsuario() {
-        return usuario;
+    public Estudiante getEstudiante() {
+        return estudiante;
     }
 
-    public void setUsuario(Estudiante usuario) {
-        this.usuario = usuario;
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
     }
     
     /**
@@ -340,14 +340,14 @@ public class Inicio extends JFrame {
 
     private void jb_contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_contactoActionPerformed
         // Pasa la instancia actual de Inicio a la clase Contactos
-        Contactos ventanaContactos = new Contactos(usuario, this);
+        Contactos ventanaContactos = new Contactos(estudiante, this);
         ventanaContactos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_contactoActionPerformed
 
     private void jb_saldos_pagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_saldos_pagosActionPerformed
         // TODO add your handling code here:
-        SaldosYPagos ventanaSaldosYPagos = new SaldosYPagos(usuario,this);
+        SaldosYPagos ventanaSaldosYPagos = new SaldosYPagos(estudiante,this);
         ventanaSaldosYPagos.setVisible(true);
         this.setVisible(false); 
     }//GEN-LAST:event_jb_saldos_pagosActionPerformed
@@ -361,7 +361,7 @@ public class Inicio extends JFrame {
         List<Curso> cursos = listaCursos.getCursos();
 
         // Crear una instancia de la ventana Cursos y pasar la lista de cursos
-        Cursos ventanaCursos = new Cursos(usuario, this, cursos);
+        Cursos ventanaCursos = new Cursos(estudiante, this, cursos);
 
         // Hacer visible la ventana Cursos y ocultar la ventana actual
         ventanaCursos.setVisible(true);
@@ -369,7 +369,7 @@ public class Inicio extends JFrame {
     }//GEN-LAST:event_jb_cursosActionPerformed
 
     private void jb_fotocheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_fotocheckActionPerformed
-        Fotocheck ventanaFotocheck = new Fotocheck(usuario,  this);
+        Fotocheck ventanaFotocheck = new Fotocheck(estudiante,  this);
         ventanaFotocheck.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_fotocheckActionPerformed

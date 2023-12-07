@@ -2,21 +2,17 @@ package GUI;
 
 import Funcionamiento.Estudiante;
 import java.awt.Color;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import Funcionamiento.Tarjeta;
 import javax.swing.JOptionPane;
-import GUI.MetodoDePago;
 
 public class SaldosYPagos extends JFrame {
     
-    private Estudiante usuario;
+    private Estudiante estudiante;
     private Inicio ventanaInicio;
     private Tarjeta tarjeta;
     private String valorOriginalMensualidad5;
-    private MetodoDePago metodo;
-
-    
+    private MetodoDePago metodo;   
   
     public SaldosYPagos() {
         initComponents();
@@ -24,56 +20,53 @@ public class SaldosYPagos extends JFrame {
         setBackground(new Color(0, 0,0, 0));
         botonPagar.setVisible(false);
         jLabel2.setVisible(false);
-        
-        
-        
+    
         jCheckBoxPagar.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             jCheckBoxPagarActionPerformed(evt);
                 }
-    });
-        
+        });   
     }
     
-    public SaldosYPagos(Estudiante us, Inicio inicio) {
+    public SaldosYPagos(Estudiante es, Inicio inicio) {
         initComponents();
-        this.usuario = us;
+        this.estudiante = es;
         this.ventanaInicio = inicio;
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0,0, 0));
-        setUpUsuario();
+        setUpEstudiante();
         jLabel2.setVisible(false);
         panelRound4.setVisible(false);
         jmensualidad5.setText(valorOriginalMensualidad5);
-         fondoAviso.setVisible(false);
-         jLabelAviso.setVisible(false);
-         jLabelMensaje.setVisible(false);
+        jb_salir_aviso.setVisible(false);
+        jp_fondo_aviso.setVisible(false);
+        jLabelAviso.setVisible(false);
+        jLabelMensaje.setVisible(false);
         
         jCheckBoxPagar.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-        jCheckBoxPagarActionPerformed(evt);
-                }
-    });
-        
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxPagarActionPerformed(evt);
+            }
+        });  
     }
-        private void setUpUsuario(){
+        private void setUpEstudiante(){
         //cuota y codigoCuota
-        jmensualidad4.setText(usuario.getMensualidad());
-        jmensualidad1.setText(usuario.getMensualidad());
-        jmensualidad2.setText(usuario.getMensualidad());
-        jmensualidad3.setText(usuario.getMensualidad());
-        jmensualidad5a.setText(usuario.getMensualidad());
-        jmensualidad7.setText(usuario.getMensualidad());
-        jcodigoCuota.setText(usuario.getCodigoCuota());
+        jmensualidad4.setText(estudiante.getMensualidad());
+        jmensualidad1.setText(estudiante.getMensualidad());
+        jmensualidad2.setText(estudiante.getMensualidad());
+        jmensualidad3.setText(estudiante.getMensualidad());
+        jmensualidad5a.setText(estudiante.getMensualidad());
+        jmensualidad7.setText(estudiante.getMensualidad());
+        jcodigoCuota.setText(estudiante.getCodigoCuota());
         valorOriginalMensualidad5 = jmensualidad5.getText();
     }
         
-         public Estudiante getUsuario() {
-        return usuario;
+    public Estudiante getEstudiante() {
+        return estudiante;
     }
 
-    public void setUsuario(Estudiante usuario) {
-        this.usuario = usuario;
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
     }
 
     /**
@@ -89,14 +82,16 @@ public class SaldosYPagos extends JFrame {
         As7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        ultimoPanel = new javax.swing.JPanel();
+        jb_salir = new javax.swing.JButton();
         jl_cursos_titulo = new javax.swing.JLabel();
         jb_retroceder = new javax.swing.JButton();
-        panelRound1 = new MyContainers.PanelRound();
-        jLabel3 = new javax.swing.JLabel();
+        jb_salir_aviso = new javax.swing.JButton();
         jLabelAviso = new javax.swing.JLabel();
         jLabelMensaje = new javax.swing.JLabel();
-        fondoAviso = new javax.swing.JLabel();
+        jp_fondo_aviso = new MyContainers.FondoCurveadoDegradado();
+        panelRound1 = new MyContainers.PanelRound();
+        jl_titulo_pagos = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         panelRound4 = new MyContainers.PanelRound();
@@ -159,13 +154,29 @@ public class SaldosYPagos extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel2.setOpaque(false);
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        ultimoPanel.setOpaque(false);
+        ultimoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jb_salir.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jb_salir.setForeground(new java.awt.Color(255, 255, 255));
+        jb_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoSalir35x35.png"))); // NOI18N
+        jb_salir.setBorder(null);
+        jb_salir.setBorderPainted(false);
+        jb_salir.setContentAreaFilled(false);
+        jb_salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_salir.setFocusPainted(false);
+        jb_salir.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jb_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_salirActionPerformed(evt);
+            }
+        });
+        ultimoPanel.add(jb_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 20, 30, -1));
 
         jl_cursos_titulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jl_cursos_titulo.setForeground(new java.awt.Color(255, 255, 255));
         jl_cursos_titulo.setText("SALDOS Y PAGOS");
-        jPanel2.add(jl_cursos_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 30, -1, -1));
+        ultimoPanel.add(jl_cursos_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 30, -1, -1));
 
         jb_retroceder.setBackground(new java.awt.Color(38, 65, 115));
         jb_retroceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BackIcon.png"))); // NOI18N
@@ -177,7 +188,41 @@ public class SaldosYPagos extends JFrame {
                 jb_retrocederActionPerformed(evt);
             }
         });
-        jPanel2.add(jb_retroceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 20, -1, -1));
+        ultimoPanel.add(jb_retroceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 20, -1, -1));
+
+        jb_salir_aviso.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jb_salir_aviso.setForeground(new java.awt.Color(255, 255, 255));
+        jb_salir_aviso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoSalir35x35.png"))); // NOI18N
+        jb_salir_aviso.setBorder(null);
+        jb_salir_aviso.setBorderPainted(false);
+        jb_salir_aviso.setContentAreaFilled(false);
+        jb_salir_aviso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_salir_aviso.setFocusPainted(false);
+        jb_salir_aviso.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jb_salir_aviso.setVerifyInputWhenFocusTarget(false);
+        jb_salir_aviso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_salir_avisoActionPerformed(evt);
+            }
+        });
+        ultimoPanel.add(jb_salir_aviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 30, -1));
+
+        jLabelAviso.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabelAviso.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelAviso.setText("AVISO");
+        ultimoPanel.add(jLabelAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, -1));
+
+        jLabelMensaje.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabelMensaje.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelMensaje.setText("Seleccione una cuota a pagar");
+        ultimoPanel.add(jLabelMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, -1, -1));
+
+        jp_fondo_aviso.setRoundBottomLeft(50);
+        jp_fondo_aviso.setRoundBottomRight(50);
+        jp_fondo_aviso.setRoundTopLeft(50);
+        jp_fondo_aviso.setRoundTopRight(50);
+        jp_fondo_aviso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        ultimoPanel.add(jp_fondo_aviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 280, 190));
 
         panelRound1.setBackground(new java.awt.Color(232, 235, 241));
         panelRound1.setRoundBottomLeft(50);
@@ -186,23 +231,10 @@ public class SaldosYPagos extends JFrame {
         panelRound1.setRoundTopRight(80);
         panelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel3.setText("PAGOS");
-        panelRound1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 100, 20));
-
-        jLabelAviso.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabelAviso.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelAviso.setText("AVISO");
-        panelRound1.add(jLabelAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, -1, -1));
-
-        jLabelMensaje.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabelMensaje.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelMensaje.setText("SELECCIONE UNA CUOTA");
-        panelRound1.add(jLabelMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
-
-        fondoAviso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoAviso.png"))); // NOI18N
-        panelRound1.add(fondoAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 280, 210));
+        jl_titulo_pagos.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jl_titulo_pagos.setForeground(new java.awt.Color(0, 0, 102));
+        jl_titulo_pagos.setText("PAGOS");
+        panelRound1.add(jl_titulo_pagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 100, 20));
 
         jScrollPane1.setBorder(null);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -210,7 +242,7 @@ public class SaldosYPagos extends JFrame {
         jPanel3.setBackground(new java.awt.Color(232, 235, 241));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelRound4.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound4.setBackground(new java.awt.Color(196, 205, 219));
         panelRound4.setRoundBottomLeft(20);
         panelRound4.setRoundBottomRight(20);
         panelRound4.setRoundTopLeft(20);
@@ -233,7 +265,7 @@ public class SaldosYPagos extends JFrame {
 
         jPanel3.add(panelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 350, 390, 60));
 
-        panelRound5.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound5.setBackground(new java.awt.Color(196, 205, 219));
         panelRound5.setRoundBottomLeft(20);
         panelRound5.setRoundBottomRight(20);
         panelRound5.setRoundTopLeft(20);
@@ -256,7 +288,7 @@ public class SaldosYPagos extends JFrame {
 
         jPanel3.add(panelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 30, 390, 60));
 
-        panelRound6.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound6.setBackground(new java.awt.Color(196, 205, 219));
         panelRound6.setRoundBottomLeft(20);
         panelRound6.setRoundBottomRight(20);
         panelRound6.setRoundTopLeft(20);
@@ -279,7 +311,7 @@ public class SaldosYPagos extends JFrame {
 
         jPanel3.add(panelRound6, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 110, 390, 60));
 
-        panelRound8.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound8.setBackground(new java.awt.Color(196, 205, 219));
         panelRound8.setRoundBottomLeft(20);
         panelRound8.setRoundBottomRight(20);
         panelRound8.setRoundTopLeft(20);
@@ -302,7 +334,7 @@ public class SaldosYPagos extends JFrame {
 
         jPanel3.add(panelRound8, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 190, 390, 60));
 
-        panelRound15.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound15.setBackground(new java.awt.Color(196, 205, 219));
         panelRound15.setRoundBottomLeft(20);
         panelRound15.setRoundBottomRight(20);
         panelRound15.setRoundTopLeft(20);
@@ -344,16 +376,18 @@ public class SaldosYPagos extends JFrame {
 
         jmensualidad5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jmensualidad5.setForeground(new java.awt.Color(0, 0, 102));
-        jmensualidad5.setText("S/0.00");
-        panelRound1.add(jmensualidad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, -1, -1));
+        jmensualidad5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jmensualidad5.setText("S/ 0.00");
+        panelRound1.add(jmensualidad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 390, 90, -1));
 
-        botonPagar.setText("PAGAR");
+        botonPagar.setText("Pagar");
+        botonPagar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         botonPagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonPagarActionPerformed(evt);
             }
         });
-        panelRound1.add(botonPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 425, -1, -1));
+        panelRound1.add(botonPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 425, 90, -1));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 0, 102));
@@ -370,7 +404,7 @@ public class SaldosYPagos extends JFrame {
         jLabel5.setText("HISTORIAL");
         panelRound1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 163, 100, 20));
 
-        panelRound9.setBackground(new java.awt.Color(204, 204, 204));
+        panelRound9.setBackground(new java.awt.Color(196, 205, 219));
         panelRound9.setRoundBottomLeft(20);
         panelRound9.setRoundBottomRight(20);
         panelRound9.setRoundTopLeft(20);
@@ -401,22 +435,22 @@ public class SaldosYPagos extends JFrame {
 
         panelRound1.add(panelRound9, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 70, 390, 60));
 
-        jPanel2.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 490));
+        ultimoPanel.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 490));
 
         fondoCurveadoDegradado1.setRoundTopLeft(50);
         fondoCurveadoDegradado1.setRoundTopRight(50);
         fondoCurveadoDegradado1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(fondoCurveadoDegradado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 140));
+        ultimoPanel.add(fondoCurveadoDegradado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 140));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ultimoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ultimoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -424,50 +458,55 @@ public class SaldosYPagos extends JFrame {
 
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
         // Crea una nueva instancia de Inicio con los datos originales
-        ventanaInicio.setUsuario(usuario);
+        ventanaInicio.setEstudiante(estudiante);
         ventanaInicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_retrocederActionPerformed
 
     private void jCheckBoxPagarActionPerformed(java.awt.event.ActionEvent evt) {                                              
-    if (jCheckBoxPagar.isSelected()) {
-        jmensualidad5.setText(jmensualidad7.getText());
-         fondoAviso.setVisible(false);
-         jLabelAviso.setVisible(false);
-         jLabelMensaje.setVisible(false);
-    } else {
-        jmensualidad5.setText(valorOriginalMensualidad5);
-         fondoAviso.setVisible(true);
-         jLabelAviso.setVisible(true);
-         jLabelMensaje.setVisible(true);
-    }
-} 
+        if (jCheckBoxPagar.isSelected()) {
+            jmensualidad5.setText(jmensualidad7.getText());
+        } else {
+            jmensualidad5.setText(valorOriginalMensualidad5);
+        }
+    } 
     
     private void botonPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPagarActionPerformed
         // TODO add your handling code here:
-    
-    if(jCheckBoxPagar.isSelected()) {    
-        MetodoDePago ventanaMetodoDePago = new MetodoDePago(tarjeta, this, usuario);
-        ventanaMetodoDePago.setVisible(true);
-        this.setVisible(false);
-        jLabel7.setVisible(false);
-        jmensualidad7.setVisible(false);
-        jCheckBoxPagar.setVisible(false);
-        jLabel2.setVisible(true);
-        panelRound4.setVisible(true);
-        jmensualidad5.setText(valorOriginalMensualidad5);
-    } else {
-         fondoAviso.setVisible(true);
-         jLabelAviso.setVisible(true);
-         jLabelMensaje.setVisible(true);
-         jmensualidad5.setText(valorOriginalMensualidad5);
-    }
+        if(jCheckBoxPagar.isSelected()) {    
+            MetodoDePago ventanaMetodoDePago = new MetodoDePago(tarjeta, this, estudiante);
+            ventanaMetodoDePago.setVisible(true);
+            this.setVisible(false);
+            jLabel7.setVisible(false);
+            jmensualidad7.setVisible(false);
+            jCheckBoxPagar.setVisible(false);
+            jLabel2.setVisible(true);
+            panelRound4.setVisible(true);
+            jmensualidad5.setText(valorOriginalMensualidad5);
+        } else {
+            jb_salir_aviso.setVisible(true);
+            jp_fondo_aviso.setVisible(true);
+            jLabelAviso.setVisible(true);
+            jLabelMensaje.setVisible(true);
+            jmensualidad5.setText(valorOriginalMensualidad5);
+        }
     }//GEN-LAST:event_botonPagarActionPerformed
+
+    private void jb_salir_avisoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salir_avisoActionPerformed
+        jp_fondo_aviso.setVisible(false);
+        jLabelAviso.setVisible(false);
+        jLabelMensaje.setVisible(false);
+        jb_salir_aviso.setVisible(false);
+    }//GEN-LAST:event_jb_salir_avisoActionPerformed
+
+    private void jb_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jb_salirActionPerformed
 
     private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {
     
         if(jCheckBoxPagar.isSelected()) {    
-            MetodoDePago ventanaMetodoDePago = new MetodoDePago(tarjeta,this,usuario);
+            MetodoDePago ventanaMetodoDePago = new MetodoDePago(tarjeta,this,estudiante);
             ventanaMetodoDePago.setVisible(true);
             this.setVisible(false);
             jLabel7.setVisible(false);
@@ -482,14 +521,11 @@ public class SaldosYPagos extends JFrame {
     }
     
     public void mostrarElementosRetroceso() {
-    jLabel7.setVisible(true);
-    jmensualidad7.setVisible(true);
-    jCheckBoxPagar.setVisible(true);
-}
-    
-    
-    
-    
+        jLabel7.setVisible(true);
+        jmensualidad7.setVisible(true);
+        jCheckBoxPagar.setVisible(true);
+    }
+       
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel As10;
     private javax.swing.JLabel As4;
@@ -502,14 +538,12 @@ public class SaldosYPagos extends JFrame {
     private javax.swing.JLabel cuota3;
     private javax.swing.JLabel cuota4;
     private javax.swing.JLabel cuota5;
-    private javax.swing.JLabel fondoAviso;
     private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
     private javax.swing.JCheckBox jCheckBoxPagar;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -518,13 +552,15 @@ public class SaldosYPagos extends JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelAviso;
     private javax.swing.JLabel jLabelMensaje;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton jb_retroceder;
+    private javax.swing.JButton jb_salir;
+    private javax.swing.JButton jb_salir_aviso;
     private javax.swing.JLabel jcodigoCuota;
     private javax.swing.JLabel jl_cursos_titulo;
+    private javax.swing.JLabel jl_titulo_pagos;
     private javax.swing.JLabel jmensualidad1;
     private javax.swing.JLabel jmensualidad2;
     private javax.swing.JLabel jmensualidad3;
@@ -532,6 +568,7 @@ public class SaldosYPagos extends JFrame {
     private javax.swing.JLabel jmensualidad5;
     private javax.swing.JLabel jmensualidad5a;
     private javax.swing.JLabel jmensualidad7;
+    private MyContainers.FondoCurveadoDegradado jp_fondo_aviso;
     private MyContainers.PanelRound panelRound1;
     private MyContainers.PanelRound panelRound15;
     private MyContainers.PanelRound panelRound4;
@@ -540,5 +577,6 @@ public class SaldosYPagos extends JFrame {
     private MyContainers.PanelRound panelRound7;
     private MyContainers.PanelRound panelRound8;
     private MyContainers.PanelRound panelRound9;
+    private javax.swing.JPanel ultimoPanel;
     // End of variables declaration//GEN-END:variables
 }

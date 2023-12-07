@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 
 public class InfoCurso extends JFrame {
 
-    private Estudiante usuario;
+    private Estudiante estudiante;
     private Cursos ventanaCursos;
     private List<Curso> cursos;
     private String nombreCurso;
@@ -23,9 +23,9 @@ public class InfoCurso extends JFrame {
         setBackground(new Color(0, 0,0, 0));
     }
     
-    public InfoCurso(Estudiante usuario, Cursos ventanaCursos, List<Curso> cursos, String nombreCurso,String numeroCreditos, Aula aula) {
+    public InfoCurso(Estudiante estudiante, Cursos ventanaCursos, List<Curso> cursos, String nombreCurso,String numeroCreditos, Aula aula) {
         initComponents();
-        this.usuario = usuario;
+        this.estudiante = estudiante;
         this.ventanaCursos = ventanaCursos;
         this.cursos = cursos;
         this.nombreCurso = nombreCurso;
@@ -489,7 +489,7 @@ public class InfoCurso extends JFrame {
             
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
         // Crea una nueva instancia de Inicio con los datos originales
-        ventanaCursos.setUsuario(usuario);
+        ventanaCursos.setEstudiante(estudiante);
         ventanaCursos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_retrocederActionPerformed

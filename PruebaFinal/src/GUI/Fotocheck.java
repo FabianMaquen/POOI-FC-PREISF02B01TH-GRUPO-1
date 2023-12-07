@@ -9,14 +9,14 @@ import java.util.GregorianCalendar;
 import javax.swing.ImageIcon;
 
 public class Fotocheck extends javax.swing.JFrame implements Runnable {
-    private Estudiante usuario;
+    private Estudiante estudiante;
     private Inicio ventanaInicio;
     String hora, minutos, segundos;
     Thread hilo; 
 
-    public Fotocheck (Estudiante usuario, Inicio inicio) {
+    public Fotocheck (Estudiante estudiante, Inicio inicio) {
         initComponents();
-        this.usuario = usuario;
+        this.estudiante = estudiante;
         this.ventanaInicio = inicio;
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0,0, 0));
@@ -29,23 +29,23 @@ public class Fotocheck extends javax.swing.JFrame implements Runnable {
     
     private void setUpUsuario(){
         //Nombre de usuario
-        jl_nombre_usuario.setText(usuario.getNombreCompleto());
+        jl_nombre_usuario.setText(estudiante.getNombreCompleto());
         
         //Codigo del alumno
-        jl_codigo_alumno.setText(usuario.getCodigoUsuario());
+        jl_codigo_alumno.setText(estudiante.getCodigoEstudiante());
         
         //Logo del boton
         ImageIcon nuevaImagen;
-        jl_logo_usuario.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(usuario.getFotocheckGrande())));
-        jl_qr_usuario.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(usuario.getQR_Usuario())));
+        jl_logo_usuario.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(estudiante.getFotocheckGrande())));
+        jl_qr_usuario.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(estudiante.getQR_Usuario())));
     }
     
     public Estudiante getEstudiante() {
-        return usuario;
+        return estudiante;
     }
 
-    public void setEstudiante(Estudiante usuario) {
-        this.usuario = usuario;
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
     }
     
     public static String fecha() {
@@ -82,6 +82,7 @@ public class Fotocheck extends javax.swing.JFrame implements Runnable {
     private void initComponents() {
 
         UltimaCapa = new javax.swing.JPanel();
+        jb_salir = new javax.swing.JButton();
         jb_retroceder = new javax.swing.JButton();
         jl_fotocheck = new javax.swing.JLabel();
         panelBlancoCurva = new MyContainers.PanelRound();
@@ -99,6 +100,22 @@ public class Fotocheck extends javax.swing.JFrame implements Runnable {
         UltimaCapa.setMinimumSize(new java.awt.Dimension(490, 490));
         UltimaCapa.setOpaque(false);
         UltimaCapa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jb_salir.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jb_salir.setForeground(new java.awt.Color(255, 255, 255));
+        jb_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoSalir35x35.png"))); // NOI18N
+        jb_salir.setBorder(null);
+        jb_salir.setBorderPainted(false);
+        jb_salir.setContentAreaFilled(false);
+        jb_salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_salir.setFocusPainted(false);
+        jb_salir.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jb_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_salirActionPerformed(evt);
+            }
+        });
+        UltimaCapa.add(jb_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 20, 30, -1));
 
         jb_retroceder.setBackground(new java.awt.Color(38, 65, 115));
         jb_retroceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BackIcon.png"))); // NOI18N
@@ -202,15 +219,20 @@ public class Fotocheck extends javax.swing.JFrame implements Runnable {
 
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
         // Crea una nueva instancia de Inicio con los datos originales
-        ventanaInicio.setUsuario(usuario);
+        ventanaInicio.setEstudiante(estudiante);
         ventanaInicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_retrocederActionPerformed
+
+    private void jb_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jb_salirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel UltimaCapa;
     private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
     private javax.swing.JButton jb_retroceder;
+    private javax.swing.JButton jb_salir;
     private javax.swing.JLabel jl_codigo_alumno;
     private javax.swing.JLabel jl_fecha;
     private javax.swing.JLabel jl_fotocheck;
