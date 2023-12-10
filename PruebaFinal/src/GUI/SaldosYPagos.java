@@ -4,61 +4,64 @@ import Funcionamiento.Estudiante;
 import java.awt.Color;
 import javax.swing.JFrame;
 import Funcionamiento.Tarjeta;
-import javax.swing.JOptionPane;
+import MyContainers.ScrollBarCustom;
+import javax.swing.UIManager;
 
-public class SaldosYPagos extends JFrame {
+public final class SaldosYPagos extends JFrame {
     
     private Estudiante estudiante;
     private Inicio ventanaInicio;
     private Tarjeta tarjeta;
     private String valorOriginalMensualidad5;
-    private MetodoDePago metodo;   
+    private MetodoDePago metodo;
+    private boolean estadoPago;
   
     public SaldosYPagos() {
         initComponents();
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0,0, 0));
-        botonPagar.setVisible(false);
-        jLabel2.setVisible(false);
+        jb_pagar.setVisible(false);
+        jl_aviso_sincuotas.setVisible(false);
     
-        jCheckBoxPagar.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jCheckBoxPagarActionPerformed(evt);
-                }
+        jcb_cuota_pagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb_cuota_pagarActionPerformed(evt);
+            }
         });   
     }
     
-    public SaldosYPagos(Estudiante es, Inicio inicio) {
+    public SaldosYPagos(Estudiante es, Inicio inicio, boolean estPago) {
         initComponents();
         this.estudiante = es;
         this.ventanaInicio = inicio;
+        this.estadoPago = estPago;
+        estadoCuotaFaltante(estadoPago);
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0,0, 0));
         setUpEstudiante();
-        jLabel2.setVisible(false);
-        panelRound4.setVisible(false);
-        jmensualidad5.setText(valorOriginalMensualidad5);
-        jb_salir_aviso.setVisible(false);
-        jp_fondo_aviso.setVisible(false);
-        jLabelAviso.setVisible(false);
-        jLabelMensaje.setVisible(false);
         
-        jCheckBoxPagar.addActionListener(new java.awt.event.ActionListener() {
+        jl_monto_pagar.setText(valorOriginalMensualidad5);
+        jsp_historial_pagos.setVerticalScrollBar(new ScrollBarCustom());
+        jsp_pagos_faltantes.setVerticalScrollBar(new ScrollBarCustom());
+        UIManager.put("Button.disabledText", new Color(196,205,219)); // color de letra del boton deshabilitado
+        
+        jcb_cuota_pagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxPagarActionPerformed(evt);
+                jcb_cuota_pagarActionPerformed(evt);
             }
         });  
     }
         private void setUpEstudiante(){
         //cuota y codigoCuota
-        jmensualidad4.setText(estudiante.getMensualidad());
-        jmensualidad1.setText(estudiante.getMensualidad());
-        jmensualidad2.setText(estudiante.getMensualidad());
-        jmensualidad3.setText(estudiante.getMensualidad());
-        jmensualidad5a.setText(estudiante.getMensualidad());
-        jmensualidad7.setText(estudiante.getMensualidad());
-        jcodigoCuota.setText(estudiante.getCodigoCuota());
-        valorOriginalMensualidad5 = jmensualidad5.getText();
+        jl_mensualidad_C4.setText(estudiante.getMensualidad());
+        jl_mensualidad_C1.setText(estudiante.getMensualidad());
+        jl_mensualidad_C2.setText(estudiante.getMensualidad());
+        jl_mensualidad_C3.setText(estudiante.getMensualidad());
+        jl_mensualidad_C5.setText(estudiante.getMensualidad());
+        jl_mensualidad_faltante.setText(estudiante.getMensualidad());
+        jl_codigoCuota.setText(estudiante.getCodigoCuota());
+        valorOriginalMensualidad5 = jl_monto_pagar.getText();
+        
     }
         
     public Estudiante getEstudiante() {
@@ -68,7 +71,20 @@ public class SaldosYPagos extends JFrame {
     public void setEstudiante(Estudiante estudiante) {
         this.estudiante = estudiante;
     }
-
+    
+    public void estadoCuotaFaltante(boolean estPago) { // si es falso se elimina la cuota y sale el aviso
+        this.estadoPago = estPago;
+        jp_cuota_faltante.setVisible(estadoPago);
+        jl_aviso_sincuotas.setVisible(!estadoPago);
+        jp_cuota_5.setVisible(!estadoPago);
+        jb_pagar.setEnabled(estadoPago);
+        
+    }
+    
+    public void restaurarEstadoBotonPagar() {
+        jb_pagar.setEnabled(false);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -86,48 +102,40 @@ public class SaldosYPagos extends JFrame {
         jb_salir = new javax.swing.JButton();
         jl_cursos_titulo = new javax.swing.JLabel();
         jb_retroceder = new javax.swing.JButton();
-        jb_salir_aviso = new javax.swing.JButton();
-        jLabelAviso = new javax.swing.JLabel();
-        jLabelMensaje = new javax.swing.JLabel();
-        jp_fondo_aviso = new MyContainers.FondoCurveadoDegradado();
-        panelRound1 = new MyContainers.PanelRound();
+        jl_aviso_sincuotas = new javax.swing.JLabel();
+        jp_panelBlancoCurva = new MyContainers.PanelRound();
         jl_titulo_pagos = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel3 = new javax.swing.JPanel();
-        panelRound4 = new MyContainers.PanelRound();
-        As4 = new javax.swing.JLabel();
-        cuota5 = new javax.swing.JLabel();
-        jmensualidad5a = new javax.swing.JLabel();
-        panelRound5 = new MyContainers.PanelRound();
-        As5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jmensualidad1 = new javax.swing.JLabel();
-        panelRound6 = new MyContainers.PanelRound();
-        As6 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jmensualidad2 = new javax.swing.JLabel();
-        panelRound8 = new MyContainers.PanelRound();
-        As8 = new javax.swing.JLabel();
-        cuota3 = new javax.swing.JLabel();
-        jmensualidad3 = new javax.swing.JLabel();
-        panelRound15 = new MyContainers.PanelRound();
-        As10 = new javax.swing.JLabel();
-        cuota4 = new javax.swing.JLabel();
-        jmensualidad4 = new javax.swing.JLabel();
+        jsp_pagos_faltantes = new javax.swing.JScrollPane();
+        jp_pagos_faltantes = new javax.swing.JPanel();
+        jp_cuota_faltante = new MyContainers.PanelRound();
+        jcb_cuota_pagar = new MyContainers.JCheckBoxCustom();
+        jl_cuota_faltante = new javax.swing.JLabel();
+        jl_mensualidad_faltante = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jmensualidad5 = new javax.swing.JLabel();
-        botonPagar = new MyContainers.BotonCustomLogin();
-        jLabel15 = new javax.swing.JLabel();
-        jcodigoCuota = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        panelRound9 = new MyContainers.PanelRound();
-        As9 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jCheckBoxPagar = new javax.swing.JCheckBox();
-        jmensualidad7 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jl_titulo_historial = new javax.swing.JLabel();
+        jsp_historial_pagos = new javax.swing.JScrollPane();
+        jp_historial_completo = new javax.swing.JPanel();
+        jp_cuota_5 = new MyContainers.PanelRound();
+        jl_titulo_C5 = new javax.swing.JLabel();
+        jl_mensualidad_C5 = new javax.swing.JLabel();
+        jp_cuota_1 = new MyContainers.PanelRound();
+        jl_titulo_C1 = new javax.swing.JLabel();
+        jl_mensualidad_C1 = new javax.swing.JLabel();
+        jp_cuota_2 = new MyContainers.PanelRound();
+        jl_titulo_C2 = new javax.swing.JLabel();
+        jl_mensualidad_C2 = new javax.swing.JLabel();
+        jp_cuota_3 = new MyContainers.PanelRound();
+        jl_titulo_C3 = new javax.swing.JLabel();
+        jl_mensualidad_C3 = new javax.swing.JLabel();
+        jp_cuota_4 = new MyContainers.PanelRound();
+        jl_titulo_C4 = new javax.swing.JLabel();
+        jl_mensualidad_C4 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jl_titulo_pago_realizar = new javax.swing.JLabel();
+        jl_titulo_documento = new javax.swing.JLabel();
+        jl_codigoCuota = new javax.swing.JLabel();
+        jl_monto_pagar = new javax.swing.JLabel();
+        jb_pagar = new MyContainers.BotonCustomLogin();
         fondoCurveadoDegradado1 = new MyContainers.FondoCurveadoDegradado();
 
         panelRound7.setBackground(new java.awt.Color(204, 204, 204));
@@ -190,252 +198,226 @@ public class SaldosYPagos extends JFrame {
         });
         ultimoPanel.add(jb_retroceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 20, -1, -1));
 
-        jb_salir_aviso.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jb_salir_aviso.setForeground(new java.awt.Color(255, 255, 255));
-        jb_salir_aviso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoSalir35x35.png"))); // NOI18N
-        jb_salir_aviso.setBorder(null);
-        jb_salir_aviso.setBorderPainted(false);
-        jb_salir_aviso.setContentAreaFilled(false);
-        jb_salir_aviso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jb_salir_aviso.setFocusPainted(false);
-        jb_salir_aviso.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jb_salir_aviso.setVerifyInputWhenFocusTarget(false);
-        jb_salir_aviso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jb_salir_avisoActionPerformed(evt);
-            }
-        });
-        ultimoPanel.add(jb_salir_aviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 30, -1));
+        jl_aviso_sincuotas.setFont(new java.awt.Font("Segoe UI Semilight", 0, 16)); // NOI18N
+        jl_aviso_sincuotas.setForeground(new java.awt.Color(0, 0, 102));
+        jl_aviso_sincuotas.setText("No cuenta con ningún pago en este momento.");
+        ultimoPanel.add(jl_aviso_sincuotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 178, -1, 25));
 
-        jLabelAviso.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabelAviso.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelAviso.setText("AVISO");
-        ultimoPanel.add(jLabelAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, -1));
+        jp_panelBlancoCurva.setBackground(new java.awt.Color(232, 235, 241));
+        jp_panelBlancoCurva.setRoundBottomLeft(50);
+        jp_panelBlancoCurva.setRoundBottomRight(50);
+        jp_panelBlancoCurva.setRoundTopLeft(80);
+        jp_panelBlancoCurva.setRoundTopRight(80);
+        jp_panelBlancoCurva.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelMensaje.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabelMensaje.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelMensaje.setText("Seleccione una cuota a pagar");
-        ultimoPanel.add(jLabelMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, -1, -1));
-
-        jp_fondo_aviso.setRoundBottomLeft(50);
-        jp_fondo_aviso.setRoundBottomRight(50);
-        jp_fondo_aviso.setRoundTopLeft(50);
-        jp_fondo_aviso.setRoundTopRight(50);
-        jp_fondo_aviso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        ultimoPanel.add(jp_fondo_aviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 280, 190));
-
-        panelRound1.setBackground(new java.awt.Color(232, 235, 241));
-        panelRound1.setRoundBottomLeft(50);
-        panelRound1.setRoundBottomRight(50);
-        panelRound1.setRoundTopLeft(80);
-        panelRound1.setRoundTopRight(80);
-        panelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jl_titulo_pagos.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jl_titulo_pagos.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jl_titulo_pagos.setForeground(new java.awt.Color(0, 0, 102));
         jl_titulo_pagos.setText("PAGOS");
-        panelRound1.add(jl_titulo_pagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 100, 20));
+        jp_panelBlancoCurva.add(jl_titulo_pagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 35, 100, 20));
 
-        jScrollPane1.setBorder(null);
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jsp_pagos_faltantes.setBorder(null);
+        jsp_pagos_faltantes.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        jPanel3.setBackground(new java.awt.Color(232, 235, 241));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jp_pagos_faltantes.setBackground(new java.awt.Color(232, 235, 241));
+        jp_pagos_faltantes.setMinimumSize(new java.awt.Dimension(380, 60));
+        jp_pagos_faltantes.setPreferredSize(new java.awt.Dimension(380, 60));
+        jp_pagos_faltantes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelRound4.setBackground(new java.awt.Color(196, 205, 219));
-        panelRound4.setRoundBottomLeft(20);
-        panelRound4.setRoundBottomRight(20);
-        panelRound4.setRoundTopLeft(20);
-        panelRound4.setRoundTopRight(20);
-        panelRound4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jp_cuota_faltante.setBackground(new java.awt.Color(196, 205, 219));
+        jp_cuota_faltante.setRoundBottomLeft(20);
+        jp_cuota_faltante.setRoundBottomRight(20);
+        jp_cuota_faltante.setRoundTopLeft(20);
+        jp_cuota_faltante.setRoundTopRight(20);
+        jp_cuota_faltante.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        As4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        As4.setForeground(new java.awt.Color(41, 61, 109));
-        panelRound4.add(As4, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 20, -1, -1));
-
-        cuota5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        cuota5.setForeground(new java.awt.Color(0, 0, 102));
-        cuota5.setText("CUOTA 5");
-        panelRound4.add(cuota5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 13, 110, -1));
-
-        jmensualidad5a.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jmensualidad5a.setForeground(new java.awt.Color(0, 0, 102));
-        jmensualidad5a.setText("precio5");
-        panelRound4.add(jmensualidad5a, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 12, 90, 30));
-
-        jPanel3.add(panelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 350, 390, 60));
-
-        panelRound5.setBackground(new java.awt.Color(196, 205, 219));
-        panelRound5.setRoundBottomLeft(20);
-        panelRound5.setRoundBottomRight(20);
-        panelRound5.setRoundTopLeft(20);
-        panelRound5.setRoundTopRight(20);
-        panelRound5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        As5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        As5.setForeground(new java.awt.Color(41, 61, 109));
-        panelRound5.add(As5, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 20, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel4.setText("CUOTA 1");
-        panelRound5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 13, 110, -1));
-
-        jmensualidad1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jmensualidad1.setForeground(new java.awt.Color(0, 0, 102));
-        jmensualidad1.setText("precio1");
-        panelRound5.add(jmensualidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 12, 90, 30));
-
-        jPanel3.add(panelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 30, 390, 60));
-
-        panelRound6.setBackground(new java.awt.Color(196, 205, 219));
-        panelRound6.setRoundBottomLeft(20);
-        panelRound6.setRoundBottomRight(20);
-        panelRound6.setRoundTopLeft(20);
-        panelRound6.setRoundTopRight(20);
-        panelRound6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        As6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        As6.setForeground(new java.awt.Color(41, 61, 109));
-        panelRound6.add(As6, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 20, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel6.setText("CUOTA 2");
-        panelRound6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 13, 110, -1));
-
-        jmensualidad2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jmensualidad2.setForeground(new java.awt.Color(0, 0, 102));
-        jmensualidad2.setText("precio2");
-        panelRound6.add(jmensualidad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 12, 90, 30));
-
-        jPanel3.add(panelRound6, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 110, 390, 60));
-
-        panelRound8.setBackground(new java.awt.Color(196, 205, 219));
-        panelRound8.setRoundBottomLeft(20);
-        panelRound8.setRoundBottomRight(20);
-        panelRound8.setRoundTopLeft(20);
-        panelRound8.setRoundTopRight(20);
-        panelRound8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        As8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        As8.setForeground(new java.awt.Color(41, 61, 109));
-        panelRound8.add(As8, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 20, -1, -1));
-
-        cuota3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        cuota3.setForeground(new java.awt.Color(0, 0, 102));
-        cuota3.setText("CUOTA 3");
-        panelRound8.add(cuota3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 13, 110, -1));
-
-        jmensualidad3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jmensualidad3.setForeground(new java.awt.Color(0, 0, 102));
-        jmensualidad3.setText("precio3");
-        panelRound8.add(jmensualidad3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 12, 90, 30));
-
-        jPanel3.add(panelRound8, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 190, 390, 60));
-
-        panelRound15.setBackground(new java.awt.Color(196, 205, 219));
-        panelRound15.setRoundBottomLeft(20);
-        panelRound15.setRoundBottomRight(20);
-        panelRound15.setRoundTopLeft(20);
-        panelRound15.setRoundTopRight(20);
-        panelRound15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        As10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        As10.setForeground(new java.awt.Color(41, 61, 109));
-        panelRound15.add(As10, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 20, -1, -1));
-
-        cuota4.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        cuota4.setForeground(new java.awt.Color(0, 0, 102));
-        cuota4.setText("CUOTA 4");
-        panelRound15.add(cuota4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 13, 110, -1));
-
-        jmensualidad4.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jmensualidad4.setForeground(new java.awt.Color(0, 0, 102));
-        jmensualidad4.setText("precio4");
-        panelRound15.add(jmensualidad4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 12, 90, 30));
-
-        jPanel3.add(panelRound15, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 270, 390, 60));
-
-        jScrollPane1.setViewportView(jPanel3);
-
-        panelRound1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 200, 430, 150));
-
-        jSeparator1.setForeground(new java.awt.Color(41, 61, 109));
-        panelRound1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 338, 340, 10));
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel12.setText("Monto:");
-        panelRound1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 395, -1, -1));
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel13.setText("Documento:");
-        panelRound1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 90, -1));
-
-        jmensualidad5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jmensualidad5.setForeground(new java.awt.Color(0, 0, 102));
-        jmensualidad5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jmensualidad5.setText("S/ 0.00");
-        panelRound1.add(jmensualidad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 390, 90, -1));
-
-        botonPagar.setText("Pagar");
-        botonPagar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        botonPagar.addActionListener(new java.awt.event.ActionListener() {
+        jcb_cuota_pagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonPagarActionPerformed(evt);
+                jcb_cuota_pagarActionPerformed(evt);
             }
         });
-        panelRound1.add(botonPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 425, 90, -1));
+        jcb_cuota_pagar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jcb_cuota_pagarKeyReleased(evt);
+            }
+        });
+        jp_cuota_faltante.add(jcb_cuota_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel15.setText("PAGO POR REALIZAR");
-        panelRound1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
+        jl_cuota_faltante.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jl_cuota_faltante.setForeground(new java.awt.Color(0, 0, 102));
+        jl_cuota_faltante.setText("CUOTA 5");
+        jp_cuota_faltante.add(jl_cuota_faltante, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 17, 110, -1));
 
-        jcodigoCuota.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jcodigoCuota.setForeground(new java.awt.Color(0, 0, 102));
-        jcodigoCuota.setText("CO 1234567");
-        panelRound1.add(jcodigoCuota, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, -1, -1));
+        jl_mensualidad_faltante.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jl_mensualidad_faltante.setForeground(new java.awt.Color(0, 0, 102));
+        jl_mensualidad_faltante.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jl_mensualidad_faltante.setText("precio1");
+        jp_cuota_faltante.add(jl_mensualidad_faltante, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 13, 90, 30));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel5.setText("HISTORIAL");
-        panelRound1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 163, 100, 20));
+        jp_pagos_faltantes.add(jp_cuota_faltante, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 0, 360, 60));
 
-        panelRound9.setBackground(new java.awt.Color(196, 205, 219));
-        panelRound9.setRoundBottomLeft(20);
-        panelRound9.setRoundBottomRight(20);
-        panelRound9.setRoundTopLeft(20);
-        panelRound9.setRoundTopRight(20);
-        panelRound9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jsp_pagos_faltantes.setViewportView(jp_pagos_faltantes);
 
-        As9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        As9.setForeground(new java.awt.Color(41, 61, 109));
-        panelRound9.add(As9, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 20, -1, -1));
+        jp_panelBlancoCurva.add(jsp_pagos_faltantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 400, 60));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel7.setText("CUOTA 1");
-        panelRound9.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 13, 110, -1));
+        jSeparator1.setForeground(new java.awt.Color(41, 61, 109));
+        jp_panelBlancoCurva.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 360, 10));
 
-        jCheckBoxPagar.setBackground(new java.awt.Color(204, 204, 204));
-        panelRound9.add(jCheckBoxPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 20, -1, -1));
+        jl_titulo_historial.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
+        jl_titulo_historial.setForeground(new java.awt.Color(0, 0, 102));
+        jl_titulo_historial.setText("HISTORIAL");
+        jp_panelBlancoCurva.add(jl_titulo_historial, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 155, 100, 20));
 
-        jmensualidad7.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jmensualidad7.setForeground(new java.awt.Color(0, 0, 102));
-        jmensualidad7.setText("precio1");
-        panelRound9.add(jmensualidad7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 12, 90, 30));
+        jsp_historial_pagos.setBorder(null);
+        jsp_historial_pagos.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 51, 102));
-        jLabel2.setText("NO CUENTA CON NINGÚN PAGO EN ESTE MOMENTO.");
-        panelRound9.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        jp_historial_completo.setBackground(new java.awt.Color(232, 235, 241));
+        jp_historial_completo.setEnabled(false);
+        jp_historial_completo.setMinimumSize(new java.awt.Dimension(380, 360));
+        jp_historial_completo.setPreferredSize(new java.awt.Dimension(380, 360));
+        jp_historial_completo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelRound1.add(panelRound9, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 70, 390, 60));
+        jp_cuota_5.setBackground(new java.awt.Color(196, 205, 219));
+        jp_cuota_5.setRoundBottomLeft(20);
+        jp_cuota_5.setRoundBottomRight(20);
+        jp_cuota_5.setRoundTopLeft(20);
+        jp_cuota_5.setRoundTopRight(20);
+        jp_cuota_5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ultimoPanel.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 490));
+        jl_titulo_C5.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jl_titulo_C5.setForeground(new java.awt.Color(0, 0, 102));
+        jl_titulo_C5.setText("CUOTA 5");
+        jp_cuota_5.add(jl_titulo_C5, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 17, 110, -1));
+
+        jl_mensualidad_C5.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jl_mensualidad_C5.setForeground(new java.awt.Color(0, 0, 102));
+        jl_mensualidad_C5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jl_mensualidad_C5.setText("precio5");
+        jp_cuota_5.add(jl_mensualidad_C5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 12, 90, 30));
+
+        jp_historial_completo.add(jp_cuota_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 300, 360, 60));
+
+        jp_cuota_1.setBackground(new java.awt.Color(196, 205, 219));
+        jp_cuota_1.setRoundBottomLeft(20);
+        jp_cuota_1.setRoundBottomRight(20);
+        jp_cuota_1.setRoundTopLeft(20);
+        jp_cuota_1.setRoundTopRight(20);
+        jp_cuota_1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_titulo_C1.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jl_titulo_C1.setForeground(new java.awt.Color(0, 0, 102));
+        jl_titulo_C1.setText("CUOTA 1");
+        jp_cuota_1.add(jl_titulo_C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 17, 110, -1));
+
+        jl_mensualidad_C1.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jl_mensualidad_C1.setForeground(new java.awt.Color(0, 0, 102));
+        jl_mensualidad_C1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jl_mensualidad_C1.setText("precio1");
+        jp_cuota_1.add(jl_mensualidad_C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 12, 90, 30));
+
+        jp_historial_completo.add(jp_cuota_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 0, 360, 60));
+
+        jp_cuota_2.setBackground(new java.awt.Color(196, 205, 219));
+        jp_cuota_2.setRoundBottomLeft(20);
+        jp_cuota_2.setRoundBottomRight(20);
+        jp_cuota_2.setRoundTopLeft(20);
+        jp_cuota_2.setRoundTopRight(20);
+        jp_cuota_2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_titulo_C2.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jl_titulo_C2.setForeground(new java.awt.Color(0, 0, 102));
+        jl_titulo_C2.setText("CUOTA 2");
+        jp_cuota_2.add(jl_titulo_C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 17, 110, -1));
+
+        jl_mensualidad_C2.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jl_mensualidad_C2.setForeground(new java.awt.Color(0, 0, 102));
+        jl_mensualidad_C2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jl_mensualidad_C2.setText("precio2");
+        jp_cuota_2.add(jl_mensualidad_C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 12, 90, 30));
+
+        jp_historial_completo.add(jp_cuota_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 75, 360, 60));
+
+        jp_cuota_3.setBackground(new java.awt.Color(196, 205, 219));
+        jp_cuota_3.setRoundBottomLeft(20);
+        jp_cuota_3.setRoundBottomRight(20);
+        jp_cuota_3.setRoundTopLeft(20);
+        jp_cuota_3.setRoundTopRight(20);
+        jp_cuota_3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_titulo_C3.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jl_titulo_C3.setForeground(new java.awt.Color(0, 0, 102));
+        jl_titulo_C3.setText("CUOTA 3");
+        jp_cuota_3.add(jl_titulo_C3, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 17, 110, -1));
+
+        jl_mensualidad_C3.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jl_mensualidad_C3.setForeground(new java.awt.Color(0, 0, 102));
+        jl_mensualidad_C3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jl_mensualidad_C3.setText("precio3");
+        jp_cuota_3.add(jl_mensualidad_C3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 12, 90, 30));
+
+        jp_historial_completo.add(jp_cuota_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 150, 360, 60));
+
+        jp_cuota_4.setBackground(new java.awt.Color(196, 205, 219));
+        jp_cuota_4.setRoundBottomLeft(20);
+        jp_cuota_4.setRoundBottomRight(20);
+        jp_cuota_4.setRoundTopLeft(20);
+        jp_cuota_4.setRoundTopRight(20);
+        jp_cuota_4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_titulo_C4.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jl_titulo_C4.setForeground(new java.awt.Color(0, 0, 102));
+        jl_titulo_C4.setText("CUOTA 4");
+        jp_cuota_4.add(jl_titulo_C4, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 17, 110, -1));
+
+        jl_mensualidad_C4.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
+        jl_mensualidad_C4.setForeground(new java.awt.Color(0, 0, 102));
+        jl_mensualidad_C4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jl_mensualidad_C4.setText("precio4");
+        jp_cuota_4.add(jl_mensualidad_C4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 12, 90, 30));
+
+        jp_historial_completo.add(jp_cuota_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 225, 360, 60));
+
+        jsp_historial_pagos.setViewportView(jp_historial_completo);
+
+        jp_panelBlancoCurva.add(jsp_historial_pagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 400, 140));
+
+        jSeparator2.setForeground(new java.awt.Color(41, 61, 109));
+        jp_panelBlancoCurva.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 360, 10));
+
+        jl_titulo_pago_realizar.setFont(new java.awt.Font("Segoe UI Light", 1, 16)); // NOI18N
+        jl_titulo_pago_realizar.setForeground(new java.awt.Color(0, 0, 102));
+        jl_titulo_pago_realizar.setText("PAGO POR REALIZAR");
+        jp_panelBlancoCurva.add(jl_titulo_pago_realizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
+
+        jl_titulo_documento.setFont(new java.awt.Font("Segoe UI Light", 0, 12)); // NOI18N
+        jl_titulo_documento.setForeground(new java.awt.Color(0, 0, 102));
+        jl_titulo_documento.setText("Documento:");
+        jp_panelBlancoCurva.add(jl_titulo_documento, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 385, 90, -1));
+
+        jl_codigoCuota.setFont(new java.awt.Font("Segoe UI Light", 0, 12)); // NOI18N
+        jl_codigoCuota.setForeground(new java.awt.Color(0, 0, 102));
+        jl_codigoCuota.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jl_codigoCuota.setText("CO 1234567");
+        jp_panelBlancoCurva.add(jl_codigoCuota, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 386, -1, -1));
+
+        jl_monto_pagar.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
+        jl_monto_pagar.setForeground(new java.awt.Color(0, 0, 102));
+        jl_monto_pagar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jl_monto_pagar.setText("S/ 0.00");
+        jp_panelBlancoCurva.add(jl_monto_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 90, -1));
+
+        jb_pagar.setText("Ir a Pagar");
+        jb_pagar.setBorderPainted(false);
+        jb_pagar.setEnabled(false);
+        jb_pagar.setFocusPainted(false);
+        jb_pagar.setFont(new java.awt.Font("Franklin Gothic Book", 0, 16)); // NOI18N
+        jb_pagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_pagarActionPerformed(evt);
+            }
+        });
+        jp_panelBlancoCurva.add(jb_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 425, 360, -1));
+
+        ultimoPanel.add(jp_panelBlancoCurva, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 490));
 
         fondoCurveadoDegradado1.setRoundTopLeft(50);
         fondoCurveadoDegradado1.setRoundTopRight(50);
@@ -458,125 +440,94 @@ public class SaldosYPagos extends JFrame {
 
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
         // Crea una nueva instancia de Inicio con los datos originales
-        ventanaInicio.setEstudiante(estudiante);
-        ventanaInicio.setVisible(true);
+        Inicio inicio = new Inicio(estudiante, estadoPago);
+        inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_retrocederActionPerformed
 
-    private void jCheckBoxPagarActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        if (jCheckBoxPagar.isSelected()) {
-            jmensualidad5.setText(jmensualidad7.getText());
-        } else {
-            jmensualidad5.setText(valorOriginalMensualidad5);
-        }
-    } 
-    
-    private void botonPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPagarActionPerformed
+    private void jb_pagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_pagarActionPerformed
         // TODO add your handling code here:
-        if(jCheckBoxPagar.isSelected()) {    
+        if(jcb_cuota_pagar.isSelected() || jl_monto_pagar.getText().equals("S/ 0.00")) {    
             MetodoDePago ventanaMetodoDePago = new MetodoDePago(tarjeta, this, estudiante);
+            jcb_cuota_pagar.setSelected(false);
+            jl_monto_pagar.setText("S/ 0.00");
+
             ventanaMetodoDePago.setVisible(true);
             this.setVisible(false);
-            jLabel7.setVisible(false);
-            jmensualidad7.setVisible(false);
-            jCheckBoxPagar.setVisible(false);
-            jLabel2.setVisible(true);
-            panelRound4.setVisible(true);
-            jmensualidad5.setText(valorOriginalMensualidad5);
+            jb_pagar.setEnabled(true);
         } else {
-            jb_salir_aviso.setVisible(true);
-            jp_fondo_aviso.setVisible(true);
-            jLabelAviso.setVisible(true);
-            jLabelMensaje.setVisible(true);
-            jmensualidad5.setText(valorOriginalMensualidad5);
+            jb_pagar.setEnabled(false);
         }
-    }//GEN-LAST:event_botonPagarActionPerformed
-
-    private void jb_salir_avisoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salir_avisoActionPerformed
-        jp_fondo_aviso.setVisible(false);
-        jLabelAviso.setVisible(false);
-        jLabelMensaje.setVisible(false);
-        jb_salir_aviso.setVisible(false);
-    }//GEN-LAST:event_jb_salir_avisoActionPerformed
+    }//GEN-LAST:event_jb_pagarActionPerformed
 
     private void jb_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jb_salirActionPerformed
 
-    private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {
-    
-        if(jCheckBoxPagar.isSelected()) {    
-            MetodoDePago ventanaMetodoDePago = new MetodoDePago(tarjeta,this,estudiante);
-            ventanaMetodoDePago.setVisible(true);
-            this.setVisible(false);
-            jLabel7.setVisible(false);
-            jmensualidad7.setVisible(false);
-            jCheckBoxPagar.setVisible(false);
-            jLabel2.setVisible(true);
-            panelRound4.setVisible(true);
+    private void jcb_cuota_pagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_cuota_pagarActionPerformed
+        // TODO add your handling code here:
+        if (jcb_cuota_pagar.isSelected()) {
+            jl_monto_pagar.setText(jl_mensualidad_faltante.getText());
+            jb_pagar.setEnabled(true);
         } else {
-            JOptionPane.showMessageDialog(this, "Seleccione la cuota.");
-            jmensualidad5.setText(valorOriginalMensualidad5);
+            jl_monto_pagar.setText(valorOriginalMensualidad5);
+            jb_pagar.setEnabled(false);
         }
-    }
-    
+    }//GEN-LAST:event_jcb_cuota_pagarActionPerformed
+
+    private void jcb_cuota_pagarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jcb_cuota_pagarKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcb_cuota_pagarKeyReleased
+
     public void mostrarElementosRetroceso() {
-        jLabel7.setVisible(true);
-        jmensualidad7.setVisible(true);
-        jCheckBoxPagar.setVisible(true);
+        jl_cuota_faltante.setVisible(true);
+        jl_mensualidad_faltante.setVisible(true);
+        jcb_cuota_pagar.setVisible(true);
     }
        
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel As10;
-    private javax.swing.JLabel As4;
-    private javax.swing.JLabel As5;
-    private javax.swing.JLabel As6;
     private javax.swing.JLabel As7;
-    private javax.swing.JLabel As8;
-    private javax.swing.JLabel As9;
-    private MyContainers.BotonCustomLogin botonPagar;
-    private javax.swing.JLabel cuota3;
-    private javax.swing.JLabel cuota4;
-    private javax.swing.JLabel cuota5;
     private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
-    private javax.swing.JCheckBox jCheckBoxPagar;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabelAviso;
-    private javax.swing.JLabel jLabelMensaje;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private MyContainers.BotonCustomLogin jb_pagar;
     private javax.swing.JButton jb_retroceder;
     private javax.swing.JButton jb_salir;
-    private javax.swing.JButton jb_salir_aviso;
-    private javax.swing.JLabel jcodigoCuota;
+    private MyContainers.JCheckBoxCustom jcb_cuota_pagar;
+    private javax.swing.JLabel jl_aviso_sincuotas;
+    private javax.swing.JLabel jl_codigoCuota;
+    private javax.swing.JLabel jl_cuota_faltante;
     private javax.swing.JLabel jl_cursos_titulo;
+    private javax.swing.JLabel jl_mensualidad_C1;
+    private javax.swing.JLabel jl_mensualidad_C2;
+    private javax.swing.JLabel jl_mensualidad_C3;
+    private javax.swing.JLabel jl_mensualidad_C4;
+    private javax.swing.JLabel jl_mensualidad_C5;
+    private javax.swing.JLabel jl_mensualidad_faltante;
+    private javax.swing.JLabel jl_monto_pagar;
+    private javax.swing.JLabel jl_titulo_C1;
+    private javax.swing.JLabel jl_titulo_C2;
+    private javax.swing.JLabel jl_titulo_C3;
+    private javax.swing.JLabel jl_titulo_C4;
+    private javax.swing.JLabel jl_titulo_C5;
+    private javax.swing.JLabel jl_titulo_documento;
+    private javax.swing.JLabel jl_titulo_historial;
+    private javax.swing.JLabel jl_titulo_pago_realizar;
     private javax.swing.JLabel jl_titulo_pagos;
-    private javax.swing.JLabel jmensualidad1;
-    private javax.swing.JLabel jmensualidad2;
-    private javax.swing.JLabel jmensualidad3;
-    private javax.swing.JLabel jmensualidad4;
-    private javax.swing.JLabel jmensualidad5;
-    private javax.swing.JLabel jmensualidad5a;
-    private javax.swing.JLabel jmensualidad7;
-    private MyContainers.FondoCurveadoDegradado jp_fondo_aviso;
-    private MyContainers.PanelRound panelRound1;
-    private MyContainers.PanelRound panelRound15;
-    private MyContainers.PanelRound panelRound4;
-    private MyContainers.PanelRound panelRound5;
-    private MyContainers.PanelRound panelRound6;
+    private MyContainers.PanelRound jp_cuota_1;
+    private MyContainers.PanelRound jp_cuota_2;
+    private MyContainers.PanelRound jp_cuota_3;
+    private MyContainers.PanelRound jp_cuota_4;
+    private MyContainers.PanelRound jp_cuota_5;
+    private MyContainers.PanelRound jp_cuota_faltante;
+    private javax.swing.JPanel jp_historial_completo;
+    private javax.swing.JPanel jp_pagos_faltantes;
+    private MyContainers.PanelRound jp_panelBlancoCurva;
+    private javax.swing.JScrollPane jsp_historial_pagos;
+    private javax.swing.JScrollPane jsp_pagos_faltantes;
     private MyContainers.PanelRound panelRound7;
-    private MyContainers.PanelRound panelRound8;
-    private MyContainers.PanelRound panelRound9;
     private javax.swing.JPanel ultimoPanel;
     // End of variables declaration//GEN-END:variables
 }

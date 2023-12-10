@@ -6,6 +6,7 @@ import Funcionamiento.Estudiante;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import javax.swing.Timer;
 import javax.swing.JFrame;
 
@@ -20,9 +21,9 @@ public class RecuperarClave extends JFrame {
         this.CorreoValido.setVisible(false);
         this.CorreoNoValido.setVisible(false);
         
-        TextPrompt txtCorreo = new TextPrompt("Email ID", txtUsuario);
+        TextPrompt txtCorreo = new TextPrompt("Email ID", tx_correo_estudiante);
        
-        timer = new Timer(2000, new ActionListener() {
+        timer = new Timer(5000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 CorreoValido.setVisible(false);
@@ -44,8 +45,10 @@ public class RecuperarClave extends JFrame {
         jPanel1 = new javax.swing.JPanel();
         jb_retroceder = new javax.swing.JButton();
         logoUsuario = new javax.swing.JLabel();
-        txtUsuario = new javax.swing.JTextField();
-        botonCustomLogin1 = new MyContainers.BotonCustomLogin();
+        jb_salir = new javax.swing.JButton();
+        tx_correo_estudiante = new javax.swing.JTextField();
+        jl_subrayado = new javax.swing.JLabel();
+        jb_recordar = new MyContainers.BotonCustomLogin();
         CorreoNoValido = new javax.swing.JLabel();
         CorreoValido = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -77,47 +80,88 @@ public class RecuperarClave extends JFrame {
         jPanel1.add(jb_retroceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 20, -1, -1));
 
         logoUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoMuñueco.png"))); // NOI18N
-        jPanel1.add(logoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
+        jPanel1.add(logoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 332, -1, -1));
 
-        txtUsuario.setBackground(new java.awt.Color(63, 108, 165));
-        txtUsuario.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        txtUsuario.setBorder(null);
-        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 180, 50));
-
-        botonCustomLogin1.setText("RECORDAR");
-        botonCustomLogin1.setFocusPainted(false);
-        botonCustomLogin1.addActionListener(new java.awt.event.ActionListener() {
+        jb_salir.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jb_salir.setForeground(new java.awt.Color(255, 255, 255));
+        jb_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoSalir35x35.png"))); // NOI18N
+        jb_salir.setBorder(null);
+        jb_salir.setBorderPainted(false);
+        jb_salir.setContentAreaFilled(false);
+        jb_salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_salir.setFocusPainted(false);
+        jb_salir.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jb_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCustomLogin1ActionPerformed(evt);
+                jb_salirActionPerformed(evt);
             }
         });
-        jPanel1.add(botonCustomLogin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 250, 50));
+        jPanel1.add(jb_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 20, 30, -1));
 
-        CorreoNoValido.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        tx_correo_estudiante.setBackground(new java.awt.Color(63, 108, 165));
+        tx_correo_estudiante.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        tx_correo_estudiante.setForeground(new java.awt.Color(255, 255, 255));
+        tx_correo_estudiante.setBorder(null);
+        tx_correo_estudiante.setCaretColor(new java.awt.Color(255, 255, 255));
+        tx_correo_estudiante.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        tx_correo_estudiante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tx_correo_estudianteActionPerformed(evt);
+            }
+        });
+        tx_correo_estudiante.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tx_correo_estudianteKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tx_correo_estudianteKeyReleased(evt);
+            }
+        });
+        jPanel1.add(tx_correo_estudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 328, 180, 30));
+
+        jl_subrayado.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jl_subrayado.setForeground(new java.awt.Color(255, 255, 255));
+        jl_subrayado.setText("__________________________________");
+        jPanel1.add(jl_subrayado, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 341, -1, -1));
+        jl_subrayado.getAccessibleContext().setAccessibleName("____________________________________");
+
+        jb_recordar.setText("RECORDAR");
+        jb_recordar.setEnabled(false);
+        jb_recordar.setFocusPainted(false);
+        jb_recordar.setFont(new java.awt.Font("Franklin Gothic Book", 1, 16)); // NOI18N
+        jb_recordar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_recordarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jb_recordar, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 390, 250, 50));
+
+        CorreoNoValido.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         CorreoNoValido.setForeground(new java.awt.Color(255, 255, 255));
+        CorreoNoValido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CorreoNoValido.setText("Correo no válido");
-        jPanel1.add(CorreoNoValido, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 450, 180, -1));
+        jPanel1.add(CorreoNoValido, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 465, 310, -1));
 
-        CorreoValido.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        CorreoValido.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         CorreoValido.setForeground(new java.awt.Color(255, 255, 255));
+        CorreoValido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CorreoValido.setText("Se enviaron las instrucciones al correo");
-        jPanel1.add(CorreoValido, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 430, 240, -1));
+        jPanel1.add(CorreoValido, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 465, 310, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("las instrucciones. ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 280, 100, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ingrese su correo electrónico y le enviaremos ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 270, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 260, 260, -1));
 
-        recordar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        recordar.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         recordar.setForeground(new java.awt.Color(255, 255, 255));
         recordar.setText("Recordar Clave");
-        jPanel1.add(recordar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 150, -1));
+        jPanel1.add(recordar, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 220, 150, -1));
 
         logoUsil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usilLogo150x150.png"))); // NOI18N
         logoUsil.setText("jLabel1");
@@ -165,9 +209,9 @@ public class RecuperarClave extends JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jb_retrocederActionPerformed
 
-    private void botonCustomLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCustomLogin1ActionPerformed
+    private void jb_recordarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_recordarActionPerformed
         // TODO add your handling code here:
-        String correo = txtUsuario.getText();
+        String correo = tx_correo_estudiante.getText();
         ListaEstudiantes l_us = new ListaEstudiantes();
 
         for (Estudiante us : l_us.getEstudiantes()) {
@@ -176,26 +220,54 @@ public class RecuperarClave extends JFrame {
             
             if (us.getCorreoEstudiante().equals(correo)) {
                 this.CorreoValido.setVisible(true);
+                timer.start();
                 break;
             } else{
                 this.CorreoNoValido.setVisible(true);
+                timer.start();
             }
         }
-    }//GEN-LAST:event_botonCustomLogin1ActionPerformed
+    }//GEN-LAST:event_jb_recordarActionPerformed
+
+    private void jb_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jb_salirActionPerformed
+
+    private void tx_correo_estudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_correo_estudianteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tx_correo_estudianteActionPerformed
+
+    private void tx_correo_estudianteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tx_correo_estudianteKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER && !tx_correo_estudiante.getText().isEmpty()){
+            jb_recordarActionPerformed(null);
+        }
+    }//GEN-LAST:event_tx_correo_estudianteKeyPressed
+
+    private void tx_correo_estudianteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tx_correo_estudianteKeyReleased
+        // TODO add your handling code here:
+        if(!tx_correo_estudiante.getText().isEmpty()){
+            jb_recordar.setEnabled(true);
+        } else{
+            jb_recordar.setEnabled(false);
+        }
+    }//GEN-LAST:event_tx_correo_estudianteKeyReleased
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CorreoNoValido;
     private javax.swing.JLabel CorreoValido;
     private javax.swing.JLabel FondoLogin;
-    private MyContainers.BotonCustomLogin botonCustomLogin1;
     private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private MyContainers.BotonCustomLogin jb_recordar;
     private javax.swing.JButton jb_retroceder;
+    private javax.swing.JButton jb_salir;
+    private javax.swing.JLabel jl_subrayado;
     private javax.swing.JLabel logoUsil;
     private javax.swing.JLabel logoUsuario;
     private javax.swing.JLabel recordar;
-    private javax.swing.JTextField txtUsuario;
+    private javax.swing.JTextField tx_correo_estudiante;
     // End of variables declaration//GEN-END:variables
 }

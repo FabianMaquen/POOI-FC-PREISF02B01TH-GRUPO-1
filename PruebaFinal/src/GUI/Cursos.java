@@ -102,7 +102,7 @@ public class Cursos extends JFrame {
         jl_nombre_docente_c6 = new javax.swing.JLabel();
         jl_correo_docente_c6 = new javax.swing.JLabel();
         jb_información_c6 = new javax.swing.JButton("<html><u>Texto Subrayado</u></html>");
-        jcb_lista_pregrado = new javax.swing.JComboBox<>();
+        cb_pregrado_x = new MyContainers.ComboBoxSuggestion();
         fondoCurveadoDegradado1 = new MyContainers.FondoCurveadoDegradado();
 
         jl_indicador_pregrado.setFont(new java.awt.Font("Dubai Medium", 0, 14)); // NOI18N
@@ -159,16 +159,12 @@ public class Cursos extends JFrame {
         scroll.setBorder(null);
         scroll.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scroll.setToolTipText("");
-        scroll.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scroll.setAutoscrolls(true);
         scroll.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        scroll.setFocusable(false);
-        scroll.setOpaque(false);
 
         contenedor.setBackground(new java.awt.Color(232, 235, 241));
-        contenedor.setMinimumSize(new java.awt.Dimension(370, 805));
-        contenedor.setOpaque(false);
-        contenedor.setPreferredSize(new java.awt.Dimension(380, 805));
+        contenedor.setName("[380, 785]"); // NOI18N
+        contenedor.setPreferredSize(new java.awt.Dimension(380, 785));
         contenedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         fondocurso1.setBackground(new java.awt.Color(196, 205, 219));
@@ -226,7 +222,7 @@ public class Cursos extends JFrame {
         });
         fondocurso1.add(jb_información_c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
 
-        contenedor.add(fondocurso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 10, 360, 110));
+        contenedor.add(fondocurso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 0, 360, 110));
 
         fondocurso2.setBackground(new java.awt.Color(196, 205, 219));
         fondocurso2.setRoundBottomLeft(20);
@@ -283,7 +279,7 @@ public class Cursos extends JFrame {
         });
         fondocurso2.add(jb_información_c2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
 
-        contenedor.add(fondocurso2, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 145, 360, 110));
+        contenedor.add(fondocurso2, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 135, 360, 110));
 
         fondocurso3.setBackground(new java.awt.Color(196, 205, 219));
         fondocurso3.setRoundBottomLeft(20);
@@ -340,7 +336,7 @@ public class Cursos extends JFrame {
         });
         fondocurso3.add(jb_información_c3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
 
-        contenedor.add(fondocurso3, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 280, 360, 110));
+        contenedor.add(fondocurso3, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 270, 360, 110));
 
         fondocurso4.setBackground(new java.awt.Color(196, 205, 219));
         fondocurso4.setRoundBottomLeft(20);
@@ -397,7 +393,7 @@ public class Cursos extends JFrame {
         });
         fondocurso4.add(jb_información_c4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
 
-        contenedor.add(fondocurso4, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 415, 360, 110));
+        contenedor.add(fondocurso4, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 405, 360, 110));
 
         fondocurso5.setBackground(new java.awt.Color(196, 205, 219));
         fondocurso5.setRoundBottomLeft(20);
@@ -454,7 +450,7 @@ public class Cursos extends JFrame {
         });
         fondocurso5.add(jb_información_c5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
 
-        contenedor.add(fondocurso5, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 550, 360, 110));
+        contenedor.add(fondocurso5, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 540, 360, 110));
 
         fondocurso6.setBackground(new java.awt.Color(196, 205, 219));
         fondocurso6.setRoundBottomLeft(20);
@@ -511,25 +507,25 @@ public class Cursos extends JFrame {
         });
         fondocurso6.add(jb_información_c6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
 
-        contenedor.add(fondocurso6, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 685, 360, 110));
+        contenedor.add(fondocurso6, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 675, 360, 110));
 
         scroll.setViewportView(contenedor);
 
-        panelRound1.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 400, 410));
+        panelRound1.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 400, 380));
 
-        jcb_lista_pregrado.setBackground(new java.awt.Color(232, 235, 241));
-        jcb_lista_pregrado.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
-        jcb_lista_pregrado.setForeground(new java.awt.Color(41, 61, 109));
-        jcb_lista_pregrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(PRE-GRADO) 2023 - 02" }));
-        jcb_lista_pregrado.setBorder(null);
-        jcb_lista_pregrado.setFocusable(false);
-        jcb_lista_pregrado.setOpaque(false);
-        jcb_lista_pregrado.addActionListener(new java.awt.event.ActionListener() {
+        cb_pregrado_x.setBackground(new java.awt.Color(196, 205, 219));
+        cb_pregrado_x.setBorder(null);
+        cb_pregrado_x.setForeground(new java.awt.Color(41, 61, 109));
+        cb_pregrado_x.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "(PRE-GRADO) 2023 - 02" }));
+        cb_pregrado_x.setFocusable(false);
+        cb_pregrado_x.setFont(new java.awt.Font("Dubai Medium", 0, 14)); // NOI18N
+        cb_pregrado_x.setOpaque(false);
+        cb_pregrado_x.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcb_lista_pregradoActionPerformed(evt);
+                cb_pregrado_xActionPerformed(evt);
             }
         });
-        panelRound1.add(jcb_lista_pregrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 160, -1));
+        panelRound1.add(cb_pregrado_x, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 200, 30));
 
         jp_ultima_capa.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 490));
 
@@ -851,15 +847,16 @@ public class Cursos extends JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jb_información_c6ActionPerformed
 
-    private void jcb_lista_pregradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_lista_pregradoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jcb_lista_pregradoActionPerformed
-
     private void jb_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jb_salirActionPerformed
+
+    private void cb_pregrado_xActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_pregrado_xActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_pregrado_xActionPerformed
       
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private MyContainers.ComboBoxSuggestion cb_pregrado_x;
     private javax.swing.JPanel contenedor;
     private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
     private MyContainers.PanelRound fondocurso1;
@@ -876,7 +873,6 @@ public class Cursos extends JFrame {
     private javax.swing.JButton jb_información_c6;
     private javax.swing.JButton jb_retroceder;
     private javax.swing.JButton jb_salir;
-    private javax.swing.JComboBox<String> jcb_lista_pregrado;
     private javax.swing.JLabel jl_bloque_c1;
     private javax.swing.JLabel jl_bloque_c2;
     private javax.swing.JLabel jl_bloque_c3;

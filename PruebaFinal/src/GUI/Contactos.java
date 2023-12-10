@@ -33,7 +33,8 @@ public class Contactos extends JFrame {
 
         capaBackground = new javax.swing.JPanel();
         jb_retroceder = new javax.swing.JButton();
-        bienvenida2 = new javax.swing.JLabel();
+        jb_contacto_titulo = new javax.swing.JLabel();
+        jb_salir = new javax.swing.JButton();
         blancoCurva = new MyContainers.PanelRound();
         panelRound3 = new MyContainers.PanelRound();
         As2 = new javax.swing.JLabel();
@@ -89,10 +90,26 @@ public class Contactos extends JFrame {
         });
         capaBackground.add(jb_retroceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 20, -1, -1));
 
-        bienvenida2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        bienvenida2.setForeground(new java.awt.Color(255, 255, 255));
-        bienvenida2.setText("CONTACTO");
-        capaBackground.add(bienvenida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
+        jb_contacto_titulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jb_contacto_titulo.setForeground(new java.awt.Color(255, 255, 255));
+        jb_contacto_titulo.setText("CONTACTO");
+        capaBackground.add(jb_contacto_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
+
+        jb_salir.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jb_salir.setForeground(new java.awt.Color(255, 255, 255));
+        jb_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoSalir35x35.png"))); // NOI18N
+        jb_salir.setBorder(null);
+        jb_salir.setBorderPainted(false);
+        jb_salir.setContentAreaFilled(false);
+        jb_salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_salir.setFocusPainted(false);
+        jb_salir.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jb_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_salirActionPerformed(evt);
+            }
+        });
+        capaBackground.add(jb_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 20, 30, -1));
 
         blancoCurva.setBackground(new java.awt.Color(232, 235, 241));
         blancoCurva.setRoundBottomLeft(50);
@@ -342,6 +359,10 @@ public class Contactos extends JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jb_retrocederActionPerformed
 
+    private void jb_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jb_salirActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel As;
     private javax.swing.JLabel As2;
@@ -351,7 +372,6 @@ public class Contactos extends JFrame {
     private javax.swing.JLabel As8;
     private javax.swing.JLabel As9;
     private javax.swing.JLabel PaSe;
-    private javax.swing.JLabel bienvenida2;
     private MyContainers.PanelRound blancoCurva;
     private javax.swing.JPanel capaBackground;
     private javax.swing.JLabel facebook1;
@@ -361,7 +381,9 @@ public class Contactos extends JFrame {
     private javax.swing.JLabel facebook5;
     private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jb_contacto_titulo;
     private javax.swing.JButton jb_retroceder;
+    private javax.swing.JButton jb_salir;
     private javax.swing.JLabel n12;
     private javax.swing.JLabel n13;
     private javax.swing.JLabel n14;

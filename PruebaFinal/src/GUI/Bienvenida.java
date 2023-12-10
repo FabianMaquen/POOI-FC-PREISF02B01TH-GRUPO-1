@@ -45,13 +45,17 @@ public class Bienvenida extends javax.swing.JFrame {
         });
         jPanel1.add(botonBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 410, 250, 50));
 
+        bienvenida1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         bienvenida1.setForeground(new java.awt.Color(255, 255, 255));
+        bienvenida1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bienvenida1.setText("¡Bienvenido a la app móvil de USIL, tu portal");
-        jPanel1.add(bienvenida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 270, 260, 20));
+        jPanel1.add(bienvenida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 440, -1));
 
+        bienvenida2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         bienvenida2.setForeground(new java.awt.Color(255, 255, 255));
+        bienvenida2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bienvenida2.setText(" personal para una experiencia educativa sin límites!");
-        jPanel1.add(bienvenida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 286, -1, -1));
+        jPanel1.add(bienvenida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 440, -1));
 
         logoUsil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usilLogo190x190.png"))); // NOI18N
         jPanel1.add(logoUsil, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, -1));
@@ -60,18 +64,7 @@ public class Bienvenida extends javax.swing.JFrame {
         fondoCurveadoDegradado1.setRoundBottomRight(50);
         fondoCurveadoDegradado1.setRoundTopLeft(50);
         fondoCurveadoDegradado1.setRoundTopRight(50);
-
-        javax.swing.GroupLayout fondoCurveadoDegradado1Layout = new javax.swing.GroupLayout(fondoCurveadoDegradado1);
-        fondoCurveadoDegradado1.setLayout(fondoCurveadoDegradado1Layout);
-        fondoCurveadoDegradado1Layout.setHorizontalGroup(
-            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
-        fondoCurveadoDegradado1Layout.setVerticalGroup(
-            fondoCurveadoDegradado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
-        );
-
+        fondoCurveadoDegradado1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(fondoCurveadoDegradado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
