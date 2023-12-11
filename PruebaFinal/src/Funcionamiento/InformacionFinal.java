@@ -40,10 +40,10 @@ public class InformacionFinal {
         return "  Estos son los requisitos!! \n"+
                 "\n      > Documentos para la inscripción\n" + //
                 "      > Ficha de datos personales llenada online.\n" + //
-                "      > Certificado oficial de notas de los cinco años de estudios\n         secundarios visado por UGEL (física o virtual) o constancia de\n         logro de aprendizaje.\n" + //
-                "      > Si no cuentas con alguno de estos documentos, completa este\n         compromiso de documentos pendientes.\n" + //
+                "      > Certificado oficial de notas de los cinco años de estudios\n         secundarios visado por UGEL (física o virtual) o\n         constancia de logro de aprendizaje.\n" + //
+                "      > Si no cuentas con alguno de estos documentos,  \n          completa este compromiso de documentos pendientes.\n" + //
                 "      > Copia simple del DNI.\n" + //
-                "      > Foto (formato jpg en fondo blanco) solo para menores de edad.  ";
+                "      > Foto (formato jpg en fondo blanco) solo para menores\n          de edad.  ";
     }
     public String getBu() {
         return "  Sigue estos pasos!! \n\n"+
@@ -159,7 +159,7 @@ public class InformacionFinal {
                     "     * Pago de la tercera cuota: Del 21 al 30 de septiembre.\n" + 
                     "     * Pago de la cuarta cuota: Del 20 al 31 de octubre.\n" + 
                     "     * Pago de la quinta cuota: Del 21 al 30 de noviembre.\n" +
-                    "     * Pago para la solicitud del examen final rezagado, tramitado y \n        aprobado: 5 de diciembre (fecha límite)";
+                    "     * Pago para la solicitud del examen final rezagado,\n        tramitado y aprobado: 5 de diciembre \n        (fecha límite)";
             
     }
 }
