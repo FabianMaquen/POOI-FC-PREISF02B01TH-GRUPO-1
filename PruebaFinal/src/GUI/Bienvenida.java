@@ -4,9 +4,6 @@ import java.awt.Color;
 
 public class Bienvenida extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Bienvenida
-     */
     public Bienvenida() {
         initComponents();
         this.setLocationRelativeTo(null);

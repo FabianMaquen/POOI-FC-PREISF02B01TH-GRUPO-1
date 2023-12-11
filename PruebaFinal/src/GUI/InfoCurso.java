@@ -1,7 +1,6 @@
 package GUI;
 
 import Funcionamiento.Aula;
-import Funcionamiento.Aula;
 import Funcionamiento.Curso;
 import Funcionamiento.Estudiante;
 import java.awt.Color;
@@ -221,7 +220,7 @@ public class InfoCurso extends JFrame {
         jl_numero_creditos.setFont(new java.awt.Font("Dubai Medium", 0, 48)); // NOI18N
         jl_numero_creditos.setForeground(new java.awt.Color(41, 61, 109));
         jl_numero_creditos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jl_numero_creditos.setText("N");
+        jl_numero_creditos.setText("4");
         jl_numero_creditos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         panelRound_periodo.add(jl_numero_creditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 75, 30, 40));
 
