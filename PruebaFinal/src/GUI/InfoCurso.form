@@ -361,7 +361,7 @@
                       <Color blue="6d" green="3d" red="29" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="N"/>
+                    <Property name="text" type="java.lang.String" value="4"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
                   <Constraints>
