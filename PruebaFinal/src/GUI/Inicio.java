@@ -13,10 +13,13 @@ import MyContainers.ScrollBarCustom;
 
 public class Inicio extends JFrame {
     private Estudiante estudiante;
+    private Login ventanaLogin;
     private boolean estadoPago = true;
     
-    public Inicio(){
+    public Inicio(Login login,boolean estadoPago){
         initComponents();
+        this.estadoPago = estadoPago;
+        this.ventanaLogin = login;
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0,0, 0));
         jl_nombre_usuario.setText("Visitante");
@@ -24,17 +27,8 @@ public class Inicio extends JFrame {
         jb_cursos.setVisible(false);
         jsp_boticias.setVerticalScrollBar(new ScrollBarCustom());
     }
-
-    public Inicio(Estudiante estudiante) {
-        initComponents();
-        this.estudiante = estudiante;    
-        this.setLocationRelativeTo(null);
-        setBackground(new Color(0, 0,0, 0));
-        setUpEstudiante();
-        jsp_boticias.setVerticalScrollBar(new ScrollBarCustom());
-    }
     
-    public Inicio(Estudiante estudiante, boolean estadoPago) {
+    public Inicio(Estudiante estudiante,boolean estadoPago) {
         initComponents();
         this.estudiante = estudiante;  
         this.estadoPago = estadoPago;
@@ -354,8 +348,8 @@ public class Inicio extends JFrame {
 
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
         // TODO add your handling code here:
-        Login ventanaLogin = new Login(estadoPago);
-        ventanaLogin.setVisible(true);
+        Login ventanalogin = new Login(estadoPago);
+        ventanalogin.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_retrocederActionPerformed
 

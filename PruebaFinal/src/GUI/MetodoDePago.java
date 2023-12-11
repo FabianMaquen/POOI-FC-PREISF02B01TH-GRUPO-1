@@ -12,7 +12,9 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JComponent;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -34,7 +36,10 @@ public class MetodoDePago extends JFrame {
         jl_logo_american.setVisible(false);
         jl_logo_visa.setVisible(false);
         jl_logo_mastercard.setVisible(false);
-        
+        disableCopyPaste(tx_numero_tarjeta);
+        disableCopyPaste(tx_cvv_tarjeta);
+        disableCopyPaste(tx_nombre_tarjeta);
+        disableCopyPaste(tx_correo);
         
         TextPrompt txtNumeroTarjeta = new TextPrompt("Numero en la Tarjeta", tx_numero_tarjeta);
         TextPrompt txtCVVTarjeta = new TextPrompt("CVV", tx_cvv_tarjeta);
@@ -68,6 +73,10 @@ public class MetodoDePago extends JFrame {
         jl_logo_american.setVisible(false);
         jl_logo_visa.setVisible(false);
         jl_logo_mastercard.setVisible(false);
+        disableCopyPaste(tx_numero_tarjeta);
+        disableCopyPaste(tx_cvv_tarjeta);
+        disableCopyPaste(tx_nombre_tarjeta);
+        disableCopyPaste(tx_correo);
         
         TextPrompt txtNumeroTarjeta = new TextPrompt("Numero en la Tarjeta", tx_numero_tarjeta);
         TextPrompt txtCVVTarjeta = new TextPrompt("CVV", tx_cvv_tarjeta);
@@ -142,89 +151,6 @@ public class MetodoDePago extends JFrame {
         });
     }
 
-    public MetodoDePago(Estudiante es, SaldosYPagos saldosYPagos) {
-        initComponents();
-        this.estudiante = es;
-        this.ventanaSaldosYPagos = saldosYPagos;
-        this.setLocationRelativeTo(null);
-        setBackground(new Color(0, 0, 0, 0));
-        jl_logo_dinnerClub.setVisible(false);
-        jl_logo_american.setVisible(false);
-        jl_logo_visa.setVisible(false);
-        jl_logo_mastercard.setVisible(false);
-        
-        TextPrompt txtNumeroTarjeta = new TextPrompt("Numero en la Tarjeta", tx_numero_tarjeta);
-        TextPrompt txtCVVTarjeta = new TextPrompt("CVV", tx_cvv_tarjeta);
-        TextPrompt txtNombreTarjeta = new TextPrompt("Nombre en la Tarjeta", tx_nombre_tarjeta);
-        TextPrompt txtCorreoElectronico = new TextPrompt("Correo electrónico", tx_correo);
-        
-        txtNumeroTarjeta.setForeground(new Color(0,0,102));
-        txtCVVTarjeta.setForeground(new Color(0,0,102));
-        txtNombreTarjeta.setForeground(new Color(0,0,102));
-        txtCorreoElectronico.setForeground(new Color(0,0,102));
-        
-        listaDeCorreos.add("fabian.maquen@usil.pe");
-        listaDeCorreos.add("gianny.alfaro@usil.pe");
-        listaDeCorreos.add("alondra.gonzales@usil.pe");
-        listaDeCorreos.add("omar.morales@usil.pe");
-        listaDeCorreos.add("franco.almerco@usil.pe");
-        listaDeCorreos.add("nefi.valderrama@usil.pe");
-        listaDeCorreos.add("romina.bautista@usil.pe");
-        listaDeCorreos.add("renato.riva@usil.pe");
-        
-        tx_numero_tarjeta.getDocument().addDocumentListener(new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                actualizarNumeroTarjeta();
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                actualizarNumeroTarjeta();
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                actualizarNumeroTarjeta();
-            }
-        });
-        
-        tx_nombre_tarjeta.getDocument().addDocumentListener(new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                actualizarNombreTitular();
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                actualizarNombreTitular();
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                actualizarNombreTitular();
-            }
-        });
-        
-        cb_mes.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                if (e.getStateChange() == ItemEvent.SELECTED) {
-                    actualizarFechaMes();
-                }
-            }
-        });
-
-        // Configurar el listener para cb_año
-        cb_año.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                if (e.getStateChange() == ItemEvent.SELECTED) {
-                    actualizarFechaAño();
-                }
-            }
-        });
-    }
     
     public Estudiante getEstudiante() {
         return estudiante;
@@ -232,6 +158,19 @@ public class MetodoDePago extends JFrame {
 
     public void setEstudiante(Estudiante estudiante) {
         this.estudiante = estudiante;
+    }
+    
+    private void disableCopy(JComponent component){
+        component.getInputMap().put(KeyStroke.getKeyStroke("control C"), "none");
+    }
+    
+    private void disablePaste(JComponent component){
+        component.getInputMap().put(KeyStroke.getKeyStroke("control V"), "none");
+    }
+    
+     private void disableCopyPaste(JComponent component){
+         disableCopy(component);
+         disablePaste(component);
     }
     
     private void actualizarNumeroTarjeta() {
@@ -1019,7 +958,7 @@ public class MetodoDePago extends JFrame {
         
         boolean num = key >= 48 && key <= 57; // Alt + 48 = 0 / Alt + 57 = 9
         
-        if(!num){
+        if(!num || (evt.getKeyCode() == KeyEvent.VK_CONTROL)){
             evt.consume();
         }
         

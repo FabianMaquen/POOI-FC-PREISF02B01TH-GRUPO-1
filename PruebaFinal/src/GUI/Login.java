@@ -326,9 +326,9 @@ public class Login extends JFrame {
     }//GEN-LAST:event_jp_password_recoveryActionPerformed
    
     private void botonOlvidaContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOlvidaContraActionPerformed
-        RecuperarClave rClave = new RecuperarClave();
+        RecuperarClave rClave = new RecuperarClave(this);
         rClave.setVisible(true);
-        this.setVisible(false);  
+        this.setVisible(false);
     }//GEN-LAST:event_botonOlvidaContraActionPerformed
 
     private void jb_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_loginActionPerformed
@@ -405,7 +405,7 @@ public class Login extends JFrame {
     }//GEN-LAST:event_salirAvisoActionPerformed
 
     private void botonLoginVisitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginVisitanteActionPerformed
-        Inicio ventanaInicio = new Inicio();
+        Inicio ventanaInicio = new Inicio(this, estadoPago);
         ventanaInicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_botonLoginVisitanteActionPerformed

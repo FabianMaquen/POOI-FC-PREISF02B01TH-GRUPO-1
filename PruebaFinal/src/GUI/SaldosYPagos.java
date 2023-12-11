@@ -22,12 +22,6 @@ public final class SaldosYPagos extends JFrame {
         setBackground(new Color(0, 0,0, 0));
         jb_pagar.setVisible(false);
         jl_aviso_sincuotas.setVisible(false);
-    
-        jcb_cuota_pagar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcb_cuota_pagarActionPerformed(evt);
-            }
-        });   
     }
     
     public SaldosYPagos(Estudiante es, Inicio inicio, boolean estPago) {
@@ -45,11 +39,6 @@ public final class SaldosYPagos extends JFrame {
         jsp_pagos_faltantes.setVerticalScrollBar(new ScrollBarCustom());
         UIManager.put("Button.disabledText", new Color(196,205,219)); // color de letra del boton deshabilitado
         
-        jcb_cuota_pagar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcb_cuota_pagarActionPerformed(evt);
-            }
-        });  
     }
         private void setUpEstudiante(){
         //cuota y codigoCuota
@@ -439,7 +428,6 @@ public final class SaldosYPagos extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
-        // Crea una nueva instancia de Inicio con los datos originales
         Inicio inicio = new Inicio(estudiante, estadoPago);
         inicio.setVisible(true);
         this.setVisible(false);

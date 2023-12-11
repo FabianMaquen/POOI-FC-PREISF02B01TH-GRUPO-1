@@ -11,11 +11,12 @@ import javax.swing.Timer;
 import javax.swing.JFrame;
 
 public class RecuperarClave extends JFrame {
-    
+    private Login ventanaLogin;
     private Timer timer;
 
-    public RecuperarClave() {
+    public RecuperarClave(Login login) {
         initComponents();
+        this.ventanaLogin = login;
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0,0, 0));
         this.CorreoValido.setVisible(false);
@@ -203,8 +204,6 @@ public class RecuperarClave extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
-        // TODO add your handling code here:
-        Login ventanaLogin = new Login();
         ventanaLogin.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_retrocederActionPerformed
