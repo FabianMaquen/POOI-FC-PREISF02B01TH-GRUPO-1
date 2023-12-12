@@ -25,12 +25,12 @@ public class ChatBot extends JFrame implements ActionListener {
     private int nivel = 0; // Etapa del diálogo: 0 - Seleccionar opción, 1 - Respuesta a la opción seleccionada, 2 - Mensaje final
     private int opcionSeleccionada = 0; // Almacena la opción seleccionada por el usuario
     private final int oportunidades = 3; // Número máximo de intentos permitidos
-    public ChatBot(String title) {
-        
+    
+    public ChatBot(Inicio inicio, Estudiante est) {
         
         //------------------*VENTANA GENERAL 
-        
-        super(title);
+        this.ventanaInicio = inicio;
+        this.estudiante = est;
         setUndecorated(true);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -73,22 +73,26 @@ public class ChatBot extends JFrame implements ActionListener {
         
         // BOTON RETROCEDER
         
-        back = new JButton("<");
+        back = new JButton();
         back.setBounds(30, 30, 35, 35); // Establece la posición y el tamaño del botón "back"
-        //back.setIcon(new ImageIcon("C:\\Users\\ALFONSO BARRENECHEA\\Desktop\\PruebaFinal\\src\\images\\BackIcon.png"));
+        back.setIcon(new ImageIcon("./src/images/BackIcon.png"));
         back.setBorder(null);
-        //back.setOpaque(true);
-        back.setFont(new Font("Arial", 1, 24));
         back.setVerticalAlignment(SwingConstants.CENTER);
         back.setContentAreaFilled(false);
-        //back.setBackground(new Color(38,65,115));
-        back.setForeground(Color.WHITE);
         roundedPanel.add(back);
+        back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ventanaInicio.setEstudiante(estudiante);
+                ventanaInicio.setVisible(true);
+                setVisible(false);
+            }
+        });
         
         // IMAGEN USILITO 
         
         JLabel imgUsilito = new JLabel();
-        imgUsilito.setIcon(new ImageIcon("C:\\Users\\ALFONSO BARRENECHEA\\Desktop\\PruebaFinal\\src\\images\\usilitoBlanco 100x104.png"));
+        imgUsilito.setIcon(new ImageIcon("./src/images/usilitoBlanco100x104.png"));
         imgUsilito.setBounds(180, 0, 100, 80);
         roundedPanel.add(imgUsilito);
         
@@ -103,11 +107,11 @@ public class ChatBot extends JFrame implements ActionListener {
         
         
         //BOTON APAGAR TODO 
-        apagar = new JButton("x");
+        apagar = new JButton();
         apagar.setBounds(400, 30, 35, 35);
         apagar.setVerticalAlignment(SwingConstants.CENTER);
         apagar.setBorder(null);
-        //apagar.setIcon(new ImageIcon("C:\\Users\\ALFONSO BARRENECHEA\\Desktop\\PruebaFinal\\src\\images\\iconoSalir35x35.png"));
+        apagar.setIcon(new ImageIcon("./src/images/iconoSalir35x35.png"));
         apagar.setFont(new Font("Segoe UI", 0, 35));
         apagar.setContentAreaFilled(false);
         apagar.setForeground(Color.WHITE);
@@ -157,10 +161,7 @@ public class ChatBot extends JFrame implements ActionListener {
         area.setForeground(new Color(41, 61, 109));
         
         
-        //SCROLL BAR 
-        
-        
-        
+        //SCROLL BAR
         JScrollPane sp = new JScrollPane(area);
         sp.setBounds(20, 137, 420, 375);
         //sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -206,12 +207,11 @@ public class ChatBot extends JFrame implements ActionListener {
         
         // BOTON ENVIAR RESPUESTA
 
-        //ImageIcon ImagenBoton= new ImageIcon("C:\\Users\\ALFONSO BARRENECHEA\\Desktop\\PROGRAMACIÓN ORIENTADA A OBJETOS - I\\2.0\\Chat-bot\\src\\ChatBot\\ImagenEnviar.png");
         send = new JButton();
         //send.setFont(new Font("Serif", 2, 20));
         send.setBackground(new Color (196,205,219));
         send.setBounds(390, 550, 30, 30);
-        send.setIcon(new ImageIcon("C:\\Users\\ALFONSO BARRENECHEA\\Desktop\\PROYECTO-USILITO\\POOI-FC-PREISF02B01TH-GRUPO-1\\PruebaFinal\\src\\images\\logoEnviarMCF30x30_1.png"));
+        send.setIcon(new ImageIcon("./src/images/logoEnviarMCF30x30_1.png"));
         send.setBorder(null);
         send.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         //send.setBorder(BorderFactory.createEmptyBorder(0, 30, 0, 10));
@@ -254,7 +254,7 @@ public class ChatBot extends JFrame implements ActionListener {
 			if (nivel == 0) { // Etapa 0: Seleccionar opción
                             //PRIMERA VUELTA EN LA QUE LAS OPCIONES SERAN DE 1 - 8 
 				if (!isValidInput(usuarioRespuesta, 1, 7)) {
-					area.append("\n   " + usuarioRespuesta + ": You\n");
+					area.append("\n  You: " + usuarioRespuesta + "\n");
 					area.append("\n  Usilito 🦁: Por favor ingrese una clave valida ☺  (1-7).\n");
 				} else {
 					opcionSeleccionada = Integer.parseInt(usuarioRespuesta) - 1;
