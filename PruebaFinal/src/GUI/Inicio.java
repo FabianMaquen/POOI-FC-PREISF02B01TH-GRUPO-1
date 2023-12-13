@@ -359,7 +359,7 @@ public class Inicio extends JFrame {
 
     private void jb_chatbotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_chatbotActionPerformed
         ChatBot cb = new ChatBot(this, estudiante); // Crea una instancia de la clase ChatBot
-        cb.setSize(460, 620);
+        cb.setSize(440, 580);
         cb.setLocationRelativeTo(null);
         cb.setVisible(true);
         this.setVisible(false);
