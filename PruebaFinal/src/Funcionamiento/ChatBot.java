@@ -1,12 +1,12 @@
 package Funcionamiento;
 
+import MyContainers.RoundedPanel;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import MyContainers.TextPrompt;
 import GUI.*;
-import java.awt.geom.Ellipse2D;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;

@@ -316,7 +316,9 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="6d" green="3d" red="29" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Informaci&#xf3;n"/>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/images/iconoInformacion22x22.png"/>
+                            </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="null"/>
                             </Property>
@@ -326,7 +328,6 @@
                               <Color id="Hand Cursor"/>
                             </Property>
                             <Property name="focusPainted" type="boolean" value="false"/>
-                            <Property name="horizontalAlignment" type="int" value="4"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_informaci&#xf3;n_c1ActionPerformed"/>
@@ -336,7 +337,7 @@
                           </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="240" y="80" width="100" height="-1"/>
+                              <AbsoluteConstraints x="320" y="65" width="25" height="-1"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -472,7 +473,9 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="6d" green="3d" red="29" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Informaci&#xf3;n"/>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/images/iconoInformacion22x22.png"/>
+                            </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="null"/>
                             </Property>
@@ -482,7 +485,6 @@
                               <Color id="Hand Cursor"/>
                             </Property>
                             <Property name="focusPainted" type="boolean" value="false"/>
-                            <Property name="horizontalAlignment" type="int" value="4"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_informaci&#xf3;n_c2ActionPerformed"/>
@@ -492,7 +494,7 @@
                           </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="240" y="80" width="100" height="-1"/>
+                              <AbsoluteConstraints x="320" y="65" width="25" height="-1"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -628,7 +630,9 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="6d" green="3d" red="29" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Informaci&#xf3;n"/>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/images/iconoInformacion22x22.png"/>
+                            </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="null"/>
                             </Property>
@@ -638,7 +642,6 @@
                               <Color id="Hand Cursor"/>
                             </Property>
                             <Property name="focusPainted" type="boolean" value="false"/>
-                            <Property name="horizontalAlignment" type="int" value="4"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_informaci&#xf3;n_c3ActionPerformed"/>
@@ -648,7 +651,7 @@
                           </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="240" y="80" width="100" height="-1"/>
+                              <AbsoluteConstraints x="320" y="65" width="25" height="-1"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -784,7 +787,9 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="6d" green="3d" red="29" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Informaci&#xf3;n"/>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/images/iconoInformacion22x22.png"/>
+                            </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="null"/>
                             </Property>
@@ -794,7 +799,6 @@
                               <Color id="Hand Cursor"/>
                             </Property>
                             <Property name="focusPainted" type="boolean" value="false"/>
-                            <Property name="horizontalAlignment" type="int" value="4"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_informaci&#xf3;n_c4ActionPerformed"/>
@@ -804,7 +808,7 @@
                           </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="240" y="80" width="100" height="-1"/>
+                              <AbsoluteConstraints x="320" y="65" width="25" height="-1"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -940,7 +944,9 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="6d" green="3d" red="29" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Informaci&#xf3;n"/>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/images/iconoInformacion22x22.png"/>
+                            </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="null"/>
                             </Property>
@@ -950,7 +956,6 @@
                               <Color id="Hand Cursor"/>
                             </Property>
                             <Property name="focusPainted" type="boolean" value="false"/>
-                            <Property name="horizontalAlignment" type="int" value="4"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_informaci&#xf3;n_c5ActionPerformed"/>
@@ -960,7 +965,7 @@
                           </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="240" y="80" width="100" height="-1"/>
+                              <AbsoluteConstraints x="320" y="65" width="25" height="-1"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -1096,7 +1101,9 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="6d" green="3d" red="29" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Informaci&#xf3;n"/>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/images/iconoInformacion22x22.png"/>
+                            </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="null"/>
                             </Property>
@@ -1106,7 +1113,6 @@
                               <Color id="Hand Cursor"/>
                             </Property>
                             <Property name="focusPainted" type="boolean" value="false"/>
-                            <Property name="horizontalAlignment" type="int" value="4"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_informaci&#xf3;n_c6ActionPerformed"/>
@@ -1116,7 +1122,7 @@
                           </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="240" y="80" width="100" height="-1"/>
+                              <AbsoluteConstraints x="320" y="65" width="25" height="-1"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -1128,9 +1134,6 @@
             </Container>
             <Component class="MyContainers.ComboBoxSuggestion" name="cb_pregrado_x">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="db" green="cd" red="c4" type="rgb"/>
-                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>

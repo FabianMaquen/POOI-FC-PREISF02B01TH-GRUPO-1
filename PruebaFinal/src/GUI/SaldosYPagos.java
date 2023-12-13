@@ -30,6 +30,7 @@ public final class SaldosYPagos extends JFrame {
         this.ventanaInicio = inicio;
         this.estadoPago = estPago;
         estadoCuotaFaltante(estadoPago);
+        jb_pagar.setEnabled(false);
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0,0, 0));
         setUpEstudiante();
@@ -67,7 +68,6 @@ public final class SaldosYPagos extends JFrame {
         jl_aviso_sincuotas.setVisible(!estadoPago);
         jp_cuota_5.setVisible(!estadoPago);
         jb_pagar.setEnabled(estadoPago);
-        
     }
     
     public void restaurarEstadoBotonPagar() {

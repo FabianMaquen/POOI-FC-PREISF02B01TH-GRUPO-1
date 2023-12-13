@@ -1,15 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Funcionamiento;
 
-
 public class InformacionFinal {
+    
     //Ingreso de las respuestas de las hojas finales a(1-8)u(1-2)
     String au, ad, bu, bd, cu, cd, du, dd, eu, ed, fu, fd ,gu ,gd;
+    
     public InformacionFinal() {
+        
     }
+    
     public InformacionFinal(String au, String ad, String bu, String bd, String cu, String cd, String du, String dd,
             String eu, String ed, String fu, String fd, String gu, String gd) {
         this.au = au;
@@ -27,6 +26,7 @@ public class InformacionFinal {
         this.gu = gu;
         this.gd = gd;
     }
+    
     public String getAu() {
         return "  Lista de Becas Disponibles!!\n"+
                 "\n      > Beca Económica Social \n" + //
@@ -36,6 +36,7 @@ public class InformacionFinal {
                 "      > Beca Excelencia Académica \n"+
                 "   ¡!Para postular a accede a nuestro portal web!!";
     }
+    
     public String getAd() {
         return "  Estos son los requisitos!! \n"+
                 "\n      > Documentos para la inscripción\n" + //
@@ -45,6 +46,7 @@ public class InformacionFinal {
                 "      > Copia simple del DNI.\n" + //
                 "      > Foto (formato jpg en fondo blanco) solo para menores\n          de edad.  ";
     }
+    
     public String getBu() {
         return "  Sigue estos pasos!! \n\n"+
                 "      > Identifica los Clubes\n" + //
@@ -53,9 +55,11 @@ public class InformacionFinal {
                 "      > Selecciona el Club de tu Elección\n" + //
                 "      > Completa el Proceso de Inscripción";
     }
+    
     public String getBd() {
         return "  Lista de eventos:  \n\n      > Hablemos de TCA 30/11/2023 - 5:00 p.m\n      > Taller global 2.0 27/11/23\n      > Sorteo de Libros 30//11/23\n      > Feria de carreras 10/12/23 1:00 p.m";
     }
+    
     public String getCu() {
         return  "  A CHAMBEAR !!!\n\n"+
                 "\n      > CC GROUP PERU\n\n"+
@@ -103,12 +107,15 @@ public class InformacionFinal {
                 "      > Referencias\n" + //
                 "     Si deseas más información sobre este tema puedes acceder\n     a las charlas de este tema organizadas por la universidad.";
     }
+    
     public String getDu() {
         return " Horario de atención:\n\n      > Lunes a viernes, de 8 a.m. a 8 p.m.\n      > sábado, de 8 am. a 5 p.m.";
     }
+    
     public String getDd() {
         return "  Para separar una cita en atención al alumno es necesario\n\t que usted se comunique con la usil mediante sus\n\t canales de atención, los cuales los puede encontrar en \n\t esta misma plataforma.";
     }
+    
     public String getEu() {
         return "  El programa de intercambio académico te brinda la\n\tposibilidad de estudiar en una universidad partner \n\t  en cualquier parte del mundo mientras continúas\n\t pagando lo mismo en USIL (matrícula + cuotas USIL).\n\t Puedes llevar estudiar en la universidad socia por uno o\n\t dos periodos académicos y avanzar tu carrera\n\t convalidando cursos de tu plan de estudios.\n\n" + //
                 "    > Beneficios:\n\n" + //
@@ -119,6 +126,7 @@ public class InformacionFinal {
                 "    * Pagas tu matrícula y cinco cuotas USIL, estudiando en el\n          extranjero.\n" + //
                 "    * Internacionaliza tu CV profesional.";
     }
+    
     public String getEd() {
         return "   Contamos con más de 270 convenios internacionales a\n\tlos cuales puedes acceder para realizar intercambios\n\testudiantiles.\n" +
                 "     \n> Algunas de las universidades con las que la USIL\n          tiene convenio son:\n \n" + //
@@ -128,6 +136,7 @@ public class InformacionFinal {
                 "    * Domus Academy\n    *  Universita Di Parma\n    * Universidad di Pisa (Italia).\n" + //
                 "    !Estas son solo algunas de las opciones !";
     }
+    
     public String getFu() {
         return "   Para obtener tu carné universitario en el ciclo 2023-2\n\t sigue este proceso:\n" + //
                 "   * Fecha de solicitudes: Del viernes 7 al viernes 14 de octubre.\n" + //
@@ -139,6 +148,7 @@ public class InformacionFinal {
                 "   * La foto debe cumplir con los requisitos mínimos establecidos.\n" + //
                 "   * Haber realizado el pago de S/.11.50";
     }
+    
     public String getFd() {
         return "      PARA RETIROS :\n      > ¿Cuáles son los requisitos para solicitarlo?\n" + //
                 "       Debes haber estado matriculado en un periodo académico vigente.\n\n" +
@@ -149,9 +159,11 @@ public class InformacionFinal {
                 "      > ¿Cuánto cuesta?\n" + 
                 "       El costo es de S/ 200.";
     }
+    
     public String getGu() {
         return "   Los pagos se podrán efectuar únicamente en las siguientes\n\t entidades bancarias:\n\n      > Banco de Crédito\n      > Scotiabank\n      > BBVA Continental\n     ¡SON LOS ENTES DE COBRANZA EN LINEA! \n";
     }
+    
     public String getGd() {
         return  " Periodo 2023-2\n" +
                     "     * Pago de matrícula y primera cuota: Del 22 al 31 de julio.\n" +
@@ -159,7 +171,6 @@ public class InformacionFinal {
                     "     * Pago de la tercera cuota: Del 21 al 30 de septiembre.\n" + 
                     "     * Pago de la cuarta cuota: Del 20 al 31 de octubre.\n" + 
                     "     * Pago de la quinta cuota: Del 21 al 30 de noviembre.\n" +
-                    "     * Pago para la solicitud del examen final rezagado,\n        tramitado y aprobado: 5 de diciembre \n        (fecha límite)";
-            
+                    "     * Pago para la solicitud del examen final rezagado,\n        tramitado y aprobado: 5 de diciembre \n        (fecha límite)";        
     }
 }

@@ -175,15 +175,12 @@ public class PagoAviso extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonHechoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHechoActionPerformed
-        ventanaSaldosYPagos.setEstudiante(estudiante);
-        //ventanaSaldosYPagos.setMontoPagar(true);
         ventanaSaldosYPagos.estadoCuotaFaltante(false);
         ventanaSaldosYPagos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_botonHechoActionPerformed
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
-        ventanaMetodoDePago.setEstudiante(estudiante);
         ventanaMetodoDePago.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_botonVolverActionPerformed

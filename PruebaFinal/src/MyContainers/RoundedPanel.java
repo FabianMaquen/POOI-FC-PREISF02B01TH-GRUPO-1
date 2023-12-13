@@ -1,4 +1,4 @@
-package Funcionamiento;
+package MyContainers;
 
 import javax.swing.*;
 import java.awt.*;
