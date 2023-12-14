@@ -95,7 +95,7 @@ public class InformacionFinal {
     }
     
     public String getCd() {
-        return "  Elaborar un currículum vitae (CV) es un paso importante en\n         la búsqueda de empleo. Aquí te proporciono una guía general sobre\n         qué incluir al elaborar un currículum:\n\n" + //
+        return "  Elaborar un currículum vitae (CV) es un paso \n         importante en la búsqueda de empleo. Aquí te proporciono\n         una guía general sobre qué incluir al elaborar uno:\n\n" + //
                 "      > Información de contacto\n" + //
                 "      > Perfil o Resumen Personal\n" + //
                 "      > Experiencia Laboral\n" + //
@@ -113,23 +113,23 @@ public class InformacionFinal {
     }
     
     public String getDd() {
-        return "  Para separar una cita en atención al alumno es necesario\n\t que usted se comunique con la usil mediante sus\n\t canales de atención, los cuales los puede encontrar en \n\t esta misma plataforma.";
+        return "  Para separar una cita en atención al alumno es\n          necesario que usted se comunique con la usil mediante\n          sus canales de atención, los cuales los puede encontrar\n          en esta misma plataforma.";
     }
     
     public String getEu() {
-        return "  El programa de intercambio académico te brinda la\n\tposibilidad de estudiar en una universidad partner \n\t  en cualquier parte del mundo mientras continúas\n\t pagando lo mismo en USIL (matrícula + cuotas USIL).\n\t Puedes llevar estudiar en la universidad socia por uno o\n\t dos periodos académicos y avanzar tu carrera\n\t convalidando cursos de tu plan de estudios.\n\n" + //
+        return "  El programa de intercambio académico te brinda la\n\tposibilidad de estudiar en una universidad partner \n\ten cualquier parte del mundo mientras continúas\n\tpagando lo mismo en USIL (matrícula + cuotas USIL).\n\tPuedes llevar estudiar en la universidad socia por uno\n\to dos periodos académicos y avanzar tu carrera\n\tconvalidando cursos de tu plan de estudios.\n\n" + //
                 "    > Beneficios:\n\n" + //
                 "    * Incrementar tu red de contactos internacionales.\n" + //
                 "    * Aprender y fortalecer el conocimiento de idiomas.\n" + //
-                "    * Conocer estudiantes de otras nacionalidades y adquirir\n         habilidades interculturales.\n" + //
-                "    * Podrás convalidar cursos de tu plan de estudios USIL y así\n          avanzar con tu carrera\n" + //
+                "    * Conocer estudiantes de otras nacionalidades y adquirir\n        habilidades interculturales.\n" + //
+                "    * Podrás convalidar cursos de tu plan de estudios USIL y así\n         avanzar con tu carrera\n" + //
                 "    * Pagas tu matrícula y cinco cuotas USIL, estudiando en el\n          extranjero.\n" + //
                 "    * Internacionaliza tu CV profesional.";
     }
     
     public String getEd() {
-        return "   Contamos con más de 270 convenios internacionales a\n\tlos cuales puedes acceder para realizar intercambios\n\testudiantiles.\n" +
-                "     \n> Algunas de las universidades con las que la USIL\n          tiene convenio son:\n \n" + //
+        return "   Contamos con más de 270 convenios internacionales \n\ta los cuales puedes acceder para realizar intercambios\n\testudiantiles.\n" +
+                "     \n> Algunas de las universidades con las que USIL tiene \n    convenio son:\n \n" + //
                 "    * Universidad de Sevilla (España)\n" + //
                 "    * London Metropolitan University (Reino Unido),\n    * Linnaeus University (Suecia)\n" + //
                 "    * Hogent - University of Applied Sciences and Arts (Holanda)\n" + //
@@ -140,8 +140,8 @@ public class InformacionFinal {
     public String getFu() {
         return "   Para obtener tu carné universitario en el ciclo 2023-2\n\t sigue este proceso:\n" + //
                 "   * Fecha de solicitudes: Del viernes 7 al viernes 14 de octubre.\n" + //
-                "   * Fecha límite de pago: Máximo dos (02) días después de generar el\n\tconcepto de pago.\n" + //
-                "   * Fecha de entrega estimada: En 30 días hábiles (El tiempo\n\tde entrega dependerá de la cantidad de solicitudes).\n" + //
+                "   * Fecha límite de pago: Máximo dos (02) días después de\n       generar el tconcepto de pago.\n" + //
+                "   * Fecha de entrega estimada: En 30 días hábiles (El tiempo\n       sde entrega dependerá de la cantidad de solicitudes).\n" + //
                 "\n      >  Requisitos:\n\n" + //
                 "   * Debes estar matriculado en el ciclo 2023-2\n" + //
                 "   * Asegúrate de tener una foto almacenada en el sistema.\n" + //
@@ -151,7 +151,7 @@ public class InformacionFinal {
     
     public String getFd() {
         return "      PARA RETIROS :\n      > ¿Cuáles son los requisitos para solicitarlo?\n" + //
-                "       Debes haber estado matriculado en un periodo académico vigente.\n\n" +
+                "       Debes haber estado matriculado en un periodo académico\n          vigente.\n\n" +
                 "      > ¿Cómo lo solicito?\n" + 
                 "       Para solicitarlo debes ingresar a la siguiente ruta en\n       INFOSIL: TRÁMITES / ACADÉMICOS / RETIRO DE PERIODO.\n\n" +
                 "      > ¿En qué momento puedo solicitarlo?\n" + 
@@ -161,7 +161,7 @@ public class InformacionFinal {
     }
     
     public String getGu() {
-        return "   Los pagos se podrán efectuar únicamente en las siguientes\n\t entidades bancarias:\n\n      > Banco de Crédito\n      > Scotiabank\n      > BBVA Continental\n     ¡SON LOS ENTES DE COBRANZA EN LINEA! \n";
+        return "   Los pagos se podrán efectuar únicamente en las\n\t siguientes entidades bancarias:\n\n      > Banco de Crédito\n      > Scotiabank\n      > BBVA Continental\n     ¡SON LOS ENTES DE COBRANZA EN LINEA! \n";
     }
     
     public String getGd() {

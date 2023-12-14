@@ -69,7 +69,7 @@ public class ChatBot extends JFrame implements ActionListener {
         
         //FONDO DEGRADADO
         FondoCurveadoDegradado panelDegradado = new FondoCurveadoDegradado();
-        panelDegradado.setBounds(1, 0, 440, 123); // Establecer el tamaño y la posición según sea necesario
+        panelDegradado.setBounds(1, 0, 438, 123); // Establecer el tamaño y la posición según sea necesario
         
         // BOTON RETROCEDER
         
@@ -154,16 +154,16 @@ public class ChatBot extends JFrame implements ActionListener {
         area.setText(saludo + listaOpciones);
 	area.setEditable(false);
 	area.setBackground(new Color(232, 235, 241));
-	area.setLineWrap(true);
+	area.setLineWrap(true); 
         area.setBorder(null);
 	area.setWrapStyleWord(true);
-        //area.setFont(new Font("Segoe UI Light", 1, 14));
+        area.setFont(new Font("Segoe UI  Emoji", 0, 13));
         area.setForeground(new Color(41, 61, 109));
         
         
         //SCROLL BAR
         JScrollPane sp = new JScrollPane(area);
-        sp.setBounds(20, 137, 420, 375);
+        sp.setBounds(25, 130, 390, 367);
         //sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         sp.getVerticalScrollBar().setBackground( new Color(41, 61, 109));
         //sp.getVerticalScrollBar().setForeground(new Color(0,0,0) );
@@ -178,8 +178,8 @@ public class ChatBot extends JFrame implements ActionListener {
         
         // FIELD PARA ESCRIBIR MENSAJES 
         field = new JTextField();
-        field.setSize(370, 40);
-	field.setLocation(30, 520);
+        field.setSize(290, 35);
+	field.setLocation(40, 515);
 	field.setBackground(new Color(196,205,219));
 	field.setForeground(new Color(41, 61, 109));
 	field.setFont(new Font("Segoe UI", 0, 14));
@@ -210,20 +210,18 @@ public class ChatBot extends JFrame implements ActionListener {
         send = new JButton();
         //send.setFont(new Font("Serif", 2, 20));
         send.setBackground(new Color (196,205,219));
-        send.setBounds(370, 550, 30, 30);
+        send.setBounds(370, 516, 30, 30);
         send.setIcon(new ImageIcon("./src/images/logoEnviarMCF30x30_1.png"));
         send.setBorder(null);
         send.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         //send.setBorder(BorderFactory.createEmptyBorder(0, 30, 0, 10));
         roundedPanel.add(send);
-        
-        
-       
+
         //PANEL INFERIOR
 	
         bottomPanel = new JPanel();
         bottomPanel.setBackground(new Color(196,205,219)); // Color #CCCCCC
-        bottomPanel.setBounds(25, 520, 440, 40); // Posición y tamaño adecuado
+        bottomPanel.setBounds(25, 512, 390, 38); // Posición y tamaño adecuado
         bottomPanel.setLayout(null); // Usar layout absoluto para posicionar los componentes
         roundedPanel.add(bottomPanel);
         
