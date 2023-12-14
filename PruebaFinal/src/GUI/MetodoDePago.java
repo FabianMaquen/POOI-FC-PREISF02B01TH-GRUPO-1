@@ -10,6 +10,8 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JComponent;
@@ -17,6 +19,8 @@ import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import java.awt.Desktop;
+import java.net.URI;
 
 public class MetodoDePago extends JFrame {
 
@@ -594,17 +598,17 @@ public class MetodoDePago extends JFrame {
                 jcb_aceptar_tycKeyReleased(evt);
             }
         });
-        jp_panel_blanco.add(jcb_aceptar_tyc, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 290, -1, -1));
+        jp_panel_blanco.add(jcb_aceptar_tyc, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 290, -1, -1));
 
         jl_tyc_t2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 11)); // NOI18N
         jl_tyc_t2.setForeground(new java.awt.Color(41, 61, 109));
         jl_tyc_t2.setText("USIL y deseo proceder con el pago");
-        jp_panel_blanco.add(jl_tyc_t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 293, 170, -1));
+        jp_panel_blanco.add(jl_tyc_t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(241, 293, 170, -1));
 
         jl_tyc_t1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 11)); // NOI18N
         jl_tyc_t1.setForeground(new java.awt.Color(41, 61, 109));
         jl_tyc_t1.setText("Acepto los ");
-        jp_panel_blanco.add(jl_tyc_t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 293, 60, -1));
+        jp_panel_blanco.add(jl_tyc_t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 293, 60, -1));
 
         jb_ver_tyc.setBackground(new java.awt.Color(63, 108, 165));
         jb_ver_tyc.setFont(new java.awt.Font("Segoe UI Semilight", 1, 11)); // NOI18N
@@ -904,9 +908,18 @@ public class MetodoDePago extends JFrame {
     }//GEN-LAST:event_jcb_aceptar_tycKeyReleased
 
     private void jb_ver_tycActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_ver_tycActionPerformed
-        /*Inicio ventanaInicio = new Inicio();
-        ventanaInicio.setVisible(true);
-        this.setVisible(false);*/
+        String url_TyC = "https://usilonlife.com/terminos-y-condiciones/"; // link de Terminos y Condiciones para pagar en USIL
+        
+        if(Desktop.isDesktopSupported()){
+            Desktop desktop = Desktop.getDesktop();
+            
+            if(desktop.isSupported(Desktop.Action.BROWSE)){
+                try {
+                    URI uri = new URI(url_TyC);
+                    desktop.browse(uri);
+                } catch (URISyntaxException | IOException ex) {}
+            }
+        }
     }//GEN-LAST:event_jb_ver_tycActionPerformed
 
     private void tx_cvv_tarjetaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tx_cvv_tarjetaKeyTyped

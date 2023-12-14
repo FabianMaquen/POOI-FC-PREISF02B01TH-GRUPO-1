@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Funcionamiento;
 
 public class BotLogic {
@@ -35,8 +31,6 @@ public class BotLogic {
         root.getOpcion(6).setOpcion(0, new TreeNode(respuestaFinal.getGu(), 0));
         root.getOpcion(6).setOpcion(1, new TreeNode(respuestaFinal.getGd(), 0));
     }
-
-    
 
     public TreeNode getRoot() {
         return root;

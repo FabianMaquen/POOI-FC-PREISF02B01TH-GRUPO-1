@@ -1,12 +1,12 @@
 package Funcionamiento;
 
+import MyContainers.RoundedPanel;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import MyContainers.TextPrompt;
 import GUI.*;
-import java.awt.geom.Ellipse2D;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -44,7 +44,7 @@ public class ChatBot extends JFrame implements ActionListener {
         RoundedPanel roundedPanel = new RoundedPanel(70); // Modifica el radio según tus preferencias
         roundedPanel.setLayout(null);
         roundedPanel.setBorder(null);
-        roundedPanel.setBounds(0, 0, 460, 620); // Ajusta la posición y el tamaño según sea necesario
+        roundedPanel.setBounds(0, 0, 440, 580); // Ajusta la posición y el tamaño según sea necesario
         roundedPanel.setBackground(new Color(232, 235, 241)); // Establecer el color de fondo del panel
         add(roundedPanel);
         
@@ -54,13 +54,13 @@ public class ChatBot extends JFrame implements ActionListener {
         
         String saludo = " \n  ¡Hola!\n  Soy Usilito 🦁, el asistente virtual de USIL, y me gustaría poder ayudarte.\n";
         String listaOpciones = "-   Para comenzar, ingresa una de las siguientes opciones: \n" +
-                                        "\n      1 Becas Y ayuda Academica 🥇\n" +
-                                        "      2 Actividades extracurriculares y Clubes Estudiantiles ⛹️🏀\n" +
-                                        "      3 Orientación para Practicas 👷‍️\n" +
-                                        "      4 Atención Presencial 🙋\n" +
-                                        "      5 Opciones de estudios en el extranjero 🛩️\n" +
-                                        "      6 Trámites Estudiantiles 📋\n" +
-                                        "      7 Pagos estudiantiles 💰\n"; 
+                                        "\n      1. Becas Y ayuda Academica 🥇\n" +
+                                        "      2. Actividades extracurriculares y Clubes Estudiantiles ⛹️🏀\n" +
+                                        "      3. Orientación para Practicas 👷‍️\n" +
+                                        "      4. Atención Presencial 🙋\n" +
+                                        "      5. Opciones de estudios en el extranjero 🛩️\n" +
+                                        "      6. Trámites Estudiantiles 📋\n" +
+                                        "      7. Pagos estudiantiles 💰\n"; 
 					// "      > Quiero hacer otra pregunta 🔍\n";
         
         
@@ -69,12 +69,12 @@ public class ChatBot extends JFrame implements ActionListener {
         
         //FONDO DEGRADADO
         FondoCurveadoDegradado panelDegradado = new FondoCurveadoDegradado();
-        panelDegradado.setBounds(1, 0, 458, 123); // Establecer el tamaño y la posición según sea necesario
+        panelDegradado.setBounds(1, 0, 440, 123); // Establecer el tamaño y la posición según sea necesario
         
         // BOTON RETROCEDER
         
         back = new JButton();
-        back.setBounds(30, 30, 35, 35); // Establece la posición y el tamaño del botón "back"
+        back.setBounds(25, 20, 35, 35); // Establece la posición y el tamaño del botón "back"
         back.setIcon(new ImageIcon("./src/images/BackIcon.png"));
         back.setBorder(null);
         back.setVerticalAlignment(SwingConstants.CENTER);
@@ -93,13 +93,13 @@ public class ChatBot extends JFrame implements ActionListener {
         
         JLabel imgUsilito = new JLabel();
         imgUsilito.setIcon(new ImageIcon("./src/images/usilitoBlanco100x104.png"));
-        imgUsilito.setBounds(180, 0, 100, 80);
+        imgUsilito.setBounds(170, 0, 100, 80);
         roundedPanel.add(imgUsilito);
         
         // TITULO USILITO
         
         JLabel tituloUsilito = new JLabel("Usilito");
-        tituloUsilito.setBounds(180, 60, 100, 30);
+        tituloUsilito.setBounds(170, 60, 100, 30);
         tituloUsilito.setHorizontalAlignment(SwingConstants.CENTER);
         tituloUsilito.setFont(new Font("Segoe UI", 1, 14));
         tituloUsilito.setForeground(Color.WHITE);
@@ -108,7 +108,7 @@ public class ChatBot extends JFrame implements ActionListener {
         
         //BOTON APAGAR TODO 
         apagar = new JButton();
-        apagar.setBounds(400, 30, 35, 35);
+        apagar.setBounds(392, 20, 35, 35);
         apagar.setVerticalAlignment(SwingConstants.CENTER);
         apagar.setBorder(null);
         apagar.setIcon(new ImageIcon("./src/images/iconoSalir35x35.png"));
@@ -130,7 +130,7 @@ public class ChatBot extends JFrame implements ActionListener {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                int radio = 90; // Radio para redondear las esquinas
+                int radio = 80; // Radio para redondear las esquinas
                 Graphics2D g2d = (Graphics2D) g.create();
                 g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
                 Shape roundRect = new RoundRectangle2D.Double(1, 0, (getWidth()-3), getHeight(), radio, radio);
@@ -139,7 +139,7 @@ public class ChatBot extends JFrame implements ActionListener {
                 g2d.dispose();
             }
         };
-        curvaSuperior.setBounds(0, 92, 460, 60); // Ajustar la posición para ubicarlo en la parte inferior
+        curvaSuperior.setBounds(0, 92, 440, 60); // Ajustar la posición para ubicarlo en la parte inferior
         curvaSuperior.setOpaque(false); // Hacer el JLabel transparente para que se vean las esquinas redondeadas
         roundedPanel.add(curvaSuperior); // Añadir curvaSuperior al panelDegradado
         
@@ -178,8 +178,8 @@ public class ChatBot extends JFrame implements ActionListener {
         
         // FIELD PARA ESCRIBIR MENSAJES 
         field = new JTextField();
-        field.setSize(340, 40);
-	field.setLocation(38, 546);
+        field.setSize(370, 40);
+	field.setLocation(30, 520);
 	field.setBackground(new Color(196,205,219));
 	field.setForeground(new Color(41, 61, 109));
 	field.setFont(new Font("Segoe UI", 0, 14));
@@ -210,7 +210,7 @@ public class ChatBot extends JFrame implements ActionListener {
         send = new JButton();
         //send.setFont(new Font("Serif", 2, 20));
         send.setBackground(new Color (196,205,219));
-        send.setBounds(390, 550, 30, 30);
+        send.setBounds(370, 550, 30, 30);
         send.setIcon(new ImageIcon("./src/images/logoEnviarMCF30x30_1.png"));
         send.setBorder(null);
         send.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -223,7 +223,7 @@ public class ChatBot extends JFrame implements ActionListener {
 	
         bottomPanel = new JPanel();
         bottomPanel.setBackground(new Color(196,205,219)); // Color #CCCCCC
-        bottomPanel.setBounds(20, 546, 420, 40); // Posición y tamaño adecuado
+        bottomPanel.setBounds(25, 520, 440, 40); // Posición y tamaño adecuado
         bottomPanel.setLayout(null); // Usar layout absoluto para posicionar los componentes
         roundedPanel.add(bottomPanel);
         

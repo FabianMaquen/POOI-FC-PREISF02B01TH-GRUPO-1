@@ -348,7 +348,7 @@ public class Inicio extends JFrame {
 
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
         // TODO add your handling code here:
-        Login ventanalogin = new Login(estadoPago);
+        Login ventanalogin = new Login();
         ventanalogin.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_retrocederActionPerformed
@@ -359,7 +359,7 @@ public class Inicio extends JFrame {
 
     private void jb_chatbotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_chatbotActionPerformed
         ChatBot cb = new ChatBot(this, estudiante); // Crea una instancia de la clase ChatBot
-        cb.setSize(460, 620);
+        cb.setSize(440, 580);
         cb.setLocationRelativeTo(null);
         cb.setVisible(true);
         this.setVisible(false);
@@ -373,7 +373,6 @@ public class Inicio extends JFrame {
     }//GEN-LAST:event_jb_contactoActionPerformed
 
     private void jb_saldos_pagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_saldos_pagosActionPerformed
-        // TODO add your handling code here:
         SaldosYPagos ventanaSaldosYPagos = new SaldosYPagos(estudiante,this,estadoPago);
         ventanaSaldosYPagos.setVisible(true);
         this.setVisible(false); 
@@ -385,7 +384,7 @@ public class Inicio extends JFrame {
         ListaEstudiantes l_us = new ListaEstudiantes();
 
         // Obtener la lista de cursos
-        List<Curso> cursos = listaCursos.getCursos();
+        List<Curso> cursos = listaCursos.getCursos(estudiante.getCodigoEstudiante());
 
         // Crear una instancia de la ventana Cursos y pasar la lista de cursos
         Cursos ventanaCursos = new Cursos(estudiante, this, cursos);

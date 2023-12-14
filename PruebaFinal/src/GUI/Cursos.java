@@ -1,6 +1,5 @@
 package GUI;
 
-import Funcionamiento.Aula;
 import Funcionamiento.Curso;
 import Funcionamiento.Estudiante;
 import MyContainers.ScrollBarCustom;
@@ -9,20 +8,18 @@ import java.awt.Dimension;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Cursos extends JFrame {
     private Estudiante estudiante;
     private Inicio ventanaInicio;
     private List<Curso> cursos;
-    private String nombreCurso;
-    private String jl_numero_creditos;
-    private Aula aula;
-    
 
     public Cursos() {
         initComponents();
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0,0, 0));
+        scroll.setVerticalScrollBar(new ScrollBarCustom());
     }
     
     public Cursos(Estudiante es, Inicio inicio, List<Curso> cursos) {
@@ -32,11 +29,10 @@ public class Cursos extends JFrame {
         this.cursos = cursos;
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0,0, 0));
-        setUpCursos();
         scroll.setVerticalScrollBar(new ScrollBarCustom());
+        setUpCursos();
     }
     
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -208,19 +204,18 @@ public class Cursos extends JFrame {
         jb_información_c1.setBackground(new java.awt.Color(63, 108, 165));
         jb_información_c1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jb_información_c1.setForeground(new java.awt.Color(41, 61, 109));
-        jb_información_c1.setText("Información");
+        jb_información_c1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoInformacion22x22.png"))); // NOI18N
         jb_información_c1.setBorder(null);
         jb_información_c1.setBorderPainted(false);
         jb_información_c1.setContentAreaFilled(false);
         jb_información_c1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jb_información_c1.setFocusPainted(false);
-        jb_información_c1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jb_información_c1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_información_c1ActionPerformed(evt);
             }
         });
-        fondocurso1.add(jb_información_c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
+        fondocurso1.add(jb_información_c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 65, 25, -1));
 
         contenedor.add(fondocurso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 0, 360, 110));
 
@@ -265,19 +260,18 @@ public class Cursos extends JFrame {
         jb_información_c2.setBackground(new java.awt.Color(63, 108, 165));
         jb_información_c2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jb_información_c2.setForeground(new java.awt.Color(41, 61, 109));
-        jb_información_c2.setText("Información");
+        jb_información_c2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoInformacion22x22.png"))); // NOI18N
         jb_información_c2.setBorder(null);
         jb_información_c2.setBorderPainted(false);
         jb_información_c2.setContentAreaFilled(false);
         jb_información_c2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jb_información_c2.setFocusPainted(false);
-        jb_información_c2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jb_información_c2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_información_c2ActionPerformed(evt);
             }
         });
-        fondocurso2.add(jb_información_c2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
+        fondocurso2.add(jb_información_c2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 65, 25, -1));
 
         contenedor.add(fondocurso2, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 135, 360, 110));
 
@@ -322,19 +316,18 @@ public class Cursos extends JFrame {
         jb_información_c3.setBackground(new java.awt.Color(63, 108, 165));
         jb_información_c3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jb_información_c3.setForeground(new java.awt.Color(41, 61, 109));
-        jb_información_c3.setText("Información");
+        jb_información_c3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoInformacion22x22.png"))); // NOI18N
         jb_información_c3.setBorder(null);
         jb_información_c3.setBorderPainted(false);
         jb_información_c3.setContentAreaFilled(false);
         jb_información_c3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jb_información_c3.setFocusPainted(false);
-        jb_información_c3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jb_información_c3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_información_c3ActionPerformed(evt);
             }
         });
-        fondocurso3.add(jb_información_c3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
+        fondocurso3.add(jb_información_c3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 65, 25, -1));
 
         contenedor.add(fondocurso3, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 270, 360, 110));
 
@@ -379,19 +372,18 @@ public class Cursos extends JFrame {
         jb_información_c4.setBackground(new java.awt.Color(63, 108, 165));
         jb_información_c4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jb_información_c4.setForeground(new java.awt.Color(41, 61, 109));
-        jb_información_c4.setText("Información");
+        jb_información_c4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoInformacion22x22.png"))); // NOI18N
         jb_información_c4.setBorder(null);
         jb_información_c4.setBorderPainted(false);
         jb_información_c4.setContentAreaFilled(false);
         jb_información_c4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jb_información_c4.setFocusPainted(false);
-        jb_información_c4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jb_información_c4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_información_c4ActionPerformed(evt);
             }
         });
-        fondocurso4.add(jb_información_c4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
+        fondocurso4.add(jb_información_c4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 65, 25, -1));
 
         contenedor.add(fondocurso4, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 405, 360, 110));
 
@@ -436,19 +428,18 @@ public class Cursos extends JFrame {
         jb_información_c5.setBackground(new java.awt.Color(63, 108, 165));
         jb_información_c5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jb_información_c5.setForeground(new java.awt.Color(41, 61, 109));
-        jb_información_c5.setText("Información");
+        jb_información_c5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoInformacion22x22.png"))); // NOI18N
         jb_información_c5.setBorder(null);
         jb_información_c5.setBorderPainted(false);
         jb_información_c5.setContentAreaFilled(false);
         jb_información_c5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jb_información_c5.setFocusPainted(false);
-        jb_información_c5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jb_información_c5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_información_c5ActionPerformed(evt);
             }
         });
-        fondocurso5.add(jb_información_c5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
+        fondocurso5.add(jb_información_c5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 65, 25, -1));
 
         contenedor.add(fondocurso5, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 540, 360, 110));
 
@@ -493,19 +484,18 @@ public class Cursos extends JFrame {
         jb_información_c6.setBackground(new java.awt.Color(63, 108, 165));
         jb_información_c6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jb_información_c6.setForeground(new java.awt.Color(41, 61, 109));
-        jb_información_c6.setText("Información");
+        jb_información_c6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoInformacion22x22.png"))); // NOI18N
         jb_información_c6.setBorder(null);
         jb_información_c6.setBorderPainted(false);
         jb_información_c6.setContentAreaFilled(false);
         jb_información_c6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jb_información_c6.setFocusPainted(false);
-        jb_información_c6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jb_información_c6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_información_c6ActionPerformed(evt);
             }
         });
-        fondocurso6.add(jb_información_c6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 100, -1));
+        fondocurso6.add(jb_información_c6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 65, 25, -1));
 
         contenedor.add(fondocurso6, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 675, 360, 110));
 
@@ -513,7 +503,6 @@ public class Cursos extends JFrame {
 
         panelRound1.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 400, 380));
 
-        cb_pregrado_x.setBackground(new java.awt.Color(196, 205, 219));
         cb_pregrado_x.setBorder(null);
         cb_pregrado_x.setForeground(new java.awt.Color(41, 61, 109));
         cb_pregrado_x.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "(PRE-GRADO) 2023 - 02" }));
@@ -547,302 +536,86 @@ public class Cursos extends JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     public void setEstudiante(Estudiante es){
         this.estudiante = es;
     }
     
-    private void setUpCursos(){
-        
+    private void setUpCursos() {
         ImageIcon nuevaImagen;
-        
-        if (estudiante.getCodigoEstudiante().equalsIgnoreCase("2312782")) { //FRANCO
-            
-            fondocurso6.setVisible(false);
-            // Cambiar el tamaño del contenedor
-            contenedor.setPreferredSize(new Dimension(380, 670));
 
-            // Asegurarse de que el cambio de tamaño se refleje correctamente
-            contenedor.revalidate();
-            contenedor.repaint();
+        for (int i = 0; i < cursos.size(); i++) {
+            String nombreComponente = "c" + (i + 1);
             
-            // CURSO 1 - Calculo
-            jl_nombre_c1.setText(cursos.get(2).getNombreCurso());
-            jl_bloque_c1.setText(cursos.get(2).getBloqueCurso());
-            jl_nombre_docente_c1.setText(cursos.get(2).getNombreDocente());
-            jl_correo_docente_c1.setText(cursos.get(2).getCorreoDocente());
-            jl_foto_docente_c1.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(2).getFotoDocente())));
-            jl_numero_creditos = cursos.get(2).getNumeroCreditos();
-            aula = new Aula(cursos.get(2).getAula().getnCampus(), cursos.get(2).getAula().getnPabellon(), cursos.get(2).getAula().getnAula());
             
-            // CURSO 2 - Lenguaje II
-            jl_nombre_c2.setText(cursos.get(9).getNombreCurso());
-            jl_bloque_c2.setText(cursos.get(9).getBloqueCurso());
-            jl_nombre_docente_c2.setText(cursos.get(9).getNombreDocente());
-            jl_correo_docente_c2.setText(cursos.get(9).getCorreoDocente());
-            jl_foto_docente_c2.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(9).getFotoDocente())));
-            
-            // CURSO 3 - Discreta
-            jl_nombre_c3.setText(cursos.get(10).getNombreCurso());
-            jl_bloque_c3.setText(cursos.get(10).getBloqueCurso());
-            jl_nombre_docente_c3.setText(cursos.get(10).getNombreDocente());
-            jl_correo_docente_c3.setText(cursos.get(10).getCorreoDocente());
-            jl_foto_docente_c3.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(10).getFotoDocente())));
-            
-            // CURSO 4 - POO I
-            jl_nombre_c4.setText(cursos.get(15).getNombreCurso());
-            jl_bloque_c4.setText(cursos.get(15).getBloqueCurso());
-            jl_nombre_docente_c4.setText(cursos.get(15).getNombreDocente());
-            jl_correo_docente_c4.setText(cursos.get(15).getCorreoDocente());
-            jl_foto_docente_c4.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(15).getFotoDocente())));
-            
-            // CURSO 5 - REALIDAD NACIONAL
-            jl_nombre_c5.setText(cursos.get(16).getNombreCurso());
-            jl_bloque_c5.setText(cursos.get(16).getBloqueCurso());
-            jl_nombre_docente_c5.setText(cursos.get(16).getNombreDocente());
-            jl_correo_docente_c5.setText(cursos.get(16).getCorreoDocente());
-            jl_foto_docente_c5.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(16).getFotoDocente())));
-        }
-        else if(estudiante.getCodigoEstudiante().equalsIgnoreCase("2312461")){ // ALONDRA
-            
-            // CURSO 1 - Administración
-            jl_nombre_c1.setText(cursos.get(0).getNombreCurso());
-            jl_bloque_c1.setText(cursos.get(0).getBloqueCurso());
-            jl_nombre_docente_c1.setText(cursos.get(0).getNombreDocente());
-            jl_correo_docente_c1.setText(cursos.get(0).getCorreoDocente());
-           jl_foto_docente_c1.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(0).getFotoDocente())));
-            
-            // CURSO 2 - Calculo
-            jl_nombre_c2.setText(cursos.get(1).getNombreCurso());
-            jl_bloque_c2.setText(cursos.get(1).getBloqueCurso());
-            jl_nombre_docente_c2.setText(cursos.get(1).getNombreDocente());
-            jl_correo_docente_c2.setText(cursos.get(1).getCorreoDocente());
-            jl_foto_docente_c2.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(1).getFotoDocente())));
-            
-            // CURSO 3 - Ingles I
-            jl_nombre_c3.setText(cursos.get(4).getNombreCurso());
-            jl_bloque_c3.setText(cursos.get(4).getBloqueCurso());
-            jl_nombre_docente_c3.setText(cursos.get(4).getNombreDocente());
-            jl_correo_docente_c3.setText(cursos.get(4).getCorreoDocente());
-            jl_foto_docente_c3.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(4).getFotoDocente())));
-            
-            // CURSO 4 - Lenguaje II
-            jl_nombre_c4.setText(cursos.get(7).getNombreCurso());
-            jl_bloque_c4.setText(cursos.get(7).getBloqueCurso());
-            jl_nombre_docente_c4.setText(cursos.get(7).getNombreDocente());
-            jl_correo_docente_c4.setText(cursos.get(7).getCorreoDocente());
-            jl_foto_docente_c4.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(7).getFotoDocente())));
-            
-            // CURSO 5 - Discreta
-            jl_nombre_c5.setText(cursos.get(10).getNombreCurso());
-            jl_bloque_c5.setText(cursos.get(10).getBloqueCurso());
-            jl_nombre_docente_c5.setText(cursos.get(10).getNombreDocente());
-            jl_correo_docente_c5.setText(cursos.get(10).getCorreoDocente());
-            jl_foto_docente_c5.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(10).getFotoDocente())));
-            
-            // CURSO 6 - POO I
-            jl_nombre_c6.setText(cursos.get(15).getNombreCurso());
-            jl_bloque_c6.setText(cursos.get(15).getBloqueCurso());
-            jl_nombre_docente_c6.setText(cursos.get(15).getNombreDocente());
-            jl_correo_docente_c6.setText(cursos.get(15).getCorreoDocente());
-            jl_foto_docente_c6.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(15).getFotoDocente())));
-        }
-        else if(estudiante.getCodigoEstudiante().equalsIgnoreCase("2311685")){ // FABIAN
-            
-            // CURSO 1 - Calculo
-            jl_nombre_c1.setText(cursos.get(1).getNombreCurso());
-            jl_bloque_c1.setText(cursos.get(1).getBloqueCurso());
-            jl_nombre_docente_c1.setText(cursos.get(1).getNombreDocente());
-            jl_correo_docente_c1.setText(cursos.get(1).getCorreoDocente());
-            jl_foto_docente_c1.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(1).getFotoDocente())));
-            nombreCurso = cursos.get(1).getNombreCurso();
-            jl_numero_creditos = cursos.get(1).getNumeroCreditos();
-            aula = new Aula(cursos.get(1).getAula().getnCampus(), cursos.get(1).getAula().getnPabellon(), cursos.get(1).getAula().getnAula());
-            
-            // CURSO 2 - Ingles III
-            jl_nombre_c2.setText(cursos.get(5).getNombreCurso());
-            jl_bloque_c2.setText(cursos.get(5).getBloqueCurso());
-            jl_nombre_docente_c2.setText(cursos.get(5).getNombreDocente());
-            jl_correo_docente_c2.setText(cursos.get(5).getCorreoDocente());
-            jl_foto_docente_c2.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(5).getFotoDocente())));
-            nombreCurso = cursos.get(5).getNombreCurso();
-            jl_numero_creditos = cursos.get(5).getNumeroCreditos();
-            aula = new Aula(cursos.get(5).getAula().getnCampus(), cursos.get(5).getAula().getnPabellon(), cursos.get(5).getAula().getnAula());
-            
-            // CURSO 3 - Lenguaje II
-            jl_nombre_c3.setText(cursos.get(7).getNombreCurso());
-            jl_bloque_c3.setText(cursos.get(7).getBloqueCurso());
-            jl_nombre_docente_c3.setText(cursos.get(7).getNombreDocente());
-            jl_correo_docente_c3.setText(cursos.get(7).getCorreoDocente());
-            jl_foto_docente_c3.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(7).getFotoDocente())));
-            jl_numero_creditos = cursos.get(7).getNumeroCreditos();
-            aula = new Aula(cursos.get(7).getAula().getnCampus(), cursos.get(7).getAula().getnPabellon(), cursos.get(7).getAula().getnAula());
-            
-            // CURSO 4 - Discreta
-            jl_nombre_c4.setText(cursos.get(11).getNombreCurso());
-            jl_bloque_c4.setText(cursos.get(11).getBloqueCurso());
-            jl_nombre_docente_c4.setText(cursos.get(11).getNombreDocente());
-            jl_correo_docente_c4.setText(cursos.get(11).getCorreoDocente());
-            jl_foto_docente_c4.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(11).getFotoDocente())));
-            nombreCurso = cursos.get(11).getNombreCurso();
-            jl_numero_creditos = cursos.get(11).getNumeroCreditos();
-            aula = new Aula(cursos.get(11).getAula().getnCampus(), cursos.get(11).getAula().getnPabellon(), cursos.get(11).getAula().getnAula());
-            
-            // CURSO 5 - Economia
-            jl_nombre_c5.setText(cursos.get(13).getNombreCurso());
-            jl_bloque_c5.setText(cursos.get(13).getBloqueCurso());
-            jl_nombre_docente_c5.setText(cursos.get(13).getNombreDocente());
-            jl_correo_docente_c5.setText(cursos.get(13).getCorreoDocente());
-            jl_foto_docente_c5.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(13).getFotoDocente())));
-            nombreCurso = cursos.get(13).getNombreCurso();
-            jl_numero_creditos = cursos.get(13).getNumeroCreditos();
-            aula = new Aula(cursos.get(13).getAula().getnCampus(), cursos.get(13).getAula().getnPabellon(), cursos.get(13).getAula().getnAula());
-            
-            // CURSO 6 - POO I
-            jl_nombre_c6.setText(cursos.get(15).getNombreCurso());
-            jl_bloque_c6.setText(cursos.get(15).getBloqueCurso());
-            jl_nombre_docente_c6.setText(cursos.get(15).getNombreDocente());
-            jl_correo_docente_c6.setText(cursos.get(15).getCorreoDocente());
-            jl_foto_docente_c6.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(15).getFotoDocente())));           
-            nombreCurso = cursos.get(15).getNombreCurso();
-            jl_numero_creditos = cursos.get(15).getNumeroCreditos();
-            aula = new Aula(cursos.get(15).getAula().getnCampus(), cursos.get(15).getAula().getnPabellon(), cursos.get(15).getAula().getnAula());
-        } 
-        else if (estudiante.getCodigoEstudiante().equalsIgnoreCase("2313215")) { // OMAR
-            
-            fondocurso6.setVisible(false);
-            // Cambiar el tamaño del contenedor
-            contenedor.setPreferredSize(new Dimension(380, 670));
+            if(cursos.size() < 6){
+                fondocurso6.setVisible(false);
+                // Cambiar el tamaño del contenedor
+                contenedor.setPreferredSize(new Dimension(380, 670));
 
-            // Asegurarse de que el cambio de tamaño se refleje correctamente
-            contenedor.revalidate();
-            contenedor.repaint();
-            
-            // CURSO 1 - Calculo
-            jl_nombre_c1.setText(cursos.get(1).getNombreCurso());
-            jl_bloque_c1.setText(cursos.get(1).getBloqueCurso());
-            jl_nombre_docente_c1.setText(cursos.get(1).getNombreDocente());
-            jl_correo_docente_c1.setText(cursos.get(1).getCorreoDocente());
-            jl_foto_docente_c1.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(1).getFotoDocente())));
-            
-            // CURSO 2 - Ingles III
-            jl_nombre_c2.setText(cursos.get(5).getNombreCurso());
-            jl_bloque_c2.setText(cursos.get(5).getBloqueCurso());
-            jl_nombre_docente_c2.setText(cursos.get(5).getNombreDocente());
-            jl_correo_docente_c2.setText(cursos.get(5).getCorreoDocente());
-            jl_foto_docente_c2.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(5).getFotoDocente())));
-            
-            // CURSO 3 - Lenguaje II
-            jl_nombre_c3.setText(cursos.get(9).getNombreCurso());
-            jl_bloque_c3.setText(cursos.get(9).getBloqueCurso());
-            jl_nombre_docente_c3.setText(cursos.get(9).getNombreDocente());
-            jl_correo_docente_c3.setText(cursos.get(9).getCorreoDocente());
-            jl_foto_docente_c3.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(9).getFotoDocente())));
-            
-            // CURSO 4 - POO I
-            jl_nombre_c4.setText(cursos.get(15).getNombreCurso());
-            jl_bloque_c4.setText(cursos.get(15).getBloqueCurso());
-            jl_nombre_docente_c4.setText(cursos.get(15).getNombreDocente());
-            jl_correo_docente_c4.setText(cursos.get(15).getCorreoDocente());
-            jl_foto_docente_c4.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(15).getFotoDocente())));
-            
-            // CURSO 5 - REALIDAD NACIONAL
-            jl_nombre_c5.setText(cursos.get(17).getNombreCurso());
-            jl_bloque_c5.setText(cursos.get(17).getBloqueCurso());
-            jl_nombre_docente_c5.setText(cursos.get(17).getNombreDocente());
-            jl_correo_docente_c5.setText(cursos.get(17).getCorreoDocente());
-            jl_foto_docente_c5.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(17).getFotoDocente())));
-        }
-        else if (estudiante.getCodigoEstudiante().equalsIgnoreCase("2311081")){ // NEFI
-            
-            // CURSO 1 - Calculo
-            jl_nombre_c1.setText(cursos.get(3).getNombreCurso());
-            jl_bloque_c1.setText(cursos.get(3).getBloqueCurso());
-            jl_nombre_docente_c1.setText(cursos.get(3).getNombreDocente());
-            jl_correo_docente_c1.setText(cursos.get(3).getCorreoDocente());
-            jl_foto_docente_c1.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(3).getFotoDocente())));
-            
-            // CURSO 2 - Ing Software I
-            jl_nombre_c2.setText(cursos.get(6).getNombreCurso());
-            jl_bloque_c2.setText(cursos.get(6).getBloqueCurso());
-            jl_nombre_docente_c2.setText(cursos.get(6).getNombreDocente());
-            jl_correo_docente_c2.setText(cursos.get(6).getCorreoDocente());
-            jl_foto_docente_c2.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(6).getFotoDocente())));
-            
-            // CURSO 3 - Lenguaje II
-            jl_nombre_c3.setText(cursos.get(8).getNombreCurso());
-            jl_bloque_c3.setText(cursos.get(8).getBloqueCurso());
-            jl_nombre_docente_c3.setText(cursos.get(8).getNombreDocente());
-            jl_correo_docente_c3.setText(cursos.get(8).getCorreoDocente());
-            jl_foto_docente_c3.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(8).getFotoDocente())));
-            
-            // CURSO 4 - Discreta
-            jl_nombre_c4.setText(cursos.get(12).getNombreCurso());
-            jl_bloque_c4.setText(cursos.get(12).getBloqueCurso());
-            jl_nombre_docente_c4.setText(cursos.get(12).getNombreDocente());
-            jl_correo_docente_c4.setText(cursos.get(12).getCorreoDocente());
-            jl_foto_docente_c4.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(12).getFotoDocente())));
-            
-            // CURSO 5 - Economia
-            jl_nombre_c5.setText(cursos.get(14).getNombreCurso());
-            jl_bloque_c5.setText(cursos.get(14).getBloqueCurso());
-            jl_nombre_docente_c5.setText(cursos.get(14).getNombreDocente());
-            jl_correo_docente_c5.setText(cursos.get(14).getCorreoDocente());
-            jl_foto_docente_c5.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(14).getFotoDocente())));
-            
-            // CURSO 6 - POO I
-            jl_nombre_c6.setText(cursos.get(15).getNombreCurso());
-            jl_bloque_c6.setText(cursos.get(15).getBloqueCurso());
-            jl_nombre_docente_c6.setText(cursos.get(15).getNombreDocente());
-            jl_correo_docente_c6.setText(cursos.get(15).getCorreoDocente());
-            jl_foto_docente_c6.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(cursos.get(15).getFotoDocente())));
+                // Asegurarse de que el cambio de tamaño se refleje correctamente
+                contenedor.revalidate();
+                contenedor.repaint();
+            }
+            try {
+                JLabel labelNombreCurso = (JLabel) getClass().getDeclaredField("jl_nombre_" + nombreComponente).get(this);
+                JLabel labelBloqueCurso = (JLabel) getClass().getDeclaredField("jl_bloque_" + nombreComponente).get(this);
+                JLabel labelNombreDocente = (JLabel) getClass().getDeclaredField("jl_nombre_docente_" + nombreComponente).get(this);
+                JLabel labelCorreoDocente = (JLabel) getClass().getDeclaredField("jl_correo_docente_" + nombreComponente).get(this);
+                JLabel labelFotoDocente = (JLabel) getClass().getDeclaredField("jl_foto_docente_" + nombreComponente).get(this);
+
+                Curso curso = cursos.get(i);
+
+                labelNombreCurso.setText(curso.getNombreCurso());
+                labelBloqueCurso.setText(curso.getBloqueCurso());
+                labelNombreDocente.setText(curso.getNombreDocente());
+                labelCorreoDocente.setText(curso.getCorreoDocente());
+                labelFotoDocente.setIcon(nuevaImagen = new ImageIcon(getClass().getResource(curso.getFotoDocente())));
+            } catch (NoSuchFieldException | IllegalAccessException e) {
+                e.printStackTrace();
+            }      
+  
         }
     }
     
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
-        // Crea una nueva instancia de Inicio con los datos originales
         ventanaInicio.setEstudiante(estudiante);
         ventanaInicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_retrocederActionPerformed
 
     private void jb_información_c3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c3ActionPerformed
-        // TODO add your handling code here:
-        InfoCurso infoCursos = new InfoCurso(estudiante, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        InfoCurso infoCursos = new InfoCurso(this,cursos.get(2));
         infoCursos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_información_c3ActionPerformed
 
     private void jb_información_c2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c2ActionPerformed
-        // TODO add your handling code here:
-        InfoCurso infoCursos = new InfoCurso(estudiante, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        InfoCurso infoCursos = new InfoCurso(this,cursos.get(1));
         infoCursos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_información_c2ActionPerformed
 
     private void jb_información_c1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c1ActionPerformed
-        InfoCurso infoCursos = new InfoCurso(estudiante, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        InfoCurso infoCursos = new InfoCurso(this,cursos.get(0));
         infoCursos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_información_c1ActionPerformed
 
     private void jb_información_c4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c4ActionPerformed
-        // TODO add your handling code here:
-        InfoCurso infoCursos = new InfoCurso(estudiante, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        InfoCurso infoCursos = new InfoCurso(this,cursos.get(3));
         infoCursos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_información_c4ActionPerformed
 
     private void jb_información_c5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c5ActionPerformed
-        // TODO add your handling code here:
-        InfoCurso infoCursos = new InfoCurso(estudiante, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        InfoCurso infoCursos = new InfoCurso(this,cursos.get(4));
         infoCursos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_información_c5ActionPerformed
 
     private void jb_información_c6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_información_c6ActionPerformed
-        // TODO add your handling code here:
-        InfoCurso infoCursos = new InfoCurso(estudiante, this, cursos, nombreCurso, jl_numero_creditos, aula);
+        InfoCurso infoCursos = new InfoCurso(this,cursos.get(5));
         infoCursos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_información_c6ActionPerformed
