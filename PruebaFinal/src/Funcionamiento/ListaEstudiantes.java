@@ -10,38 +10,38 @@ import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
 public class ListaEstudiantes {
-    private static ArrayList<Estudiante> usuarios;
+    private static ArrayList<Estudiante> estudiantes;
     
     public ListaEstudiantes() {
-        usuarios = new ArrayList<>();
+        estudiantes = new ArrayList<>();
         cargarArchivo();
     }
     
-    public ArrayList<Estudiante> getUsuarios() {
-        return usuarios;
+    public ArrayList<Estudiante> getEstudiantes() {
+        return estudiantes;
     }
     
-    public void adicionar(Estudiante usuario) {
-        usuarios.add(usuario);
+    public void adicionar(Estudiante estudiante) {
+        estudiantes.add(estudiante);
     }
     
-    public void eliminar(Estudiante usuario) {
-        usuarios.remove(usuario);
+    public void eliminar(Estudiante estudiante) {
+        estudiantes.remove(estudiante);
     }
     
     public void mostrar() {
-        for(Estudiante us: usuarios){
-            System.out.println(us.toString());
+        for(Estudiante es: estudiantes){
+            System.out.println(es.toString());
         }
     }
     
-    public void registrarEstudiante(String nombreUsuario, String contrasenha, String correoUsuario, String nombreCompleto, String codigoUsuario, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario, String mensualidad, String codigoCuota) {
-        Estudiante us = new Estudiante(nombreUsuario,contrasenha,correoUsuario,nombreCompleto,codigoUsuario,fotocheckPequeño,fotocheckGrande,QR_Usuario,mensualidad,codigoCuota);
-        adicionar(us);
+    public void registrarEstudiante(String nombreEstudiante, String contrasenha, String correoEstudiante, String nombreCompleto, String codigoEstudiante, String fotocheckPequeño, String fotocheckGrande, String QR_Usuario, String mensualidad, String codigoCuota) {
+        Estudiante es = new Estudiante(nombreEstudiante,contrasenha,correoEstudiante,nombreCompleto,codigoEstudiante,fotocheckPequeño,fotocheckGrande,QR_Usuario,mensualidad,codigoCuota);
+        adicionar(es);
         mostrar();
     }
     
-    // Metodos para leer la lista de usuarios del txt
+    // Metodos para leer la lista de estudiantes del txt
     
     private void readFromInputStream(InputStream inputStream) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
@@ -54,28 +54,28 @@ public class ListaEstudiantes {
         br.close();
     }
     
-    // M?todo que a?adir a los usuarios del archivo .txt en el arrayList usuarios.
+    // Método que añadir a los estudiantes del archivo .txt en el arrayList estudiantes.
     private void createStudent(StringTokenizer st){
-        String nombreUsuario = st.nextToken().trim();
+        String nombreEstudiante = st.nextToken().trim();
         String contrasenha = st.nextToken().trim();
-        String correoUsuario = st.nextToken().trim();
+        String correoEstudiante = st.nextToken().trim();
         String nombreCompleto = st.nextToken().trim();
-        String codigoUsuario = st.nextToken().trim();
+        String codigoEstudiante = st.nextToken().trim();
         String fotocheckPequeño = st.nextToken().trim();       
         String fotocheckGrande = st.nextToken().trim();
         String QR_Usuario = st.nextToken().trim();     
         String mensualidad = st.nextToken().trim();
         String codigoCuota = st.nextToken().trim();
-        Estudiante us = new Estudiante(nombreUsuario,contrasenha,correoUsuario,nombreCompleto,codigoUsuario,fotocheckPequeño,fotocheckGrande,QR_Usuario, mensualidad, codigoCuota);
-        adicionar(us);
+        Estudiante es = new Estudiante(nombreEstudiante,contrasenha,correoEstudiante,nombreCompleto,codigoEstudiante,fotocheckPequeño,fotocheckGrande,QR_Usuario, mensualidad, codigoCuota);
+        adicionar(es);
     }
     
     // M?todos para manipular el archivo de texto
     private void cargarArchivo() {
     try {
-        File file = new File("./src/ListaUsuarios.txt");
+        File file = new File("./src/ListaEstudiantes.txt");
         Class<ListaEstudiantes> clazz = ListaEstudiantes.class;
-        InputStream inputStream = clazz.getResourceAsStream("/ListaUsuarios.txt");
+        InputStream inputStream = clazz.getResourceAsStream("/ListaEstudiantes.txt");
         if (file.exists()) {
             readFromInputStream(inputStream);
         } else

@@ -1,38 +1,41 @@
 package GUI;
 
-import Funcionamiento.Aula;
-import Funcionamiento.Aula;
 import Funcionamiento.Curso;
-import Funcionamiento.Estudiante;
 import java.awt.Color;
-import java.util.List;
 import javax.swing.JFrame;
 
 public class InfoCurso extends JFrame {
 
-    private Estudiante usuario;
     private Cursos ventanaCursos;
-    private List<Curso> cursos;
-    private String nombreCurso;
-    private String numeroCreditos;
-    private Aula aula;
+    private Curso curso;
     
     public InfoCurso() {
         initComponents();
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0,0, 0));
+        
+        jl_L_punto.setVisible(false);
+        jl_Ma_punto.setVisible(false);
+        jl_Mi_punto.setVisible(false);
+        jl_J_punto.setVisible(false);
+        jl_V_punto.setVisible(false);
+        jl_S_punto.setVisible(false);
     }
     
-    public InfoCurso(Estudiante usuario, Cursos ventanaCursos, List<Curso> cursos, String nombreCurso,String numeroCreditos, Aula aula) {
+    public InfoCurso(Cursos ventanaCursos, Curso cs) {
         initComponents();
-        this.usuario = usuario;
         this.ventanaCursos = ventanaCursos;
-        this.cursos = cursos;
-        this.nombreCurso = nombreCurso;
-        this.numeroCreditos = numeroCreditos;
-        this.aula = aula;
+        this.curso = cs;
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0, 0, 0));
+        
+        jl_L_punto.setVisible(false);
+        jl_Ma_punto.setVisible(false);
+        jl_Mi_punto.setVisible(false);
+        jl_J_punto.setVisible(false);
+        jl_V_punto.setVisible(false);
+        jl_S_punto.setVisible(false);
+        
         setUpCursos();
     }
 
@@ -53,7 +56,7 @@ public class InfoCurso extends JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jl_titulo_evaluaciones = new javax.swing.JLabel();
         jl_titulo_horario = new javax.swing.JLabel();
-        jl_hora_curso1 = new javax.swing.JLabel();
+        jl_hora_curso = new javax.swing.JLabel();
         jl_nombre_curso = new javax.swing.JLabel();
         jl_titulo_lugar_aula = new javax.swing.JLabel();
         logo_reloj = new javax.swing.JLabel();
@@ -71,18 +74,24 @@ public class InfoCurso extends JFrame {
         jl_titulo_creditos = new javax.swing.JLabel();
         jl_titulo_pertenece = new javax.swing.JLabel();
         panelRound_horario = new MyContainers.PanelRound();
-        panelRound6 = new MyContainers.PanelRound();
+        jp_lunes = new MyContainers.PanelRound();
         jl_L = new javax.swing.JLabel();
-        panelRound7 = new MyContainers.PanelRound();
+        jl_L_punto = new javax.swing.JLabel();
+        jp_martes = new MyContainers.PanelRound();
         jl_Ma = new javax.swing.JLabel();
-        panelRound8 = new MyContainers.PanelRound();
+        jl_Ma_punto = new javax.swing.JLabel();
+        jp_miercoles = new MyContainers.PanelRound();
         jl_Mi = new javax.swing.JLabel();
-        panelRound9 = new MyContainers.PanelRound();
+        jl_Mi_punto = new javax.swing.JLabel();
+        jp_jueves = new MyContainers.PanelRound();
         jl_J = new javax.swing.JLabel();
-        panelRound10 = new MyContainers.PanelRound();
+        jl_J_punto = new javax.swing.JLabel();
+        jp_viernes = new MyContainers.PanelRound();
         jl_V = new javax.swing.JLabel();
-        panelRound_S = new MyContainers.PanelRound();
+        jl_V_punto = new javax.swing.JLabel();
+        jp_sabado = new MyContainers.PanelRound();
         jl_S = new javax.swing.JLabel();
+        jl_S_punto = new javax.swing.JLabel();
         panelRound_aula = new MyContainers.PanelRound();
         jl_titulo_campus = new javax.swing.JLabel();
         jl_titulo_aula = new javax.swing.JLabel();
@@ -159,12 +168,12 @@ public class InfoCurso extends JFrame {
         jl_titulo_horario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         panelRound1.add(jl_titulo_horario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 60, 20));
 
-        jl_hora_curso1.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
-        jl_hora_curso1.setForeground(new java.awt.Color(41, 61, 109));
-        jl_hora_curso1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jl_hora_curso1.setText("x:xx - x:xx xm");
-        jl_hora_curso1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panelRound1.add(jl_hora_curso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 90, 20));
+        jl_hora_curso.setFont(new java.awt.Font("Dubai", 0, 11)); // NOI18N
+        jl_hora_curso.setForeground(new java.awt.Color(41, 61, 109));
+        jl_hora_curso.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jl_hora_curso.setText("nn:nn nm / nn:nn nm");
+        jl_hora_curso.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panelRound1.add(jl_hora_curso, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 230, -1, 20));
 
         jl_nombre_curso.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
         jl_nombre_curso.setForeground(new java.awt.Color(41, 61, 109));
@@ -181,7 +190,7 @@ public class InfoCurso extends JFrame {
         panelRound1.add(jl_titulo_lugar_aula, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 355, 60, 20));
 
         logo_reloj.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reloj15x15.png"))); // NOI18N
-        panelRound1.add(logo_reloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 233, -1, -1));
+        panelRound1.add(logo_reloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 232, -1, -1));
 
         panelRound_periodo.setBackground(new java.awt.Color(255, 255, 255));
         panelRound_periodo.setRoundBottomLeft(20);
@@ -221,7 +230,7 @@ public class InfoCurso extends JFrame {
         jl_numero_creditos.setFont(new java.awt.Font("Dubai Medium", 0, 48)); // NOI18N
         jl_numero_creditos.setForeground(new java.awt.Color(41, 61, 109));
         jl_numero_creditos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jl_numero_creditos.setText("N");
+        jl_numero_creditos.setText("4");
         jl_numero_creditos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         panelRound_periodo.add(jl_numero_creditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 75, 30, 40));
 
@@ -276,104 +285,149 @@ public class InfoCurso extends JFrame {
         panelRound_horario.setRoundTopRight(20);
         panelRound_horario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelRound6.setBackground(new java.awt.Color(255, 255, 255));
-        panelRound6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 61, 109)));
-        panelRound6.setRoundBottomLeft(20);
-        panelRound6.setRoundBottomRight(20);
-        panelRound6.setRoundTopLeft(20);
-        panelRound6.setRoundTopRight(20);
-        panelRound6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jp_lunes.setBackground(new java.awt.Color(220, 220, 220));
+        jp_lunes.setForeground(new java.awt.Color(204, 204, 204));
+        jp_lunes.setRoundBottomLeft(20);
+        jp_lunes.setRoundBottomRight(20);
+        jp_lunes.setRoundTopLeft(20);
+        jp_lunes.setRoundTopRight(20);
+        jp_lunes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jl_L.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
-        jl_L.setForeground(new java.awt.Color(41, 61, 109));
+        jl_L.setForeground(new java.awt.Color(170, 170, 170));
         jl_L.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl_L.setText("L");
         jl_L.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panelRound6.add(jl_L, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 25, 30, 30));
+        jp_lunes.add(jl_L, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 30, 30, 30));
 
-        panelRound_horario.add(panelRound6, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 10, 40, 60));
+        jl_L_punto.setFont(new java.awt.Font("Dubai", 1, 40)); // NOI18N
+        jl_L_punto.setForeground(new java.awt.Color(255, 255, 255));
+        jl_L_punto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_L_punto.setText(".");
+        jl_L_punto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jp_lunes.add(jl_L_punto, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, -5, 10, 25));
 
-        panelRound7.setBackground(new java.awt.Color(41, 61, 109));
-        panelRound7.setRoundBottomLeft(20);
-        panelRound7.setRoundBottomRight(20);
-        panelRound7.setRoundTopLeft(20);
-        panelRound7.setRoundTopRight(20);
-        panelRound7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelRound_horario.add(jp_lunes, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 10, 40, 60));
+
+        jp_martes.setBackground(new java.awt.Color(220, 220, 220));
+        jp_martes.setForeground(new java.awt.Color(204, 204, 204));
+        jp_martes.setRoundBottomLeft(20);
+        jp_martes.setRoundBottomRight(20);
+        jp_martes.setRoundTopLeft(20);
+        jp_martes.setRoundTopRight(20);
+        jp_martes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jl_Ma.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
-        jl_Ma.setForeground(new java.awt.Color(255, 255, 255));
+        jl_Ma.setForeground(new java.awt.Color(170, 170, 170));
         jl_Ma.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jl_Ma.setText("M");
+        jl_Ma.setText("Ma");
         jl_Ma.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panelRound7.add(jl_Ma, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 25, 30, 30));
+        jp_martes.add(jl_Ma, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 30, 30, 30));
 
-        panelRound_horario.add(panelRound7, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 10, 40, 60));
+        jl_Ma_punto.setFont(new java.awt.Font("Dubai", 1, 40)); // NOI18N
+        jl_Ma_punto.setForeground(new java.awt.Color(255, 255, 255));
+        jl_Ma_punto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_Ma_punto.setText(".");
+        jl_Ma_punto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jp_martes.add(jl_Ma_punto, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, -5, 10, 25));
 
-        panelRound8.setBackground(new java.awt.Color(41, 61, 109));
-        panelRound8.setRoundBottomLeft(20);
-        panelRound8.setRoundBottomRight(20);
-        panelRound8.setRoundTopLeft(20);
-        panelRound8.setRoundTopRight(20);
-        panelRound8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelRound_horario.add(jp_martes, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 10, 40, 60));
+
+        jp_miercoles.setBackground(new java.awt.Color(220, 220, 220));
+        jp_miercoles.setForeground(new java.awt.Color(204, 204, 204));
+        jp_miercoles.setRoundBottomLeft(20);
+        jp_miercoles.setRoundBottomRight(20);
+        jp_miercoles.setRoundTopLeft(20);
+        jp_miercoles.setRoundTopRight(20);
+        jp_miercoles.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jl_Mi.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
-        jl_Mi.setForeground(new java.awt.Color(255, 255, 255));
+        jl_Mi.setForeground(new java.awt.Color(170, 170, 170));
         jl_Mi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jl_Mi.setText("M");
+        jl_Mi.setText("Mi");
         jl_Mi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panelRound8.add(jl_Mi, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 25, 30, 30));
+        jp_miercoles.add(jl_Mi, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 30, 30, 30));
 
-        panelRound_horario.add(panelRound8, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 10, 40, 60));
+        jl_Mi_punto.setFont(new java.awt.Font("Dubai", 1, 40)); // NOI18N
+        jl_Mi_punto.setForeground(new java.awt.Color(255, 255, 255));
+        jl_Mi_punto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_Mi_punto.setText(".");
+        jl_Mi_punto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jp_miercoles.add(jl_Mi_punto, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, -5, 10, 25));
 
-        panelRound9.setBackground(new java.awt.Color(255, 255, 255));
-        panelRound9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(41, 61, 109), 1, true));
-        panelRound9.setRoundBottomLeft(20);
-        panelRound9.setRoundBottomRight(20);
-        panelRound9.setRoundTopLeft(20);
-        panelRound9.setRoundTopRight(20);
-        panelRound9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelRound_horario.add(jp_miercoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 10, 40, 60));
+
+        jp_jueves.setBackground(new java.awt.Color(220, 220, 220));
+        jp_jueves.setForeground(new java.awt.Color(204, 204, 204));
+        jp_jueves.setRoundBottomLeft(20);
+        jp_jueves.setRoundBottomRight(20);
+        jp_jueves.setRoundTopLeft(20);
+        jp_jueves.setRoundTopRight(20);
+        jp_jueves.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jl_J.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
-        jl_J.setForeground(new java.awt.Color(41, 61, 109));
+        jl_J.setForeground(new java.awt.Color(170, 170, 170));
         jl_J.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl_J.setText("J");
         jl_J.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panelRound9.add(jl_J, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 25, 30, 30));
+        jp_jueves.add(jl_J, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 30, 30, 30));
 
-        panelRound_horario.add(panelRound9, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 10, 40, 60));
+        jl_J_punto.setFont(new java.awt.Font("Dubai", 1, 40)); // NOI18N
+        jl_J_punto.setForeground(new java.awt.Color(255, 255, 255));
+        jl_J_punto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_J_punto.setText(".");
+        jl_J_punto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jp_jueves.add(jl_J_punto, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, -5, 10, 25));
 
-        panelRound10.setBackground(new java.awt.Color(41, 61, 109));
-        panelRound10.setRoundBottomLeft(20);
-        panelRound10.setRoundBottomRight(20);
-        panelRound10.setRoundTopLeft(20);
-        panelRound10.setRoundTopRight(20);
-        panelRound10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelRound_horario.add(jp_jueves, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 10, 40, 60));
+
+        jp_viernes.setBackground(new java.awt.Color(220, 220, 220));
+        jp_viernes.setForeground(new java.awt.Color(204, 204, 204));
+        jp_viernes.setRoundBottomLeft(20);
+        jp_viernes.setRoundBottomRight(20);
+        jp_viernes.setRoundTopLeft(20);
+        jp_viernes.setRoundTopRight(20);
+        jp_viernes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jl_V.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
-        jl_V.setForeground(new java.awt.Color(255, 255, 255));
+        jl_V.setForeground(new java.awt.Color(170, 170, 170));
         jl_V.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl_V.setText("V");
         jl_V.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panelRound10.add(jl_V, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 25, 30, 30));
+        jp_viernes.add(jl_V, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 30, 30, 30));
 
-        panelRound_horario.add(panelRound10, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 10, 40, 60));
+        jl_V_punto.setFont(new java.awt.Font("Dubai", 1, 40)); // NOI18N
+        jl_V_punto.setForeground(new java.awt.Color(255, 255, 255));
+        jl_V_punto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_V_punto.setText(".");
+        jl_V_punto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jp_viernes.add(jl_V_punto, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, -5, 10, 25));
 
-        panelRound_S.setBackground(new java.awt.Color(255, 255, 255));
-        panelRound_S.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 61, 109)));
-        panelRound_S.setRoundBottomLeft(20);
-        panelRound_S.setRoundBottomRight(20);
-        panelRound_S.setRoundTopLeft(20);
-        panelRound_S.setRoundTopRight(20);
-        panelRound_S.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelRound_horario.add(jp_viernes, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 10, 40, 60));
+
+        jp_sabado.setBackground(new java.awt.Color(220, 220, 220));
+        jp_sabado.setForeground(new java.awt.Color(204, 204, 204));
+        jp_sabado.setRoundBottomLeft(20);
+        jp_sabado.setRoundBottomRight(20);
+        jp_sabado.setRoundTopLeft(20);
+        jp_sabado.setRoundTopRight(20);
+        jp_sabado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jl_S.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
-        jl_S.setForeground(new java.awt.Color(41, 61, 109));
+        jl_S.setForeground(new java.awt.Color(170, 170, 170));
         jl_S.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl_S.setText("S");
         jl_S.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panelRound_S.add(jl_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 25, 30, 30));
+        jp_sabado.add(jl_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 30, 30, 30));
 
-        panelRound_horario.add(panelRound_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 40, 60));
+        jl_S_punto.setFont(new java.awt.Font("Dubai", 1, 40)); // NOI18N
+        jl_S_punto.setForeground(new java.awt.Color(255, 255, 255));
+        jl_S_punto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_S_punto.setText(".");
+        jl_S_punto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jp_sabado.add(jl_S_punto, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, -5, 10, 25));
+
+        panelRound_horario.add(jp_sabado, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 40, 60));
 
         panelRound1.add(panelRound_horario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 255, 340, 80));
 
@@ -410,23 +464,23 @@ public class InfoCurso extends JFrame {
         jl_numero_campus.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jl_numero_campus.setText("NN");
         jl_numero_campus.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panelRound_aula.add(jl_numero_campus, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 20, 20));
+        panelRound_aula.add(jl_numero_campus, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 60, 20));
 
         jl_numero_pabellon.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
         jl_numero_pabellon.setForeground(new java.awt.Color(41, 61, 109));
         jl_numero_pabellon.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jl_numero_pabellon.setText("X");
         jl_numero_pabellon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panelRound_aula.add(jl_numero_pabellon, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 20, 20));
+        panelRound_aula.add(jl_numero_pabellon, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 60, 20));
 
         jl_numero_aula.setFont(new java.awt.Font("Dubai", 0, 12)); // NOI18N
         jl_numero_aula.setForeground(new java.awt.Color(41, 61, 109));
         jl_numero_aula.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jl_numero_aula.setText("NNN");
         jl_numero_aula.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panelRound_aula.add(jl_numero_aula, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 40, 20));
+        panelRound_aula.add(jl_numero_aula, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 60, 20));
 
-        panelRound1.add(panelRound_aula, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 120, 80));
+        panelRound1.add(panelRound_aula, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 135, 80));
 
         panelRound_evaluaciones.setBackground(new java.awt.Color(255, 255, 255));
         panelRound_evaluaciones.setRoundBottomLeft(20);
@@ -480,16 +534,51 @@ public class InfoCurso extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     private void setUpCursos(){
-        jl_nombre_curso.setText(nombreCurso);
-        jl_numero_creditos.setText(numeroCreditos);
-        jl_numero_campus.setText(aula.getnCampus());
-        jl_numero_pabellon.setText(aula.getnPabellon());
-        jl_numero_aula.setText(aula.getnAula());
+        jl_nombre_curso.setText(curso.getNombreCurso());
+        jl_numero_creditos.setText(curso.getNumeroCreditos());
+        jl_numero_ciclo.setText(curso.getCicloCurso());
+        jl_numero_veces_cursado.setText(curso.getnVecesCursado());
+        jl_hora_curso.setText(curso.getHorarioHora());
+        jl_numero_campus.setText(curso.getAula().getnCampus());
+        jl_numero_pabellon.setText(curso.getAula().getnPabellon());
+        jl_numero_aula.setText(curso.getAula().getnAula());
+        
+        Color colorBlanco = new Color(255,255,255);
+        Color colorAzul = new Color(41,61,109);
+        
+        if(curso.getHorarioDia().contains("1")){
+            jp_lunes.setBackground(colorAzul);
+            jl_L.setForeground(colorBlanco);
+            jl_L_punto.setVisible(true);
+        }
+        if(curso.getHorarioDia().contains("2")){
+            jp_martes.setBackground(colorAzul);
+            jl_Ma.setForeground(colorBlanco);
+            jl_Ma_punto.setVisible(true);
+        }
+        if(curso.getHorarioDia().contains("3")){
+            jp_miercoles.setBackground(colorAzul);
+            jl_Mi.setForeground(colorBlanco);
+            jl_Mi_punto.setVisible(true);
+        }
+        if(curso.getHorarioDia().contains("4")){
+            jp_jueves.setBackground(colorAzul);
+            jl_J.setForeground(colorBlanco);
+            jl_J_punto.setVisible(true);
+        }
+        if(curso.getHorarioDia().contains("5")){
+            jp_viernes.setBackground(colorAzul);
+            jl_V.setForeground(colorBlanco);
+            jl_V_punto.setVisible(true);
+        }
+        if(curso.getHorarioDia().contains("6")){
+            jp_sabado.setBackground(colorAzul);
+            jl_S.setForeground(colorBlanco);
+            jl_S_punto.setVisible(true);
+        }
     }
             
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
-        // Crea una nueva instancia de Inicio con los datos originales
-        ventanaCursos.setUsuario(usuario);
         ventanaCursos.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jb_retrocederActionPerformed
@@ -507,13 +596,19 @@ public class InfoCurso extends JFrame {
     private javax.swing.JButton jb_retroceder;
     private javax.swing.JButton jb_salir;
     private javax.swing.JLabel jl_J;
+    private javax.swing.JLabel jl_J_punto;
     private javax.swing.JLabel jl_L;
+    private javax.swing.JLabel jl_L_punto;
     private javax.swing.JLabel jl_Ma;
+    private javax.swing.JLabel jl_Ma_punto;
     private javax.swing.JLabel jl_Mi;
+    private javax.swing.JLabel jl_Mi_punto;
     private javax.swing.JLabel jl_S;
+    private javax.swing.JLabel jl_S_punto;
     private javax.swing.JLabel jl_V;
+    private javax.swing.JLabel jl_V_punto;
     private javax.swing.JLabel jl_cursos_titulo;
-    private javax.swing.JLabel jl_hora_curso1;
+    private javax.swing.JLabel jl_hora_curso;
     private javax.swing.JLabel jl_nombre_curso;
     private javax.swing.JLabel jl_numero_aula;
     private javax.swing.JLabel jl_numero_campus;
@@ -536,15 +631,15 @@ public class InfoCurso extends JFrame {
     private javax.swing.JLabel jl_titulo_ndeveces;
     private javax.swing.JLabel jl_titulo_pabellon;
     private javax.swing.JLabel jl_titulo_pertenece;
+    private MyContainers.PanelRound jp_jueves;
+    private MyContainers.PanelRound jp_lunes;
+    private MyContainers.PanelRound jp_martes;
+    private MyContainers.PanelRound jp_miercoles;
+    private MyContainers.PanelRound jp_sabado;
     private javax.swing.JPanel jp_ultima_capa;
+    private MyContainers.PanelRound jp_viernes;
     private javax.swing.JLabel logo_reloj;
     private MyContainers.PanelRound panelRound1;
-    private MyContainers.PanelRound panelRound10;
-    private MyContainers.PanelRound panelRound6;
-    private MyContainers.PanelRound panelRound7;
-    private MyContainers.PanelRound panelRound8;
-    private MyContainers.PanelRound panelRound9;
-    private MyContainers.PanelRound panelRound_S;
     private MyContainers.PanelRound panelRound_aula;
     private MyContainers.PanelRound panelRound_evaluaciones;
     private MyContainers.PanelRound panelRound_horario;

@@ -6,39 +6,44 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
 public class ListaCursos {
 
-    private static List<Curso> cursos;
+    private static Map<String, List<Curso>> cursos;  // Cambiando a HashMap con String como clave
 
     public ListaCursos() {
-        cursos = new ArrayList<>();
+        cursos = new HashMap<>();  // Inicializando como HashMap
         cargarArchivo();
     }
 
-    public List<Curso> getCursos() {
-        return cursos;
+    public List<Curso> getCursos(String ID) {
+        return cursos.get(ID);
     }
 
     public void adicionar(Curso curso) {
-        cursos.add(curso);
+        String ID = curso.getID();
+        cursos.computeIfAbsent(ID, k -> new ArrayList<>()).add(curso);
     }
-
-    public void eliminar(Curso curso) {
-        cursos.remove(curso);
+    
+    public void eliminar(String ID) {
+        cursos.remove(ID);
     }
 
     public void mostrar() {
-        for (Curso curso : cursos) {
-            System.out.println(curso.toString());
+        for (List<Curso> listaCursos : cursos.values()) {
+            for (Curso curso : listaCursos) {
+                System.out.println(curso.toString());
+            }
         }
     }
     
-    public void registrarCurso(String nombreCurso, String bloqueCurso, String nombreDocente, String correoDocente, String fotoDocente, String numeroCreditos, String nCampus, String nPabellon, String nAula) {
-        Curso cs = new Curso(nombreCurso, bloqueCurso, nombreDocente, correoDocente, fotoDocente, numeroCreditos, nCampus, nPabellon, nAula);
+    public void registrarCurso(String nombreCurso, String bloqueCurso, String nombreDocente, String correoDocente, String fotoDocente, String numeroCreditos, String cicloCurso, String nVecesCursado, String horarioHora, String horarioDia, String silabo, String nCampus, String nPabellon, String nAula) {
+        Curso cs = new Curso(nombreCurso, bloqueCurso, nombreDocente, correoDocente, fotoDocente, numeroCreditos, cicloCurso, nVecesCursado, horarioHora, horarioDia, silabo, nCampus, nPabellon, nAula);
         adicionar(cs);
         mostrar();
     }
@@ -58,16 +63,23 @@ public class ListaCursos {
     
     // Método que añadir a los usuarios del archivo .txt en el arrayList cursos.
     private void createCourse(StringTokenizer st){
+        String ID = st.nextToken().trim();
         String nombreCurso = st.nextToken().trim();
         String bloqueCurso = st.nextToken().trim();
         String nombreDocente = st.nextToken().trim();
         String correoDocente = st.nextToken().trim();
         String fotoDocente = st.nextToken().trim();
-        String numeroCreditos = st.nextToken().trim();       
+        String numeroCreditos = st.nextToken().trim();
+        String cicloCurso = st.nextToken().trim();
+        String nVecesCursado = st.nextToken().trim();
+        String horarioHora = st.nextToken().trim();
+        String horarioDia = st.nextToken().trim();
+        String silabo = st.nextToken().trim();
         String nCampus = st.nextToken().trim();
         String nPabellon = st.nextToken().trim();   
         String nAula = st.nextToken().trim(); 
-        Curso cs = new Curso(nombreCurso, bloqueCurso, nombreDocente, correoDocente, fotoDocente, numeroCreditos, nCampus, nPabellon, nAula);
+        Curso cs = new Curso(nombreCurso, bloqueCurso, nombreDocente, correoDocente, fotoDocente, numeroCreditos, cicloCurso, nVecesCursado, horarioHora, horarioDia, silabo, nCampus, nPabellon, nAula);
+        cs.setID(ID); // Establecer el ID en el curso
         adicionar(cs);
     }
     
