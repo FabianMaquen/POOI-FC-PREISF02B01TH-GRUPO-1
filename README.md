@@ -2,12 +2,12 @@
 
 Trabajo Final - POO1
 
-Almerco Ayala, Franco Raúl 2312782
+Almerco Ayala, Franco Raúl			      2312782 
 
-Gonzales Cuaresma, Alondra Yamileth 2312461
+Gonzales Cuaresma, Alondra Yamileth	  2312461 
 
-Maquen Caisan, Fabian 2311685
+Maquen Caisan, Fabian			            2311685 
 
-Morales Silva, Omar Jean Piere 2313215
+Morales Silva, Omar Jean Piere		    2313215 
 
-Valderrama Vilca, Nefi Bitner 2311081
+Valderrama Vilca, Nefi Bitner	        2311081
