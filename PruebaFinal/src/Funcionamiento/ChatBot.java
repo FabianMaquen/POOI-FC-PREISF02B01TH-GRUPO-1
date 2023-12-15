@@ -12,6 +12,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import MyContainers.FondoCurveadoDegradado;
 import MyContainers.ScrollBarCustom;
+
 public class ChatBot extends JFrame implements ActionListener {
     // CREANCIÓN DE OBJETOS DE LAS ROPIEDADES DE INTERFACES
     JScrollPane sp;
@@ -211,8 +212,9 @@ public class ChatBot extends JFrame implements ActionListener {
         //send.setFont(new Font("Serif", 2, 20));
         send.setBackground(new Color (196,205,219));
         send.setBounds(370, 516, 30, 30);
-        send.setIcon(new ImageIcon("./src/images/logoEnviarMCF30x30_1.png"));
+        send.setIcon(new ImageIcon("./src/images/logoEnviarCeleste.png"));
         send.setBorder(null);
+        send.setEnabled(false);
         send.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         //send.setBorder(BorderFactory.createEmptyBorder(0, 30, 0, 10));
         roundedPanel.add(send);
@@ -239,14 +241,14 @@ public class ChatBot extends JFrame implements ActionListener {
 	}
     public void actionPerformed(ActionEvent e) {
 			String usuarioRespuesta = field.getText().trim().toLowerCase();
-			String listaOpciones = "      Re - ingresa una de las siguientes opciones: \n" +
-                                        "\n      1 Becas Y ayuda Academica 🥇\n" +
-                                        "      2 Actividades extracurriculares y Clubes Estudiantiles ⛹️🏀\n" +
-                                        "      3 Orientación para Practicas 👷‍♂️\n" +
-					"      4 Atención Presencial 🙋\n" +
-					"      5 Opciones de estudios en el extranjero 🛩️\n" +
-					"      6 Trámites Estudiantiles 📋\n" +
-					"      7 Pagos estudiantiles 💰\n"; 
+			String listaOpciones =
+                                        "\n      1. Becas Y ayuda Academica 🥇\n" +
+                                        "      2. Actividades extracurriculares y Clubes Estudiantiles ⛹️🏀\n" +
+                                        "      3. Orientación para Practicas 👷‍♂️\n" +
+					"      4. Atención Presencial 🙋\n" +
+					"      5. Opciones de estudios en el extranjero 🛩️\n" +
+					"      6. Trámites Estudiantiles 📋\n" +
+					"      7. Pagos estudiantiles 💰\n"; 
 					// "      > Quiero hacer otra pregunta 🔍\n";
 		
 			if (nivel == 0) { // Etapa 0: Seleccionar opción

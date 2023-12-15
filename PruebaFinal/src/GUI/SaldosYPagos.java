@@ -5,6 +5,7 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import Funcionamiento.Tarjeta;
 import MyContainers.ScrollBarCustom;
+import java.awt.Dimension;
 import javax.swing.UIManager;
 
 public final class SaldosYPagos extends JFrame {
@@ -68,6 +69,9 @@ public final class SaldosYPagos extends JFrame {
         jl_aviso_sincuotas.setVisible(!estadoPago);
         jp_cuota_5.setVisible(!estadoPago);
         jb_pagar.setEnabled(estadoPago);
+        if(!estadoPago){
+            jp_historial_completo.setPreferredSize(new Dimension(380, 360));
+        }
     }
     
     public void restaurarEstadoBotonPagar() {
@@ -262,7 +266,7 @@ public final class SaldosYPagos extends JFrame {
         jp_historial_completo.setBackground(new java.awt.Color(232, 235, 241));
         jp_historial_completo.setEnabled(false);
         jp_historial_completo.setMinimumSize(new java.awt.Dimension(380, 360));
-        jp_historial_completo.setPreferredSize(new java.awt.Dimension(380, 360));
+        jp_historial_completo.setPreferredSize(new java.awt.Dimension(380, 285));
         jp_historial_completo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jp_cuota_5.setBackground(new java.awt.Color(196, 205, 219));

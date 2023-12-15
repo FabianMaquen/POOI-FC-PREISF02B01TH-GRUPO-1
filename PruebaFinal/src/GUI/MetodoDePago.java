@@ -36,6 +36,17 @@ public class MetodoDePago extends JFrame {
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0, 0, 0));
         this.listaTarjetas = new ListaTarjetas();
+        
+        jl_titulo_aviso.setVisible(false);
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jLabel5.setVisible(false);
+        jb_aviso_regresar.setVisible(false);
+        jb_aviso_confirmar.setVisible(false);
+        jSeparator.setVisible(false);
+        jSeparator1.setVisible(false);
+        jp_antes_confirmar.setVisible(false);
+        
         jl_logo_dinnerClub.setVisible(false);
         jl_logo_american.setVisible(false);
         jl_logo_visa.setVisible(false);
@@ -73,6 +84,17 @@ public class MetodoDePago extends JFrame {
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0, 0, 0));
         this.listaTarjetas = new ListaTarjetas();
+        
+        jl_titulo_aviso.setVisible(false);
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jLabel5.setVisible(false);
+        jb_aviso_regresar.setVisible(false);
+        jb_aviso_confirmar.setVisible(false);
+        jSeparator.setVisible(false);
+        jSeparator1.setVisible(false);
+        jp_antes_confirmar.setVisible(false);
+        
         jl_logo_dinnerClub.setVisible(false);
         jl_logo_american.setVisible(false);
         jl_logo_visa.setVisible(false);
@@ -335,6 +357,15 @@ public class MetodoDePago extends JFrame {
     private void initComponents() {
 
         jp_utlima_capa = new javax.swing.JPanel();
+        jl_titulo_aviso = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jb_aviso_regresar = new javax.swing.JButton();
+        jb_aviso_confirmar = new javax.swing.JButton();
+        jSeparator = new javax.swing.JSeparator();
+        jSeparator1 = new javax.swing.JSeparator();
+        jp_antes_confirmar = new MyContainers.FondoCurveadoDegradado();
         jl_icono_chip = new javax.swing.JLabel();
         jl_logo_dinnerClub = new javax.swing.JLabel();
         jl_logo_american = new javax.swing.JLabel();
@@ -379,6 +410,84 @@ public class MetodoDePago extends JFrame {
 
         jp_utlima_capa.setOpaque(false);
         jp_utlima_capa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_titulo_aviso.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
+        jl_titulo_aviso.setForeground(new java.awt.Color(255, 255, 255));
+        jl_titulo_aviso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_titulo_aviso.setText("Confirmar pago");
+        jl_titulo_aviso.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jp_utlima_capa.add(jl_titulo_aviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 215, 280, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("¿Está seguro de proceder con el pago?");
+        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jp_utlima_capa.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 255, 280, -1));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText(" Esta acción realizará la compra y se reflejará");
+        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jp_utlima_capa.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 280, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("en su cuenta.");
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jp_utlima_capa.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 297, 280, -1));
+
+        jb_aviso_regresar.setBackground(new java.awt.Color(63, 108, 165));
+        jb_aviso_regresar.setFont(new java.awt.Font("Segoe UI Semilight", 0, 16)); // NOI18N
+        jb_aviso_regresar.setForeground(new java.awt.Color(255, 255, 255));
+        jb_aviso_regresar.setText("Regresar");
+        jb_aviso_regresar.setBorder(null);
+        jb_aviso_regresar.setBorderPainted(false);
+        jb_aviso_regresar.setContentAreaFilled(false);
+        jb_aviso_regresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_aviso_regresar.setFocusPainted(false);
+        jb_aviso_regresar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_aviso_regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_aviso_regresarActionPerformed(evt);
+            }
+        });
+        jp_utlima_capa.add(jb_aviso_regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 70, 30));
+
+        jb_aviso_confirmar.setBackground(new java.awt.Color(63, 108, 165));
+        jb_aviso_confirmar.setFont(new java.awt.Font("Segoe UI Semilight", 0, 16)); // NOI18N
+        jb_aviso_confirmar.setForeground(new java.awt.Color(255, 255, 255));
+        jb_aviso_confirmar.setText("Confirmar");
+        jb_aviso_confirmar.setBorder(null);
+        jb_aviso_confirmar.setBorderPainted(false);
+        jb_aviso_confirmar.setContentAreaFilled(false);
+        jb_aviso_confirmar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_aviso_confirmar.setFocusPainted(false);
+        jb_aviso_confirmar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_aviso_confirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_aviso_confirmarActionPerformed(evt);
+            }
+        });
+        jp_utlima_capa.add(jb_aviso_confirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 340, 70, 30));
+
+        jSeparator.setBackground(new java.awt.Color(215, 216, 219));
+        jSeparator.setForeground(new java.awt.Color(41, 61, 109));
+        jp_utlima_capa.add(jSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 330, 310, 10));
+
+        jSeparator1.setBackground(new java.awt.Color(215, 216, 219));
+        jSeparator1.setForeground(new java.awt.Color(41, 61, 109));
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jp_utlima_capa.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 10, 50));
+
+        jp_antes_confirmar.setRoundBottomLeft(40);
+        jp_antes_confirmar.setRoundBottomRight(40);
+        jp_antes_confirmar.setRoundTopLeft(40);
+        jp_antes_confirmar.setRoundTopRight(40);
+        jp_antes_confirmar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jp_utlima_capa.add(jp_antes_confirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 200, 310, 180));
 
         jl_icono_chip.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoChipTarj30x25.png"))); // NOI18N
         jp_utlima_capa.add(jl_icono_chip, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 113, -1, -1));
@@ -782,35 +891,31 @@ public class MetodoDePago extends JFrame {
     }//GEN-LAST:event_jb_salirActionPerformed
 
     private void jb_confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_confirmarActionPerformed
-        String nombre = tx_nombre_tarjeta.getText();
-        String nroCuenta = tx_numero_tarjeta.getText();
-        String CVV = tx_cvv_tarjeta.getText();
-        String correo = tx_correo.getText();
+        jb_retroceder.setVisible(false);
+        jb_salir.setVisible(false);
+        tx_numero_tarjeta.setEnabled(false);
+        cb_mes.setEnabled(false);
+        cb_año.setEnabled(false);   
+        tx_cvv_tarjeta.setEnabled(false);
+        tx_nombre_tarjeta.setEnabled(false);
+        tx_correo.setEnabled(false);
+        jcb_aceptar_tyc.setEnabled(false);
+        jb_ver_tyc.setEnabled(false);
+        jb_confirmar.setEnabled(false);
         
-        nroCuenta = nroCuenta.replaceAll("\\s", "");
-        
-        Object mesSelec = cb_mes.getSelectedItem();
-        Object anhoSelec = cb_año.getSelectedItem();
-        String mes = mesSelec.toString();
-        String anho = anhoSelec.toString();
-
-        // Crear una tarjeta con la información ingresada
-        Tarjeta tarjetaIngresada = new Tarjeta(nombre, nroCuenta, mes, anho, CVV);
-
-        // Verificar si la tarjeta está en la lista
-        if (this.listaTarjetas.getTarjeta().contains(tarjetaIngresada) && this.listaDeCorreos.contains(correo)) {
-                PagoAviso ventanaPagoAviso = new PagoAviso(this.estudiante, this.ventanaSaldosYPagos);
-                ventanaPagoAviso.setVisible(true);
-                this.setVisible(false); 
-        } else {
-            PagoAviso ventanaTransaccionFallida = new PagoAviso(estudiante, this);
-            ventanaTransaccionFallida.setVisible(true);
-            this.setVisible(false);
-        }     
+        jl_titulo_aviso.setVisible(true);
+        jLabel3.setVisible(true);
+        jLabel4.setVisible(true);
+        jLabel5.setVisible(true);
+        jb_aviso_regresar.setVisible(true);
+        jb_aviso_confirmar.setVisible(true);
+        jSeparator.setVisible(true);
+        jSeparator1.setVisible(true);
+        jp_antes_confirmar.setVisible(true);      
     }//GEN-LAST:event_jb_confirmarActionPerformed
 
     private void tx_nombre_tarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_nombre_tarjetaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_tx_nombre_tarjetaActionPerformed
 
     private void tx_nombre_tarjetaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tx_nombre_tarjetaKeyReleased
@@ -985,12 +1090,94 @@ public class MetodoDePago extends JFrame {
         }
     }//GEN-LAST:event_tx_numero_tarjetaKeyTyped
 
+    private void jb_aviso_confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_aviso_confirmarActionPerformed
+        String nombre = tx_nombre_tarjeta.getText();
+        String nroCuenta = tx_numero_tarjeta.getText();
+        String CVV = tx_cvv_tarjeta.getText();
+        String correo = tx_correo.getText();
+        
+        nroCuenta = nroCuenta.replaceAll("\\s", "");
+        
+        Object mesSelec = cb_mes.getSelectedItem();
+        Object anhoSelec = cb_año.getSelectedItem();
+        String mes = mesSelec.toString();
+        String anho = anhoSelec.toString();
+
+        // Crear una tarjeta con la información ingresada
+        Tarjeta tarjetaIngresada = new Tarjeta(nombre, nroCuenta, mes, anho, CVV);
+
+        // Verificar si la tarjeta está en la lista
+        if (this.listaTarjetas.getTarjeta().contains(tarjetaIngresada) && this.listaDeCorreos.contains(correo)) {      
+            PagoAviso ventanaPagoAviso = new PagoAviso(this.estudiante, this.ventanaSaldosYPagos);
+            ventanaPagoAviso.setVisible(true);
+            this.setVisible(false); 
+        } else {
+            PagoAviso ventanaTransaccionFallida = new PagoAviso(estudiante, this);
+            ventanaTransaccionFallida.setVisible(true);
+            this.setVisible(false);
+        }
+        
+        jb_retroceder.setVisible(true);
+        jb_salir.setVisible(true);
+        tx_numero_tarjeta.setEnabled(true);
+        cb_mes.setEnabled(true);
+        cb_año.setEnabled(true);      
+        tx_cvv_tarjeta.setEnabled(true);
+        tx_nombre_tarjeta.setEnabled(true);
+        tx_correo.setEnabled(true);
+        jcb_aceptar_tyc.setEnabled(true);
+        jb_ver_tyc.setEnabled(true);
+        jb_confirmar.setEnabled(true);
+        
+        jl_titulo_aviso.setVisible(false);
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jLabel5.setVisible(false);
+        jb_aviso_regresar.setVisible(false);
+        jb_aviso_confirmar.setVisible(false);
+        jSeparator.setVisible(false);
+        jSeparator1.setVisible(false);
+        jp_antes_confirmar.setVisible(false);
+    }//GEN-LAST:event_jb_aviso_confirmarActionPerformed
+
+    private void jb_aviso_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_aviso_regresarActionPerformed
+        jb_retroceder.setVisible(true);
+        jb_salir.setVisible(true);
+        tx_numero_tarjeta.setEnabled(true);
+        cb_mes.setEnabled(true);
+        cb_año.setEnabled(true);      
+        tx_cvv_tarjeta.setEnabled(true);
+        tx_nombre_tarjeta.setEnabled(true);
+        tx_correo.setEnabled(true);
+        jcb_aceptar_tyc.setEnabled(true);
+        jb_ver_tyc.setEnabled(true);
+        jb_confirmar.setEnabled(true);
+        jb_confirmar.setEnabled(true);
+        
+        jl_titulo_aviso.setVisible(false);
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jLabel5.setVisible(false);
+        jb_aviso_regresar.setVisible(false);
+        jb_aviso_confirmar.setVisible(false);
+        jSeparator.setVisible(false);
+        jSeparator1.setVisible(false);
+        jp_antes_confirmar.setVisible(false);
+    }//GEN-LAST:event_jb_aviso_regresarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private MyContainers.ComboBoxSuggestion cb_año;
     private MyContainers.ComboBoxSuggestion cb_mes;
     private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
     private MyContainers.FondoTarjeta fondoTarjeta1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JSeparator jSeparator;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton jb_aviso_confirmar;
+    private javax.swing.JButton jb_aviso_regresar;
     private MyContainers.BotonCustomLogin jb_confirmar;
     private javax.swing.JButton jb_retroceder;
     private javax.swing.JButton jb_salir;
@@ -1012,8 +1199,10 @@ public class MetodoDePago extends JFrame {
     private javax.swing.JLabel jl_nombre_titular;
     private javax.swing.JLabel jl_numero_tarjeta;
     private javax.swing.JLabel jl_slash;
+    private javax.swing.JLabel jl_titulo_aviso;
     private javax.swing.JLabel jl_tyc_t1;
     private javax.swing.JLabel jl_tyc_t2;
+    private MyContainers.FondoCurveadoDegradado jp_antes_confirmar;
     private MyContainers.PanelRound jp_caja_CVVT;
     private MyContainers.PanelRound jp_caja_correoT;
     private MyContainers.PanelRound jp_caja_fechaT;
