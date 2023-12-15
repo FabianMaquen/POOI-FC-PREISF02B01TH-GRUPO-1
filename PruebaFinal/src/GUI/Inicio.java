@@ -23,8 +23,20 @@ public class Inicio extends JFrame {
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0,0, 0));
         jl_nombre_usuario.setText("Visitante");
+        
+        jp_cerrar_sesion.setVisible(false);
+        jl_titulo_aviso.setVisible(false);
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jLabel5.setVisible(false);
+        jb_aviso_regresar.setVisible(false);
+        jb_aviso_confirmar.setVisible(false);
+        jSeparatorA1.setVisible(false);
+        jSeparatorA2.setVisible(false);
+        
         jb_saldos_pagos.setVisible(false);
         jb_cursos.setVisible(false);
+        jb_fotocheck.setVisible(false);
         jsp_boticias.setVerticalScrollBar(new ScrollBarCustom());
     }
     
@@ -34,6 +46,18 @@ public class Inicio extends JFrame {
         this.estadoPago = estadoPago;
         this.setLocationRelativeTo(null);
         setBackground(new Color(0, 0,0, 0));
+        
+        jp_cerrar_sesion.setVisible(false);
+        jl_titulo_aviso.setVisible(false);
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jLabel5.setVisible(false);
+        jb_aviso_regresar.setVisible(false);
+        jb_aviso_confirmar.setVisible(false);
+        jSeparatorA1.setVisible(false);
+        jSeparatorA2.setVisible(false);
+        jb_fotocheckInvitado.setVisible(false);
+        
         setUpEstudiante();
         jsp_boticias.setVerticalScrollBar(new ScrollBarCustom());
     }
@@ -69,6 +93,15 @@ public class Inicio extends JFrame {
     private void initComponents() {
 
         UltimaCapa = new javax.swing.JPanel();
+        jl_titulo_aviso = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jSeparatorA1 = new javax.swing.JSeparator();
+        jb_aviso_regresar = new javax.swing.JButton();
+        jSeparatorA2 = new javax.swing.JSeparator();
+        jb_aviso_confirmar = new javax.swing.JButton();
+        jp_cerrar_sesion = new MyContainers.FondoCurveadoDegradado();
         jb_retroceder = new javax.swing.JButton();
         jb_salir = new javax.swing.JButton();
         jl_nombre_usuario = new javax.swing.JLabel();
@@ -98,6 +131,7 @@ public class Inicio extends JFrame {
         jl_text2_noticia3 = new javax.swing.JLabel();
         jl_text3_noticia3 = new javax.swing.JLabel();
         jl_text4_noticia3 = new javax.swing.JLabel();
+        jb_fotocheckInvitado = new javax.swing.JButton();
         fondoCurveadoDegradado1 = new MyContainers.FondoCurveadoDegradado();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -105,6 +139,84 @@ public class Inicio extends JFrame {
 
         UltimaCapa.setOpaque(false);
         UltimaCapa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_titulo_aviso.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
+        jl_titulo_aviso.setForeground(new java.awt.Color(255, 255, 255));
+        jl_titulo_aviso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_titulo_aviso.setText("Cerrar Sesión");
+        jl_titulo_aviso.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        UltimaCapa.add(jl_titulo_aviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 215, 280, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("¿Desea cerrar sesión?");
+        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        UltimaCapa.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 255, 280, -1));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Al hacerlo, se desconectará de su cuenta y cualquier");
+        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        UltimaCapa.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 280, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("actividad no guardada podría perderse.");
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        UltimaCapa.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 297, 280, -1));
+
+        jSeparatorA1.setBackground(new java.awt.Color(215, 216, 219));
+        jSeparatorA1.setForeground(new java.awt.Color(41, 61, 109));
+        UltimaCapa.add(jSeparatorA1, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 330, 310, 10));
+
+        jb_aviso_regresar.setBackground(new java.awt.Color(63, 108, 165));
+        jb_aviso_regresar.setFont(new java.awt.Font("Segoe UI Semilight", 0, 16)); // NOI18N
+        jb_aviso_regresar.setForeground(new java.awt.Color(255, 255, 255));
+        jb_aviso_regresar.setText("Regresar");
+        jb_aviso_regresar.setBorder(null);
+        jb_aviso_regresar.setBorderPainted(false);
+        jb_aviso_regresar.setContentAreaFilled(false);
+        jb_aviso_regresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_aviso_regresar.setFocusPainted(false);
+        jb_aviso_regresar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_aviso_regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_aviso_regresarActionPerformed(evt);
+            }
+        });
+        UltimaCapa.add(jb_aviso_regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 70, 30));
+
+        jSeparatorA2.setBackground(new java.awt.Color(215, 216, 219));
+        jSeparatorA2.setForeground(new java.awt.Color(41, 61, 109));
+        jSeparatorA2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        UltimaCapa.add(jSeparatorA2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 10, 50));
+
+        jb_aviso_confirmar.setBackground(new java.awt.Color(63, 108, 165));
+        jb_aviso_confirmar.setFont(new java.awt.Font("Segoe UI Semilight", 0, 16)); // NOI18N
+        jb_aviso_confirmar.setForeground(new java.awt.Color(255, 255, 255));
+        jb_aviso_confirmar.setText("Confirmar");
+        jb_aviso_confirmar.setBorder(null);
+        jb_aviso_confirmar.setBorderPainted(false);
+        jb_aviso_confirmar.setContentAreaFilled(false);
+        jb_aviso_confirmar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_aviso_confirmar.setFocusPainted(false);
+        jb_aviso_confirmar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_aviso_confirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_aviso_confirmarActionPerformed(evt);
+            }
+        });
+        UltimaCapa.add(jb_aviso_confirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 340, 70, 30));
+
+        jp_cerrar_sesion.setRoundBottomLeft(40);
+        jp_cerrar_sesion.setRoundBottomRight(40);
+        jp_cerrar_sesion.setRoundTopLeft(40);
+        jp_cerrar_sesion.setRoundTopRight(40);
+        jp_cerrar_sesion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        UltimaCapa.add(jp_cerrar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 200, 310, 180));
 
         jb_retroceder.setBackground(new java.awt.Color(38, 65, 115));
         jb_retroceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoApagado.png"))); // NOI18N
@@ -312,6 +424,19 @@ public class Inicio extends JFrame {
 
         jp_panelBlancoCurva.add(jsp_boticias, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 400, 310));
 
+        jb_fotocheckInvitado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotocheckInvitado60x60.png"))); // NOI18N
+        jb_fotocheckInvitado.setBorder(null);
+        jb_fotocheckInvitado.setBorderPainted(false);
+        jb_fotocheckInvitado.setContentAreaFilled(false);
+        jb_fotocheckInvitado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jb_fotocheckInvitado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_fotocheckInvitado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_fotocheckInvitadoActionPerformed(evt);
+            }
+        });
+        jp_panelBlancoCurva.add(jb_fotocheckInvitado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 418, -1, -1));
+
         UltimaCapa.add(jp_panelBlancoCurva, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 490));
 
         fondoCurveadoDegradado1.setRoundBottomLeft(50);
@@ -347,10 +472,24 @@ public class Inicio extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jb_retrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_retrocederActionPerformed
-        // TODO add your handling code here:
-        Login ventanalogin = new Login();
-        ventanalogin.setVisible(true);
-        this.setVisible(false);
+        jb_retroceder.setVisible(false);
+        jb_salir.setVisible(false);
+        jb_fotocheck.setEnabled(false);
+        jb_fotocheckInvitado.setEnabled(false);
+        jb_saldos_pagos.setEnabled(false);
+        jb_contacto.setEnabled(false);
+        jb_cursos.setEnabled(false);
+        jb_chatbot.setEnabled(false);
+        
+        jp_cerrar_sesion.setVisible(true);
+        jl_titulo_aviso.setVisible(true);
+        jLabel3.setVisible(true);
+        jLabel4.setVisible(true);
+        jLabel5.setVisible(true);
+        jb_aviso_regresar.setVisible(true);
+        jb_aviso_confirmar.setVisible(true);
+        jSeparatorA1.setVisible(true);
+        jSeparatorA2.setVisible(true);
     }//GEN-LAST:event_jb_retrocederActionPerformed
 
     private void jb_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salirActionPerformed
@@ -384,10 +523,10 @@ public class Inicio extends JFrame {
         ListaEstudiantes l_us = new ListaEstudiantes();
 
         // Obtener la lista de cursos
-        List<Curso> cursos = listaCursos.getCursos(estudiante.getCodigoEstudiante());
+        List<Curso> curso = listaCursos.getCursos(estudiante.getCodigoEstudiante());
 
         // Crear una instancia de la ventana Cursos y pasar la lista de cursos
-        Cursos ventanaCursos = new Cursos(estudiante, this, cursos);
+        Cursos ventanaCursos = new Cursos(estudiante, this, curso);
 
         // Hacer visible la ventana Cursos y ocultar la ventana actual
         ventanaCursos.setVisible(true);
@@ -395,19 +534,60 @@ public class Inicio extends JFrame {
     }//GEN-LAST:event_jb_cursosActionPerformed
 
     private void jb_fotocheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_fotocheckActionPerformed
-        Fotocheck ventanaFotocheck = new Fotocheck(estudiante,  this);
-        ventanaFotocheck.setVisible(true);
-        this.setVisible(false);
+        if(!jl_nombre_usuario.getText().equals("Visitante")){
+            Fotocheck ventanaFotocheck = new Fotocheck(estudiante,  this);
+            ventanaFotocheck.setVisible(true);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jb_fotocheckActionPerformed
+
+    private void jb_aviso_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_aviso_regresarActionPerformed
+        jb_retroceder.setVisible(true);
+        jb_salir.setVisible(true);
+        jb_fotocheck.setEnabled(true);
+        jb_fotocheckInvitado.setEnabled(true);
+        jb_saldos_pagos.setEnabled(true);
+        jb_contacto.setEnabled(true);
+        jb_cursos.setEnabled(true);
+        jb_chatbot.setEnabled(true);
+        
+        jp_cerrar_sesion.setVisible(false);
+        jl_titulo_aviso.setVisible(false);
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jLabel5.setVisible(false);
+        jb_aviso_regresar.setVisible(false);
+        jb_aviso_confirmar.setVisible(false);
+        jSeparatorA1.setVisible(false);
+        jSeparatorA2.setVisible(false);
+    }//GEN-LAST:event_jb_aviso_regresarActionPerformed
+
+    private void jb_aviso_confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_aviso_confirmarActionPerformed
+        Login ventanalogin = new Login();
+        ventanalogin.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jb_aviso_confirmarActionPerformed
+
+    private void jb_fotocheckInvitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_fotocheckInvitadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_fotocheckInvitadoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel UltimaCapa;
     private MyContainers.FondoCurveadoDegradado fondoCurveadoDegradado1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparatorA1;
+    private javax.swing.JSeparator jSeparatorA2;
+    private javax.swing.JButton jb_aviso_confirmar;
+    private javax.swing.JButton jb_aviso_regresar;
     private javax.swing.JButton jb_chatbot;
     private javax.swing.JButton jb_contacto;
     private javax.swing.JButton jb_cursos;
     private javax.swing.JButton jb_fotocheck;
+    private javax.swing.JButton jb_fotocheckInvitado;
     private javax.swing.JButton jb_retroceder;
     private javax.swing.JButton jb_saldos_pagos;
     private javax.swing.JButton jb_salir;
@@ -427,8 +607,10 @@ public class Inicio extends JFrame {
     private javax.swing.JLabel jl_text4_noticia1;
     private javax.swing.JLabel jl_text4_noticia2;
     private javax.swing.JLabel jl_text4_noticia3;
+    private javax.swing.JLabel jl_titulo_aviso;
     private javax.swing.JLabel jl_titulo_bienvenido;
     private javax.swing.JLabel jl_titulo_uchill;
+    private MyContainers.FondoCurveadoDegradado jp_cerrar_sesion;
     private javax.swing.JPanel jp_noticias;
     private MyContainers.PanelRound jp_panelBlancoCurva;
     private javax.swing.JScrollPane jsp_boticias;

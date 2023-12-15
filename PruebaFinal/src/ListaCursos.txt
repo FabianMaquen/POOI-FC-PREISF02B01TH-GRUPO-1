@@ -1,13 +1,13 @@
-2312782,Cálculo de una variable,FC-PREIYC02B01M(H),LUIS ALBERTO DIAZ NUNJA,luis.diaz@usil.pe,"",4,2,1,horarioHora,horarioDia,silabo,C2,D,301
-2312782,Lenguaje y Comunicación II,FC-VIRPSC02C01T,CUMPA VALENCIA JOSE MOISES,jose.cumpav@usil.pe,"",4,2,1,horarioHora,horarioDia,silabo,C1,X,157
-2312782,Matemática Discreta,FC-PREISF02C01M,BETETA SALAS MARISEL ROCIO,marisel.beteta@epg.usil.pe,"",2,2,1,horarioHora,4,silabo,C2,A,506
+2312782,Cálculo de una variable,FC-PREIYC02B01M(H),LUIS ALBERTO DIAZ NUNJA,luis.diaz@usil.pe,/images/docenteLuis_Calculo.png,4,2,1,9:00 am - 10:40 am,135,silabo,C2,D,301
+2312782,Lenguaje y Comunicación II,FC-VIRPSC02C01T,CUMPA VALENCIA JOSE MOISES,jose.cumpav@usil.pe,/images/docenteCumpa_LenguajeII.png,4,2,1,11:00 am - 12:40 pm,135,silabo,C1,X,157
+2312782,Matemática Discreta,FC-PREISF02C01M,BETETA SALAS MARISEL ROCIO,marisel.beteta@epg.usil.pe,/images/docenteMarisel_Discreta.png,2,2,1,9:00 am - 12:40 pm,4,silabo,C2,A,506
 2312782,Programación Orientada a Objetos I,FC-PREISF02B01T(H),ALFARO GUTIERREZ GIANNY ROMIE,gianny.alfaro@usil.pe,/images/docenteGianny_POOI.png,4,2,1,1:00 pm - 2:40 pm,235,silabo,C2,A,506
-2312782,Realidad Nacional y Globalización,FC-PREENI02A01T(H),JOSE HELI VILLANUEVA BARRON,jose.villanuevab@usil.pe,"",3,1,1,horarioHora,horarioDia,silabo,C2,C,104
-2312461,Administración para los negocios,FC-PREENI01H01T(H),GARCIA OTERO DIANA GRACIELA,diana.garciao@usil.pe,"",3,2,1,horarioHora,horarioDia,silabo,C2,C,101
-2312461,Cálculo de una variable,CN-PRECIV02A01T(H),BRAVO QUISPE CARLOS JUAN,carlos.bravo@usil.pe,/images/docenteBravo_Calculo.png,4,2,1,horarioHora,135,silabo,C2,D,301
-2312461,English I,FC-PREHOT01K01M,LEON LECCA KATIA MARLENI,katia.leon@usil.pe,"",5,1,1,horarioHora,horarioDia,silabo,C2,B,301
+2312782,Realidad Nacional y Globalización,FC-PREENI02A01T(H),VILLANUEVA BARRON JOSE HELI,jose.villanuevab@usil.pe,/images/docenteVillanueva_RN.png,3,1,1,3:00 pm - 4:40 pm,24,silabo,C2,C,104
+2312461,Administración para los negocios,FC-PREENI01H01T(H),GARCIA OTERO DIANA GRACIELA,diana.garciao@usil.pe,/images/docenteDiana_Admin.png,3,2,1,3:00 pm - 4:40 pm,13,silabo,C2,C,101
+2312461,Cálculo de una variable,CN-PRECIV02A01T(H),BRAVO QUISPE CARLOS JUAN,carlos.bravo@usil.pe,/images/docenteBravo_Calculo.png,4,2,1,9:00 am - 10:40 am,135,silabo,C2,D,301
+2312461,English I,FC-PREHOT01K01M,LEON LECCA KATIA MARLENI,katia.leon@usil.pe,/images/docenteKatia_InglesI.png,5,1,1,11:00 am - 12:40 pm,1234,silabo,C2,B,301
 2312461,Lenguaje y Comunicación II,FC-VIREMP02D01T,ANCHANTE ARIAS JIM ALEXANDER,jim.anchante@usil.pe,/images/docenteJim_LenguajeII.png,4,2,1,3:00 pm - 4:40 pm,24,silabo,C1,X,153
-2312461,Matemática Discreta,FC-PREISF02C01M,BETETA SALAS MARISEL ROCIO,marisel.beteta@epg.usil.pe,"",2,2,1,horarioHora,2,silabo,C2,A,506
+2312461,Matemática Discreta,FC-PREISF02C01M,BETETA SALAS MARISEL ROCIO,marisel.beteta@epg.usil.pe,/images/docenteMarisel_Discreta.png,2,2,1,7:00 am - 10:40 am,2,silabo,C2,A,506
 2312461,Programación Orientada a Objetos I,FC-PREISF02B01T(H),ALFARO GUTIERREZ GIANNY ROMIE,gianny.alfaro@usil.pe,/images/docenteGianny_POOI.png,4,2,1,1:00 pm - 2:40 pm,235,silabo,C2,A,506
 2311685,Cálculo de una variable,CN-PRECIV02A01T(H),BRAVO QUISPE CARLOS JUAN,carlos.bravo@usil.pe,/images/docenteBravo_Calculo.png,4,2,1,3:00 pm - 4:40 pm,135,silabo,C2,D,301
 2311685,English III,FC-VIREMP03D01M,DAVILA SILVESTRE SILVIA INES,silvia.davila@usil.pe,/images/docenteSilvia_InglesIII.png,5,3,1,(M) 7:00 am - 10:40 am / (J-V) 11:00 am - 12:40 pm,345,silabo,C1,X,134
@@ -17,12 +17,12 @@
 2311685,Programación Orientada a Objetos I,FC-PREISF02B01T(H),ALFARO GUTIERREZ GIANNY ROMIE,gianny.alfaro@usil.pe,/images/docenteGianny_POOI.png,4,2,1,1:00 pm - 2:40 pm,235,silabo,C2,A,506
 2313215,Cálculo de una variable,CN-PRECIV02A01T(H),BRAVO QUISPE CARLOS JUAN,carlos.bravo@usil.pe,/images/docenteBravo_Calculo.png,4,2,1,3:00 pm - 4:40 pm,135,silabo,C2,D,301
 2313215,English III,FC-VIREMP03D01M,DAVILA SILVESTRE SILVIA INES,silvia.davila@usil.pe,/images/docenteSilvia_InglesIII.png,5,3,1,(M) 7:00 am - 10:40 am / (J-V) 11:00 am - 12:40 pm,345,silabo,C1,X,134
-2313215,Lenguaje y Comunicación II,FC-VIREMP02D01T,ANCHANTE ARIAS JIM ALEXANDER,jim.anchante@usil.pe,/images/docenteJim_LenguajeII.png,4,2,1,3:00 pm - 4:40 pm,24,silabo,C1,X,153
+2313215,Lenguaje y Comunicación II,FC-VIRPSC02C01T,CUMPA VALENCIA JOSE MOISES,jose.cumpav@usil.pe,/images/docenteCumpa_LenguajeII.png,4,2,1,3:00 pm - 4:40 pm,24,silabo,C1,X,153
 2313215,Programación Orientada a Objetos I,FC-PREISF02B01T(H),ALFARO GUTIERREZ GIANNY ROMIE,gianny.alfaro@usil.pe,/images/docenteGianny_POOI.png,4,2,1,1:00 pm - 2:40 pm,235,silabo,C2,A,506
-2313215,Realidad Nacional y Globalización,FC-PREENI02F01M(H),RIVERA RUA CARLOS,carlos.riverar@usil.pe,"",3,1,1,horarioHora,horarioDia,silabo,C2,C,104
-2311081,Cálculo de una variable,FC-PREIYC02B01M(H),LUIS ALBERTO DIAZ NUNJA,luis.diaz@usil.pe,"",4,2,1,horarioHora,horarioDia,silabo,C1,X,103
-2311081,Ingeniería de Software I,FC-PREISF03C01T(H),ACOSTA TICSE DEISY,deisy.acosta@usil.pe,"",2,3,1,horarioHora,horarioDia,silabo,C2,A,705
-2311081,Lenguaje y Comunicación II,FC-VIRIAM02C01M,CHAVEZ DURAN ELIZABETH,elizabeth.chavez@usil.pe,"",4,2,1,horarioHora,horarioDia,silabo,C1,X,166
-2311081,Matemática Discreta,FC-PREISF02D01M,TORRES CESPEDES ISABEL ZORAIDA,isabel.torres@usil.pe,/images/docenteAnonimo.png,2,2,1,horarioHora,horarioDia,silabo,C2,A,705
-2311081,Principios de Economía,FC-VIREMP02K01T,VALDEZ BARBOZA ALBERTO,alberto.valdez@usil.pe,"",3,3,1,horarioHora,horarioDia,silabo,C1,X,147
+2313215,Realidad Nacional y Globalización,FC-PREENI02F01M(H),RIVERA RUA CARLOS,carlos.riverar@usil.pe,/images/docenteCarlos_RN.png,3,1,1,7:00 am - 8:40 am,12,silabo,C2,C,104
+2311081,Cálculo de una variable,FC-PREIYC02B01M(H),DIAZ NUNJA LUIS ALBERTO,luis.diaz@usil.pe,/images/docenteLuis_Calculo.png,4,2,1,5:00 pm - 6:40 pm,235,silabo,C1,X,103
+2311081,Ingeniería de Software I,FC-PREISF03C01T(H),ACOSTA TICSE DEISY,deisy.acosta@usil.pe,/images/docenteDeisy_IngSoftwI.png,2,3,1,3:00 pm - 4:40 pm,34,silabo,C2,A,705
+2311081,Lenguaje y Comunicación II,FC-VIRIAM02C01M,CHAVEZ DURAN ELIZABETH,elizabeth.chavez@usil.pe,/images/docenteElizabeth_LenguajeII.png,4,2,1,9:00 am - 10:40 am,13,silabo,C1,X,166
+2311081,Matemática Discreta,FC-PREISF02D01M,TORRES CESPEDES ISABEL ZORAIDA,isabel.torres@usil.pe,/images/docenteAnonimo.png,2,2,1,7:00 am - 10:40 am,2,silabo,C2,A,705
+2311081,Principios de Economía,FC-VIREMP02K01T,VALDEZ BARBOZA ALBERTO,alberto.valdez@usil.pe,/images/docenteValdez_Economia.png,3,3,1,11:00 am - 12:40 pm,13,silabo,C1,X,147
 2311081,Programación Orientada a Objetos I,FC-PREISF02B01T(H),ALFARO GUTIERREZ GIANNY ROMIE,gianny.alfaro@usil.pe,/images/docenteGianny_POOI.png,4,2,1,1:00 pm - 2:40 pm,235,silabo,C2,A,506
