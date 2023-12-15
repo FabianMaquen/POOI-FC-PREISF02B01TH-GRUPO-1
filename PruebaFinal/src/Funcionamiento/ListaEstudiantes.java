@@ -72,16 +72,20 @@ public class ListaEstudiantes {
     
     // M?todos para manipular el archivo de texto
     private void cargarArchivo() {
-    try {
-        File file = new File("./src/ListaEstudiantes.txt");
-        Class<ListaEstudiantes> clazz = ListaEstudiantes.class;
-        InputStream inputStream = clazz.getResourceAsStream("/ListaEstudiantes.txt");
-        if (file.exists()) {
-            readFromInputStream(inputStream);
-        } else
-            JOptionPane.showMessageDialog(null,"El archivo txt no existe");
+        try {
+            // Cargamos el archivo desde el classpath usando getResourceAsStream
+            InputStream inputStream = getClass().getResourceAsStream("/ListaEstudiantes.txt");
+
+            if (inputStream != null) {
+                // Si el archivo se carga correctamente, lo leemos
+                readFromInputStream(inputStream);
+            } else {
+                // Si no se encuentra el archivo, mostramos un mensaje
+                JOptionPane.showMessageDialog(null, "El archivo txt no existe");
+            }
         } catch (Exception x) {
-            JOptionPane.showMessageDialog(null, "Se produjo un error= " + x);
+            // Manejo de excepciones
+            JOptionPane.showMessageDialog(null, "Se produjo un error: " + x.getMessage());
         }
-    }  
+    }
 }
